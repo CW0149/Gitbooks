@@ -15,25 +15,25 @@ function handlerTocs($, page, modifyHeader) {
     var tocs = [];
 
     var count = {
+        h1: 0,
         h2: 0,
-        h3: 0,
-        h4: 0
+        h3: 0
     };
     var titleCountMap = {}; // 用来记录标题出现的次数
-    var h2 = 0, h3 = 0, h4 = 0;
+    var h1 = 0, h2 = 0, h3 = 0;
     $(':header').each(function (i, elem) {
         var header = $(elem);
         var id = addId(header, titleCountMap);
 
         if (id) {
             switch (elem.tagName) {
-                case "h2":
+                case "h1":
                     handlerH1Toc(config, count, header, tocs, page.level, modifyHeader);
                     break;
-                case "h3":
+                case "h2":
                     handlerH2Toc(config, count, header, tocs, page.level, modifyHeader);
                     break;
-                case "h4":
+                case "h3":
                     handlerH3Toc(config, count, header, tocs, page.level, modifyHeader);
                     break;
                 default:
@@ -90,11 +90,11 @@ function handlerH1Toc(config, count, header, tocs, pageLevel, modifyHeader) {
 
     if (config.showLevel) {
         //层级显示仅在需要的时候处理
-        count.h2 += 1;
+        count.h1 += 1;
+        count.h2 = 0;
         count.h3 = 0;
-        count.h4 = 0;
         if (config.multipleH1) {
-            level = count.h2 + '. ';
+            level = count.h1 + '. ';
         } else {
             level = ' ';
         }
@@ -130,7 +130,7 @@ function handlerH2Toc(config, count, header, tocs, pageLevel, modifyHeader) {
         //一级节点为空时，生成一个空的一级节点，让二级节点附带在这个上面
         // 在显示层级的时候不乱
         if (config.showLevel) {
-            count.h2 += 1;
+            count.h1 += 1;
         }
         tocs.push({
             name: "",
@@ -143,12 +143,12 @@ function handlerH2Toc(config, count, header, tocs, pageLevel, modifyHeader) {
     var h1Index = tocs.length - 1;
     var h1Toc = tocs[h1Index];
     if (config.showLevel) {
-        count.h3 += 1;
-        count.h4 = 0;
+        count.h2 += 1;
+        count.h3 = 0;
         if (config.multipleH1) {
-            level = (count.h2 + '.' + count.h3 + '. ');
+            level = (count.h1 + '.' + count.h2 + '. ');
         } else {
-            level = (count.h3 + '. ');
+            level = (count.h2 + '. ');
         }
         if (config.associatedWithSummary && config.themeDefault.showLevel) {
             level = pageLevel + '.' + level;
@@ -180,7 +180,7 @@ function handlerH3Toc(config, count, header, tocs, pageLevel, modifyHeader) {
     if (tocs.length <= 0) {
         //一级节点为空时，生成一个空的一级节点，让二级节点附带在这个上面
         if (config.showLevel) {
-            count.h2 += 1;
+            count.h1 += 1;
         }
         tocs.push({
             name: "",
@@ -195,7 +195,7 @@ function handlerH3Toc(config, count, header, tocs, pageLevel, modifyHeader) {
     if (h2Tocs.length <= 0) {
         //二级节点为空时，生成一个空的二级节点，让三级节点附带在这个上面
         if (config.showLevel) {
-            count.h3 += 1;
+            count.h2 += 1;
         }
         h2Tocs.push({
             name: "",
@@ -207,11 +207,11 @@ function handlerH3Toc(config, count, header, tocs, pageLevel, modifyHeader) {
     var h2Toc = h1Toc.children[h2Tocs.length - 1];
 
     if (config.showLevel) {
-        count.h4 += 1;
+        count.h3 += 1;
         if (config.multipleH1) {
-            level = (count.h2 + '.' + count.h3 + '.' + count.h4 + '. ');
+            level = (count.h1 + '.' + count.h2 + '.' + count.h3 + '. ');
         } else {
-            level = (count.h3 + '.' + count.h4 + '. ');
+            level = (count.h2 + '.' + count.h3 + '. ');
         }
         if (config.associatedWithSummary && config.themeDefault.showLevel) {
             level = pageLevel + "." + level;

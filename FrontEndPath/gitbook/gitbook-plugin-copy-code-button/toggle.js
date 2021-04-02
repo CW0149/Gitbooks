@@ -18,11 +18,11 @@ require(["gitbook", "jQuery"], function(gitbook, $) {
       }
       return t;
   }
-
+  
   function copyToClipboard(text) {
     if (window.clipboardData && window.clipboardData.setData) {
         // IE specific code path to prevent textarea being shown while dialog is visible.
-        return clipboardData.setData("Text", text);
+        return clipboardData.setData("Text", text); 
 
     } else if (document.queryCommandSupported && document.queryCommandSupported("copy")) {
         var textarea = document.createElement("textarea");
@@ -56,7 +56,7 @@ require(["gitbook", "jQuery"], function(gitbook, $) {
       $(this).css("position", "relative");
 
       var $copyCodeButton = $("<button class='copy-code-button'>Copy</button>");
-      $copyCodeButton.css({"fontSize": "13px","position": "absolute", "top": "5px", "right": "5px", "padding": "3px", "background-color":"rgb(73, 135, 212)", "color":"white", "border-radius": "5px" , "-moz-border-radius": "5px", "-webkit-border-radius": "5px", "border": "2px solid #CCCCCC"});
+      $copyCodeButton.css({"position": "absolute", "top": "5px", "right": "5px", "padding": "3px", "background-color":"#313E4E", "color":"white", "border-radius": "5px" , "-moz-border-radius": "5px", "-webkit-border-radius": "5px", "border": "2px solid #CCCCCC"});
       $copyCodeButton.click(function(){
         var $codeContainer = $(this).siblings("code");
         if($codeContainer) {
@@ -79,7 +79,7 @@ require(["gitbook", "jQuery"], function(gitbook, $) {
           }, 2000);
         }
       });
-
+      
       $(this).append($copyCodeButton);
     });
   });

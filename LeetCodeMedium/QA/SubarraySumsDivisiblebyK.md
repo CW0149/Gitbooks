@@ -1,0 +1,12 @@
+# [和可被 K 整除的子数组](https://leetcode-cn.com/problems/subarray-sums-divisible-by-k)
+
+### 问题
+
+
+
+### 解答
+
+```
+
+```
+

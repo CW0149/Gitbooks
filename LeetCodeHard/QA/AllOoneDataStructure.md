@@ -1,0 +1,12 @@
+# [全 O(1) 的数据结构](https://leetcode-cn.com/problems/all-oone-data-structure)
+
+### 问题
+
+
+
+### 解答
+
+```
+
+```
+

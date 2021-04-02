@@ -1,0 +1,15 @@
+{
+  "name": "gitbooks",
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {
+    "build": "./build.sh",
+    "deploy": "gh-pages -d build",
+    "b-deploy": "build && deploy"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "gh-pages": "^3.1.0"
+  }
+}

@@ -1,0 +1,12 @@
+# [最大间距](https://leetcode-cn.com/problems/maximum-gap)
+
+### 问题
+
+
+
+### 解答
+
+```
+
+```
+

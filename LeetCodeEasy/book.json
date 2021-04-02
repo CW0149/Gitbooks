@@ -1,0 +1,23 @@
+{
+	"theme-default": {
+      "showLevel": true
+  },
+	"plugins": ["expandable-chapters-small", "github"],
+	"pluginsConfig": {
+	    "github": {
+	        "url": "https://github.com/CW0149/leetcode-easy"
+	    },
+	    "sharing": {
+	        "facebook": false,
+	        "twitter": false,
+	        "google": false,
+	        "weibo": false,
+	        "instapaper": false,
+	        "vk": false,
+	        "all": [
+	            "facebook", "google", "twitter",
+	            "weibo", "instapaper"
+	        ]
+	    }
+	}
+}

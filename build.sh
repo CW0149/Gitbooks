@@ -1,29 +1,34 @@
 #!/bin/bash
 
-books=(
-  'AdvancedJS'
-  'FrontEndPath'
-  'ReactRouterV4'
-  'Redux'
-  'ModernJS'
-  'ReactFundamentals'
-  'ReactNative'
+books=$1
 
-  'LeetCodeEasy'
-  'LeetCodeMedium'
-  'LeetCodeHard'
+init() {
+  echo "init"
 
-  'ServerSide'
-  'Snippet'
-  'TechNote'
-  'Docs'
-  'Projects'
+  books=(
+    'AdvancedJS'
+    'FrontEndPath'
+    'ReactRouterV4'
+    'Redux'
+    'ModernJS'
+    'ReactFundamentals'
+    'ReactNative'
 
-  'Thoughts'
-)
+    'LeetCodeEasy'
+    'LeetCodeMedium'
+    'LeetCodeHard'
 
-rm -rf build
-mkdir build
+    'ServerSide'
+    'Snippet'
+    'TechNote'
+    'Docs'
+    'Projects'
+
+    'Thoughts'
+  )
+  rm -rf build
+  mkdir build
+}
 
 handleOne() {
   # rm -rf ${book}/_book
@@ -32,13 +37,30 @@ handleOne() {
   # rm -f ${book}/.gitignore
 
   bookdir=build/${book}
-  echo ${bookdir}
+
+  if [ -d ${bookdir} ]
+  then
+    echo "remove ${bookdir}"
+    rm -r ${bookdir}
+  fi
+
   mkdir ${bookdir}
+
   cd ${book} && gitbook install && cd .. && gitbook build ${book} ${bookdir}
 }
 
-for book in ${books[@]}
-do
-  handleOne
+run() {
+  if [ ${books} ]
+  then
+    echo ${books}
+  else
+    init
+  fi
 
-done
+  for book in ${books[@]}
+  do
+    handleOne
+  done
+}
+
+run

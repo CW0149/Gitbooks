@@ -1,0 +1,605 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>命令行操作 · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="examples.html" />
+    
+    
+    <link rel="prev" href="./" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    介绍
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.1.1" data-path="../graphql/">
+            
+                <a href="../graphql/">
+            
+                    
+                    GraphQL
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.2" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    MongoDB
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter active" data-level="1.1.2.1" data-path="commands.html">
+            
+                <a href="commands.html">
+            
+                    
+                    命令行操作
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.2.2" data-path="examples.html">
+            
+                <a href="examples.html">
+            
+                    
+                    示例
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.3" data-path="../mysql/">
+            
+                <a href="../mysql/">
+            
+                    
+                    MySQL
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >命令行操作</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="&#x547D;&#x4EE4;&#x884C;&#x64CD;&#x4F5C;">&#x547D;&#x4EE4;&#x884C;&#x64CD;&#x4F5C;</h1>
+<h3 id="&#x5B89;&#x88C5;&#x4E0E;&#x542F;&#x52A8;">&#x5B89;&#x88C5;&#x4E0E;&#x542F;&#x52A8;</h3>
+<h4 id="mac">Mac</h4>
+<ul>
+<li>&#x5B89;&#x88C5;&#xFF1A;<code>brew install mongodb</code></li>
+<li>&#x542F;&#x52A8;&#xFF1A;<code>brew services start mongodb</code></li>
+<li>&#x505C;&#x6B62;&#xFF1A;<code>brew services stop mongodb</code></li>
+<li>&#x8FDB;&#x5165;&#xFF1A;<code>mongo</code></li>
+<li>&#x663E;&#x793A;&#x670D;&#x52A1;&#x5217;&#x8868;&#xFF1A;<code>brew services list</code></li>
+</ul>
+<h3 id="&#x5E38;&#x7528;&#x64CD;&#x4F5C;">&#x5E38;&#x7528;&#x64CD;&#x4F5C;</h3>
+<p>mongo&#x8FDB;&#x5165;&#x540E;</p>
+<h4 id="&#x6570;&#x636E;&#x5E93;&#x64CD;&#x4F5C;">&#x6570;&#x636E;&#x5E93;&#x64CD;&#x4F5C;</h4>
+<ul>
+<li>&#x67E5;&#x770B;&#x6240;&#x6709;&#x6570;&#x636E;&#x5E93;&#xFF1A; <code>show dbs</code></li>
+<li>&#x5207;&#x6362;&#x6570;&#x636E;&#x5E93;&#xFF0C;&#x82E5;&#x4E0D;&#x5B58;&#x5728;&#x5219;&#x521B;&#x5EFA;&#xFF08;&#x82E5;&#x5E93;&#x5185;&#x65E0;collection show dbs&#x65E0;&#x663E;&#x793A;&#xFF09;&#xFF1A; <code>use db_name</code></li>
+<li>&#x663E;&#x793A;&#x5F53;&#x524D;&#x6570;&#x636E;&#x5E93;&#xFF1A;<code>db</code></li>
+<li>&#x5220;&#x9664;&#x5F53;&#x524D;&#x6570;&#x636E;&#x5E93;&#xFF1A;<code>db.dropDatabase()</code></li>
+</ul>
+<h4 id="&#x96C6;&#x5408;&#x64CD;&#x4F5C;">&#x96C6;&#x5408;&#x64CD;&#x4F5C;</h4>
+<ul>
+<li>&#x67E5;&#x770B;collection: <code>show tables / show collections</code></li>
+<li>&#x521B;&#x5EFA;collection: <code>db.createCollection(name, options)</code></li>
+<li>&#x5220;&#x9664;collection: <code>db.collection.drop()</code></li>
+<li>options&#x5C5E;&#x6027;&#xFF1A;</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>&#x5B57;&#x6BB5;</th>
+<th>&#x7C7B;&#x578B;</th>
+<th>&#x63CF;&#x8FF0;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>capped</td>
+<td>&#x5E03;&#x5C14;</td>
+<td>&#xFF08;&#x53EF;&#x9009;&#xFF09;&#x5982;&#x679C;&#x4E3A; true&#xFF0C;&#x5219;&#x521B;&#x5EFA;&#x56FA;&#x5B9A;&#x96C6;&#x5408;&#x3002;&#x56FA;&#x5B9A;&#x96C6;&#x5408;&#x662F;&#x6307;&#x6709;&#x7740;&#x56FA;&#x5B9A;&#x5927;&#x5C0F;&#x7684;&#x96C6;&#x5408;&#xFF0C;&#x5F53;&#x8FBE;&#x5230;&#x6700;&#x5927;&#x503C;&#x65F6;&#xFF0C;&#x5B83;&#x4F1A;&#x81EA;&#x52A8;&#x8986;&#x76D6;&#x6700;&#x65E9;&#x7684;&#x6587;&#x6863;&#x3002;&#x5F53;&#x8BE5;&#x503C;&#x4E3A; true &#x65F6;&#xFF0C;&#x5FC5;&#x987B;&#x6307;&#x5B9A; size &#x53C2;&#x6570;&#x3002;</td>
+</tr>
+<tr>
+<td>autoIndexId</td>
+<td>&#x5E03;&#x5C14;</td>
+<td>&#xFF08;&#x53EF;&#x9009;&#xFF09;&#x5982;&#x4E3A; true&#xFF0C;&#x81EA;&#x52A8;&#x5728; _id &#x5B57;&#x6BB5;&#x521B;&#x5EFA;&#x7D22;&#x5F15;&#x3002;&#x9ED8;&#x8BA4;&#x4E3A; false&#x3002;</td>
+</tr>
+<tr>
+<td>size</td>
+<td>&#x6570;&#x503C;</td>
+<td>&#xFF08;&#x53EF;&#x9009;&#xFF09;&#x4E3A;&#x56FA;&#x5B9A;&#x96C6;&#x5408;&#x6307;&#x5B9A;&#x4E00;&#x4E2A;&#x6700;&#x5927;&#x503C;&#xFF08;&#x4EE5;&#x5B57;&#x8282;&#x8BA1;&#xFF09;&#x3002;&#x5982;&#x679C; capped &#x4E3A; true&#xFF0C;&#x4E5F;&#x9700;&#x8981;&#x6307;&#x5B9A;&#x8BE5;&#x5B57;&#x6BB5;&#x3002;</td>
+</tr>
+<tr>
+<td>max</td>
+<td>&#x6570;&#x503C;</td>
+<td>&#xFF08;&#x53EF;&#x9009;&#xFF09;&#x6307;&#x5B9A;&#x56FA;&#x5B9A;&#x96C6;&#x5408;&#x4E2D;&#x5305;&#x542B;&#x6587;&#x6863;&#x7684;&#x6700;&#x5927;&#x6570;&#x91CF;&#x3002;</td>
+</tr>
+</tbody>
+</table>
+<h4 id="&#x6587;&#x6863;&#x64CD;&#x4F5C;">&#x6587;&#x6863;&#x64CD;&#x4F5C;</h4>
+<p><strong>&#x589E;</strong></p>
+<ul>
+<li>&#x63D2;&#x5165;&#x6587;&#x6863;&#xFF08;&#x65E0;collection&#x5219;&#x521B;&#x5EFA;&#xFF09;&#xFF1A;<code>db.collection.insert(&lt;document&gt; || &lt;documents&gt;)</code></li>
+<li>&#x63D2;&#x5165;&#x4E00;&#x6761;&#x6587;&#x6863;&#xFF1A; <code>db.collection.insertOne()</code></li>
+<li>&#x63D2;&#x5165;&#x591A;&#x6761;&#x6587;&#x6863;&#xFF1A; <code>db.collection.insertMany(arrType)</code></li>
+<li>&#x5B9A;&#x4E49;&#x53D8;&#x91CF;&#xFF1A;<br><pre><code>document=({title: &apos;MongoDB &#x6559;&#x7A0B;&apos;,
+  description: &apos;MongoDB &#x662F;&#x4E00;&#x4E2A; Nosql &#x6570;&#x636E;&#x5E93;&apos;,
+  by: &apos;test&apos;,
+  url: &apos;http://www.runoob.com&apos;,
+  tags: [&apos;mongodb&apos;, &apos;database&apos;, &apos;NoSQL&apos;],
+  likes: 100
+});
+db.[db_name].insert(document)
+</code></pre></li>
+</ul>
+<p><strong>&#x5220;</strong></p>
+<ul>
+<li>&#x5220;&#x9664;&#x6587;&#x6863;&#xFF1A;<pre><code>db.collection.remove(
+   &lt;query&gt;,
+   {
+     justOne: &lt;boolean&gt;,
+     writeConcern: &lt;document&gt;
+   }
+)
+query :&#xFF08;&#x53EF;&#x9009;&#xFF09;&#x5220;&#x9664;&#x7684;&#x6587;&#x6863;&#x7684;&#x6761;&#x4EF6;&#x3002;
+justOne : &#xFF08;&#x53EF;&#x9009;&#xFF09;&#x5982;&#x679C;&#x8BBE;&#x4E3A; true &#x6216; 1&#xFF0C;&#x5219;&#x53EA;&#x5220;&#x9664;&#x4E00;&#x4E2A;&#x6587;&#x6863;&#xFF0C;&#x5982;&#x679C;&#x4E0D;&#x8BBE;&#x7F6E;&#x8BE5;&#x53C2;&#x6570;&#xFF0C;&#x6216;&#x4F7F;&#x7528;&#x9ED8;&#x8BA4;&#x503C; false&#xFF0C;&#x5219;&#x5220;&#x9664;&#x6240;&#x6709;&#x5339;&#x914D;&#x6761;&#x4EF6;&#x7684;&#x6587;&#x6863;&#x3002;
+writeConcern :&#xFF08;&#x53EF;&#x9009;&#xFF09;&#x629B;&#x51FA;&#x5F02;&#x5E38;&#x7684;&#x7EA7;&#x522B;&#x3002;
+&#x793A;&#x4F8B;&#xFF1A;
+  db.col.remove({&apos;title&apos;:&apos;MongoDB &#x6559;&#x7A0B;&apos;})
+  db.col.remove({}) // &#x6E05;&#x7A7A;&#x6570;&#x636E;
+</code></pre></li>
+</ul>
+<p><strong>&#x6539;</strong></p>
+<ul>
+<li>&#x66F4;&#x65B0;&#x6587;&#x6863;&#xFF1A;<br><pre><code>db.collection.update(
+   &lt;query&gt;,
+   &lt;update&gt;,
+   {
+     upsert: &lt;boolean&gt;,
+     multi: &lt;boolean&gt;,
+     writeConcern: &lt;document&gt;
+   }
+)
+query : update&#x7684;&#x67E5;&#x8BE2;&#x6761;&#x4EF6;&#xFF0C;&#x7C7B;&#x4F3C;sql update&#x67E5;&#x8BE2;&#x5185;where&#x540E;&#x9762;&#x7684;&#x3002;
+update : update&#x7684;&#x5BF9;&#x8C61;&#x548C;&#x4E00;&#x4E9B;&#x66F4;&#x65B0;&#x7684;&#x64CD;&#x4F5C;&#x7B26;&#xFF08;&#x5982;$,$inc...&#xFF09;&#x7B49;&#xFF0C;&#x4E5F;&#x53EF;&#x4EE5;&#x7406;&#x89E3;&#x4E3A;sql update&#x67E5;&#x8BE2;&#x5185;set&#x540E;&#x9762;&#x7684;
+upsert : &#x53EF;&#x9009;&#xFF0C;&#x8FD9;&#x4E2A;&#x53C2;&#x6570;&#x7684;&#x610F;&#x601D;&#x662F;&#xFF0C;&#x5982;&#x679C;&#x4E0D;&#x5B58;&#x5728;update&#x7684;&#x8BB0;&#x5F55;&#xFF0C;&#x662F;&#x5426;&#x63D2;&#x5165;objNew,true&#x4E3A;&#x63D2;&#x5165;&#xFF0C;&#x9ED8;&#x8BA4;&#x662F;false&#xFF0C;&#x4E0D;&#x63D2;&#x5165;&#x3002;
+multi : &#x53EF;&#x9009;&#xFF0C;mongodb &#x9ED8;&#x8BA4;&#x662F;false,&#x53EA;&#x66F4;&#x65B0;&#x627E;&#x5230;&#x7684;&#x7B2C;&#x4E00;&#x6761;&#x8BB0;&#x5F55;&#xFF0C;&#x5982;&#x679C;&#x8FD9;&#x4E2A;&#x53C2;&#x6570;&#x4E3A;true,&#x5C31;&#x628A;&#x6309;&#x6761;&#x4EF6;&#x67E5;&#x51FA;&#x6765;&#x591A;&#x6761;&#x8BB0;&#x5F55;&#x5168;&#x90E8;&#x66F4;&#x65B0;&#x3002;
+writeConcern :&#x53EF;&#x9009;&#xFF0C;&#x629B;&#x51FA;&#x5F02;&#x5E38;&#x7684;&#x7EA7;&#x522B;&#x3002;
+  WriteConcern.NONE:&#x6CA1;&#x6709;&#x5F02;&#x5E38;&#x629B;&#x51FA;
+  WriteConcern.NORMAL:&#x4EC5;&#x629B;&#x51FA;&#x7F51;&#x7EDC;&#x9519;&#x8BEF;&#x5F02;&#x5E38;&#xFF0C;&#x6CA1;&#x6709;&#x670D;&#x52A1;&#x5668;&#x9519;&#x8BEF;&#x5F02;&#x5E38;
+  WriteConcern.SAFE:&#x629B;&#x51FA;&#x7F51;&#x7EDC;&#x9519;&#x8BEF;&#x5F02;&#x5E38;&#x3001;&#x670D;&#x52A1;&#x5668;&#x9519;&#x8BEF;&#x5F02;&#x5E38;&#xFF1B;&#x5E76;&#x7B49;&#x5F85;&#x670D;&#x52A1;&#x5668;&#x5B8C;&#x6210;&#x5199;&#x64CD;&#x4F5C;&#x3002;
+  WriteConcern.MAJORITY: &#x629B;&#x51FA;&#x7F51;&#x7EDC;&#x9519;&#x8BEF;&#x5F02;&#x5E38;&#x3001;&#x670D;&#x52A1;&#x5668;&#x9519;&#x8BEF;&#x5F02;&#x5E38;&#xFF1B;&#x5E76;&#x7B49;&#x5F85;&#x4E00;&#x4E2A;&#x4E3B;&#x670D;&#x52A1;&#x5668;&#x5B8C;&#x6210;&#x5199;&#x64CD;&#x4F5C;&#x3002;
+  WriteConcern.FSYNC_SAFE: &#x629B;&#x51FA;&#x7F51;&#x7EDC;&#x9519;&#x8BEF;&#x5F02;&#x5E38;&#x3001;&#x670D;&#x52A1;&#x5668;&#x9519;&#x8BEF;&#x5F02;&#x5E38;&#xFF1B;&#x5199;&#x64CD;&#x4F5C;&#x7B49;&#x5F85;&#x670D;&#x52A1;&#x5668;&#x5C06;&#x6570;&#x636E;&#x5237;&#x65B0;&#x5230;&#x78C1;&#x76D8;&#x3002;
+  WriteConcern.JOURNAL_SAFE:&#x629B;&#x51FA;&#x7F51;&#x7EDC;&#x9519;&#x8BEF;&#x5F02;&#x5E38;&#x3001;&#x670D;&#x52A1;&#x5668;&#x9519;&#x8BEF;&#x5F02;&#x5E38;&#xFF1B;&#x5199;&#x64CD;&#x4F5C;&#x7B49;&#x5F85;&#x670D;&#x52A1;&#x5668;&#x63D0;&#x4EA4;&#x5230;&#x78C1;&#x76D8;&#x7684;&#x65E5;&#x5FD7;&#x6587;&#x4EF6;&#x3002;
+  WriteConcern.REPLICAS_SAFE:&#x629B;&#x51FA;&#x7F51;&#x7EDC;&#x9519;&#x8BEF;&#x5F02;&#x5E38;&#x3001;&#x670D;&#x52A1;&#x5668;&#x9519;&#x8BEF;&#x5F02;&#x5E38;&#xFF1B;&#x7B49;&#x5F85;&#x81F3;&#x5C11;2&#x53F0;&#x670D;&#x52A1;&#x5668;&#x5B8C;&#x6210;&#x5199;&#x64CD;&#x4F5C;&#x3002;
+&#x793A;&#x4F8B;&#xFF1A;
+  db.col.update({&apos;title&apos;:&apos;MongoDB &#x6559;&#x7A0B;&apos;},{$set:{&apos;title&apos;:&apos;MongoDB&apos;}},{multi:true})
+  db.col.update({&apos;title&apos;:&apos;MongoDB &#x6559;&#x7A0B;&apos;},{$unset:{&apos;title&apos;:&apos;MongoDB&apos;}},{multi:true})
+</code></pre></li>
+<li>&#x8986;&#x76D6;&#x6587;&#x6863;&#xFF1A;<code>db.collection.save(
+ &lt;document&gt;,
+ {
+   writeConcern: &lt;document&gt;
+ }
+)</code> &#x5982;&#x679C;document&#x672A;&#x6307;&#x5B9A;_id&#xFF0C;&#x4F5C;&#x7528;&#x4E0E;insert&#x76F8;&#x540C;&#xFF0C;&#x6307;&#x5B9A;_id&#x540E;&#x4F1A;&#x8986;&#x76D6;&#x91CD;&#x590D;_id&#x7684;&#x5BF9;&#x8C61;(&#x4F7F;&#x7528;insert&#x4F1A;&#x62A5;&#x9519;)&#x3002;</li>
+<li>&#x66F4;&#x65B0;&#x5355;&#x4E2A;&#x6587;&#x6863;&#xFF1A; <code>db.collection.updateOne()</code></li>
+<li>&#x66F4;&#x65B0;&#x591A;&#x4E2A;&#x6587;&#x6863;&#xFF1A;<code>db.collection.updateMany()</code></li>
+</ul>
+<p><strong>&#x67E5;</strong></p>
+<ul>
+<li>&#x67E5;&#x8BE2;&#x6587;&#x6863;&#xFF1A;<pre><code>db.collection.find(query, projection)[.pretty()]
+query &#xFF1A;&#x53EF;&#x9009;&#xFF0C;&#x4F7F;&#x7528;&#x67E5;&#x8BE2;&#x64CD;&#x4F5C;&#x7B26;&#x6307;&#x5B9A;&#x67E5;&#x8BE2;&#x6761;&#x4EF6;
+projection &#xFF1A;&#x53EF;&#x9009;&#xFF0C;&#x4F7F;&#x7528;&#x6295;&#x5F71;&#x64CD;&#x4F5C;&#x7B26;&#x6307;&#x5B9A;&#x8FD4;&#x56DE;&#x7684;&#x952E;&#x3002;&#x67E5;&#x8BE2;&#x65F6;&#x8FD4;&#x56DE;&#x6587;&#x6863;&#x4E2D;&#x6240;&#x6709;&#x952E;&#x503C;&#xFF0C; &#x53EA;&#x9700;&#x7701;&#x7565;&#x8BE5;&#x53C2;&#x6570;&#x5373;&#x53EF;&#xFF08;&#x9ED8;&#x8BA4;&#x7701;&#x7565;&#xFF09;&#x3002;
+  &#x82E5;&#x4E0D;&#x6307;&#x5B9A; projection&#xFF0C;&#x5219;&#x9ED8;&#x8BA4;&#x8FD4;&#x56DE;&#x6240;&#x6709;&#x952E;&#xFF0C;&#x6307;&#x5B9A; projection &#x683C;&#x5F0F;&#x5982;&#x4E0B;&#xFF0C;&#x6709;&#x4E24;&#x79CD;&#x6A21;&#x5F0F;
+  db.collection.find(query, {title: 1, by: 1}) // inclusion&#x6A21;&#x5F0F; &#x6307;&#x5B9A;&#x8FD4;&#x56DE;&#x7684;&#x952E;&#xFF0C;&#x4E0D;&#x8FD4;&#x56DE;&#x5176;&#x4ED6;&#x952E;
+  db.collection.find(query, {title: 0, by: 0}) // exclusion&#x6A21;&#x5F0F; &#x6307;&#x5B9A;&#x4E0D;&#x8FD4;&#x56DE;&#x7684;&#x952E;,&#x8FD4;&#x56DE;&#x5176;&#x4ED6;&#x952E;
+  _id &#x952E;&#x9ED8;&#x8BA4;&#x8FD4;&#x56DE;&#xFF0C;&#x9700;&#x8981;&#x4E3B;&#x52A8;&#x6307;&#x5B9A; _id:0 &#x624D;&#x4F1A;&#x9690;&#x85CF;
+  &#x4E24;&#x79CD;&#x6A21;&#x5F0F;&#x4E0D;&#x53EF;&#x6DF7;&#x7528;&#xFF08;&#x56E0;&#x4E3A;&#x8FD9;&#x6837;&#x7684;&#x8BDD;&#x65E0;&#x6CD5;&#x63A8;&#x65AD;&#x5176;&#x4ED6;&#x952E;&#x662F;&#x5426;&#x5E94;&#x8FD4;&#x56DE;&#xFF09;
+  db.collection.find(query, {title: 1, by: 0}) // &#x9519;&#x8BEF;
+  &#x53EA;&#x80FD;&#x5168;1&#x6216;&#x5168;0&#xFF0C;&#x9664;&#x4E86;&#x5728;inclusion&#x6A21;&#x5F0F;&#x65F6;&#x53EF;&#x4EE5;&#x6307;&#x5B9A;_id&#x4E3A;0
+  db.collection.find(query, {_id:0, title: 1, by: 1}) // &#x6B63;&#x786E;
+&#x793A;&#x4F8B;&#xFF1A;
+  db.col.find({key1:value1, key2:value2}).pretty() // AND
+  db.col.find({&quot;by&quot;:&quot;test&quot;, &quot;title&quot;:&quot;MongoDB &#x6559;&#x7A0B;&quot;}).pretty()
+  db.col.find( // OR
+     {
+        $or: [
+           {key1: value1}, {key2:value2}
+        ]
+     }
+  ).pretty()
+  db.col.find({$or:[{&quot;by&quot;:&quot;test&quot;},{&quot;title&quot;: &quot;MongoDB &#x6559;&#x7A0B;&quot;}]}).pretty()
+  db.col.find({&quot;likes&quot;: {$gt:50}, $or: [{&quot;by&quot;: &quot;test&quot;},{&quot;title&quot;: &quot;MongoDB &#x6559;&#x7A0B;&quot;}]}).pretty()
+</code></pre></li>
+<li>&#x67E5;&#x8BE2;&#x5355;&#x4E2A;&#x6587;&#x6863;&#xFF1A;<code>db.collection.findOne(query)</code></li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>&#x64CD;&#x4F5C;</th>
+<th>&#x683C;&#x5F0F;</th>
+<th>&#x8303;&#x4F8B;</th>
+<th>RDBMS&#x4E2D;&#x7684;&#x7C7B;&#x4F3C;&#x8BED;&#x53E5;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>&#x7B49;&#x4E8E;</td>
+<td><code>{&lt;key&gt;:&lt;value&gt;}</code></td>
+<td><code>db.col.find({&quot;by&quot;:&quot;test&quot;}).pretty()</code></td>
+<td>where by = &apos;test&apos;</td>
+</tr>
+<tr>
+<td>&#x5C0F;&#x4E8E;</td>
+<td><code>{&lt;key&gt;:{$lt:&lt;value&gt;}}</code></td>
+<td><code>db.col.find({&quot;likes&quot;:{$lt:50}}).pretty()</code></td>
+<td>where likes &lt; 50</td>
+</tr>
+<tr>
+<td>&#x5C0F;&#x4E8E;&#x6216;&#x7B49;&#x4E8E;</td>
+<td><code>{&lt;key&gt;:{$lte:&lt;value&gt;}}</code></td>
+<td><code>db.col.find({&quot;likes&quot;:{$lte:50}}).pretty()</code></td>
+<td>where likes &lt;= 50</td>
+</tr>
+<tr>
+<td>&#x5927;&#x4E8E;</td>
+<td><code>{&lt;key&gt;:{$gt:&lt;value&gt;}}</code></td>
+<td><code>db.col.find({&quot;likes&quot;:{$gt:50}}).pretty()</code></td>
+<td>where likes &gt; 50</td>
+</tr>
+<tr>
+<td>&#x5927;&#x4E8E;&#x6216;&#x7B49;&#x4E8E;</td>
+<td><code>{&lt;key&gt;:{$gte:&lt;value&gt;}}</code></td>
+<td><code>db.col.find({&quot;likes&quot;:{$gte:50}}).pretty()</code></td>
+<td>where likes &gt;= 50</td>
+</tr>
+<tr>
+<td>&#x4E0D;&#x7B49;&#x4E8E;</td>
+<td><code>{&lt;key&gt;:{$ne:&lt;value&gt;}}</code></td>
+<td><code>db.col.find({&quot;likes&quot;:{$ne:50}}).pretty()</code></td>
+<td>where likes != 50</td>
+</tr>
+</tbody>
+</table>
+<h3 id="&#x64CD;&#x4F5C;&#x7B26;">&#x64CD;&#x4F5C;&#x7B26;</h3>
+<ul>
+<li>(&gt;) &#x5927;&#x4E8E; - $gt</li>
+<li>(&lt;) &#x5C0F;&#x4E8E; - $lt</li>
+<li>(&gt;=) &#x5927;&#x4E8E;&#x7B49;&#x4E8E; - $gte</li>
+<li>(&lt;= ) &#x5C0F;&#x4E8E;&#x7B49;&#x4E8E; - $lte</li>
+<li>&#x6570;&#x636E;&#x7C7B;&#x578B; - $type</li>
+</ul>
+<p><strong>&#x793A;&#x4F8B;&#xFF1A;</strong></p>
+<pre><code>db.col.find({likes : {$gt : 100}})
+db.col.find({likes : {$lt : 100}})
+db.col.find({likes : {$gte : 100}})
+db.col.find({likes : {$lte : 100}})
+db.col.find({likes : {$lt :200, $gt : 100}})
+db.col.find({&quot;title&quot; : {$type : 2}}) OR db.col.find({&quot;title&quot; : {$type : &apos;string&apos;}})
+</code></pre><h3 id="&#x65B9;&#x6CD5;">&#x65B9;&#x6CD5;</h3>
+<ul>
+<li>&#x9650;&#x5B9A;&#x8BFB;&#x53D6;&#x6761;&#x6570;(&#x9ED8;&#x8BA4;&#x5168;&#x90E8;)&#xFF1A;limit(NUMBER)</li>
+<li>&#x8DF3;&#x8FC7;NUMBER&#x6570;&#x91CF;&#x7684;&#x6570;&#x636E;(&#x9ED8;&#x8BA4;&#x53C2;&#x6570;0)&#xFF1A;skip(NUMBER)</li>
+<li>&#x6570;&#x636E;&#x6392;&#x5E8F;&#xFF1A;<code>sort({ KEY: 1 OR -1 })</code> // &#x6309;KEY&#x5B57;&#x6BB5;&#x6392;&#x5E8F;&#xFF0C;1&#x5347;&#x5E8F;&#xFF0C;-1&#x964D;&#x5E8F;</li>
+<li><a href="https://docs.mongodb.com/manual/indexes/" target="_blank">&#x521B;&#x5EFA;&#x7D22;&#x5F15;</a>&#xFF1A;<code>db.collection.createIndex(keys, options)</code><ul>
+<li>&#x4E0D;&#x4F1A;&#x521B;&#x5EFA;&#x91CD;&#x590D;&#x7D22;&#x5F15;</li>
+<li>&#x9ED8;&#x8BA4;&#x7ED9;_id&#x521B;&#x5EFA;&#x7D22;&#x5F15;&#xFF0C;&#x53EF;&#x786E;&#x4FDD;_id&#x552F;&#x4E00;&#x6027;</li>
+<li><img src="https://docs.mongodb.com/manual/_images/index-for-sort.bakedsvg.svg" alt="&#x793A;&#x610F;&#x56FE;"></li>
+<li><img src="https://docs.mongodb.com/manual/_images/index-ascending.bakedsvg.svg" alt="&#x5355;&#x7D22;&#x5F15;"></li>
+<li><img src="https://docs.mongodb.com/manual/_images/index-compound-key.bakedsvg.svg" alt="&#x590D;&#x5408;&#x7D22;&#x5F15;"></li>
+<li><img src="https://docs.mongodb.com/manual/_images/index-multikey.bakedsvg.svg" alt="&#x591A;&#x952E;&#x503C;&#x7D22;&#x5F15;"></li>
+<li>...</li>
+</ul>
+</li>
+<li>&#x805A;&#x5408;&#xFF1A;<code>db.collection.aggregate(AGGREGATE_OPERATION)</code><ul>
+<li>&#x5E38;&#x7528;&#x64CD;&#x4F5C;<ul>
+<li>$project&#xFF1A;&#x4FEE;&#x6539;&#x8F93;&#x5165;&#x6587;&#x6863;&#x7684;&#x7ED3;&#x6784;&#x3002;&#x53EF;&#x4EE5;&#x7528;&#x6765;&#x91CD;&#x547D;&#x540D;&#x3001;&#x589E;&#x52A0;&#x6216;&#x5220;&#x9664;&#x57DF;&#xFF0C;&#x4E5F;&#x53EF;&#x4EE5;&#x7528;&#x4E8E;&#x521B;&#x5EFA;&#x8BA1;&#x7B97;&#x7ED3;&#x679C;&#x4EE5;&#x53CA;&#x5D4C;&#x5957;&#x6587;&#x6863;&#x3002;</li>
+<li>$match&#xFF1A;&#x7528;&#x4E8E;&#x8FC7;&#x6EE4;&#x6570;&#x636E;&#xFF0C;&#x53EA;&#x8F93;&#x51FA;&#x7B26;&#x5408;&#x6761;&#x4EF6;&#x7684;&#x6587;&#x6863;&#x3002;$match&#x4F7F;&#x7528;MongoDB&#x7684;&#x6807;&#x51C6;&#x67E5;&#x8BE2;&#x64CD;&#x4F5C;&#x3002;</li>
+<li>$limit&#xFF1A;&#x7528;&#x6765;&#x9650;&#x5236;MongoDB&#x805A;&#x5408;&#x7BA1;&#x9053;&#x8FD4;&#x56DE;&#x7684;&#x6587;&#x6863;&#x6570;&#x3002;</li>
+<li>$skip&#xFF1A;&#x5728;&#x805A;&#x5408;&#x7BA1;&#x9053;&#x4E2D;&#x8DF3;&#x8FC7;&#x6307;&#x5B9A;&#x6570;&#x91CF;&#x7684;&#x6587;&#x6863;&#xFF0C;&#x5E76;&#x8FD4;&#x56DE;&#x4F59;&#x4E0B;&#x7684;&#x6587;&#x6863;&#x3002;</li>
+<li>$unwind&#xFF1A;&#x5C06;&#x6587;&#x6863;&#x4E2D;&#x7684;&#x67D0;&#x4E00;&#x4E2A;&#x6570;&#x7EC4;&#x7C7B;&#x578B;&#x5B57;&#x6BB5;&#x62C6;&#x5206;&#x6210;&#x591A;&#x6761;&#xFF0C;&#x6BCF;&#x6761;&#x5305;&#x542B;&#x6570;&#x7EC4;&#x4E2D;&#x7684;&#x4E00;&#x4E2A;&#x503C;&#x3002;</li>
+<li>$group&#xFF1A;&#x5C06;&#x96C6;&#x5408;&#x4E2D;&#x7684;&#x6587;&#x6863;&#x5206;&#x7EC4;&#xFF0C;&#x53EF;&#x7528;&#x4E8E;&#x7EDF;&#x8BA1;&#x7ED3;&#x679C;&#x3002;</li>
+<li>$sort&#xFF1A;&#x5C06;&#x8F93;&#x5165;&#x6587;&#x6863;&#x6392;&#x5E8F;&#x540E;&#x8F93;&#x51FA;&#x3002;</li>
+<li>$geoNear&#xFF1A;&#x8F93;&#x51FA;&#x63A5;&#x8FD1;&#x67D0;&#x4E00;&#x5730;&#x7406;&#x4F4D;&#x7F6E;&#x7684;&#x6709;&#x5E8F;&#x6587;&#x6863;&#x3002;</li>
+</ul>
+</li>
+<li>&#x805A;&#x5408;&#x8868;&#x8FBE;&#x5F0F;</li>
+</ul>
+</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>&#x8868;&#x8FBE;&#x5F0F;</th>
+<th>&#x63CF;&#x8FF0;</th>
+<th>&#x5B9E;&#x4F8B;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>$sum</td>
+<td>&#x8BA1;&#x7B97;&#x603B;&#x548C;&#x3002;</td>
+<td>db.col.aggregate([{$group : {_id : &quot;$by_user&quot;, num_tutorial : {$sum : &quot;$likes&quot;}}}])</td>
+</tr>
+<tr>
+<td>$avg</td>
+<td>&#x8BA1;&#x7B97;&#x5E73;&#x5747;&#x503C;</td>
+<td>db.col.aggregate([{$group : {_id : &quot;$by_user&quot;, num_tutorial : {$avg : &quot;$likes&quot;}}}])</td>
+</tr>
+<tr>
+<td>$min</td>
+<td>&#x83B7;&#x53D6;&#x96C6;&#x5408;&#x4E2D;&#x6240;&#x6709;&#x6587;&#x6863;&#x5BF9;&#x5E94;&#x503C;&#x5F97;&#x6700;&#x5C0F;&#x503C;&#x3002;</td>
+<td>db.col.aggregate([{$group : {_id : &quot;$by_user&quot;, num_tutorial : {$min : &quot;$likes&quot;}}}])</td>
+</tr>
+<tr>
+<td>$max</td>
+<td>&#x83B7;&#x53D6;&#x96C6;&#x5408;&#x4E2D;&#x6240;&#x6709;&#x6587;&#x6863;&#x5BF9;&#x5E94;&#x503C;&#x5F97;&#x6700;&#x5927;&#x503C;&#x3002;</td>
+<td>db.col.aggregate([{$group : {_id : &quot;$by_user&quot;, num_tutorial : {$max : &quot;$likes&quot;}}}])</td>
+</tr>
+<tr>
+<td>$push</td>
+<td>&#x5728;&#x7ED3;&#x679C;&#x6587;&#x6863;&#x4E2D;&#x63D2;&#x5165;&#x503C;&#x5230;&#x4E00;&#x4E2A;&#x6570;&#x7EC4;&#x4E2D;&#x3002;</td>
+<td>db.col.aggregate([{$group : {_id : &quot;$by_user&quot;, url : {$push: &quot;$url&quot;}}}])</td>
+</tr>
+<tr>
+<td>$addToSet</td>
+<td>&#x5728;&#x7ED3;&#x679C;&#x6587;&#x6863;&#x4E2D;&#x63D2;&#x5165;&#x503C;&#x5230;&#x4E00;&#x4E2A;&#x6570;&#x7EC4;&#x4E2D;&#xFF0C;&#x4F46;&#x4E0D;&#x521B;&#x5EFA;&#x526F;&#x672C;&#x3002;</td>
+<td>db.col.aggregate([{$group : {_id : &quot;$by_user&quot;, url : {$addToSet : &quot;$url&quot;}}}])</td>
+</tr>
+<tr>
+<td>$first</td>
+<td>&#x6839;&#x636E;&#x8D44;&#x6E90;&#x6587;&#x6863;&#x7684;&#x6392;&#x5E8F;&#x83B7;&#x53D6;&#x7B2C;&#x4E00;&#x4E2A;&#x6587;&#x6863;&#x6570;&#x636E;&#x3002;</td>
+<td>db.col.aggregate([{$group : {_id : &quot;$by_user&quot;, first_url : {$first : &quot;$url&quot;}}}])</td>
+</tr>
+<tr>
+<td>$last</td>
+<td>&#x6839;&#x636E;&#x8D44;&#x6E90;&#x6587;&#x6863;&#x7684;&#x6392;&#x5E8F;&#x83B7;&#x53D6;&#x6700;&#x540E;&#x4E00;&#x4E2A;&#x6587;&#x6863;&#x6570;&#x636E;</td>
+<td>db.col.aggregate([{$group : {_id : &quot;$by_user&quot;, last_url : {$last : &quot;$url&quot;}}}])</td>
+</tr>
+</tbody>
+</table>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="./" class="navigation navigation-prev " aria-label="Previous page: MongoDB">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="examples.html" class="navigation navigation-next " aria-label="Next page: 示例">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"命令行操作","level":"1.1.2.1","depth":3,"next":{"title":"示例","level":"1.1.2.2","depth":3,"path":"mongodb/examples.md","ref":"mongodb/examples.md","articles":[]},"previous":{"title":"MongoDB","level":"1.1.2","depth":2,"path":"mongodb/README.md","ref":"mongodb/README.md","articles":[{"title":"命令行操作","level":"1.1.2.1","depth":3,"path":"mongodb/commands.md","ref":"mongodb/commands.md","articles":[]},{"title":"示例","level":"1.1.2.2","depth":3,"path":"mongodb/examples.md","ref":"mongodb/examples.md","articles":[]}]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"mongodb/commands.md","mtime":"2018-12-30T03:16:29.252Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2021-04-02T17:23:02.267Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

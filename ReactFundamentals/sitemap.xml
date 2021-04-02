@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:news="http://www.google.com/schemas/sitemap-news/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:mobile="http://www.google.com/schemas/sitemap-mobile/1.0" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+<url> <loc>https://gitbook.ryanhuang.cn/ReactFundamentals/_book/</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
+<url> <loc>https://gitbook.ryanhuang.cn/ReactFundamentals/_book/tools/</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
+<url> <loc>https://gitbook.ryanhuang.cn/ReactFundamentals/_book/tools/git.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
+<url> <loc>https://gitbook.ryanhuang.cn/ReactFundamentals/_book/tools/npm.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
+<url> <loc>https://gitbook.ryanhuang.cn/ReactFundamentals/_book/tools/webpack.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
+<url> <loc>https://gitbook.ryanhuang.cn/ReactFundamentals/_book/tools/summary.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
+<url> <loc>https://gitbook.ryanhuang.cn/ReactFundamentals/_book/practice/</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
+<url> <loc>https://gitbook.ryanhuang.cn/ReactFundamentals/_book/practice/speedup.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
+<url> <loc>https://gitbook.ryanhuang.cn/ReactFundamentals/_book/practice/dependencies.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
+</urlset>

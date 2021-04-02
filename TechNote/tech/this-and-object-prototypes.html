@@ -1,0 +1,1443 @@
+
+<!DOCTYPE HTML>
+<html lang="zh" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>this和对象原型 · Yan Huang的技术笔记</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-anchor-navigation-ex/style/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-expandable-chapters-small/expandable-chapters-small.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+        <link rel="stylesheet" href="../styles/website.css">
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="Types-and-Grammar.html" />
+    
+    
+    <link rel="prev" href="scope.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="輸入並搜尋" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    介绍
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../frontend/">
+            
+                <a href="../frontend/">
+            
+                    
+                    前端体系
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="../frontend/difficulty.html">
+            
+                <a href="../frontend/difficulty.html">
+            
+                    
+                    JS难点
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="../frontend/async-and-events.html">
+            
+                <a href="../frontend/async-and-events.html">
+            
+                    
+                    异步流控制与事件
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3" data-path="../frontend/regexp-and-template-engine.html">
+            
+                <a href="../frontend/regexp-and-template-engine.html">
+            
+                    
+                    正则与模版引擎
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4" data-path="../frontend/cross-origin-and-safe.html">
+            
+                <a href="../frontend/cross-origin-and-safe.html">
+            
+                    
+                    跨域与前端安全
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5" data-path="../frontend/modular-and-webpack.html">
+            
+                <a href="../frontend/modular-and-webpack.html">
+            
+                    
+                    模块化与webpack
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.6" data-path="../frontend/performance-optimization.html">
+            
+                <a href="../frontend/performance-optimization.html">
+            
+                    
+                    性能优化
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.7" data-path="../frontend/monitoring-report-and-pwa.html">
+            
+                <a href="../frontend/monitoring-report-and-pwa.html">
+            
+                    
+                    监控上报与PWA
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.8" data-path="../frontend/test.html">
+            
+                <a href="../frontend/test.html">
+            
+                    
+                    自动化集成测试
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.9" data-path="../frontend/react-and-vue.html">
+            
+                <a href="../frontend/react-and-vue.html">
+            
+                    
+                    React & Vue
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.10" data-path="../frontend/nodejs.html">
+            
+                <a href="../frontend/nodejs.html">
+            
+                    
+                    Node.js
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    阅读笔记
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="questions.html">
+            
+                <a href="questions.html">
+            
+                    
+                    问题库
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2" data-path="regexp.html">
+            
+                <a href="regexp.html">
+            
+                    
+                    正则表达式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3" data-path="urlEncode.html">
+            
+                <a href="urlEncode.html">
+            
+                    
+                    URL编码
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.4" data-path="scope.html">
+            
+                <a href="scope.html">
+            
+                    
+                    作用域
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.3.5" data-path="this-and-object-prototypes.html">
+            
+                <a href="this-and-object-prototypes.html">
+            
+                    
+                    this和对象原型
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.6" data-path="Types-and-Grammar.html">
+            
+                <a href="Types-and-Grammar.html">
+            
+                    
+                    类型和语法
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="../practice/">
+            
+                <a href="../practice/">
+            
+                    
+                    实践笔记
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1" data-path="../practice/ssl.html">
+            
+                <a href="../practice/ssl.html">
+            
+                    
+                    申请SSL通配符证书
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2" data-path="../practice/phabricator.html">
+            
+                <a href="../practice/phabricator.html">
+            
+                    
+                    Phabricator
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.3" data-path="../practice/antd-pro-usage.html">
+            
+                <a href="../practice/antd-pro-usage.html">
+            
+                    
+                    Use Ant Design Pro
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.4" data-path="../practice/mac-start-ways.html">
+            
+                <a href="../practice/mac-start-ways.html">
+            
+                    
+                    Mac 开机方式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.5" data-path="../practice/typescript.html">
+            
+                <a href="../practice/typescript.html">
+            
+                    
+                    TypeScript
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.6" data-path="../practice/resources.html">
+            
+                <a href="../practice/resources.html">
+            
+                    
+                    资源
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.7" data-path="../practice/npm-package-mmanagement.html">
+            
+                <a href="../practice/npm-package-mmanagement.html">
+            
+                    
+                    npm 依赖管理
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="../frameworks/">
+            
+                <a href="../frameworks/">
+            
+                    
+                    框架
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.1" data-path="../frameworks/flutter.html">
+            
+                <a href="../frameworks/flutter.html">
+            
+                    
+                    Flutter
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2" data-path="../frameworks/react-native.html">
+            
+                <a href="../frameworks/react-native.html">
+            
+                    
+                    React Native
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="../articles/">
+            
+                <a href="../articles/">
+            
+                    
+                    文摘摘录
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.6.1" data-path="../articles/mix.html">
+            
+                <a href="../articles/mix.html">
+            
+                    
+                    杂
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.2" data-path="../articles/2019-02-04.html">
+            
+                <a href="../articles/2019-02-04.html">
+            
+                    
+                    2019-02-04
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" data-path="../links/">
+            
+                <a href="../links/">
+            
+                    
+                    链接收藏
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.7.1" data-path="../links/articles.html">
+            
+                <a href="../links/articles.html">
+            
+                    
+                    文章
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.2" data-path="../links/tools.html">
+            
+                <a href="../links/tools.html">
+            
+                    
+                    开发
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.3" data-path="../links/resources.html">
+            
+                <a href="../links/resources.html">
+            
+                    
+                    学习资源
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.4" data-path="../links/blogs.html">
+            
+                <a href="../links/blogs.html">
+            
+                    
+                    博客
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.5" data-path="../links/other.html">
+            
+                <a href="../links/other.html">
+            
+                    
+                    其它
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            本書使用 GitBook 釋出
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >this和对象原型</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <div id="anchor-navigation-ex-navbar"><i class="fa fa-anchor"></i><ul><li><span class="title-icon fa fa-star"></span><a href="#this"><b></b>this</a></li><ul><li><span class="title-icon fa fa-hashtag"></span><a href="#&#x4E3A;&#x4EC0;&#x4E48;&#x9700;&#x8981;thiswhy"><b></b>&#x4E3A;&#x4EC0;&#x4E48;&#x9700;&#x8981;this(Why)</a></li><li><span class="title-icon fa fa-hashtag"></span><a href="#this&#x662F;&#x4EC0;&#x4E48;what"><b></b>this&#x662F;&#x4EC0;&#x4E48;(What)</a></li><li><span class="title-icon fa fa-hashtag"></span><a href="#this&#x7ED1;&#x5B9A;&#x89C4;&#x5219;how"><b></b>this&#x7ED1;&#x5B9A;&#x89C4;&#x5219;(How)</a></li><ul><li><span class="title-icon fa fa-magic"></span><a href="#&#x9690;&#x5F0F;&#x7ED1;&#x5B9A;"><b></b>&#x9690;&#x5F0F;&#x7ED1;&#x5B9A;</a></li><li><span class="title-icon fa fa-magic"></span><a href="#&#x663E;&#x5F0F;&#x7ED1;&#x5B9A;"><b></b>&#x663E;&#x5F0F;&#x7ED1;&#x5B9A;</a></li><li><span class="title-icon fa fa-magic"></span><a href="#new&#x7ED1;&#x5B9A;"><b></b>new&#x7ED1;&#x5B9A;</a></li><li><span class="title-icon fa fa-magic"></span><a href="#&#x9ED8;&#x8BA4;&#x7ED1;&#x5B9A;"><b></b>&#x9ED8;&#x8BA4;&#x7ED1;&#x5B9A;</a></li></ul><li><span class="title-icon fa fa-hashtag"></span><a href="#this&#x7ED1;&#x5B9A;&#x5B9E;&#x8DF5;"><b></b>this&#x7ED1;&#x5B9A;&#x5B9E;&#x8DF5;</a></li><ul><li><span class="title-icon fa fa-magic"></span><a href="#&#x5224;&#x65AD;this&#x7684;&#x7ED1;&#x5B9A;"><b></b>&#x5224;&#x65AD;this&#x7684;&#x7ED1;&#x5B9A;</a></li><li><span class="title-icon fa fa-magic"></span><a href="#&#x6CE8;&#x610F;&#x70B9;"><b></b>&#x6CE8;&#x610F;&#x70B9;</a></li><li><span class="title-icon fa fa-magic"></span><a href="#&#x8F6F;&#x7ED1;&#x5B9A;"><b></b>&#x8F6F;&#x7ED1;&#x5B9A;</a></li><li><span class="title-icon fa fa-magic"></span><a href="#&#x7BAD;&#x5934;&#x51FD;&#x6570;"><b></b>&#x7BAD;&#x5934;&#x51FD;&#x6570;</a></li></ul></ul><li><span class="title-icon fa fa-star"></span><a href="#&#x5BF9;&#x8C61;"><b></b>&#x5BF9;&#x8C61;</a></li><ul><li><span class="title-icon fa fa-hashtag"></span><a href="#&#x5B9A;&#x4E49;"><b></b>&#x5B9A;&#x4E49;</a></li><li><span class="title-icon fa fa-hashtag"></span><a href="#&#x7C7B;&#x578B;"><b></b>&#x7C7B;&#x578B;</a></li><ul><li><span class="title-icon fa fa-magic"></span><a href="#&#x4E3B;&#x8981;&#x7C7B;&#x578B;"><b></b>&#x4E3B;&#x8981;&#x7C7B;&#x578B;</a></li><li><span class="title-icon fa fa-magic"></span><a href="#&#x5185;&#x7F6E;&#x5BF9;&#x8C61;"><b></b>&#x5185;&#x7F6E;&#x5BF9;&#x8C61;</a></li></ul><li><span class="title-icon fa fa-hashtag"></span><a href="#&#x5185;&#x5BB9;"><b></b>&#x5185;&#x5BB9;</a></li><ul><li><span class="title-icon fa fa-magic"></span><a href="#&#x5C5E;&#x6027;&#x540D;"><b></b>&#x5C5E;&#x6027;&#x540D;</a></li><li><span class="title-icon fa fa-magic"></span><a href="#&#x6570;&#x7EC4;"><b></b>&#x6570;&#x7EC4;</a></li><li><span class="title-icon fa fa-magic"></span><a href="#&#x590D;&#x5236;&#x5BF9;&#x8C61;"><b></b>&#x590D;&#x5236;&#x5BF9;&#x8C61;</a></li><li><span class="title-icon fa fa-magic"></span><a href="#&#x5C5E;&#x6027;&#x63CF;&#x8FF0;&#x7B26;"><b></b>&#x5C5E;&#x6027;&#x63CF;&#x8FF0;&#x7B26;</a></li><li><span class="title-icon fa fa-magic"></span><a href="#&#x4E0D;&#x53D8;&#x6027;"><b></b>&#x4E0D;&#x53D8;&#x6027;</a></li><li><span class="title-icon fa fa-magic"></span><a href="#get&#x4E0E;put"><b></b>Get&#x4E0E;Put</a></li><li><span class="title-icon fa fa-magic"></span><a href="#getter&#x4E0E;setter"><b></b>getter&#x4E0E;setter</a></li><li><span class="title-icon fa fa-magic"></span><a href="#&#x5224;&#x65AD;&#x5C5E;&#x6027;&#x5B58;&#x5728;"><b></b>&#x5224;&#x65AD;&#x5C5E;&#x6027;&#x5B58;&#x5728;</a></li><li><span class="title-icon fa fa-magic"></span><a href="#&#x904D;&#x5386;"><b></b>&#x904D;&#x5386;</a></li></ul></ul><li><span class="title-icon fa fa-star"></span><a href="#&#x7C7B;"><b></b>&#x7C7B;</a></li><ul><li><span class="title-icon fa fa-hashtag"></span><a href="#&#x4EC0;&#x4E48;&#x662F;&#x7C7B;"><b></b>&#x4EC0;&#x4E48;&#x662F;&#x7C7B;</a></li><li><span class="title-icon fa fa-hashtag"></span><a href="#&#x51E0;&#x4E2A;&#x6982;&#x5FF5;"><b></b>&#x51E0;&#x4E2A;&#x6982;&#x5FF5;</a></li><li><span class="title-icon fa fa-hashtag"></span><a href="#&#x591A;&#x91CD;&#x7EE7;&#x627F;&#x95EE;&#x9898;"><b></b>&#x591A;&#x91CD;&#x7EE7;&#x627F;&#x95EE;&#x9898;</a></li><li><span class="title-icon fa fa-hashtag"></span><a href="#&#x6DF7;&#x5165;"><b></b>&#x6DF7;&#x5165;</a></li></ul><li><span class="title-icon fa fa-star"></span><a href="#&#x539F;&#x578B;"><b></b>&#x539F;&#x578B;</a></li><ul><li><span class="title-icon fa fa-hashtag"></span><a href="#prototype"><b></b>[[Prototype]]</a></li><ul><li><span class="title-icon fa fa-magic"></span><a href="#&#x4EC0;&#x4E48;&#x662F;prototype"><b></b>&#x4EC0;&#x4E48;&#x662F;[[Prototype]]</a></li><li><span class="title-icon fa fa-magic"></span><a href="#prototype&#x5E94;&#x7528;-&#x5C5E;&#x6027;&#x8BBE;&#x7F6E;&#x4E0E;&#x5C4F;&#x853D;"><b></b>[[Prototype]]&#x5E94;&#x7528;-&#x5C5E;&#x6027;&#x8BBE;&#x7F6E;&#x4E0E;&#x5C4F;&#x853D;</a></li></ul><li><span class="title-icon fa fa-hashtag"></span><a href="#javascript&#x4E2D;&#x7684;&#x7C7B;"><b></b>Javascript&#x4E2D;&#x7684;&#x201C;&#x7C7B;&#x201D;</a></li><ul><li><span class="title-icon fa fa-magic"></span><a href="#prototype&#x6765;&#x81EA;&#x54EA;"><b></b>prototype&#x6765;&#x81EA;&#x54EA;</a></li><li><span class="title-icon fa fa-magic"></span><a href="#constructor_function%20Object()%20%7B%20[native%20code]%20%7D"><b></b>constructor</a></li><li><span class="title-icon fa fa-magic"></span><a href="#&#x539F;&#x578B;&#x7EE7;&#x627F;"><b></b>&#x539F;&#x578B;&#x7EE7;&#x627F;</a></li><li><span class="title-icon fa fa-magic"></span><a href="#&#x68C0;&#x67E5;&#x7C7B;&#x7684;&#x5173;&#x7CFB;"><b></b>&#x68C0;&#x67E5;&#x201C;&#x7C7B;&#x201D;&#x7684;&#x5173;&#x7CFB;</a></li><li><span class="title-icon fa fa-magic"></span><a href="#prototype_1"><b></b>__prototype__</a></li><li><span class="title-icon fa fa-magic"></span><a href="#&#x5BF9;&#x8C61;&#x5173;&#x8054;"><b></b>&#x5BF9;&#x8C61;&#x5173;&#x8054;</a></li><li><span class="title-icon fa fa-magic"></span><a href="#&#x5229;&#x7528;&#x5173;&#x8054;&#x4F5C;&#x4E3A;&#x5907;&#x7528;"><b></b>&#x5229;&#x7528;&#x5173;&#x8054;&#x4F5C;&#x4E3A;&#x5907;&#x7528;</a></li></ul></ul><li><span class="title-icon fa fa-star"></span><a href="#&#x884C;&#x4E3A;&#x59D4;&#x6258;"><b></b>&#x884C;&#x4E3A;&#x59D4;&#x6258;</a></li><ul><li><span class="title-icon fa fa-hashtag"></span><a href="#&#x9762;&#x5411;&#x59D4;&#x6258;&#x7684;&#x8BBE;&#x8BA1;"><b></b>&#x9762;&#x5411;&#x59D4;&#x6258;&#x7684;&#x8BBE;&#x8BA1;</a></li><ul><li><span class="title-icon fa fa-magic"></span><a href="#&#x793A;&#x4F8B;"><b></b>&#x793A;&#x4F8B;</a></li></ul><li><span class="title-icon fa fa-hashtag"></span><a href="#es6&#x7684;class&#x8BED;&#x6CD5;&#x7CD6;"><b></b>ES6&#x7684;class&#x8BED;&#x6CD5;&#x7CD6;</a></li><li><span class="title-icon fa fa-hashtag"></span><a href="#&#x66F4;&#x7B80;&#x6D01;&#x7684;&#x8BBE;&#x8BA1;"><b></b>&#x66F4;&#x7B80;&#x6D01;&#x7684;&#x8BBE;&#x8BA1;</a></li><li><span class="title-icon fa fa-hashtag"></span><a href="#&#x66F4;&#x597D;&#x7684;&#x8BED;&#x6CD5;"><b></b>&#x66F4;&#x597D;&#x7684;&#x8BED;&#x6CD5;</a></li><li><span class="title-icon fa fa-hashtag"></span><a href="#&#x5C0F;&#x7ED3;"><b></b>&#x5C0F;&#x7ED3;</a></li></ul><li><span class="title-icon fa fa-star"></span><a href="#&#x8D44;&#x6599;"><b></b>&#x8D44;&#x6599;</a></li></ul></div><a href="#this" id="anchorNavigationExGoTop"><i class="fa fa-arrow-up"></i></a><h1 id="this&#x548C;&#x5BF9;&#x8C61;&#x539F;&#x578B;"><a name="this&#x548C;&#x5BF9;&#x8C61;&#x539F;&#x578B;" class="anchor-navigation-ex-anchor" href="#this&#x548C;&#x5BF9;&#x8C61;&#x539F;&#x578B;"><i class="fa fa-link" aria-hidden="true"></i></a>this&#x548C;&#x5BF9;&#x8C61;&#x539F;&#x578B;</h1>
+<!-- toc -->
+<h2 id="this"><a name="this" class="anchor-navigation-ex-anchor" href="#this"><i class="fa fa-link" aria-hidden="true"></i></a>this</h2>
+<h3 id="&#x4E3A;&#x4EC0;&#x4E48;&#x9700;&#x8981;thiswhy"><a name="&#x4E3A;&#x4EC0;&#x4E48;&#x9700;&#x8981;thiswhy" class="anchor-navigation-ex-anchor" href="#&#x4E3A;&#x4EC0;&#x4E48;&#x9700;&#x8981;thiswhy"><i class="fa fa-link" aria-hidden="true"></i></a>&#x4E3A;&#x4EC0;&#x4E48;&#x9700;&#x8981;this(Why)</h3>
+<p>&#x5728;&#x7F16;&#x7A0B;&#x4E2D;&#xFF0C;&#x7ECF;&#x5E38;&#x9700;&#x8981;&#x5728;&#x51FD;&#x6570;&#x95F4;&#x4F20;&#x9012;&#x4E0A;&#x4E0B;&#x6587;&#x5BF9;&#x8C61;&#xFF0C;&#x5982;&#x679C;&#x4F7F;&#x7528;&#x53C2;&#x6570;&#x663E;&#x793A;&#x4F20;&#x9012;&#x65B9;&#x5F0F;&#xFF0C;&#x968F;&#x7740;&#x4F7F;&#x7528;&#x6A21;&#x5F0F;&#x8D8A;&#x6765;&#x8D8A;&#x590D;&#x6742;&#xFF0C;&#x4EE3;&#x7801;&#x4F1A;&#x53D8;&#x5F97;&#x8D8A;&#x6765;&#x8D8A;&#x4E71;&#x3002;this &#x63D0;&#x4F9B;&#x4E86;&#x4E00;&#x79CD;&#x4F18;&#x96C5;&#x7684;&#x65B9;&#x5F0F;&#x6765;&#x9690;&#x5F0F;&#x201C;&#x4F20;&#x9012;&#x201D;&#x4E00;&#x4E2A;&#x5BF9;&#x8C61;&#x5F15;&#x7528;&#xFF0C;&#x5E2E;&#x52A9;&#x6211;&#x4EEC;&#x5C06; API &#x8BBE;&#x8BA1;&#x5F97;&#x66F4;&#x52A0;&#x7B80;&#x6D01;&#x5E76;&#x4E14;&#x6613;&#x4E8E;&#x590D;&#x7528;&#x3002;</p>
+<h3 id="this&#x662F;&#x4EC0;&#x4E48;what"><a name="this&#x662F;&#x4EC0;&#x4E48;what" class="anchor-navigation-ex-anchor" href="#this&#x662F;&#x4EC0;&#x4E48;what"><i class="fa fa-link" aria-hidden="true"></i></a>this&#x662F;&#x4EC0;&#x4E48;(What)</h3>
+<p>&#x5F53;&#x4E00;&#x4E2A;&#x51FD;&#x6570;&#x88AB;&#x8C03;&#x7528;&#x65F6;&#xFF0C;&#x4F1A;&#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x6D3B;&#x52A8;&#x8BB0;&#x5F55;(&#x6709;&#x65F6;&#x5019;&#x4E5F;&#x79F0;&#x4E3A;&#x6267;&#x884C;&#x4E0A;&#x4E0B;&#x6587;)&#x3002;&#x8FD9;&#x4E2A;&#x8BB0;&#x5F55;&#x4F1A;&#x5305;&#x542B;&#x51FD;&#x6570;&#x5728;&#x54EA;&#x91CC;&#x88AB;&#x8C03;&#x7528;(&#x8C03;&#x7528;&#x6808;)&#x3001;&#x51FD;&#x6570;&#x7684;&#x8C03;&#x7528;&#x65B9;&#x6CD5;&#x3001;&#x4F20;&#x5165;&#x7684;&#x53C2;&#x6570;&#x7B49;&#x4FE1;&#x606F;&#x3002;this &#x5C31;&#x662F;&#x8BB0;&#x5F55;&#x7684;&#x5176;&#x4E2D;&#x4E00;&#x4E2A;&#x5C5E;&#x6027;&#xFF0C;&#x4F1A;&#x5728;&#x51FD;&#x6570;&#x6267;&#x884C;&#x7684;&#x8FC7;&#x7A0B;&#x4E2D;&#x7528;&#x5230;&#x3002;&#x4F60;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;&#x5728;&#x63A7;&#x5236;&#x53F0;&#x7ED9;&#x4EE3;&#x7801;&#x6DFB;&#x52A0;&#x65AD;&#x70B9;&#x6765;&#x7814;&#x7A76;&#x8C03;&#x7528;&#x6808;&#x3002;</p>
+<p>this &#x65E2;&#x4E0D;&#x6307;&#x5411;&#x51FD;&#x6570;&#x81EA;&#x8EAB;&#x4E5F;&#x4E0D;&#x6307;&#x5411;&#x51FD;&#x6570;&#x7684;&#x8BCD;&#x6CD5;&#x4F5C;&#x7528;&#x57DF;&#xFF0C;&#x5B83;&#x662F;&#x5728;&#x51FD;&#x6570;&#x88AB;&#x8C03;&#x7528;&#x65F6;&#x53D1;&#x751F;&#x7684;&#x7ED1;&#x5B9A;&#xFF0C;&#x5B83;&#x6307;&#x5411;&#x4EC0;&#x4E48;&#x5B8C;&#x5168;&#x53D6;&#x51B3;&#x4E8E;&#x51FD;&#x6570;&#x5728;&#x54EA;&#x91CC;&#x88AB;&#x8C03;&#x7528;(&#x8C03;&#x7528;&#x4F4D;&#x7F6E;)&#x3002;&#x8C03;&#x7528;&#x4F4D;&#x7F6E;&#x5728;&#x5F53;&#x524D;&#x6B63;&#x5728;&#x6267;&#x884C;&#x7684;&#x51FD;&#x6570;&#x7684;&#x524D;&#x4E00;&#x4E2A;&#x8C03;&#x7528;&#x4E2D;&#x3002;</p>
+<h3 id="this&#x7ED1;&#x5B9A;&#x89C4;&#x5219;how"><a name="this&#x7ED1;&#x5B9A;&#x89C4;&#x5219;how" class="anchor-navigation-ex-anchor" href="#this&#x7ED1;&#x5B9A;&#x89C4;&#x5219;how"><i class="fa fa-link" aria-hidden="true"></i></a>this&#x7ED1;&#x5B9A;&#x89C4;&#x5219;(How)</h3>
+<h4 id="&#x9690;&#x5F0F;&#x7ED1;&#x5B9A;"><a name="&#x9690;&#x5F0F;&#x7ED1;&#x5B9A;" class="anchor-navigation-ex-anchor" href="#&#x9690;&#x5F0F;&#x7ED1;&#x5B9A;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x9690;&#x5F0F;&#x7ED1;&#x5B9A;</h4>
+<p>&#x82E5;&#x51FD;&#x6570;&#x5F15;&#x7528;&#x6709;&#x4E0A;&#x4E0B;&#x6587;&#x5BF9;&#x8C61;&#xFF0C;&#x5219;&#x51FD;&#x6570;&#x8C03;&#x7528;&#x4E2D;&#x7684;this&#x4F1A;&#x88AB;&#x7ED1;&#x5B9A;&#x5230;&#x8FD9;&#x4E2A;&#x4E0A;&#x4E0B;&#x6587;&#x5BF9;&#x8C61;&#x3002;</p>
+<p><strong>&#x9690;&#x5F0F;&#x4E22;&#x5931;</strong></p>
+<pre><code>function foo() {
+    console.log( this.a );
+}
+var obj = {
+    a: 2,
+    foo: foo
+};
+var a = &quot;oops, global&quot;; // a &#x662F;&#x5168;&#x5C40;&#x5BF9;&#x8C61;&#x7684;&#x5C5E;&#x6027;
+setTimeout( obj.foo, 100 ); // &quot;oops, global&quot;
+
+JavaScript &#x73AF;&#x5883;&#x4E2D;&#x5185;&#x7F6E;&#x7684; setTimeout() &#x51FD;&#x6570;&#x5B9E;&#x73B0;&#x548C;&#x4E0B;&#x9762;&#x7684;&#x4F2A;&#x4EE3;&#x7801;&#x7C7B;&#x4F3C;:
+function setTimeout(fn,delay) { // &#x7B49;&#x5F85; delay &#x6BEB;&#x79D2;
+    fn(); // &lt;-- &#x8C03;&#x7528;&#x4F4D;&#x7F6E;!
+}
+</code></pre><h4 id="&#x663E;&#x5F0F;&#x7ED1;&#x5B9A;"><a name="&#x663E;&#x5F0F;&#x7ED1;&#x5B9A;" class="anchor-navigation-ex-anchor" href="#&#x663E;&#x5F0F;&#x7ED1;&#x5B9A;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x663E;&#x5F0F;&#x7ED1;&#x5B9A;</h4>
+<p>&#x4F7F;&#x7528;call(...)&#x548C;apply(...)&#x65B9;&#x6CD5;&#xFF0C;&#x53EF;&#x4EE5;&#x5C06;this&#x6307;&#x5B9A;&#x7ED1;&#x5B9A;&#x5230;&#x7279;&#x5B9A;&#x5BF9;&#x8C61;&#x4E0A;&#x3002;</p>
+<p>&#x7B2C;&#x4E09;&#x65B9;&#x5E93;&#x7684;&#x8BB8;&#x591A;&#x51FD;&#x6570;&#xFF0C;&#x4EE5;&#x53CA; JavaScript &#x8BED;&#x8A00;&#x548C;&#x5BBF;&#x4E3B;&#x73AF;&#x5883;&#x4E2D;&#x8BB8;&#x591A;&#x65B0;&#x7684;&#x5185;&#x7F6E;&#x51FD;&#x6570;&#xFF0C;&#x90FD;&#x63D0;&#x4F9B;&#x4E86;&#x4E00;&#x4E2A;&#x53EF;&#x9009;&#x7684;&#x53C2;&#x6570;&#xFF0C;&#x901A;&#x5E38;&#x88AB;&#x79F0;&#x4E3A;&#x201C;&#x4E0A;&#x4E0B;&#x6587;&#x201D;(context)&#xFF0C;&#x5176;&#x4F5C;&#x7528;&#x548C; bind(..) &#x4E00;&#x6837;&#xFF0C;&#x786E;&#x4FDD;&#x4F60;&#x7684;&#x56DE;&#x8C03;&#x51FD;&#x6570;&#x4F7F;&#x7528;&#x6307;&#x5B9A;&#x7684; this&#x3002;</p>
+<pre><code>// &#x8C03;&#x7528; foo(..) &#x65F6;&#x628A; this &#x7ED1;&#x5B9A;&#x5230;
+obj [1, 2, 3].forEach( foo, obj );
+// 1 awesome 2 awesome 3 awesome
+</code></pre><h4 id="new&#x7ED1;&#x5B9A;"><a name="new&#x7ED1;&#x5B9A;" class="anchor-navigation-ex-anchor" href="#new&#x7ED1;&#x5B9A;"><i class="fa fa-link" aria-hidden="true"></i></a>new&#x7ED1;&#x5B9A;</h4>
+<p>&#x4F7F;&#x7528; new &#x6765;&#x8C03;&#x7528;&#x51FD;&#x6570;&#xFF0C;&#x6216;&#x8005;&#x8BF4;&#x53D1;&#x751F;&#x6784;&#x9020;&#x51FD;&#x6570;&#x8C03;&#x7528;&#x65F6;&#xFF0C;&#x4F1A;&#x81EA;&#x52A8;&#x6267;&#x884C;&#x4E0B;&#x9762;&#x7684;&#x64CD;&#x4F5C;&#x3002;</p>
+<ol>
+<li>&#x521B;&#x5EFA;(&#x6216;&#x8005;&#x8BF4;&#x6784;&#x9020;)&#x4E00;&#x4E2A;&#x5168;&#x65B0;&#x7684;&#x5BF9;&#x8C61;&#x3002;</li>
+<li>&#x8FD9;&#x4E2A;&#x65B0;&#x5BF9;&#x8C61;&#x4F1A;&#x88AB;&#x6267;&#x884C;[[&#x539F;&#x578B;]]&#x8FDE;&#x63A5;&#x3002;</li>
+<li>&#x8FD9;&#x4E2A;&#x65B0;&#x5BF9;&#x8C61;&#x4F1A;&#x7ED1;&#x5B9A;&#x5230;&#x51FD;&#x6570;&#x8C03;&#x7528;&#x7684;this&#x3002;</li>
+<li>&#x5982;&#x679C;&#x51FD;&#x6570;&#x6CA1;&#x6709;&#x8FD4;&#x56DE;&#x5176;&#x4ED6;&#x5BF9;&#x8C61;&#xFF0C;&#x90A3;&#x4E48;new&#x8868;&#x8FBE;&#x5F0F;&#x4E2D;&#x7684;&#x51FD;&#x6570;&#x8C03;&#x7528;&#x4F1A;&#x81EA;&#x52A8;&#x8FD4;&#x56DE;&#x8FD9;&#x4E2A;&#x65B0;&#x5BF9;&#x8C61;&#x3002;</li>
+</ol>
+<p>new&#x7ED1;&#x5B9A;&#x6BD4;&#x663E;&#x5F0F;&#x7ED1;&#x5B9A;&#x4F18;&#x5148;&#x7EA7;&#x66F4;&#x9AD8;&#x3002;</p>
+<h4 id="&#x9ED8;&#x8BA4;&#x7ED1;&#x5B9A;"><a name="&#x9ED8;&#x8BA4;&#x7ED1;&#x5B9A;" class="anchor-navigation-ex-anchor" href="#&#x9ED8;&#x8BA4;&#x7ED1;&#x5B9A;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x9ED8;&#x8BA4;&#x7ED1;&#x5B9A;</h4>
+<p>&#x82E5;&#x4E0D;&#x7B26;&#x5408;&#x4E0A;&#x8FF0;&#x89C4;&#x5219;&#xFF0C;this&#x4F1A;&#x91C7;&#x7528;&#x9ED8;&#x8BA4;&#x7ED1;&#x5B9A;&#x3002;this&#x9ED8;&#x8BA4;&#x7ED1;&#x5B9A;&#x5728;&#x975E;&#x4E25;&#x683C;&#x6A21;&#x5F0F;&#x4E0B;&#x7ED1;&#x5B9A;&#x5230;&#x5168;&#x5C40;&#x5BF9;&#x8C61;&#xFF0C;&#x4E25;&#x683C;&#x6A21;&#x5F0F;&#x4E0B;&#x503C;&#x4E3A;undifined&#x3002;</p>
+<h3 id="this&#x7ED1;&#x5B9A;&#x5B9E;&#x8DF5;"><a name="this&#x7ED1;&#x5B9A;&#x5B9E;&#x8DF5;" class="anchor-navigation-ex-anchor" href="#this&#x7ED1;&#x5B9A;&#x5B9E;&#x8DF5;"><i class="fa fa-link" aria-hidden="true"></i></a>this&#x7ED1;&#x5B9A;&#x5B9E;&#x8DF5;</h3>
+<p>this&#x5177;&#x6709;&#x9ED8;&#x8BA4;&#x7ED1;&#x5B9A;&#xFF0C;&#x51FD;&#x6570;&#x8C03;&#x7528;&#x65F6;&#x53EF;&#x80FD;&#x6539;&#x53D8;this&#x7684;&#x7ED1;&#x5B9A;&#x3002;</p>
+<h4 id="&#x5224;&#x65AD;this&#x7684;&#x7ED1;&#x5B9A;"><a name="&#x5224;&#x65AD;this&#x7684;&#x7ED1;&#x5B9A;" class="anchor-navigation-ex-anchor" href="#&#x5224;&#x65AD;this&#x7684;&#x7ED1;&#x5B9A;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x5224;&#x65AD;this&#x7684;&#x7ED1;&#x5B9A;</h4>
+<ol>
+<li>&#x51FD;&#x6570;&#x662F;&#x5426;&#x5728;new&#x4E2D;&#x8C03;&#x7528;(new&#x7ED1;&#x5B9A;)?&#x5982;&#x679C;&#x662F;&#x7684;&#x8BDD;this&#x7ED1;&#x5B9A;&#x7684;&#x662F;&#x65B0;&#x521B;&#x5EFA;&#x7684;&#x5BF9;&#x8C61;&#x3002;
+  var bar = new foo()</li>
+<li>&#x51FD;&#x6570;&#x662F;&#x5426;&#x901A;&#x8FC7;call&#x3001;apply(&#x663E;&#x5F0F;&#x7ED1;&#x5B9A;)&#x6216;&#x8005;&#x786C;&#x7ED1;&#x5B9A;&#x8C03;&#x7528;?&#x5982;&#x679C;&#x662F;&#x7684;&#x8BDD;&#xFF0C;this&#x7ED1;&#x5B9A;&#x7684;&#x662F;&#x6307;&#x5B9A;&#x7684;&#x5BF9;&#x8C61;&#x3002;
+  var bar = foo.call(obj2)</li>
+<li>&#x51FD;&#x6570;&#x662F;&#x5426;&#x5728;&#x67D0;&#x4E2A;&#x4E0A;&#x4E0B;&#x6587;&#x5BF9;&#x8C61;&#x4E2D;&#x8C03;&#x7528;(&#x9690;&#x5F0F;&#x7ED1;&#x5B9A;)?&#x5982;&#x679C;&#x662F;&#x7684;&#x8BDD;&#xFF0C;this &#x7ED1;&#x5B9A;&#x7684;&#x662F;&#x90A3;&#x4E2A;&#x4E0A;&#x4E0B;&#x6587;&#x5BF9;&#x8C61;&#x3002;
+  var bar = obj1.foo()</li>
+<li>&#x5982;&#x679C;&#x90FD;&#x4E0D;&#x662F;&#x7684;&#x8BDD;&#xFF0C;&#x4F7F;&#x7528;&#x9ED8;&#x8BA4;&#x7ED1;&#x5B9A;&#x3002;&#x5982;&#x679C;&#x5728;&#x4E25;&#x683C;&#x6A21;&#x5F0F;&#x4E0B;&#xFF0C;&#x5C31;&#x7ED1;&#x5B9A;&#x5230;undefined&#xFF0C;&#x5426;&#x5219;&#x7ED1;&#x5B9A;&#x5230;&#x5168;&#x5C40;&#x5BF9;&#x8C61;&#x3002;
+  var bar = foo()</li>
+</ol>
+<h4 id="&#x6CE8;&#x610F;&#x70B9;"><a name="&#x6CE8;&#x610F;&#x70B9;" class="anchor-navigation-ex-anchor" href="#&#x6CE8;&#x610F;&#x70B9;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x6CE8;&#x610F;&#x70B9;</h4>
+<p>&#x6709;&#x4E9B;&#x8C03;&#x7528;&#x53EF;&#x80FD;&#x5728;&#x65E0;&#x610F;&#x4E2D;&#x4F7F;&#x7528;&#x9ED8;&#x8BA4;&#x7ED1;&#x5B9A;&#x89C4;&#x5219;&#x3002;&#x5982;&#x679C;&#x60F3;&#x201C;&#x66F4;&#x5B89;&#x5168;&#x201D;&#x5730;&#x5FFD;&#x7565; this &#x7ED1;&#x5B9A;&#xFF0C;&#x4F60;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;&#x4E00;&#x4E2A; DMZ &#x5BF9;&#x8C61;&#xFF0C;&#x6BD4;&#x5982; &#xF8; = Object.create(null)&#xFF0C;&#x4EE5;&#x4FDD;&#x62A4;&#x5168;&#x5C40;&#x5BF9;&#x8C61;&#x3002;</p>
+<p>&#x4F8B;&#x5982;&#xFF0C;&#x82E5;&#x5C06; null &#x6216;&#x8005; undefined &#x4F5C;&#x4E3A; this &#x7684;&#x7ED1;&#x5B9A;&#x5BF9;&#x8C61;&#x4F20;&#x5165; call&#x3001;apply &#x6216;&#x8005; bind&#xFF0C;&#x8FD9;&#x4E9B;&#x503C;&#x5728;&#x8C03;&#x7528;&#x65F6;&#x4F1A;&#x88AB;&#x5FFD;&#x7565;&#xFF0C;&#x5B9E;&#x9645;&#x5E94;&#x7528;&#x7684;&#x662F;&#x9ED8;&#x8BA4;&#x7ED1;&#x5B9A;&#x89C4;&#x5219;&#x3002;&#x66F4;&#x5B89;&#x5168;&#x7684;&#x505A;&#x6CD5;&#x662F;&#x4F7F;&#x7528;<code>Object.create(null)</code>&#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x4E0D;&#x4F1A;&#x521B;&#x5EFA;Object.prototype&#x59D4;&#x6258;&#x7684;&#x5E72;&#x51C0;&#x7684;&#x7A7A;&#x5BF9;&#x8C61;&#xFF0C;&#x5C06;&#x5176;&#x4F5C;&#x4E3A;call&#x3001;apply&#x7684;&#x9996;&#x4E2A;&#x53C2;&#x6570;&#x3002;</p>
+<h4 id="&#x8F6F;&#x7ED1;&#x5B9A;"><a name="&#x8F6F;&#x7ED1;&#x5B9A;" class="anchor-navigation-ex-anchor" href="#&#x8F6F;&#x7ED1;&#x5B9A;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x8F6F;&#x7ED1;&#x5B9A;</h4>
+<p>&#x786C;&#x7ED1;&#x5B9A;&#x53EF;&#x4EE5;&#x628A; this &#x5F3A;&#x5236;&#x7ED1;&#x5B9A;&#x5230;&#x6307;&#x5B9A;&#x7684;&#x5BF9;&#x8C61;(&#x9664;&#x4E86;&#x4F7F;&#x7528; new &#x65F6;)&#xFF0C;&#x4F46;&#x662F;&#x786C;&#x7ED1;&#x5B9A;&#x4F1A;&#x5927;&#x5927;&#x964D;&#x4F4E;&#x51FD;&#x6570;&#x7684;&#x7075;&#x6D3B;&#x6027;-&#x4F7F;&#x7528;&#x786C;&#x7ED1;&#x5B9A;&#x4E4B;&#x540E;&#x5C31;&#x65E0;&#x6CD5;&#x4F7F;&#x7528;&#x9690;&#x5F0F;&#x7ED1;&#x5B9A;&#x6216;&#x8005;&#x663E;&#x5F0F;&#x7ED1;&#x5B9A;&#x6765;&#x4FEE;&#x6539; this&#x3002;</p>
+<p>&#x5982;&#x679C;&#x53EF;&#x4EE5;&#x7ED9;&#x9ED8;&#x8BA4;&#x7ED1;&#x5B9A;&#x6307;&#x5B9A;&#x4E00;&#x4E2A;&#x5168;&#x5C40;&#x5BF9;&#x8C61;&#x548C; undefined &#x4EE5;&#x5916;&#x7684;&#x503C;&#xFF0C;&#x90A3;&#x5C31;&#x53EF;&#x4EE5;&#x5B9E;&#x73B0;&#x548C;&#x786C;&#x7ED1;&#x5B9A;&#x76F8;&#x540C;&#x7684;&#x6548;&#x679C;&#xFF0C;&#x540C;&#x65F6;&#x4FDD;&#x7559;&#x9690;&#x5F0F;&#x7ED1;&#x5B9A;&#x6216;&#x8005;&#x663E;&#x5F0F;&#x7ED1;&#x5B9A;&#x4FEE;&#x6539; this &#x7684;&#x80FD;&#x529B;&#xFF0C;&#x8FD9;&#x53EF;&#x4EE5;&#x89E3;&#x51B3;&#x9690;&#x5F0F;&#x4E22;&#x5931;&#x7684;&#x95EE;&#x9898;&#x3002;</p>
+<p>&#x4E0B;&#x9762;&#x662F;softBind&#x7684;&#x5B9E;&#x73B0;&#x3002;softBind(..) &#x7684;&#x5176;&#x4ED6;&#x539F;&#x7406;&#x548C; ES5 &#x5185;&#x7F6E;&#x7684; bind(..) &#x7C7B;&#x4F3C;&#x3002;&#x5B83;&#x4F1A;&#x5BF9;&#x6307;&#x5B9A;&#x7684;&#x51FD;&#x6570;&#x8FDB;&#x884C;&#x5C01;&#x88C5;&#xFF0C;&#x9996;&#x5148;&#x68C0;&#x67E5;&#x8C03;&#x7528;&#x65F6;&#x7684; this&#xFF0C;&#x5982;&#x679C; this &#x7ED1;&#x5B9A;&#x5230;&#x5168;&#x5C40;&#x5BF9;&#x8C61;&#x6216;&#x8005; undefined&#xFF0C;&#x90A3;&#x5C31;&#x628A;&#x6307;&#x5B9A;&#x7684;&#x9ED8;&#x8BA4;&#x5BF9;&#x8C61; obj &#x7ED1;&#x5B9A;&#x5230; this&#xFF0C;&#x5426;&#x5219;&#x4E0D;&#x4F1A;&#x4FEE;&#x6539; this&#x3002;</p>
+<pre><code>if (!Function.prototype.softBind) {
+    Function.prototype.softBind = function(obj) {
+        var fn = this;
+        // &#x6355;&#x83B7;&#x6240;&#x6709; curried &#x53C2;&#x6570;
+        var curried = [].slice.call( arguments, 1 );
+        var bound = function() {
+            return fn.apply(
+                (!this || this === (window || global)) ?
+                obj : this
+                curried.concat.apply( curried, arguments )
+            );
+        };
+        bound.prototype = Object.create( fn.prototype );
+        return bound;
+    };
+}
+
+// &#x793A;&#x4F8B;
+function foo() {
+    console.log(&quot;name: &quot; + this.name);
+}
+var obj = { name: &quot;obj&quot; }, obj2 = { name: &quot;obj2&quot; }, obj3 = { name: &quot;obj3&quot; };
+var fooOBJ = foo.softBind( obj );
+fooOBJ(); // name: obj
+obj2.foo = foo.softBind(obj);
+obj2.foo(); // name: obj2 &lt;---- &#x770B;!!!
+fooOBJ.call( obj3 ); // name: obj3 &lt;---- &#x770B;!
+setTimeout( obj2.foo, 10 ); // name: obj &lt;---- &#x5E94;&#x7528;&#x4E86;&#x8F6F;&#x7ED1;&#x5B9A;
+</code></pre><h4 id="&#x7BAD;&#x5934;&#x51FD;&#x6570;"><a name="&#x7BAD;&#x5934;&#x51FD;&#x6570;" class="anchor-navigation-ex-anchor" href="#&#x7BAD;&#x5934;&#x51FD;&#x6570;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x7BAD;&#x5934;&#x51FD;&#x6570;</h4>
+<p>&#x7BAD;&#x5934;&#x51FD;&#x6570;&#x4E0D;&#x4F7F;&#x7528; this &#x7684;&#x56DB;&#x79CD;&#x6807;&#x51C6;&#x89C4;&#x5219;&#xFF0C;&#x800C;&#x662F;&#x6839;&#x636E;&#x5916;&#x5C42;(&#x51FD;&#x6570;&#x6216;&#x8005;&#x5168;&#x5C40;)&#x4F5C;&#x7528;&#x57DF;&#x6765;&#x51B3;&#x5B9A; this&#x3002;&#x7BAD;&#x5934;&#x51FD;&#x6570;&#x4F1A;&#x7EE7;&#x627F;&#x5916;&#x5C42;&#x51FD;&#x6570;&#x8C03;&#x7528;&#x7684; this &#x7ED1;&#x5B9A;(&#x65E0;&#x8BBA; this &#x7ED1;&#x5B9A;&#x5230;&#x4EC0;&#x4E48;)&#x3002;&#x8FD9;&#x5176;&#x5B9E;&#x548C; ES6 &#x4E4B;&#x524D;&#x4EE3;&#x7801;&#x4E2D;&#x7684; self = this &#x673A;&#x5236;&#x4E00;&#x6837;&#x3002;</p>
+<p>&#x5728;&#x540C;&#x4E00;&#x4E2A;&#x51FD;&#x6570;&#x6216;&#x8005;&#x540C;&#x4E00;&#x4E2A;&#x7A0B;&#x5E8F;&#x4E2D;&#x6DF7;&#x5408;&#x4F7F;&#x7528;&#x8FD9;&#x4E24;&#x79CD;&#x98CE;&#x683C;&#x901A;&#x5E38;&#x4F1A;&#x4F7F;&#x4EE3;&#x7801;&#x66F4;&#x96BE;&#x7EF4;&#x62A4;&#xFF0C;&#x5E76;&#x4E14;&#x53EF;&#x80FD;&#x4E5F;&#x4F1A;&#x66F4;&#x96BE;&#x7F16;&#x5199;&#x3002;&#x5982;&#x679C;&#x4F60;&#x7ECF;&#x5E38;&#x7F16;&#x5199; this &#x98CE;&#x683C;&#x7684;&#x4EE3;&#x7801;&#xFF0C;&#x4F46;&#x662F;&#x7EDD;&#x5927;&#x90E8;&#x5206;&#x65F6;&#x5019;&#x90FD;&#x4F1A;&#x4F7F;&#x7528; self = this &#x6216;&#x8005;&#x7BAD;&#x5934;&#x51FD;&#x6570;&#x6765;&#x5426;&#x5B9A; this &#x673A;&#x5236;&#xFF0C;&#x90A3;&#x4F60;&#x6216;&#x8BB8;&#x5E94;&#x5F53;:</p>
+<ol>
+<li>&#x53EA;&#x4F7F;&#x7528;&#x8BCD;&#x6CD5;&#x4F5C;&#x7528;&#x57DF;&#x5E76;&#x5B8C;&#x5168;&#x629B;&#x5F03;&#x9519;&#x8BEF;this&#x98CE;&#x683C;&#x7684;&#x4EE3;&#x7801;;</li>
+<li>&#x5B8C;&#x5168;&#x91C7;&#x7528; this &#x98CE;&#x683C;&#xFF0C;&#x5728;&#x5FC5;&#x8981;&#x65F6;&#x4F7F;&#x7528; bind(..)&#xFF0C;&#x5C3D;&#x91CF;&#x907F;&#x514D;&#x4F7F;&#x7528; self = this &#x548C;&#x7BAD;&#x5934;&#x51FD;&#x6570;&#x3002;</li>
+</ol>
+<h2 id="&#x5BF9;&#x8C61;"><a name="&#x5BF9;&#x8C61;" class="anchor-navigation-ex-anchor" href="#&#x5BF9;&#x8C61;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x5BF9;&#x8C61;</h2>
+<h3 id="&#x5B9A;&#x4E49;"><a name="&#x5B9A;&#x4E49;" class="anchor-navigation-ex-anchor" href="#&#x5B9A;&#x4E49;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x5B9A;&#x4E49;</h3>
+<p>&#x5BF9;&#x8C61;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;&#x4E24;&#x79CD;&#x5F62;&#x5F0F;&#x5B9A;&#x4E49;:&#x58F0;&#x660E;(&#x6587;&#x5B57;)&#x5F62;&#x5F0F;&#x548C;&#x6784;&#x9020;&#x5F62;&#x5F0F;&#x3002;&#x8FD9;&#x4E24;&#x79CD;&#x5F62;&#x5F0F;&#x751F;&#x6210;&#x7684;&#x5BF9;&#x8C61;&#x662F;&#x4E00;&#x6837;&#x7684;&#x3002;&#x552F;&#x4E00;&#x7684;&#x533A;&#x522B;&#x662F;&#xFF0C;&#x5728;&#x6587;&#x5B57;&#x58F0;&#x660E;&#x4E2D;&#x4F60;&#x53EF;&#x4EE5;&#x6DFB;&#x52A0;&#x591A;&#x4E2A;&#x952E; / &#x503C;&#x5BF9;&#xFF0C;&#x4F46;&#x662F;&#x5728;&#x6784;&#x9020;&#x5F62;&#x5F0F;&#x4E2D;&#x4F60;&#x5FC5;&#x987B;&#x9010;&#x4E2A;&#x6DFB;&#x52A0;&#x5C5E;&#x6027;&#x3002;&#x5B57;&#x9762;&#x5F62;&#x5F0F;&#x66F4;&#x5E38;&#x7528;&#xFF0C;&#x4E0D;&#x8FC7;&#x6709;&#x65F6;&#x5019;&#x6784;&#x9020;&#x5F62;&#x5F0F;&#x53EF;&#x4EE5;&#x63D0;&#x4F9B;&#x66F4;&#x591A;&#x9009;&#x9879;&#x3002;</p>
+<pre><code>&#x5BF9;&#x8C61;&#x7684;&#x6587;&#x5B57;&#x8BED;&#x6CD5;&#x5927;&#x6982;&#x662F;&#x8FD9;&#x6837;:
+var myObj = {
+    key: value
+    // ...
+};
+&#x6784;&#x9020;&#x5F62;&#x5F0F;&#x5927;&#x6982;&#x662F;&#x8FD9;&#x6837;:
+var myObj = new Object();
+myObj.key = value;
+</code></pre><h3 id="&#x7C7B;&#x578B;"><a name="&#x7C7B;&#x578B;" class="anchor-navigation-ex-anchor" href="#&#x7C7B;&#x578B;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x7C7B;&#x578B;</h3>
+<h4 id="&#x4E3B;&#x8981;&#x7C7B;&#x578B;"><a name="&#x4E3B;&#x8981;&#x7C7B;&#x578B;" class="anchor-navigation-ex-anchor" href="#&#x4E3B;&#x8981;&#x7C7B;&#x578B;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x4E3B;&#x8981;&#x7C7B;&#x578B;</h4>
+<p>&#x5728;JavaScript&#x4E2D;&#x4E00;&#x5171;&#x6709;&#x516D;&#x79CD;&#x4E3B;&#x8981;&#x7C7B;&#x578B;(&#x672F;&#x8BED;&#x662F;&#x201C;&#x8BED;&#x8A00;&#x7C7B;&#x578B;&#x201D;)&#xFF1A;</p>
+<ul>
+<li>string</li>
+<li>number</li>
+<li>boolean</li>
+<li>null</li>
+<li>undefined</li>
+<li>object</li>
+</ul>
+<p>null &#x6709;&#x65F6;&#x4F1A;&#x88AB;&#x5F53;&#x4F5C;&#x4E00;&#x79CD;&#x5BF9;&#x8C61;&#x7C7B;&#x578B;&#xFF0C;&#x4F46;&#x662F;&#x8FD9;&#x5176;&#x5B9E;&#x53EA;&#x662F;&#x8BED;&#x8A00;&#x672C;&#x8EAB;&#x7684;&#x4E00;&#x4E2A; bug&#xFF0C;&#x5373;&#x5BF9; null &#x6267;&#x884C; typeof null &#x65F6;&#x4F1A;&#x8FD4;&#x56DE;&#x5B57;&#x7B26;&#x4E32; &quot;object&quot;&#x3002;&#x5B9E;&#x9645;&#x4E0A;&#xFF0C;null &#x672C;&#x8EAB;&#x662F;&#x57FA;&#x672C;&#x7C7B;&#x578B;&#x3002;</p>
+<h4 id="&#x5185;&#x7F6E;&#x5BF9;&#x8C61;"><a name="&#x5185;&#x7F6E;&#x5BF9;&#x8C61;" class="anchor-navigation-ex-anchor" href="#&#x5185;&#x7F6E;&#x5BF9;&#x8C61;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x5185;&#x7F6E;&#x5BF9;&#x8C61;</h4>
+<p>JavaScript &#x4E2D;&#x8FD8;&#x6709;&#x4E00;&#x4E9B;&#x5BF9;&#x8C61;&#x5B50;&#x7C7B;&#x578B;&#xFF0C;&#x901A;&#x5E38;&#x88AB;&#x79F0;&#x4E3A;&#x5185;&#x7F6E;&#x5BF9;&#x8C61;&#x3002;&#x5728; JavaScript&#x4E2D;&#xFF0C;&#x5B83;&#x4EEC;&#x5B9E;&#x9645;&#x4E0A;&#x53EA;&#x662F;&#x4E00;&#x4E9B;&#x5185;&#x7F6E;&#x51FD;&#x6570;&#x3002;&#x8FD9;&#x4E9B;&#x5185;&#x7F6E;&#x51FD;&#x6570;&#x53EF;&#x4EE5;&#x5F53;&#x4F5C;&#x6784;&#x9020;&#x51FD;&#x6570;&#x6765;&#x4F7F;&#x7528;&#x3002;</p>
+<ul>
+<li>String</li>
+<li>Number</li>
+<li>Boolean</li>
+<li>Object</li>
+<li>Function</li>
+<li>Array</li>
+<li>Date</li>
+<li>RegExp</li>
+<li>Error</li>
+</ul>
+<p>JavaScript &#x4E2D;&#x7684;&#x51FD;&#x6570;&#x662F;&#x201C;&#x4E00;&#x7B49;&#x516C;&#x6C11;&#x201D;&#xFF0C;&#x56E0;&#x4E3A;&#x5B83;&#x4EEC;&#x672C;&#x8D28;&#x4E0A;&#x548C;&#x666E;&#x901A;&#x7684;&#x5BF9;&#x8C61;&#x4E00;&#x6837;(&#x53EA;&#x662F;&#x53EF;&#x4EE5;&#x8C03;&#x7528;)&#xFF0C;&#x6240;&#x4EE5;&#x53EF;&#x4EE5;&#x50CF;&#x64CD;&#x4F5C;&#x5176;&#x4ED6;&#x5BF9;&#x8C61;&#x4E00;&#x6837;&#x64CD;&#x4F5C;&#x51FD;&#x6570;(&#x6BD4;&#x5982;&#x5F53;&#x4F5C;&#x53E6;&#x4E00;&#x4E2A;&#x51FD;&#x6570;&#x7684;&#x53C2;&#x6570;)&#x3002;</p>
+<p>&#x539F;&#x59CB;&#x503C; &quot;I am a string&quot; &#x5E76;&#x4E0D;&#x662F;&#x4E00;&#x4E2A;&#x5BF9;&#x8C61;&#xFF0C;&#x5B83;&#x53EA;&#x662F;&#x4E00;&#x4E2A;&#x5B57;&#x9762;&#x91CF;&#xFF0C;&#x5E76;&#x4E14;&#x662F;&#x4E00;&#x4E2A;&#x4E0D;&#x53EF;&#x53D8;&#x7684;&#x503C;&#x3002; &#x5982;&#x679C;&#x8981;&#x5728;&#x8FD9;&#x4E2A;&#x5B57;&#x9762;&#x91CF;&#x4E0A;&#x6267;&#x884C;&#x4E00;&#x4E9B;&#x64CD;&#x4F5C;&#xFF0C;&#x6BD4;&#x5982;&#x83B7;&#x53D6;&#x957F;&#x5EA6;&#x3001;&#x8BBF;&#x95EE;&#x5176;&#x4E2D;&#x67D0;&#x4E2A;&#x5B57;&#x7B26;&#x7B49;&#xFF0C;&#x90A3;&#x9700;&#x8981;&#x5C06;&#x5176;&#x8F6C;&#x6362;&#x4E3A; String &#x5BF9;&#x8C61;&#x3002;&#x6240;&#x5E78;&#xFF0C;&#x5728;&#x5FC5;&#x8981;&#x65F6;&#x8BED;&#x8A00;&#x4F1A;&#x81EA;&#x52A8;&#x628A;&#x5B57;&#x7B26;&#x4E32;&#x5B57;&#x9762;&#x91CF;&#x8F6C;&#x6362;&#x6210;&#x4E00;&#x4E2A; String &#x5BF9;&#x8C61;&#xFF0C;&#x5982;<code>strPrimitive.length</code>&#x65F6;&#xFF0C;&#x4E5F;&#x5C31;&#x662F;&#x8BF4;&#x4F60;&#x5E76;&#x4E0D;&#x9700;&#x8981;&#x663E;&#x5F0F;&#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x5BF9;&#x8C61;&#x3002;JavaScript &#x793E;&#x533A;&#x4E2D;&#x7684;&#x5927;&#x591A;&#x6570;&#x4EBA;&#x90FD;&#x8BA4;&#x4E3A;&#x80FD;&#x4F7F;&#x7528;&#x6587;&#x5B57;&#x5F62;&#x5F0F;&#x65F6;&#x5C31;&#x4E0D;&#x8981;&#x4F7F;&#x7528;&#x6784;&#x9020;&#x5F62;&#x5F0F;&#x3002;&#x540C;&#x6837;&#x7684;&#x4E8B;&#x4E5F;&#x4F1A;&#x53D1;&#x751F;&#x5728;&#x6570;&#x503C;&#x5B57;&#x9762;&#x91CF;&#x4E0A;&#xFF0C;&#x5982;42.359.toFixed(2)&#x3002;</p>
+<p>null &#x548C; undefined &#x6CA1;&#x6709;&#x5BF9;&#x5E94;&#x7684;&#x6784;&#x9020;&#x5F62;&#x5F0F;&#xFF0C;&#x5B83;&#x4EEC;&#x53EA;&#x6709;&#x6587;&#x5B57;&#x5F62;&#x5F0F;&#x3002;&#x76F8;&#x53CD;&#xFF0C;Date &#x53EA;&#x6709;&#x6784;&#x9020;&#xFF0C;&#x6CA1;&#x6709;&#x6587;&#x5B57;&#x5F62;&#x5F0F;&#x3002;</p>
+<p>&#x5BF9;&#x4E8E; Object&#x3001;Array&#x3001;Function &#x548C; RegExp(&#x6B63;&#x5219;&#x8868;&#x8FBE;&#x5F0F;)&#x6765;&#x8BF4;&#xFF0C;&#x65E0;&#x8BBA;&#x4F7F;&#x7528;&#x6587;&#x5B57;&#x5F62;&#x5F0F;&#x8FD8;&#x662F;&#x6784;&#x9020;&#x5F62;&#x5F0F;&#xFF0C;&#x5B83;&#x4EEC;&#x90FD;&#x662F;&#x5BF9;&#x8C61;&#xFF0C;&#x4E0D;&#x662F;&#x5B57;&#x9762;&#x91CF;&#x3002;&#x5728;&#x67D0;&#x4E9B;&#x60C5;&#x51B5;&#x4E0B;&#xFF0C;&#x76F8;&#x6BD4;&#x7528;&#x6587;&#x5B57;&#x5F62;&#x5F0F;&#x521B;&#x5EFA;&#x5BF9;&#x8C61;&#xFF0C;&#x6784;&#x9020;&#x5F62;&#x5F0F;&#x53EF;&#x4EE5;&#x63D0;&#x4F9B;&#x4E00;&#x4E9B;&#x989D;&#x5916;&#x9009;&#x9879;&#x3002;&#x7531;&#x4E8E;&#x8FD9;&#x4E24;&#x79CD;&#x5F62;&#x5F0F;&#x90FD;&#x53EF;&#x4EE5;&#x521B;&#x5EFA;&#x5BF9;&#x8C61;&#xFF0C;&#x6240;&#x4EE5;&#x6211;&#x4EEC;&#x9996;&#x9009;&#x66F4;&#x7B80;&#x5355;&#x7684;&#x6587;&#x5B57;&#x5F62;&#x5F0F;&#x3002;&#x5EFA;&#x8BAE;&#x53EA;&#x5728;&#x9700;&#x8981;&#x90A3;&#x4E9B;&#x989D;&#x5916;&#x9009;&#x9879;&#x65F6;&#x4F7F;&#x7528;&#x6784;&#x9020;&#x5F62;&#x5F0F;&#x3002;</p>
+<p>Error &#x5BF9;&#x8C61;&#x5F88;&#x5C11;&#x5728;&#x4EE3;&#x7801;&#x4E2D;&#x663E;&#x5F0F;&#x521B;&#x5EFA;&#xFF0C;&#x4E00;&#x822C;&#x662F;&#x5728;&#x629B;&#x51FA;&#x5F02;&#x5E38;&#x65F6;&#x88AB;&#x81EA;&#x52A8;&#x521B;&#x5EFA;&#x3002;&#x4E5F;&#x53EF;&#x4EE5;&#x4F7F;&#x7528; new Error(..) &#x8FD9;&#x79CD;&#x6784;&#x9020;&#x5F62;&#x5F0F;&#x6765;&#x521B;&#x5EFA;&#xFF0C;&#x4E0D;&#x8FC7;&#x4E00;&#x822C;&#x6765;&#x8BF4;&#x7528;&#x4E0D;&#x7740;&#x3002;</p>
+<h3 id="&#x5185;&#x5BB9;"><a name="&#x5185;&#x5BB9;" class="anchor-navigation-ex-anchor" href="#&#x5185;&#x5BB9;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x5185;&#x5BB9;</h3>
+<p>&#x5F15;&#x64CE;&#x5185;&#x90E8;&#xFF0C;&#x5BF9;&#x8C61;&#x503C;&#x7684;&#x5B58;&#x50A8;&#x65B9;&#x5F0F;&#x662F;&#x591A;&#x79CD;&#x591A;&#x6837;&#x7684;&#xFF0C;&#x4E00;&#x822C;&#x5E76;&#x4E0D;&#x4F1A;&#x5B58;&#x5728;&#x5BF9;&#x8C61;&#x5BB9;&#x5668;&#x5185;&#x90E8;&#x3002;&#x5B58;&#x50A8;&#x5728;&#x5BF9;&#x8C61;&#x5BB9;&#x5668;&#x5185;&#x90E8;&#x7684;&#x662F;&#x8FD9;&#x4E9B;&#x5C5E;&#x6027;&#x7684;&#x540D;&#x79F0;&#xFF0C;&#x5B83;&#x4EEC;&#x5C31;&#x50CF;&#x6307;&#x9488;&#x4E00;&#x6837;&#xFF0C;&#x6307;&#x5411;&#x8FD9;&#x4E9B;&#x503C;&#x771F;&#x6B63;&#x7684;&#x5B58;&#x50A8;&#x4F4D;&#x7F6E;&#x3002;</p>
+<h4 id="&#x5C5E;&#x6027;&#x540D;"><a name="&#x5C5E;&#x6027;&#x540D;" class="anchor-navigation-ex-anchor" href="#&#x5C5E;&#x6027;&#x540D;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x5C5E;&#x6027;&#x540D;</h4>
+<p>.a &#x8BED;&#x6CD5;&#x901A;&#x5E38;&#x88AB;&#x79F0;&#x4E3A;&#x201C;&#x5C5E;&#x6027;&#x8BBF;&#x95EE;&#x201D;&#xFF0C;[&quot;a&quot;] &#x8BED;&#x6CD5;&#x901A;&#x5E38;&#x88AB;&#x79F0;&#x4E3A;&#x201C;&#x952E;&#x8BBF;&#x95EE;&#x201D;&#x3002;&#x8FD9;&#x4E24;&#x79CD;&#x8BED;&#x6CD5;&#x7684;&#x4E3B;&#x8981;&#x533A;&#x522B;&#x5728;&#x4E8E; . &#x64CD;&#x4F5C;&#x7B26;&#x8981;&#x6C42;&#x5C5E;&#x6027;&#x540D;&#x6EE1;&#x8DB3;&#x6807;&#x8BC6;&#x7B26;&#x7684;&#x547D;&#x540D;&#x89C4;&#x8303;&#xFF0C;&#x800C; [&quot;..&quot;] &#x8BED;&#x6CD5;&#x53EF;&#x4EE5;&#x63A5;&#x53D7;&#x4EFB;&#x610F; UTF-8/Unicode &#x5B57;&#x7B26;&#x4E32;&#x4F5C;&#x4E3A;&#x5C5E;&#x6027;&#x540D;&#x3002;</p>
+<p><strong>&#x5728;&#x5BF9;&#x8C61;&#x4E2D;&#xFF0C;&#x5C5E;&#x6027;&#x540D;&#x6C38;&#x8FDC;&#x90FD;&#x662F;&#x5B57;&#x7B26;&#x4E32;&#x3002;</strong>&#x5982;&#x679C;&#x4F60;&#x4F7F;&#x7528; string(&#x5B57;&#x9762;&#x91CF;)&#x4EE5;&#x5916;&#x7684;&#x5176;&#x4ED6;&#x503C;&#x4F5C;&#x4E3A;&#x5C5E;&#x6027;&#x540D;&#xFF0C;&#x90A3;&#x5B83;&#x9996;&#x5148;&#x4F1A;&#x88AB;&#x8F6C;&#x6362;&#x4E3A;&#x4E00;&#x4E2A;&#x5B57;&#x7B26;&#x4E32;&#x3002;&#x5373;&#x4F7F;&#x662F;&#x6570;&#x5B57;&#x4E5F;&#x4E0D;&#x4F8B;&#x5916;&#x3002;</p>
+<p><strong>ES6</strong> &#x589E;&#x52A0;&#x4E86;&#x53EF;&#x8BA1;&#x7B97;&#x5C5E;&#x6027;&#x540D;&#xFF0C;&#x53EF;&#x4EE5;&#x5728;&#x6587;&#x5B57;&#x5F62;&#x5F0F;&#x4E2D;&#x4F7F;&#x7528; [] &#x5305;&#x88F9;&#x4E00;&#x4E2A;&#x8868;&#x8FBE;&#x5F0F;&#x6765;&#x5F53;&#x4F5C;&#x5C5E;&#x6027;&#x540D;&#xFF0C;&#x53EF;&#x8BA1;&#x7B97;&#x5C5E;&#x6027;&#x540D;&#x6700;&#x5E38;&#x7528;&#x7684;&#x573A;&#x666F;&#x53EF;&#x80FD;&#x662F; ES6 &#x7684;&#x7B26;&#x53F7;(Symbol)&#x3002;</p>
+<h4 id="&#x6570;&#x7EC4;"><a name="&#x6570;&#x7EC4;" class="anchor-navigation-ex-anchor" href="#&#x6570;&#x7EC4;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x6570;&#x7EC4;</h4>
+<p>&#x4F60;&#x53EF;&#x4EE5;&#x628A;&#x6570;&#x7EC4;&#x5F53;&#x4F5C;&#x4E00;&#x4E2A;&#x666E;&#x901A;&#x7684;&#x952E; / &#x503C;&#x5BF9;&#x8C61;&#x6765;&#x4F7F;&#x7528;&#xFF0C;&#x5E76;&#x4E14;&#x4E0D;&#x6DFB;&#x52A0;&#x4EFB;&#x4F55;&#x6570;&#x503C;&#x7D22;&#x5F15;&#xFF0C;&#x4F46;&#x662F;&#x8FD9;&#x5E76;&#x4E0D;&#x662F;&#x4E00;&#x4E2A;&#x597D;&#x4E3B;&#x610F;&#x3002;&#x6570;&#x7EC4;&#x548C;&#x666E;&#x901A;&#x7684;&#x5BF9;&#x8C61;&#x90FD;&#x6839;&#x636E;&#x5176;&#x5BF9;&#x5E94;&#x7684;&#x884C;&#x4E3A;&#x548C;&#x7528;&#x9014;&#x8FDB;&#x884C;&#x4E86;&#x4F18;&#x5316;&#xFF0C;&#x6240;&#x4EE5;&#x6700;&#x597D;&#x53EA;&#x7528;&#x5BF9;&#x8C61;&#x6765;&#x5B58;&#x50A8;&#x952E; / &#x503C;&#x5BF9;&#xFF0C;&#x53EA;&#x7528;&#x6570;&#x7EC4;&#x6765;&#x5B58;&#x50A8;&#x6570;&#x503C;&#x4E0B;&#x6807; / &#x503C;&#x5BF9;&#x3002;</p>
+<p><strong>&#x5982;&#x679C;&#x4F60;&#x8BD5;&#x56FE;&#x5411;&#x6570;&#x7EC4;&#x6DFB;&#x52A0;&#x4E00;&#x4E2A;&#x5C5E;&#x6027;&#xFF0C;&#x4F46;&#x662F;&#x5C5E;&#x6027;&#x540D;&#x201C;&#x770B;&#x8D77;&#x6765;&#x201D;&#x50CF;&#x4E00;&#x4E2A;&#x6570;&#x5B57;&#xFF0C;&#x90A3;&#x5B83;&#x4F1A;&#x53D8;&#x6210;&#x4E00;&#x4E2A;&#x6570;&#x503C;&#x4E0B;&#x6807;(&#x56E0;&#x6B64;&#x4F1A;&#x4FEE;&#x6539;&#x6570;&#x7EC4;&#x7684;&#x5185;&#x5BB9;&#x800C;&#x4E0D;&#x662F;&#x6DFB;&#x52A0;&#x4E00;&#x4E2A;&#x5C5E;&#x6027;)</strong></p>
+<pre><code>var myArray = [ &quot;foo&quot;, 42, &quot;bar&quot; ];
+myArray.baz = &quot;baz&quot;;
+myArray.length; // 3
+myArray.baz; // &quot;baz&quot;
+
+var myArray = [ &quot;foo&quot;, 42, &quot;bar&quot; ];
+myArray[&quot;3&quot;] = &quot;baz&quot;;
+myArray.length; // 4
+myArray[3]; // &quot;baz&quot;
+</code></pre><h4 id="&#x590D;&#x5236;&#x5BF9;&#x8C61;"><a name="&#x590D;&#x5236;&#x5BF9;&#x8C61;" class="anchor-navigation-ex-anchor" href="#&#x590D;&#x5236;&#x5BF9;&#x8C61;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x590D;&#x5236;&#x5BF9;&#x8C61;</h4>
+<p><strong>&#x590D;&#x5236;&#x7684;&#x51E0;&#x4E2A;&#x95EE;&#x9898;&#xFF1A;</strong></p>
+<ul>
+<li>&#x5BF9;&#x4E8E;&#x6DF1;&#x590D;&#x5236;&#x6765;&#x8BF4;&#xFF0C;&#x5982;&#x679C;&#x5C5E;&#x6027;&#x95F4;&#x5B58;&#x5728;&#x5FAA;&#x73AF;&#x5F15;&#x7528;&#xFF0C;&#x8FD9;&#x6837;&#x5C31;&#x53EF;&#x80FD;&#x5BFC;&#x81F4;&#x6B7B;&#x5FAA;&#x73AF;&#x3002;&#x6211;&#x4EEC;&#x662F;&#x5E94;&#x8BE5;&#x68C0;&#x6D4B;&#x5FAA;&#x73AF;&#x5F15;&#x7528;&#x5E76;&#x7EC8;&#x6B62;&#x5FAA;&#x73AF;(&#x4E0D;&#x590D;&#x5236;&#x6DF1;&#x5C42;&#x5143;&#x7D20;)?&#x8FD8;&#x662F;&#x5E94;&#x5F53;&#x76F4;&#x63A5;&#x62A5;&#x9519;&#x6216;&#x8005;&#x662F;&#x9009;&#x62E9;&#x5176;&#x4ED6;&#x65B9;&#x6CD5;?</li>
+<li>&#x6211;&#x4EEC;&#x8FD8;&#x4E0D;&#x786E;&#x5B9A;&#x201C;&#x590D;&#x5236;&#x201D;&#x4E00;&#x4E2A;&#x51FD;&#x6570;&#x610F;&#x5473;&#x7740;&#x4EC0;&#x4E48;&#x3002;&#x6709;&#x4E9B;&#x4EBA;&#x4F1A;&#x901A;&#x8FC7; toString() &#x6765;&#x5E8F;&#x5217;&#x5316;&#x4E00;&#x4E2A;&#x51FD;&#x6570;&#x7684;&#x6E90;&#x4EE3;&#x7801;(&#x4F46;&#x662F;&#x7ED3;&#x679C;&#x53D6;&#x51B3;&#x4E8E; JavaScript &#x7684;&#x5177;&#x4F53;&#x5B9E;&#x73B0;&#xFF0C;&#x800C;&#x4E14;&#x4E0D;&#x540C;&#x7684;&#x5F15;&#x64CE;&#x5BF9;&#x4E8E;&#x4E0D;&#x540C;&#x7C7B;&#x578B;&#x7684;&#x51FD;&#x6570;&#x5904;&#x7406;&#x65B9;&#x5F0F;&#x5E76;&#x4E0D;&#x5B8C;&#x5168;&#x76F8;&#x540C;)&#x3002;</li>
+</ul>
+<p>&#x5BF9;&#x4E8E; JSON &#x5B89;&#x5168;(&#x53EF;&#x4EE5;&#x88AB;&#x5E8F;&#x5217;&#x5316;&#x4E3A;&#x4E00;&#x4E2A; JSON &#x5B57;&#x7B26;&#x4E32;&#x5E76;&#x4E14;&#x53EF;&#x4EE5;&#x6839;&#x636E;&#x8FD9;&#x4E2A;&#x5B57;&#x7B26;&#x4E32;&#x89E3;&#x6790;&#x51FA;&#x4E00;&#x4E2A;&#x7ED3;&#x6784;&#x548C;&#x503C;&#x5B8C;&#x5168;&#x4E00;&#x6837;&#x7684;&#x5BF9;&#x8C61;)&#x7684;&#x5BF9;&#x8C61;&#x6765;&#x8BF4;&#xFF0C;&#x6709;&#x4E00;&#x79CD;&#x5DE7;&#x5999;&#x7684;&#x590D;&#x5236;&#x65B9;&#x6CD5;:
+<code>var newObj = JSON.parse( JSON.stringify( someObj ) );</code>&#x3002;&#x8FD9;&#x79CD;&#x65B9;&#x6CD5;&#x9700;&#x8981;&#x4FDD;&#x8BC1;&#x5BF9;&#x8C61;&#x662F; JSON &#x5B89;&#x5168;&#x7684;&#xFF0C;&#x6240;&#x4EE5;&#x53EA;&#x9002;&#x7528;&#x4E8E;&#x90E8;&#x5206;&#x60C5;&#x51B5;&#x3002;</p>
+<p>&#x76F8;&#x6BD4;&#x6DF1;&#x590D;&#x5236;&#xFF0C;&#x6D45;&#x590D;&#x5236;&#x975E;&#x5E38;&#x6613;&#x61C2;&#x5E76;&#x4E14;&#x95EE;&#x9898;&#x8981;&#x5C11;&#x5F97;&#x591A;&#xFF0C;ES6 &#x5B9A;&#x4E49;&#x4E86; Object.assign(..) &#x65B9;&#x6CD5;&#x6765;&#x5B9E;&#x73B0;&#x6D45;&#x590D;&#x5236;&#x3002;Object.assign(..) &#x65B9;&#x6CD5;&#x7684;&#x7B2C;&#x4E00;&#x4E2A;&#x53C2;&#x6570;&#x662F;&#x76EE;&#x6807;&#x5BF9;&#x8C61;&#xFF0C;&#x4E4B;&#x540E;&#x8FD8;&#x53EF;&#x4EE5;&#x8DDF;&#x4E00;&#x4E2A;&#x6216;&#x591A;&#x4E2A;&#x6E90;&#x5BF9;&#x8C61;&#x3002;&#x5B83;&#x4F1A;&#x904D;&#x5386;&#x4E00;&#x4E2A;&#x6216;&#x591A;&#x4E2A;&#x6E90;&#x5BF9;&#x8C61;&#x7684;&#x6240;&#x6709;&#x53EF;&#x679A;&#x4E3E;&#x5E76;&#x628A;&#x5B83;&#x4EEC;&#x590D;&#x5236;(&#x4F7F;&#x7528; = &#x64CD;&#x4F5C;&#x7B26;&#x8D4B;&#x503C;)&#x5230;&#x76EE;&#x6807;&#x5BF9;&#x8C61;&#xFF0C;&#x6700;&#x540E;&#x8FD4;&#x56DE;&#x76EE;&#x6807;&#x5BF9;&#x8C61;&#x3002;</p>
+<h4 id="&#x5C5E;&#x6027;&#x63CF;&#x8FF0;&#x7B26;"><a name="&#x5C5E;&#x6027;&#x63CF;&#x8FF0;&#x7B26;" class="anchor-navigation-ex-anchor" href="#&#x5C5E;&#x6027;&#x63CF;&#x8FF0;&#x7B26;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x5C5E;&#x6027;&#x63CF;&#x8FF0;&#x7B26;</h4>
+<p>&#x4ECE; ES5 &#x5F00;&#x59CB;&#xFF0C;&#x6240;&#x6709;&#x7684;&#x5C5E;&#x6027;&#x90FD;&#x5177;&#x5907;&#x4E86;&#x5C5E;&#x6027;&#x63CF;&#x8FF0;&#x7B26;&#x3002;&#x666E;&#x901A;&#x7684;&#x5BF9;&#x8C61;&#x5C5E;&#x6027;&#x5BF9;&#x5E94;&#x7684;&#x5C5E;&#x6027;/&#x6570;&#x636E;&#x63CF;&#x8FF0;&#x7B26;&#x5305;&#x542B;&#x4E00;&#x4E2A;value&#xFF0C;writable(&#x53EF;&#x5199;)&#x3001; enumerable(&#x53EF;&#x679A;&#x4E3E;)&#x548C; configurable(&#x53EF;&#x914D;&#x7F6E;)&#x3002;</p>
+<pre><code>var myObject = {
+    a:2
+};
+Object.getOwnPropertyDescriptor( myObject, &quot;a&quot; );
+// {
+// value: 2,
+// writable: true,
+// enumerable: true,
+// configurable: true
+// }
+</code></pre><h5 id="&#x8BBE;&#x7F6E;&#x5C5E;&#x6027;"><a name="&#x8BBE;&#x7F6E;&#x5C5E;&#x6027;" class="anchor-navigation-ex-anchor" href="#&#x8BBE;&#x7F6E;&#x5C5E;&#x6027;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x8BBE;&#x7F6E;&#x5C5E;&#x6027;</h5>
+<p>&#x5728;&#x521B;&#x5EFA;&#x666E;&#x901A;&#x5C5E;&#x6027;&#x65F6;&#x5C5E;&#x6027;&#x63CF;&#x8FF0;&#x7B26;&#x4F1A;&#x4F7F;&#x7528;&#x9ED8;&#x8BA4;&#x503C;&#xFF0C;&#x6211;&#x4EEC;&#x4E5F;&#x53EF;&#x4EE5;&#x4F7F;&#x7528; Object.defineProperty(..) &#x6765;&#x6DFB;&#x52A0;&#x4E00;&#x4E2A;&#x65B0;&#x5C5E;&#x6027;&#x6216;&#x8005;&#x4FEE;&#x6539;&#x4E00;&#x4E2A;&#x5DF2;&#x6709;&#x5C5E;&#x6027;(&#x5982;&#x679C;&#x5B83;&#x662F; configurable)&#x5E76;&#x5BF9;&#x7279;&#x6027;&#x8FDB;&#x884C;&#x8BBE;&#x7F6E;&#x3002;&#x7136;&#x800C;&#xFF0C;&#x4E00;&#x822C;&#x6765;&#x8BF4;&#x4F60;&#x4E0D;&#x4F1A;&#x4F7F;&#x7528;&#x8FD9;&#x79CD;&#x65B9;&#x5F0F;&#xFF0C;&#x9664;&#x975E;&#x4F60;&#x60F3;&#x4FEE;&#x6539;&#x5C5E;&#x6027;&#x63CF;&#x8FF0;&#x7B26;&#x3002;</p>
+<pre><code>var myObject = {};
+Object.defineProperty( myObject, &quot;a&quot;, {
+      value: 2,
+        writable: true,
+        configurable: true,
+        enumerable: true
+    }
+);
+myObject.a; // 2
+</code></pre><p><strong>Writable</strong></p>
+<p>writable &#x51B3;&#x5B9A;&#x662F;&#x5426;&#x53EF;&#x4EE5;&#x4FEE;&#x6539;&#x5C5E;&#x6027;&#x7684;&#x503C;&#x3002;&#x82E5;&#x4E3A;false&#xFF0C;&#x6211;&#x4EEC;&#x5BF9;&#x4E8E;&#x5C5E;&#x6027;&#x503C;&#x7684;&#x4FEE;&#x6539;&#x4F1A;&#x9759;&#x9ED8;&#x5931;&#x8D25;(silently failed)&#x3002;&#x5982;&#x679C;&#x5728;&#x4E25;&#x683C;&#x6A21;&#x5F0F;&#x4E0B;&#xFF0C;&#x8FD9;&#x79CD;&#x65B9;&#x6CD5;&#x4F1A;&#x629B;&#x51FA;TypeError&#x9519;&#x8BEF;&#x3002;</p>
+<p>&#x7B80;&#x5355;&#x6765;&#x8BF4;&#xFF0C;&#x4F60;&#x53EF;&#x4EE5;&#x628A; writable:false &#x770B;&#x4F5C;&#x662F;&#x5C5E;&#x6027;&#x4E0D;&#x53EF;&#x6539;&#x53D8;&#xFF0C;&#x76F8;&#x5F53;&#x4E8E;&#x4F60;&#x5B9A;&#x4E49;&#x4E86;&#x4E00;&#x4E2A;&#x7A7A;&#x64CD;&#x4F5C; setter&#x3002;&#x4E25;&#x683C;&#x6765;&#x8BF4;&#xFF0C;&#x5982;&#x679C;&#x8981;&#x548C; writable:false &#x4E00;&#x81F4;&#x7684;&#x8BDD;&#xFF0C;&#x4F60;&#x7684; setter &#x88AB;&#x8C03;&#x7528;&#x65F6;&#x5E94;&#x5F53;&#x629B;&#x51FA;&#x4E00;&#x4E2A; TypeError &#x9519;&#x8BEF;&#x3002;</p>
+<p><strong>Configurable</strong></p>
+<p>&#x628A; configurable &#x4FEE;&#x6539;&#x6210; false &#x662F;&#x5355;&#x5411;&#x64CD;&#x4F5C;&#xFF0C;&#x65E0;&#x6CD5;&#x64A4;&#x9500;&#x3002;</p>
+<p>&#x53EA;&#x8981;&#x5C5E;&#x6027;&#x662F;&#x53EF;&#x914D;&#x7F6E;&#x7684;&#xFF0C;&#x5C31;&#x53EF;&#x4EE5;&#x4F7F;&#x7528; defineProperty(..) &#x65B9;&#x6CD5;&#x6765;&#x4FEE;&#x6539;&#x5C5E;&#x6027;&#x63CF;&#x8FF0;&#x7B26;&#x3002;&#x4E0D;&#x7BA1;&#x662F;&#x4E0D;&#x662F;&#x5904;&#x4E8E;&#x4E25;&#x683C;&#x6A21;&#x5F0F;&#xFF0C;&#x5C1D;&#x8BD5;&#x4FEE;&#x6539;&#x4E00;&#x4E2A;&#x4E0D;&#x53EF;&#x914D;&#x7F6E;&#x7684;&#x5C5E;&#x6027;&#x63CF;&#x8FF0;&#x7B26;&#x90FD;&#x4F1A;&#x51FA;&#x9519;&#x3002;&#x4E00;&#x4E2A;&#x5C0F;&#x5C0F;&#x7684;&#x4F8B;&#x5916;:&#x5373;&#x4FBF;&#x5C5E;&#x6027;&#x662F; configurable:false&#xFF0C;&#x6211;&#x4EEC;&#x8FD8;&#x662F;&#x53EF;&#x4EE5;&#x628A; writable &#x7684;&#x72B6;&#x6001;&#x7531; true &#x6539;&#x4E3A; false&#xFF0C;&#x4F46;&#x662F;&#x65E0;&#x6CD5;&#x7531; false &#x6539;&#x4E3A; true&#x3002;</p>
+<p>&#x9664;&#x4E86;&#x65E0;&#x6CD5;&#x4FEE;&#x6539;&#xFF0C;configurable:false &#x8FD8;&#x4F1A;&#x7981;&#x6B62;&#x5220;&#x9664;&#x8FD9;&#x4E2A;&#x5C5E;&#x6027;&#x3002;&#x5982;&#x679C;&#x5BF9;&#x8C61;&#x7684;&#x67D0;&#x4E2A;&#x5C5E;&#x6027;&#x662F;&#x67D0;&#x4E2A;&#x5BF9;&#x8C61; / &#x51FD;&#x6570;&#x7684;&#x6700;&#x540E;&#x4E00;&#x4E2A;&#x5F15;&#x7528;&#x8005;&#xFF0C;&#x5BF9;&#x8FD9;&#x4E2A;&#x5C5E;&#x6027;&#x6267;&#x884C; delete &#x64CD;&#x4F5C;&#x4E4B;&#x540E;&#xFF0C;&#x8FD9;&#x4E2A;&#x672A;&#x5F15;&#x7528;&#x7684;&#x5BF9;&#x8C61; / &#x51FD;&#x6570;&#x5C31;&#x53EF;&#x4EE5;&#x88AB;&#x5783;&#x573E;&#x56DE;&#x6536;&#x3002;&#x4F46;&#x662F;&#xFF0C;&#x4E0D;&#x8981;&#x628A; delete &#x770B;&#x4F5C;&#x4E00;&#x4E2A;&#x91CA;&#x653E;&#x5185;&#x5B58;&#x7684;&#x5DE5;&#x5177;(&#x5C31;&#x50CF; C/C++ &#x4E2D;&#x90A3;&#x6837;)&#xFF0C;&#x5B83;&#x5C31;&#x662F;&#x4E00;&#x4E2A;&#x5220;&#x9664;&#x5BF9;&#x8C61;&#x5C5E;&#x6027;&#x7684;&#x64CD;&#x4F5C;&#xFF0C;&#x4EC5;&#x6B64;&#x800C;&#x5DF2;&#x3002;</p>
+<p><strong>Enumerable</strong></p>
+<p>&#x8FD9;&#x4E2A;&#x63CF;&#x8FF0;&#x7B26;&#x63A7;&#x5236;&#x7684;&#x662F;&#x5C5E;&#x6027;&#x662F;&#x5426;&#x4F1A;&#x51FA;&#x73B0;&#x5728;&#x5BF9;&#x8C61;&#x7684;&#x5C5E;&#x6027;&#x679A;&#x4E3E;&#x4E2D;&#xFF0C;&#x6BD4;&#x5982;&#x8BF4; for..in &#x5FAA;&#x73AF;&#x3002;&#x5982;&#x679C;&#x628A; enumerable &#x8BBE;&#x7F6E;&#x6210; false&#xFF0C;&#x8FD9;&#x4E2A;&#x5C5E;&#x6027;&#x5C31;&#x4E0D;&#x4F1A;&#x51FA;&#x73B0;&#x5728;&#x679A;&#x4E3E;&#x4E2D;&#xFF0C;&#x4F46;&#x4ECD;&#x7136;&#x53EF;&#x4EE5;&#x6B63;&#x5E38;&#x8BBF;&#x95EE;&#x5B83;&#x3002;</p>
+<p>&#x7528;&#x6237;&#x5B9A;&#x4E49;&#x7684;&#x6240;&#x6709;&#x7684;&#x666E;&#x901A;&#x5C5E;&#x6027;&#x9ED8;&#x8BA4;&#x90FD;&#x662F; enumerable&#x3002;</p>
+<h4 id="&#x4E0D;&#x53D8;&#x6027;"><a name="&#x4E0D;&#x53D8;&#x6027;" class="anchor-navigation-ex-anchor" href="#&#x4E0D;&#x53D8;&#x6027;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x4E0D;&#x53D8;&#x6027;</h4>
+<p>&#x6709;&#x65F6;&#x5019;&#x4F60;&#x4F1A;&#x5E0C;&#x671B;&#x5C5E;&#x6027;&#x6216;&#x8005;&#x5BF9;&#x8C61;&#x662F;&#x4E0D;&#x53EF;&#x6539;&#x53D8;(&#x65E0;&#x8BBA;&#x6709;&#x610F;&#x8FD8;&#x662F;&#x65E0;&#x610F;)&#x3002;</p>
+<h5 id="&#x6240;&#x6709;&#x7684;&#x65B9;&#x6CD5;&#x521B;&#x5EFA;&#x7684;&#x90FD;&#x662F;&#x6D45;&#x4E0D;&#x53D8;&#x6027;"><a name="&#x6240;&#x6709;&#x7684;&#x65B9;&#x6CD5;&#x521B;&#x5EFA;&#x7684;&#x90FD;&#x662F;&#x6D45;&#x4E0D;&#x53D8;&#x6027;" class="anchor-navigation-ex-anchor" href="#&#x6240;&#x6709;&#x7684;&#x65B9;&#x6CD5;&#x521B;&#x5EFA;&#x7684;&#x90FD;&#x662F;&#x6D45;&#x4E0D;&#x53D8;&#x6027;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x6240;&#x6709;&#x7684;&#x65B9;&#x6CD5;&#x521B;&#x5EFA;&#x7684;&#x90FD;&#x662F;&#x6D45;&#x4E0D;&#x53D8;&#x6027;</h5>
+<pre><code>myImmutableObject.foo; // [1,2,3]
+myImmutableObject.foo.push( 4 );
+myImmutableObject.foo; // [1,2,3,4]
+&#x5047;&#x8BBE;&#x4EE3;&#x7801;&#x4E2D;&#x7684; myImmutableObject &#x5DF2;&#x7ECF;&#x88AB;&#x521B;&#x5EFA;&#x800C;&#x4E14;&#x662F;&#x4E0D;&#x53EF;&#x53D8;&#x7684;&#xFF0C;&#x4F46;&#x662F;&#x4E3A;&#x4E86;&#x4FDD;&#x62A4;&#x5B83;&#x7684;&#x5185;&#x5BB9; myImmutableObject.foo&#xFF0C;&#x4F60;&#x8FD8;&#x9700;&#x8981;&#x8BA9; foo &#x4E5F;&#x4E0D;&#x53EF;&#x53D8;&#x3002;
+</code></pre><h5 id="&#x5BF9;&#x8C61;&#x4E0D;&#x53D8;&#x7684;&#x65B9;&#x6CD5;"><a name="&#x5BF9;&#x8C61;&#x4E0D;&#x53D8;&#x7684;&#x65B9;&#x6CD5;" class="anchor-navigation-ex-anchor" href="#&#x5BF9;&#x8C61;&#x4E0D;&#x53D8;&#x7684;&#x65B9;&#x6CD5;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x5BF9;&#x8C61;&#x4E0D;&#x53D8;&#x7684;&#x65B9;&#x6CD5;</h5>
+<p><strong>&#x5BF9;&#x8C61;&#x5E38;&#x91CF;</strong></p>
+<p>&#x7ED3;&#x5408; writable:false &#x548C; configurable:false &#x5C31;&#x53EF;&#x4EE5;&#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x771F;&#x6B63;&#x7684;&#x5E38;&#x91CF;&#x5C5E;&#x6027;(&#x4E0D;&#x53EF;&#x4FEE;&#x6539;&#x3001; &#x91CD;&#x5B9A;&#x4E49;&#x6216;&#x8005;&#x5220;&#x9664;)&#x3002;</p>
+<p><strong>&#x7981;&#x6B62;&#x6269;&#x5C55;</strong></p>
+<p>&#x82E5;&#x60F3;&#x7981;&#x6B62;&#x4E00;&#x4E2A;&#x5BF9;&#x8C61;&#x6DFB;&#x52A0;&#x65B0;&#x5C5E;&#x6027;&#x5E76;&#x4E14;&#x4FDD;&#x7559;&#x5DF2;&#x6709;&#x5C5E;&#x6027;&#xFF0C;&#x53EF;&#x4EE5;&#x4F7F;&#x7528; Object.prevent Extensions(..)&#x3002;</p>
+<p><strong>&#x5BC6;&#x5C01;</strong></p>
+<p>Object.seal(..) &#x4F1A;&#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x201C;&#x5BC6;&#x5C01;&#x201D;&#x7684;&#x5BF9;&#x8C61;&#xFF0C;&#x8FD9;&#x4E2A;&#x65B9;&#x6CD5;&#x5B9E;&#x9645;&#x4E0A;&#x4F1A;&#x5728;&#x4E00;&#x4E2A;&#x73B0;&#x6709;&#x5BF9;&#x8C61;&#x4E0A;&#x8C03;&#x7528; Object.preventExtensions(..) &#x5E76;&#x628A;&#x6240;&#x6709;&#x73B0;&#x6709;&#x5C5E;&#x6027;&#x6807;&#x8BB0;&#x4E3A; configurable:false&#x3002;
+&#x6240;&#x4EE5;&#xFF0C;&#x5BC6;&#x5C01;&#x4E4B;&#x540E;&#x4E0D;&#x4EC5;&#x4E0D;&#x80FD;&#x6DFB;&#x52A0;&#x65B0;&#x5C5E;&#x6027;&#xFF0C;&#x4E5F;&#x4E0D;&#x80FD;&#x91CD;&#x65B0;&#x914D;&#x7F6E;&#x6216;&#x8005;&#x5220;&#x9664;&#x4EFB;&#x4F55;&#x73B0;&#x6709;&#x5C5E;&#x6027;(&#x867D;&#x7136;&#x53EF;&#x4EE5;&#x4FEE;&#x6539;&#x5C5E;&#x6027;&#x7684;&#x503C;)&#x3002;</p>
+<p><strong>&#x51BB;&#x7ED3;</strong></p>
+<p>Object.freeze(..) &#x4F1A;&#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x51BB;&#x7ED3;&#x5BF9;&#x8C61;&#xFF0C;&#x8FD9;&#x4E2A;&#x65B9;&#x6CD5;&#x4F1A;&#x5728;&#x4E00;&#x4E2A;&#x73B0;&#x6709;&#x5BF9;&#x8C61;&#x4E0A;&#x8C03;&#x7528; Object.seal(..) &#x5E76;&#x628A;&#x6240;&#x6709;&#x201C;&#x6570;&#x636E;&#x8BBF;&#x95EE;&#x201D;&#x5C5E;&#x6027;&#x6807;&#x8BB0;&#x4E3A; writable:false&#xFF0C;&#x8FD9;&#x6837;&#x5C31;&#x65E0;&#x6CD5;&#x4FEE;&#x6539;&#x5B83;&#x4EEC;&#x7684;&#x503C;&#x3002;</p>
+<p>&#x4F60;&#x53EF;&#x4EE5;&#x201C;&#x6DF1;&#x5EA6;&#x51BB;&#x7ED3;&#x201D;&#x4E00;&#x4E2A;&#x5BF9;&#x8C61;&#xFF0C;&#x5177;&#x4F53;&#x65B9;&#x6CD5;&#x4E3A;&#xFF0C;&#x9996;&#x5148;&#x5728;&#x8FD9;&#x4E2A;&#x5BF9;&#x8C61;&#x4E0A;&#x8C03;&#x7528; Object.freeze(..)&#xFF0C; &#x7136;&#x540E;&#x904D;&#x5386;&#x5B83;&#x5F15;&#x7528;&#x7684;&#x6240;&#x6709;&#x5BF9;&#x8C61;&#x5E76;&#x5728;&#x8FD9;&#x4E9B;&#x5BF9;&#x8C61;&#x4E0A;&#x8C03;&#x7528; Object.freeze(..)&#x3002;&#x4F46;&#x662F;&#x4E00;&#x5B9A;&#x8981;&#x5C0F;&#x5FC3;&#xFF0C;&#x56E0;&#x4E3A;&#x8FD9;&#x6837;&#x505A;&#x6709;&#x53EF;&#x80FD;&#x4F1A;&#x5728;&#x65E0;&#x610F;&#x4E2D;&#x51BB;&#x7ED3;&#x5176;&#x4ED6;(&#x5171;&#x4EAB;)&#x5BF9;&#x8C61;&#x3002;</p>
+<h4 id="get&#x4E0E;put"><a name="get&#x4E0E;put" class="anchor-navigation-ex-anchor" href="#get&#x4E0E;put"><i class="fa fa-link" aria-hidden="true"></i></a>Get&#x4E0E;Put</h4>
+<p>&#x8BED;&#x8A00;&#x89C4;&#x8303;&#x4E2D;&#xFF0C;myObject.a &#x5728; myObject &#x4E0A;&#x5B9E;&#x9645;&#x4E0A;&#x662F;&#x5B9E;&#x73B0;&#x4E86; [[Get]] &#x64CD;&#x4F5C;(&#x6709;&#x70B9;&#x50CF;&#x51FD;&#x6570;&#x8C03;&#x7528;:<a href="">[Get]</a>)&#x3002;1&#x3001;&#x9996;&#x5148;&#x5728;&#x5BF9;&#x8C61;&#x4E2D;&#x67E5;&#x627E;&#x662F;&#x5426;&#x6709;&#x540D;&#x79F0;&#x76F8;&#x540C;&#x7684;&#x5C5E;&#x6027;&#xFF0C; &#x5982;&#x679C;&#x627E;&#x5230;&#x5C31;&#x4F1A;&#x8FD4;&#x56DE;&#x8FD9;&#x4E2A;&#x5C5E;&#x6027;&#x7684;&#x503C;&#x3002;2&#x3001;&#x5982;&#x679C;&#x6CA1;&#x6709;&#x627E;&#x5230;&#x540D;&#x79F0;&#x76F8;&#x540C;&#x7684;&#x5C5E;&#x6027;&#xFF0C;&#x4F1A;&#x5728;&#x539F;&#x578B;&#x94FE;&#x4E0A;&#x67E5;&#x627E;&#x3002;3&#x3001;&#x5982;&#x679C;&#x59CB;&#x7EC8;&#x90FD;&#x6CA1;&#x6709;&#x627E;&#x5230;&#x540D;&#x79F0;&#x76F8;&#x540C;&#x7684;&#x5C5E;&#x6027;&#xFF0C;[[Get]] &#x64CD;&#x4F5C;&#x4F1A;&#x8FD4;&#x56DE;&#x503C; undefined&#x3002;</p>
+<p>[[Put]] &#x88AB;&#x89E6;&#x53D1;&#x65F6;&#xFF0C;&#x5B9E;&#x9645;&#x7684;&#x884C;&#x4E3A;&#x53D6;&#x51B3;&#x4E8E;&#x8BB8;&#x591A;&#x56E0;&#x7D20;&#xFF0C;&#x5305;&#x62EC;&#x5BF9;&#x8C61;&#x4E2D;&#x662F;&#x5426;&#x5DF2;&#x7ECF;&#x5B58;&#x5728;&#x8FD9;&#x4E2A;&#x5C5E;&#x6027;(&#x8FD9;&#x662F;&#x6700;&#x91CD;&#x8981;&#x7684;&#x56E0;&#x7D20;)&#x3002;</p>
+<p>&#x5982;&#x679C;&#x5DF2;&#x7ECF;&#x5B58;&#x5728;&#x8FD9;&#x4E2A;&#x5C5E;&#x6027;&#xFF0C;[[Put]] &#x7B97;&#x6CD5;&#x5927;&#x81F4;&#x4F1A;&#x68C0;&#x67E5;&#x4E0B;&#x9762;&#x8FD9;&#x4E9B;&#x5185;&#x5BB9;&#x3002;</p>
+<ol>
+<li>&#x5C5E;&#x6027;&#x662F;&#x5426;&#x662F;&#x8BBF;&#x95EE;&#x63CF;&#x8FF0;&#x7B26;&#xFF1F;&#x5982;&#x679C;&#x662F;&#x5E76;&#x4E14;&#x5B58;&#x5728;setter&#x5C31;&#x8C03;&#x7528;setter&#x3002;</li>
+<li>&#x5C5E;&#x6027;&#x7684;&#x6570;&#x636E;&#x63CF;&#x8FF0;&#x7B26;&#x4E2D;writable&#x662F;&#x5426;&#x662F;false&#xFF1F;&#x5982;&#x679C;&#x662F;&#xFF0C;&#x5728;&#x975E;&#x4E25;&#x683C;&#x6A21;&#x5F0F;&#x4E0B;&#x9759;&#x9ED8;&#x5931;&#x8D25;&#xFF0C;&#x5728;&#x4E25;&#x683C;&#x6A21;&#x5F0F;&#x4E0B;&#x629B;&#x51FA; TypeError &#x5F02;&#x5E38;&#x3002;</li>
+<li>&#x5982;&#x679C;&#x90FD;&#x4E0D;&#x662F;&#xFF0C;&#x5C06;&#x8BE5;&#x503C;&#x8BBE;&#x7F6E;&#x4E3A;&#x5C5E;&#x6027;&#x7684;&#x503C;&#x3002;</li>
+</ol>
+<h4 id="getter&#x4E0E;setter"><a name="getter&#x4E0E;setter" class="anchor-navigation-ex-anchor" href="#getter&#x4E0E;setter"><i class="fa fa-link" aria-hidden="true"></i></a>getter&#x4E0E;setter</h4>
+<p>&#x5F53;&#x4F60;&#x7ED9;&#x4E00;&#x4E2A;&#x5C5E;&#x6027;&#x5B9A;&#x4E49; getter&#x3001;setter &#x6216;&#x8005;&#x4E24;&#x8005;&#x90FD;&#x6709;&#x65F6;&#xFF0C;&#x8FD9;&#x4E2A;&#x5C5E;&#x6027;&#x4F1A;&#x88AB;&#x5B9A;&#x4E49;&#x4E3A;&#x201C;&#x8BBF;&#x95EE;&#x63CF;&#x8FF0;&#x7B26;&#x201D;&#x3002;&#x5BF9;&#x8BBF;&#x95EE;&#x63CF;&#x8FF0;&#x7B26;&#xFF0C;JavaScript &#x4F1A;&#x5FFD;&#x7565;&#x5B83;&#x4EEC;&#x7684; value &#x548C; writable &#x7279;&#x6027;&#xFF0C;&#x53D6;&#x800C;&#x4EE3;&#x4E4B;&#x7684;&#x662F;&#x5173;&#x5FC3; set &#x548C; get(&#x8FD8;&#x6709; configurable &#x548C; enumerable)&#x7279;&#x6027;&#x3002;</p>
+<pre><code>var myObject = {
+    // &#x7ED9; a &#x5B9A;&#x4E49;&#x4E00;&#x4E2A; getter
+    get a() {
+        return 2;
+    }
+};
+Object.defineProperty(
+    myObject, // &#x76EE;&#x6807;&#x5BF9;&#x8C61;
+    &quot;b&quot;, // &#x5C5E;&#x6027;&#x540D;
+    {
+        // &#x63CF;&#x8FF0;&#x7B26;
+        // &#x7ED9; b &#x8BBE;&#x7F6E;&#x4E00;&#x4E2A; getter
+        get: function(){ return this.a * 2 },
+        // &#x786E;&#x4FDD; b &#x4F1A;&#x51FA;&#x73B0;&#x5728;&#x5BF9;&#x8C61;&#x7684;&#x5C5E;&#x6027;&#x5217;&#x8868;&#x4E2D;
+    enumerable: true
+  }
+);
+myObject.a; // 2
+myObject.b; // 4
+</code></pre><p>&#x4E0A;&#x8FF0;&#x4E24;&#x8005;getter&#x5B9A;&#x4E49;&#x65B9;&#x6CD5;&#xFF0C;&#x90FD;&#x4F1A;&#x5728;&#x5BF9;&#x8C61;&#x4E2D;&#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x4E0D;&#x5305;&#x542B;&#x503C;&#x7684;&#x5C5E;&#x6027;&#xFF0C;&#x5BF9;&#x8FD9;&#x4E2A;&#x5C5E;&#x6027;&#x7684;&#x8BBF;&#x95EE;&#x4F1A;&#x81EA;&#x52A8;&#x8C03;&#x7528;&#x9690;&#x85CF;&#x51FD;&#x6570;&#x3002;</p>
+<p>&#x901A;&#x5E38;&#x6765;&#x8BF4;getter&#x548C;setter&#x662F;&#x6210;&#x5BF9;&#x51FA;&#x73B0;&#x7684;&#x3002;</p>
+<h4 id="&#x5224;&#x65AD;&#x5C5E;&#x6027;&#x5B58;&#x5728;"><a name="&#x5224;&#x65AD;&#x5C5E;&#x6027;&#x5B58;&#x5728;" class="anchor-navigation-ex-anchor" href="#&#x5224;&#x65AD;&#x5C5E;&#x6027;&#x5B58;&#x5728;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x5224;&#x65AD;&#x5C5E;&#x6027;&#x5B58;&#x5728;</h4>
+<p>&#x5982; myObject.a &#x7684;&#x5C5E;&#x6027;&#x8BBF;&#x95EE;&#x8FD4;&#x56DE;&#x503C;&#x53EF;&#x80FD;&#x662F; undefined&#xFF0C;&#x4F46;&#x662F;&#x8FD9;&#x4E2A;&#x503C;&#x6709;&#x53EF;&#x80FD;&#x662F;&#x5C5E;&#x6027;&#x4E2D;&#x5B58;&#x50A8;&#x7684; undefined&#xFF0C;&#x4E5F;&#x53EF;&#x80FD;&#x662F;&#x56E0;&#x4E3A;&#x5C5E;&#x6027;&#x4E0D;&#x5B58;&#x5728;&#x6240;&#x4EE5;&#x8FD4;&#x56DE; undefined&#x3002;&#x90A3;&#x4E48;&#x5982;&#x4F55;&#x533A;&#x5206;&#x8FD9;&#x4E24;&#x79CD;&#x60C5;&#x51B5;&#x5462;?</p>
+<p><strong>&#x5224;&#x65AD;&#x5BF9;&#x8C61;&#x662F;&#x5426;&#x5177;&#x6709;&#x67D0;&#x5C5E;&#x6027;</strong></p>
+<p>in &#x64CD;&#x4F5C;&#x7B26;&#x4F1A;&#x68C0;&#x67E5;&#x5C5E;&#x6027;&#x662F;&#x5426;&#x5728;&#x5BF9;&#x8C61;&#x53CA;&#x5176; [[Prototype]] <strong>&#x539F;&#x578B;&#x94FE;</strong>&#x4E2D;&#x3002;hasOwnProperty(..) &#x53EA;&#x4F1A;&#x68C0;&#x67E5;&#x5C5E;&#x6027;&#x662F;&#x5426;&#x5728; myObject &#x5BF9;&#x8C61;&#x4E2D;&#x3002;</p>
+<pre><code>var myObject = {
+    a:2
+};
+(&quot;a&quot; in myObject); // true
+(&quot;b&quot; in myObject); // false
+myObject.hasOwnProperty( &quot;a&quot; ); // true
+myObject.hasOwnProperty( &quot;b&quot; ); // false
+</code></pre><p>&#x6240;&#x6709;&#x7684;&#x666E;&#x901A;&#x5BF9;&#x8C61;&#x90FD;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;&#x5BF9;&#x4E8E; Object.prototype &#x7684;&#x59D4;&#x6258;&#x6765;&#x8BBF;&#x95EE; hasOwnProperty(..)&#xFF0C; &#x4F46;&#x662F;&#x6709;&#x7684;&#x5BF9;&#x8C61;&#x53EF;&#x80FD;&#x6CA1;&#x6709;&#x8FDE;&#x63A5;&#x5230;Object.prototype, &#x5982;&#x901A;&#x8FC7;Object.create(null)&#x3002;&#x5728;&#x8FD9;&#x79CD;&#x60C5;&#x51B5;&#x4E0B;&#xFF0C;&#x5F62;&#x5982; myObejct.hasOwnProperty(..) &#x5C31;&#x4F1A;&#x5931;&#x8D25;&#x3002;&#x8FD9;&#x65F6;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;Object.prototype.hasOwnProperty.call(myObject,&quot;a&quot;)&#x8FDB;&#x884C;&#x5224;&#x65AD;&#x3002;</p>
+<h5 id="&#x679A;&#x4E3E;"><a name="&#x679A;&#x4E3E;" class="anchor-navigation-ex-anchor" href="#&#x679A;&#x4E3E;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x679A;&#x4E3E;</h5>
+<p>&#x201C;&#x53EF;&#x679A;&#x4E3E;&#x201D;&#x5C31;&#x76F8;&#x5F53;&#x4E8E;&#x201C;&#x53EF;&#x4EE5;&#x51FA;&#x73B0;&#x5728;&#x5BF9;&#x8C61;&#x5C5E;&#x6027;&#x7684;&#x904D;&#x5386;&#x4E2D;&#x201D;&#x3002;&#x5728;&#x6570;&#x7EC4;&#x4E0A;&#x5E94;&#x7528; for..in &#x5FAA;&#x73AF;&#x6709;&#x65F6;&#x4F1A;&#x4EA7;&#x751F;&#x51FA;&#x4EBA;&#x610F;&#x6599;&#x7684;&#x7ED3;&#x679C;&#xFF0C;&#x56E0;&#x4E3A;&#x8FD9;&#x79CD;&#x679A;&#x4E3E;&#x4E0D;&#x4EC5;&#x4F1A;&#x5305;&#x542B;&#x6240;&#x6709;&#x6570;&#x503C;&#x7D22;&#x5F15;&#xFF0C;&#x8FD8;&#x4F1A;<strong>&#x5305;&#x542B;&#x6240;&#x6709;&#x53EF;&#x679A;&#x4E3E;&#x5C5E;&#x6027;(&#x5305;&#x542B;&#x539F;&#x578B;&#x94FE;)</strong>&#x3002;&#x6700;&#x597D;&#x53EA;&#x5728;&#x5BF9;&#x8C61;&#x4E0A;&#x5E94;&#x7528; for..in &#x5FAA;&#x73AF;&#xFF0C;&#x5982;&#x679C;&#x8981;&#x904D;&#x5386;&#x6570;&#x7EC4;&#x5C31;&#x4F7F;&#x7528;&#x4F20;&#x7EDF;&#x7684; for &#x5FAA;&#x73AF;&#x6765;&#x904D;&#x5386;&#x6570;&#x503C;&#x7D22;&#x5F15;&#x3002;</p>
+<p><strong>&#x5224;&#x65AD;&#x662F;&#x5426;&#x53EF;&#x679A;&#x4E3E;</strong></p>
+<p>propertyIsEnumerable(..) &#x4F1A;&#x68C0;&#x67E5;&#x7ED9;&#x5B9A;&#x7684;&#x5C5E;&#x6027;&#x540D;&#x662F;&#x5426;&#x76F4;&#x63A5;&#x5B58;&#x5728;&#x4E8E;&#x5BF9;&#x8C61;&#x4E2D;(&#x800C;&#x4E0D;&#x662F;&#x5728;&#x539F;&#x578B;&#x94FE;&#x4E0A;)&#x5E76;&#x4E14;&#x6EE1;&#x8DB3; enumerable:true&#x3002;</p>
+<p><strong>&#x83B7;&#x53D6;&#x5BF9;&#x8C61;&#x5C5E;&#x6027;&#x5217;&#x8868;</strong></p>
+<p>Object.keys(..) &#x4F1A;&#x8FD4;&#x56DE;&#x4E00;&#x4E2A;&#x6570;&#x7EC4;&#xFF0C;&#x5305;&#x542B;&#x6240;&#x6709;&#x53EF;&#x679A;&#x4E3E;&#x5C5E;&#x6027;&#xFF0C;Object.getOwnPropertyNames(..) &#x4F1A;&#x8FD4;&#x56DE;&#x4E00;&#x4E2A;&#x6570;&#x7EC4;&#xFF0C;&#x5305;&#x542B;&#x6240;&#x6709;&#x5C5E;&#x6027;&#xFF0C;&#x65E0;&#x8BBA;&#x5B83;&#x4EEC;&#x662F;&#x5426;&#x53EF;&#x679A;&#x4E3E;&#x3002;&#x5B83;&#x4EEC;&#x53EA;&#x83B7;&#x53D6;&#x5BF9;&#x8C61;&#x76F4;&#x63A5;&#x5C5E;&#x6027;&#x3002;</p>
+<h4 id="&#x904D;&#x5386;"><a name="&#x904D;&#x5386;" class="anchor-navigation-ex-anchor" href="#&#x904D;&#x5386;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x904D;&#x5386;</h4>
+<h5 id="&#x51E0;&#x4E2A;&#x51FD;&#x6570;"><a name="&#x51E0;&#x4E2A;&#x51FD;&#x6570;" class="anchor-navigation-ex-anchor" href="#&#x51E0;&#x4E2A;&#x51FD;&#x6570;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x51E0;&#x4E2A;&#x51FD;&#x6570;</h5>
+<ul>
+<li>forEach(..) &#x4F1A;&#x904D;&#x5386;&#x6570;&#x7EC4;&#x4E2D;&#x7684;&#x6240;&#x6709;&#x503C;&#x5E76;&#x5FFD;&#x7565;&#x56DE;&#x8C03;&#x51FD;&#x6570;&#x7684;&#x8FD4;&#x56DE;&#x503C;&#x3002;</li>
+<li>every(..) &#x4F1A;&#x4E00;&#x76F4;&#x8FD0;&#x884C;&#x76F4;&#x5230;&#x5BF9;&#x8C61;&#x56DE;&#x8C03;&#x51FD;&#x6570;&#x8FD4;&#x56DE; false(&#x6216;&#x8005;&#x201C;&#x5047;&#x201D;&#x503C;)&#x3002;</li>
+<li>some(..) &#x4F1A;&#x4E00;&#x76F4;&#x8FD0;&#x884C;&#x76F4;&#x5230;&#x56DE;&#x8C03;&#x51FD;&#x6570;&#x8FD4;&#x56DE; true(&#x6216;&#x8005; &#x201C;&#x771F;&#x201D;&#x503C;)&#x3002;</li>
+</ul>
+<p>every(..) &#x548C; some(..) &#x4E2D;&#x7279;&#x6B8A;&#x7684;&#x8FD4;&#x56DE;&#x503C;&#x548C;&#x666E;&#x901A; for &#x5FAA;&#x73AF;&#x4E2D;&#x7684; break &#x8BED;&#x53E5;&#x7C7B;&#x4F3C;&#xFF0C;&#x5B83;&#x4EEC;&#x4F1A;&#x63D0;&#x524D;&#x7EC8;&#x6B62;&#x904D;&#x5386;&#x3002;</p>
+<h5 id="&#x5BF9;&#x8C61;&#x904D;&#x5386;"><a name="&#x5BF9;&#x8C61;&#x904D;&#x5386;" class="anchor-navigation-ex-anchor" href="#&#x5BF9;&#x8C61;&#x904D;&#x5386;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x5BF9;&#x8C61;&#x904D;&#x5386;</h5>
+<p>&#x904D;&#x5386;&#x5BF9;&#x8C61;&#x5C5E;&#x6027;&#x65F6;&#x7684;&#x987A;&#x5E8F;&#x662F;&#x4E0D;&#x786E;&#x5B9A;&#x7684;&#xFF0C;&#x5728;&#x4E0D;&#x540C;&#x7684; JavaScript &#x5F15;&#x64CE;&#x4E2D;&#x53EF;&#x80FD;&#x4E0D;&#x4E00;&#x6837;&#x3002;&#x56E0;&#x6B64;&#xFF0C;&#x5728;&#x4E0D;&#x540C;&#x7684;&#x73AF;&#x5883;&#x4E2D;&#x9700;&#x8981;&#x4FDD;&#x8BC1;&#x4E00;&#x81F4;&#x6027;&#x65F6;&#xFF0C;&#x4E00;&#x5B9A;&#x4E0D;&#x8981;&#x76F8;&#x4FE1;&#x4EFB;&#x4F55;&#x89C2;&#x5BDF;&#x5230;&#x7684;&#x987A;&#x5E8F;&#xFF0C;&#x5B83;&#x4EEC;&#x662F;&#x4E0D;&#x53EF;&#x9760;&#x7684;&#x3002;</p>
+<h5 id="forof-&#x5FAA;&#x73AF;"><a name="forof-&#x5FAA;&#x73AF;" class="anchor-navigation-ex-anchor" href="#forof-&#x5FAA;&#x73AF;"><i class="fa fa-link" aria-hidden="true"></i></a>for..of &#x5FAA;&#x73AF;</h5>
+<p>ES6 &#x589E;&#x52A0;&#x4E86;&#x4E00;&#x79CD;&#x7528;&#x6765;&#x904D;&#x5386;&#x6570;&#x7EC4;&#x7684; for..of &#x5FAA;&#x73AF;&#x8BED;&#x6CD5;&#x3002;for..of &#x4F1A;&#x5BFB;&#x627E;&#x5185;&#x7F6E;&#x6216;&#x8005;&#x81EA;&#x5B9A;&#x4E49;&#x7684; @@iterator &#x5BF9;&#x8C61;&#x5E76;&#x8C03;&#x7528;&#x5B83;&#x7684; next() &#x65B9;&#x6CD5;&#x6765;&#x904D;&#x5386;&#x6570;&#x636E;&#x503C;&#x3002;</p>
+<pre><code>var myArray = [ 1, 2, 3 ];
+var it = myArray[Symbol.iterator]();
+it.next();
+// { value:1, done:false } it.next();
+// { value:2, done:false } it.next();
+// { value:3, done:false } it.next();
+// { done:true }
+</code></pre><p>&#x548C;&#x6570;&#x7EC4;&#x4E0D;&#x540C;&#xFF0C;&#x666E;&#x901A;&#x7684;&#x5BF9;&#x8C61;&#x6CA1;&#x6709;&#x5185;&#x7F6E;&#x7684; @@iterator&#xFF0C;&#x6240;&#x4EE5;&#x65E0;&#x6CD5;&#x81EA;&#x52A8;&#x5B8C;&#x6210; for..of &#x904D;&#x5386;&#x3002;&#x4F60;&#x53EF;&#x4EE5;&#x7ED9;&#x4EFB;&#x4F55;&#x60F3;&#x904D;&#x5386;&#x7684;&#x5BF9;&#x8C61;&#x5B9A;&#x4E49; @@iterator&#x3002;</p>
+<pre><code>var myObject = {
+    a: 2,
+    b: 3
+};
+Object.defineProperty( myObject, Symbol.iterator, {
+    enumerable: false,
+    writable: false,
+    configurable: true,
+    value: function() {
+        var o = this;
+        var idx = 0;
+        var ks = Object.keys( o );
+        return {
+            next: function() {
+                return {
+          value: o[ks[idx++]],
+          done: (idx &gt; ks.length)
+        };
+            }
+        };
+    }
+});
+// &#x624B;&#x52A8;&#x904D;&#x5386; myObject
+var it = myObject[Symbol.iterator]();
+it.next(); // { value:2, done:false }
+it.next(); // { value:3, done:false }
+it.next(); // { value:undefined, done:true }
+</code></pre><h2 id="&#x7C7B;"><a name="&#x7C7B;" class="anchor-navigation-ex-anchor" href="#&#x7C7B;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x7C7B;</h2>
+<h3 id="&#x4EC0;&#x4E48;&#x662F;&#x7C7B;"><a name="&#x4EC0;&#x4E48;&#x662F;&#x7C7B;" class="anchor-navigation-ex-anchor" href="#&#x4EC0;&#x4E48;&#x662F;&#x7C7B;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x4EC0;&#x4E48;&#x662F;&#x7C7B;</h3>
+<p>&#x7C7B; / &#x7EE7;&#x627F;&#x63CF;&#x8FF0;&#x4E86;&#x4E00;&#x79CD;&#x4EE3;&#x7801;&#x7684;&#x7EC4;&#x7EC7;&#x7ED3;&#x6784;&#x5F62;&#x5F0F;&#x2014;&#x2014;&#x4E00;&#x79CD;&#x5728;&#x8F6F;&#x4EF6;&#x4E2D;&#x5BF9;&#x771F;&#x5B9E;&#x4E16;&#x754C;&#x4E2D;&#x95EE;&#x9898;&#x9886;&#x57DF;&#x7684;&#x5EFA;&#x6A21;&#x65B9;&#x6CD5;&#x3002;&#x597D;&#x7684;&#x8BBE;&#x8BA1;&#x5C31;&#x662F;&#x628A;&#x6570;&#x636E;&#x4EE5;&#x53CA;&#x548C;&#x5B83;&#x76F8;&#x5173;&#x7684;&#x884C;&#x4E3A;&#x6253;&#x5305;(&#x6216;&#x8005;&#x8BF4;&#x5C01;&#x88C5;)&#x8D77;&#x6765;&#x3002;&#x6211;&#x4EEC;&#x8FD8;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;&#x7C7B;&#x5BF9;&#x6570;&#x636E;&#x7ED3;&#x6784;&#x8FDB;&#x884C;&#x5206;&#x7C7B;&#x3002;</p>
+<p>&#x7C7B;&#x7406;&#x8BBA;&#x5F3A;&#x70C8;&#x5EFA;&#x8BAE;&#x7236;&#x7C7B;&#x548C;&#x5B50;&#x7C7B;&#x4F7F;&#x7528;&#x76F8;&#x540C;&#x7684;&#x65B9;&#x6CD5;&#x540D;&#x6765;&#x8868;&#x793A;&#x7279;&#x5B9A;&#x7684;&#x884C;&#x4E3A;&#xFF0C;&#x4ECE;&#x800C;&#x8BA9;&#x5B50;&#x7C7B;&#x91CD;&#x5199;&#x7236;&#x7C7B;&#x3002; &#x800C;&#x5728; JavaScript &#x4EE3;&#x7801;&#x4E2D;&#x8FD9;&#x6837;&#x505A;&#x4F1A;&#x964D;&#x4F4E;&#x4EE3;&#x7801;&#x7684;&#x53EF;&#x8BFB;&#x6027;&#x548C;&#x5065;&#x58EE;&#x6027;&#x3002;&#x5176;&#x4ED6;&#x8BED;&#x8A00;&#x4E2D;&#x7684;&#x7C7B;&#x548C; JavaScript &#x4E2D;&#x7684;&#x201C;&#x7C7B;&#x201D;&#x5E76;&#x4E0D;&#x4E00;&#x6837;&#xFF0C;JavaScript &#x5E76;&#x4E0D;&#x4F1A;(&#x50CF;&#x7C7B;&#x90A3;&#x6837;)&#x81EA;&#x52A8;&#x521B;&#x5EFA;&#x5BF9;&#x8C61;&#x7684;&#x526F;&#x672C;&#x3002;</p>
+<h3 id="&#x51E0;&#x4E2A;&#x6982;&#x5FF5;"><a name="&#x51E0;&#x4E2A;&#x6982;&#x5FF5;" class="anchor-navigation-ex-anchor" href="#&#x51E0;&#x4E2A;&#x6982;&#x5FF5;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x51E0;&#x4E2A;&#x6982;&#x5FF5;</h3>
+<ul>
+<li>&#x6784;&#x9020;&#x51FD;&#x6570;&#x3002;&#x7C7B;&#x5B9E;&#x4F8B;&#x662F;&#x7531;&#x4E00;&#x4E2A;&#x7279;&#x6B8A;&#x7684;&#x7C7B;&#x65B9;&#x6CD5;&#x6784;&#x9020;&#x7684;&#xFF0C;&#x8FD9;&#x4E2A;&#x65B9;&#x6CD5;&#x540D;&#x901A;&#x5E38;&#x548C;&#x7C7B;&#x540D;&#x76F8;&#x540C;&#xFF0C;&#x88AB;&#x79F0;&#x4E3A;&#x6784;&#x9020;&#x51FD;&#x6570;&#x3002;</li>
+<li>&#x5B9E;&#x4F8B;&#x5316;&#x3002;&#x4F20;&#x7EDF;&#x7684;&#x7C7B;&#x88AB;&#x5B9E;&#x4F8B;&#x5316;&#x65F6;&#xFF0C;&#x5B83;&#x7684;&#x884C;&#x4E3A;&#x4F1A;&#x88AB;&#x590D;&#x5236;&#x5230;&#x5B9E;&#x4F8B;&#x4E2D;&#x3002;</li>
+<li>&#x7EE7;&#x627F;&#x3002;&#x5728;&#x9762;&#x5411;&#x7C7B;&#x7684;&#x8BED;&#x8A00;&#x4E2D;&#xFF0C;&#x4F60;&#x53EF;&#x4EE5;&#x5148;&#x5B9A;&#x4E49;&#x4E00;&#x4E2A;&#x7C7B;&#xFF0C;&#x7136;&#x540E;&#x5B9A;&#x4E49;&#x4E00;&#x4E2A;&#x7EE7;&#x627F;&#x524D;&#x8005;&#x7684;&#x7C7B;&#xFF0C;&#x540E;&#x8005;&#x901A;&#x5E38;&#x88AB;&#x79F0;&#x4E3A;&#x201C;&#x5B50;&#x7C7B;&#x201D;&#xFF0C;&#x524D;&#x8005;&#x901A;&#x5E38;&#x88AB;&#x79F0;&#x4E3A;&#x201C;&#x7236;&#x7C7B;&#x201D;&#x3002;&#x7C7B;&#x88AB;&#x7EE7;&#x627F;&#x65F6;&#xFF0C;&#x884C;&#x4E3A;&#x4F1A;&#x88AB;&#x590D;&#x5236;&#x5230;&#x5B50;&#x7C7B;&#x4E2D;&#x3002;</li>
+<li>&#x591A;&#x6001;&#x3002;&#x7236;&#x7C7B;&#x7684;&#x901A;&#x7528;&#x884C;&#x4E3A;&#x53EF;&#x4EE5;&#x88AB;&#x5B50;&#x7C7B;&#x7528;&#x66F4;&#x7279;&#x6B8A;&#x7684;&#x884C;&#x4E3A;&#x91CD;&#x5199;&#x3002;&#x76F8;&#x5BF9;&#x591A;&#x6001;&#x6027;&#x5141;&#x8BB8;&#x6211;&#x4EEC;&#x4ECE;&#x91CD;&#x5199;&#x884C;&#x4E3A;&#x4E2D;&#x5F15;&#x7528;&#x57FA;&#x7840;&#x884C;&#x4E3A;&#x3002;&#x591A;&#x6001;&#x770B;&#x8D77;&#x6765;&#x4F3C;&#x4E4E;&#x662F;&#x4ECE;&#x5B50;&#x7C7B;&#x5F15;&#x7528;&#x7236;&#x7C7B;&#xFF0C;&#x4F46;&#x662F;&#x672C;&#x8D28;&#x4E0A;&#x5F15;&#x7528;&#x7684;&#x5176;&#x5B9E;&#x662F;&#x590D;&#x5236;&#x7684;&#x7ED3;&#x679C;&#x3002;</li>
+</ul>
+<h3 id="&#x591A;&#x91CD;&#x7EE7;&#x627F;&#x95EE;&#x9898;"><a name="&#x591A;&#x91CD;&#x7EE7;&#x627F;&#x95EE;&#x9898;" class="anchor-navigation-ex-anchor" href="#&#x591A;&#x91CD;&#x7EE7;&#x627F;&#x95EE;&#x9898;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x591A;&#x91CD;&#x7EE7;&#x627F;&#x95EE;&#x9898;</h3>
+<p>&#x94BB;&#x77F3;&#x95EE;&#x9898;&#x7684;&#x53D8;&#x79CD;&#xFF1A;&#x5728;&#x94BB;&#x77F3;&#x95EE;&#x9898;&#x4E2D;&#xFF0C;&#x5B50;&#x7C7B; D &#x7EE7;&#x627F;&#x81EA;&#x4E24;&#x4E2A;&#x7236;&#x7C7B;(B &#x548C; C)&#xFF0C;&#x8FD9;&#x4E24;&#x4E2A;&#x7236;&#x7C7B;&#x90FD;&#x7EE7;&#x627F;&#x81EA; A&#x3002;&#x5982;&#x679C; A &#x4E2D;&#x6709; drive() &#x65B9;&#x6CD5;&#x5E76;&#x4E14; B &#x548C; C &#x90FD;&#x91CD;&#x5199;&#x4E86;&#x8FD9;&#x4E2A;&#x65B9;&#x6CD5; (&#x591A;&#x6001;)&#xFF0C;&#x90A3;&#x5F53; D &#x5F15;&#x7528; drive() &#x65F6;&#x5E94;&#x5F53;&#x9009;&#x62E9;&#x54EA;&#x4E2A;&#x7248;&#x672C;&#x5462;(B:drive() &#x8FD8;&#x662F; C:drive())?</p>
+<p>JavaScript &#x672C;&#x8EAB;&#x5E76;&#x4E0D;&#x63D0;&#x4F9B;&#x201C;&#x591A;&#x91CD;&#x7EE7;&#x627F;&#x201D;&#x529F;&#x80FD;&#x3002;</p>
+<h3 id="&#x6DF7;&#x5165;"><a name="&#x6DF7;&#x5165;" class="anchor-navigation-ex-anchor" href="#&#x6DF7;&#x5165;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x6DF7;&#x5165;</h3>
+<p>&#x5728;&#x7EE7;&#x627F;&#x6216;&#x8005;&#x5B9E;&#x4F8B;&#x5316;&#x65F6;&#xFF0C;JavaScript &#x7684;&#x5BF9;&#x8C61;&#x673A;&#x5236;&#x5E76;&#x4E0D;&#x4F1A;&#x81EA;&#x52A8;&#x6267;&#x884C;&#x590D;&#x5236;&#x884C;&#x4E3A;&#xFF0C;&#x5B83;&#x4EEC;&#x4F1A;&#x88AB;&#x5173;&#x8054;&#x8D77;&#x6765;&#x3002;</p>
+<p>&#x6DF7;&#x5165;&#x662F;Javascript&#x4E2D;&#x6A21;&#x62DF;&#x7C7B;&#x7684;&#x590D;&#x5236;&#x884C;&#x4E3A;&#x7684;&#x4E00;&#x79CD;&#x65B9;&#x6CD5;&#xFF0C;&#x5206;&#x4E3A;&#x663E;&#x793A;&#x6DF7;&#x5165;&#x548C;&#x9690;&#x5F0F;&#x6DF7;&#x5165;&#x3002;&#x4F46;&#x662F;&#x901A;&#x5E38;&#x4F1A;&#x4EA7;&#x751F;&#x4E11;&#x964B;&#x5E76;&#x4E14;&#x8106;&#x5F31;&#x7684;&#x8BED;&#x6CD5;&#xFF0C;&#x6BD4;&#x5982;&#x663E;&#x5F0F;&#x4F2A;&#x591A;&#x6001;(OtherObj.methodName.call(this, ...))&#xFF0C;&#x8FD9;&#x4F1A;&#x8BA9;&#x4EE3;&#x7801;&#x66F4;&#x52A0;&#x96BE;&#x61C2;&#x5E76;&#x4E14;&#x96BE;&#x4EE5;&#x7EF4;&#x62A4;&#x3002;</p>
+<p>&#x663E;&#x5F0F;&#x6DF7;&#x5165;&#x5B9E;&#x9645;&#x4E0A;&#x65E0;&#x6CD5;&#x5B8C;&#x5168;&#x6A21;&#x62DF;&#x7C7B;&#x7684;&#x590D;&#x5236;&#x884C;&#x4E3A;&#xFF0C;&#x56E0;&#x4E3A;&#x5BF9;&#x8C61;(&#x548C;&#x51FD;&#x6570;!&#x522B;&#x5FD8;&#x4E86;&#x51FD;&#x6570;&#x4E5F;&#x662F;&#x5BF9;&#x8C61;)&#x53EA;&#x80FD;&#x590D;&#x5236;&#x5F15;&#x7528;&#xFF0C;&#x65E0;&#x6CD5;&#x590D;&#x5236;&#x88AB;&#x5F15;&#x7528;&#x7684;&#x5BF9;&#x8C61;&#x6216;&#x8005;&#x51FD;&#x6570;&#x672C;&#x8EAB;&#x3002;</p>
+<h2 id="&#x539F;&#x578B;"><a name="&#x539F;&#x578B;" class="anchor-navigation-ex-anchor" href="#&#x539F;&#x578B;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x539F;&#x578B;</h2>
+<h3 id="prototype"><a name="prototype" class="anchor-navigation-ex-anchor" href="#prototype"><i class="fa fa-link" aria-hidden="true"></i></a>[[Prototype]]</h3>
+<h4 id="&#x4EC0;&#x4E48;&#x662F;prototype"><a name="&#x4EC0;&#x4E48;&#x662F;prototype" class="anchor-navigation-ex-anchor" href="#&#x4EC0;&#x4E48;&#x662F;prototype"><i class="fa fa-link" aria-hidden="true"></i></a>&#x4EC0;&#x4E48;&#x662F;[[Prototype]]</h4>
+<p>JavaScript &#x4E2D;&#x7684;&#x5BF9;&#x8C61;&#x6709;&#x4E00;&#x4E2A;&#x7279;&#x6B8A;&#x7684; <strong>[[Prototype]] &#x5185;&#x7F6E;&#x5C5E;&#x6027;</strong>&#xFF0C;&#x662F;&#x5BF9;&#x4E8E;&#x5176;&#x4ED6;&#x5BF9;&#x8C61;&#x7684;&#x5F15;&#x7528;&#x3002;&#x51E0;&#x4E4E;&#x6240;&#x6709;&#x7684;&#x5BF9;&#x8C61;&#x5728;&#x521B;&#x5EFA;&#x65F6; [[Prototype]] &#x5C5E;&#x6027;&#x90FD;&#x4F1A;&#x88AB;&#x8D4B;&#x4E88;&#x4E00;&#x4E2A;&#x975E;&#x7A7A;&#x7684;&#x503C;&#x3002;</p>
+<p>&#x5F53;&#x4F60;&#x8BD5;&#x56FE;&#x5F15;&#x7528;&#x5BF9;&#x8C61;&#x7684;&#x5C5E;&#x6027;&#x65F6;&#x4F1A;&#x89E6;&#x53D1;[[Get]] &#x64CD;&#x4F5C;&#xFF0C;&#x5BF9;&#x4E8E;&#x9ED8;&#x8BA4;&#x7684; [[Get]] &#x64CD;&#x4F5C;&#xFF0C;&#x5982;&#x679C;&#x65E0;&#x6CD5;&#x5728;&#x5BF9;&#x8C61;&#x672C;&#x8EAB;&#x627E;&#x5230;&#x9700;&#x8981;&#x7684;&#x5C5E;&#x6027;&#xFF0C;&#x5C31;&#x4F1A;&#x7EE7;&#x7EED;&#x8BBF;&#x95EE;&#x5BF9;&#x8C61;&#x7684; [[Prototype]] &#x94FE;&#x3002;</p>
+<p>Object.create(..) &#x80FD;&#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x5BF9;&#x8C61;&#x5E76;&#x628A;&#x8FD9;&#x4E2A;&#x5BF9;&#x8C61;&#x7684; [[Prototype]] &#x5173;&#x8054;&#x5230;&#x6307;&#x5B9A;&#x7684;&#x5BF9;&#x8C61;&#x3002;</p>
+<p>&#x6240;&#x6709;&#x666E;&#x901A;&#x7684; [[Prototype]] &#x94FE;&#x6700;&#x7EC8;&#x90FD;&#x4F1A;&#x6307;&#x5411;&#x5185;&#x7F6E;&#x7684; Object.prototype&#x3002;</p>
+<h4 id="prototype&#x5E94;&#x7528;-&#x5C5E;&#x6027;&#x8BBE;&#x7F6E;&#x4E0E;&#x5C4F;&#x853D;"><a name="prototype&#x5E94;&#x7528;-&#x5C5E;&#x6027;&#x8BBE;&#x7F6E;&#x4E0E;&#x5C4F;&#x853D;" class="anchor-navigation-ex-anchor" href="#prototype&#x5E94;&#x7528;-&#x5C5E;&#x6027;&#x8BBE;&#x7F6E;&#x4E0E;&#x5C4F;&#x853D;"><i class="fa fa-link" aria-hidden="true"></i></a>[[Prototype]]&#x5E94;&#x7528;-&#x5C5E;&#x6027;&#x8BBE;&#x7F6E;&#x4E0E;&#x5C4F;&#x853D;</h4>
+<p>&#x7ED9;&#x4E00;&#x4E2A;&#x5BF9;&#x8C61;&#x8BBE;&#x7F6E;&#x5C5E;&#x6027;&#x5982;myObject.foo = &quot;bar&quot;&#x7684;&#x8FC7;&#x7A0B;:</p>
+<ol>
+<li>&#x82E5;myObject &#x5BF9;&#x8C61;&#x4E2D;&#x5305;&#x542B;&#x540D;&#x4E3A; foo &#x7684;&#x666E;&#x901A;&#x6570;&#x636E;&#x8BBF;&#x95EE;&#x5C5E;&#x6027;&#xFF0C;&#x8FD9;&#x6761;&#x8D4B;&#x503C;&#x8BED;&#x53E5;&#x53EA;&#x4F1A;&#x4FEE;&#x6539;&#x5DF2;&#x6709;&#x7684;&#x5C5E;&#x6027;&#x503C;&#x3002;</li>
+<li>&#x82E5; foo &#x4E0D;&#x662F;&#x76F4;&#x63A5;&#x5B58;&#x5728;&#x4E8E; myObject &#x4E2D;&#xFF0C;[[Prototype]] &#x94FE;&#x5C31;&#x4F1A;&#x88AB;&#x904D;&#x5386;&#xFF0C;&#x7C7B;&#x4F3C; [[Get]] &#x64CD;&#x4F5C;&#x3002;&#x5982;&#x679C;&#x539F;&#x578B;&#x94FE;&#x4E0A;&#x627E;&#x4E0D;&#x5230; foo&#xFF0C;foo &#x5C31;&#x4F1A;&#x88AB;&#x76F4;&#x63A5;&#x6DFB;&#x52A0;&#x5230; myObject &#x4E0A;&#x3002;</li>
+<li>&#x82E5;&#x539F;&#x578B;&#x94FE;&#x4E0A;&#x80FD;&#x627E;&#x5230; foo<ol>
+<li>&#x5982;&#x679C;&#x5728;[[Prototype]]&#x94FE;&#x4E0A;&#x5C42;&#x5B58;&#x5728;&#x540D;&#x4E3A;foo&#x7684;&#x666E;&#x901A;&#x6570;&#x636E;&#x8BBF;&#x95EE;&#x5C5E;&#x6027;&#x5E76;&#x4E14;&#x6CA1;&#x6709;&#x88AB;&#x6807;&#x8BB0;&#x4E3A;&#x53EA;&#x8BFB;(writable:false)&#xFF0C;&#x90A3;&#x5C31;&#x4F1A;&#x76F4;&#x63A5;&#x5728; myObject &#x4E2D;&#x6DFB;&#x52A0;&#x4E00;&#x4E2A;&#x540D;&#x4E3A; foo &#x7684;&#x65B0;&#x5C5E;&#x6027;&#xFF0C;&#x5B83;&#x662F;&#x5C4F;&#x853D;&#x5C5E;&#x6027;&#x3002;</li>
+<li>&#x5982;&#x679C;&#x5728;[[Prototype]]&#x94FE;&#x4E0A;&#x5C42;&#x5B58;&#x5728;foo&#xFF0C;&#x4F46;&#x662F;&#x5B83;&#x88AB;&#x6807;&#x8BB0;&#x4E3A;&#x53EA;&#x8BFB;(writable:false)&#xFF0C;&#x90A3;&#x4E48;&#x65E0;&#x6CD5;&#x4FEE;&#x6539;&#x5DF2;&#x6709;&#x5C5E;&#x6027;&#x6216;&#x8005;&#x5728; myObject &#x4E0A;&#x521B;&#x5EFA;&#x5C4F;&#x853D;&#x5C5E;&#x6027;&#x3002;&#x5982;&#x679C;&#x8FD0;&#x884C;&#x5728;&#x4E25;&#x683C;&#x6A21;&#x5F0F;&#x4E0B;&#xFF0C;&#x4EE3;&#x7801;&#x4F1A;&#x629B;&#x51FA;&#x4E00;&#x4E2A;&#x9519;&#x8BEF;&#x3002;&#x5426;&#x5219;&#xFF0C;&#x8FD9;&#x6761;&#x8D4B;&#x503C;&#x8BED;&#x53E5;&#x4F1A;&#x88AB;&#x5FFD;&#x7565;&#x3002;&#x603B;&#x4E4B;&#xFF0C;&#x4E0D;&#x4F1A;&#x53D1;&#x751F;&#x5C4F;&#x853D;&#x3002;<ul>
+<li>&#x53EA;&#x8BFB;&#x5C5E;&#x6027;&#x4F1A;&#x963B;&#x6B62; [[Prototype]] &#x94FE;&#x4E0B;&#x5C42;&#x9690;&#x5F0F;&#x521B;&#x5EFA;(&#x5C4F;&#x853D;)&#x540C;&#x540D;&#x5C5E;&#x6027;&#x3002;&#x8FD9;&#x6837;&#x505A;&#x4E3B;&#x8981;&#x662F;&#x4E3A;&#x4E86;&#x6A21;&#x62DF;&#x7C7B;&#x5C5E;&#x6027;&#x7684;&#x7EE7;&#x627F;&#x3002;&#x4F60;&#x53EF;&#x4EE5;&#x628A;&#x539F;&#x578B;&#x94FE;&#x4E0A;&#x5C42;&#x7684; foo &#x770B;&#x4F5C;&#x662F;&#x7236;&#x7C7B;&#x4E2D;&#x7684;&#x5C5E;&#x6027;&#xFF0C;&#x5B83;&#x4F1A;&#x88AB; myObject &#x7EE7;&#x627F;(&#x590D;&#x5236;)&#xFF0C;&#x8FD9;&#x6837;&#x4E00;&#x6765; myObject &#x4E2D;&#x7684; foo &#x5C5E;&#x6027;&#x4E5F;&#x662F;&#x53EA;&#x8BFB;&#xFF0C;&#x6240;&#x4EE5;&#x65E0;&#x6CD5;&#x521B;&#x5EFA;&#x3002;</li>
+</ul>
+</li>
+<li>&#x5982;&#x679C;&#x5728;[[Prototype]]&#x94FE;&#x4E0A;&#x5C42;&#x5B58;&#x5728;foo&#x5E76;&#x4E14;&#x5B83;&#x662F;&#x4E00;&#x4E2A;setter&#xFF0C;&#x90A3;&#x5C31;&#x4E00;&#x5B9A;&#x4F1A;&#x8C03;&#x7528;&#x8FD9;&#x4E2A; setter&#x3002;foo &#x4E0D;&#x4F1A;&#x88AB;&#x6DFB;&#x52A0;&#x5230;(&#x6216;&#x8005;&#x8BF4;&#x5C4F;&#x853D;&#x4E8E;)myObject&#xFF0C;&#x4E5F;&#x4E0D;&#x4F1A;&#x91CD;&#x65B0;&#x5B9A;&#x4E49; foo &#x8FD9;&#x4E2A; setter&#x3002;</li>
+</ol>
+</li>
+</ol>
+<pre><code>anotherObject.hasOwnProperty( &quot;a&quot; ); // true
+myObject.hasOwnProperty( &quot;a&quot; ); // false
+myObject.a++; // &#x9690;&#x5F0F;&#x5C4F;&#x853D;! anotherObject.a; // 2
+myObject.a; // 3
+myObject.hasOwnProperty( &quot;a&quot; ); // true
+</code></pre><h3 id="javascript&#x4E2D;&#x7684;&#x7C7B;"><a name="javascript&#x4E2D;&#x7684;&#x7C7B;" class="anchor-navigation-ex-anchor" href="#javascript&#x4E2D;&#x7684;&#x7C7B;"><i class="fa fa-link" aria-hidden="true"></i></a>Javascript&#x4E2D;&#x7684;&#x201C;&#x7C7B;&#x201D;</h3>
+<p>&#x5728;Javascript&#x4E2D;&#xFF0C;&#x201C;&#x59D4;&#x6258;&#x201D;&#x76F8;&#x6BD4;&#x7C7B;&#x662F;&#x4E00;&#x4E2A;&#x66F4;&#x5408;&#x9002;&#x7684;&#x672F;&#x8BED;&#xFF0C;&#x56E0;&#x4E3A;&#x5BF9;&#x8C61;&#x4E4B;&#x95F4;&#x7684;&#x5173;&#x7CFB;&#x4E0D;&#x662F;&#x590D;&#x5236;&#x800C;&#x662F;&#x59D4;&#x6258;&#x3002;</p>
+<h4 id="prototype&#x6765;&#x81EA;&#x54EA;"><a name="prototype&#x6765;&#x81EA;&#x54EA;" class="anchor-navigation-ex-anchor" href="#prototype&#x6765;&#x81EA;&#x54EA;"><i class="fa fa-link" aria-hidden="true"></i></a>prototype&#x6765;&#x81EA;&#x54EA;</h4>
+<p>&#x6240;&#x6709;&#x7684;<strong>&#x51FD;&#x6570;</strong>&#x9ED8;&#x8BA4;&#x90FD;&#x4F1A;&#x62E5;&#x6709;&#x4E00;&#x4E2A;&#x540D;&#x4E3A; prototype &#x7684;&#x516C;&#x6709;&#x5E76;&#x4E14;&#x4E0D;&#x53EF;&#x679A;&#x4E3E;&#x7684;&#x5C5E;&#x6027;&#xFF0C;&#x5B83;&#x4F1A;&#x6307;&#x5411;&#x53E6;&#x4E00;&#x4E2A;&#x5BF9;&#x8C61;&#x3002;</p>
+<pre><code>function Foo() {
+    // ...
+}
+var a = new Foo();
+</code></pre><p>prototype &#x662F;&#x5728;&#x8C03;&#x7528; new Foo()&#x65F6;&#x521B;&#x5EFA;&#x7684;&#xFF0C;&#x6700;&#x540E;&#x4F1A;&#x88AB;&#x5173;&#x8054;&#x5230;&#x8FD9;&#x4E2A;&#x201C;Foo.prototype&#x201D;&#x5BF9;&#x8C61;&#x4E0A;&#x3002;new Foo() &#x8FD8;&#x4F1A;&#x521B;&#x5EFA; a&#xFF0C;&#x5176;&#x4E2D;&#x7684;&#x4E00;&#x6B65;&#x5C31;&#x662F;&#x7ED9; a &#x4E00;&#x4E2A;&#x5185;&#x90E8;&#x7684; [[Prototype]] &#x94FE;&#x63A5;&#xFF0C;&#x5173;&#x8054;&#x5230; Foo.prototype &#x6307;&#x5411;&#x7684;&#x90A3;&#x4E2A;&#x5BF9;&#x8C61;&#x3002;&#x6700;&#x540E;&#x6211;&#x4EEC;&#x5F97;&#x5230;&#x4E86;&#x4E24;&#x4E2A;&#x5BF9;&#x8C61;&#xFF0C;&#x5B83;&#x4EEC;&#x4E4B;&#x95F4;&#x4E92;&#x76F8;&#x5173;&#x8054;&#x3002;</p>
+<h4 id="constructor_function Object() { [native code] }"><a name="constructor_function Object() { [native code] }" class="anchor-navigation-ex-anchor" href="#constructor_function%20Object()%20%7B%20[native%20code]%20%7D"><i class="fa fa-link" aria-hidden="true"></i></a>constructor</h4>
+<p>Foo.prototype &#x9ED8;&#x8BA4;(&#x5728;&#x4EE3;&#x7801;&#x4E2D;&#x7B2C;&#x4E00;&#x884C;&#x58F0;&#x660E;&#x65F6;)&#x6709;&#x4E00;&#x4E2A;&#x516C;&#x6709;&#x5E76;&#x4E14;&#x4E0D;&#x53EF;&#x679A;&#x4E3E;&#x7684;&#x5C5E;&#x6027; .constructor&#xFF0C;&#x8FD9;&#x4E2A;&#x5C5E;&#x6027;&#x5F15;&#x7528;&#x7684;&#x662F;&#x5BF9;&#x8C61;&#x5173;&#x8054;&#x7684;&#x51FD;&#x6570;(&#x672C;&#x4F8B;&#x4E2D;&#x662F; Foo)&#x3002; a &#x6CA1;&#x6709; .constructor &#x5C5E;&#x6027;&#xFF0C;&#x867D;&#x7136; a.constructor &#x6307;&#x5411; Foo &#x51FD;&#x6570;&#xFF0C;&#x4F46;&#x662F;&#x8FD9;&#x4E2A; constructor &#x662F;&#x6765;&#x81EA; Foo &#x7684; prototype&#x3002;&#x5982;&#x679C;&#x4F60;&#x521B;&#x5EFA;&#x4E86;&#x4E00;&#x4E2A;&#x65B0;&#x5BF9;&#x8C61;&#x5E76;&#x66FF;&#x6362;&#x4E86;&#x51FD;&#x6570;&#x9ED8;&#x8BA4;&#x7684; .prototype &#x5BF9;&#x8C61;&#x5F15;&#x7528;&#xFF0C;&#x90A3;&#x4E48;&#x65B0;&#x5BF9;&#x8C61;&#x5E76;&#x4E0D;&#x4F1A;&#x81EA;&#x52A8;&#x83B7;&#x5F97; .constructor &#x5C5E;&#x6027;&#x3002;</p>
+<pre><code>function Foo() { /* .. */ }
+Foo.prototype = { /* .. */ }; // &#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x65B0;&#x539F;&#x578B;&#x5BF9;&#x8C61;
+var a1 = new Foo();
+a1.constructor === Foo; // false! a1.constructor === Object; // true!
+</code></pre><p>.constructor &#x5E76;&#x4E0D;&#x662F;&#x4E00;&#x4E2A;&#x4E0D;&#x53EF;&#x53D8;&#x5C5E;&#x6027;&#x3002;&#x5B83;&#x662F;&#x4E0D;&#x53EF;&#x679A;&#x4E3E;&#x7684;&#xFF0C;&#x4F46;&#x662F;&#x5B83;&#x7684;&#x503C;&#x662F;&#x53EF;&#x4EE5;&#x88AB;&#x4FEE;&#x6539;&#x7684;&#x3002;&#x6B64;&#x5916;&#xFF0C;&#x4F60;&#x53EF;&#x4EE5;&#x7ED9;&#x4EFB;&#x610F; [[Prototype]] &#x94FE;&#x4E2D;&#x7684;&#x4EFB;&#x610F;&#x5BF9;&#x8C61;&#x6DFB;&#x52A0;&#x4E00;&#x4E2A;&#x540D;&#x4E3A; constructor &#x7684;&#x5C5E;&#x6027;&#x6216;&#x8005;&#x5BF9;&#x5176;&#x8FDB;&#x884C;&#x4FEE;&#x6539;&#xFF0C;&#x4F60;&#x53EF;&#x4EE5;&#x4EFB;&#x610F;&#x5BF9;&#x5176;&#x8D4B;&#x503C;&#x3002;&#x56E0;&#x6B64;&#xFF0C;&#x4E00;&#x4E9B;&#x968F;&#x610F;&#x7684;&#x5BF9;&#x8C61;&#x5C5E;&#x6027;&#x5F15;&#x7528;&#xFF0C;&#x6BD4;&#x5982; a1.constructor&#xFF0C;&#x5B9E;&#x9645;&#x4E0A;&#x662F;&#x4E0D;&#x88AB;&#x4FE1;&#x4EFB;&#x7684;&#xFF0C;&#x5B83;&#x4EEC;&#x4E0D;&#x4E00;&#x5B9A;&#x4F1A;&#x6307;&#x5411;&#x9ED8;&#x8BA4;&#x7684;&#x51FD;&#x6570;&#x5F15;&#x7528;&#x3002;
+<strong>a1.constructor &#x662F;&#x4E00;&#x4E2A;&#x975E;&#x5E38;&#x4E0D;&#x53EF;&#x9760;&#x5E76;&#x4E14;&#x4E0D;&#x5B89;&#x5168;&#x7684;&#x5F15;&#x7528;</strong>&#x3002;&#x901A;&#x5E38;&#x6765;&#x8BF4;&#x8981;&#x5C3D;&#x91CF;&#x907F;&#x514D;&#x4F7F;&#x7528;&#x8FD9;&#x4E9B;&#x5F15;&#x7528;&#x3002;</p>
+<h4 id="&#x539F;&#x578B;&#x7EE7;&#x627F;"><a name="&#x539F;&#x578B;&#x7EE7;&#x627F;" class="anchor-navigation-ex-anchor" href="#&#x539F;&#x578B;&#x7EE7;&#x627F;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x539F;&#x578B;&#x7EE7;&#x627F;</h4>
+<p>Object.create(..) &#x4F1A;&#x51ED;&#x7A7A;&#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x201C;&#x65B0;&#x201D;&#x5BF9;&#x8C61;&#x5E76;&#x628A;&#x65B0;&#x5BF9;&#x8C61;&#x5185;&#x90E8;&#x7684; [[Prototype]] &#x5173;&#x8054;&#x5230;&#x4F60;&#x6307;&#x5B9A;&#x7684;&#x5BF9;&#x8C61;(&#x672C;&#x4F8B;&#x4E2D;&#x662F; Foo.prototype)&#x3002;</p>
+<p>&#x5982;&#x679C;&#x6211;&#x4EEC;&#x60F3;&#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x65B0;&#x5BF9;&#x8C61;&#x5E76;&#x628A;&#x5B83;&#x5173;&#x8054;&#x5230;&#x6211;&#x4EEC;&#x5E0C;&#x671B;&#x7684;&#x5BF9;&#x8C61;&#x4E0A;<code>Bar.prototype = new Foo();</code>&#x57FA;&#x672C;&#x4E0A;&#x6EE1;&#x8DB3;&#x4F60;&#x7684;&#x9700;&#x6C42;&#xFF0C;&#x4F46;&#x662F;&#x53EF;&#x80FD;&#x4F1A;&#x4EA7;&#x751F;&#x4E00;&#x4E9B;&#x526F;&#x4F5C;&#x7528;&#x3002;&#x5982;&#x679C;&#x51FD;&#x6570; Foo &#x6709;&#x4E00;&#x4E9B;&#x526F;&#x4F5C;&#x7528;(&#x6BD4;&#x5982;&#x5199;&#x65E5;&#x5FD7;&#x3001;&#x4FEE;&#x6539;&#x72B6;&#x6001;&#x3001;&#x6CE8;&#x518C;&#x5230;&#x5176;&#x4ED6;&#x5BF9;&#x8C61;&#x3001;&#x7ED9; this &#x6DFB;&#x52A0;&#x6570;&#x636E;&#x5C5E;&#x6027;&#xFF0C;&#x7B49;&#x7B49;)&#x7684;&#x8BDD;&#xFF0C;&#x5C31;&#x4F1A;&#x5F71;&#x54CD;&#x5230; Bar() &#x7684;&#x201C;&#x540E;&#x4EE3;&#x201D;&#xFF0C;&#x540E;&#x679C;&#x4E0D;&#x582A;&#x8BBE;&#x60F3;&#x3002;</p>
+<p>&#x56E0;&#x6B64;&#xFF0C;&#x8981;&#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x5408;&#x9002;&#x7684;&#x5173;&#x8054;&#x5BF9;&#x8C61;&#xFF0C;&#x6211;&#x4EEC;&#x5FC5;&#x987B;&#x4F7F;&#x7528; Object.create(..) &#x800C;&#x4E0D;&#x662F;&#x4F7F;&#x7528;&#x5177;&#x6709;&#x526F;&#x4F5C;&#x7528;&#x7684; Foo(..)&#x3002;&#x8FD9;&#x6837;&#x505A;&#x552F;&#x4E00;&#x7684;&#x7F3A;&#x70B9;&#x5C31;&#x662F;&#x9700;&#x8981;&#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x65B0;&#x5BF9;&#x8C61;&#x7136;&#x540E;&#x628A;&#x65E7;&#x5BF9;&#x8C61;(prototype)&#x629B;&#x5F03;&#x6389;&#x3002;</p>
+<p>&#x5982;&#x679C;&#x80FD;&#x6709;&#x4E00;&#x4E2A;&#x6807;&#x51C6;&#x5E76;&#x4E14;&#x53EF;&#x9760;&#x7684;&#x65B9;&#x6CD5;&#x6765;&#x4FEE;&#x6539;&#x5BF9;&#x8C61;&#x7684; <strong>[[Prototype]]</strong> &#x5173;&#x8054;&#x5C31;&#x597D;&#x4E86;&#x3002;</p>
+<ul>
+<li>&#x5728; ES6 &#x4E4B;&#x524D;&#xFF0C; &#x6211;&#x4EEC;&#x53EA;&#x80FD;&#x901A;&#x8FC7;&#x8BBE;&#x7F6E; .<strong>proto</strong> &#x5C5E;&#x6027;&#x6765;&#x5B9E;&#x73B0;&#xFF0C;&#x4F46;&#x662F;&#x8FD9;&#x4E2A;&#x65B9;&#x6CD5;&#x5E76;&#x4E0D;&#x662F;&#x6807;&#x51C6;&#x5E76;&#x4E14;&#x65E0;&#x6CD5;&#x517C;&#x5BB9;&#x6240;&#x6709;&#x6D4F;&#x89C8;&#x5668;&#x3002;</li>
+<li>ES6 &#x6DFB;&#x52A0;&#x4E86;&#x8F85;&#x52A9;&#x51FD;&#x6570; Object.setPrototypeOf(..)&#xFF0C;&#x53EF;&#x4EE5;&#x7528;&#x6807;&#x51C6;&#x5E76;&#x4E14;&#x53EF;&#x9760;&#x7684;&#x65B9;&#x6CD5;&#x6765;&#x4FEE;&#x6539;&#x5173;&#x8054;&#x3002;</li>
+</ul>
+<pre><code>// ES6 &#x4E4B;&#x524D;&#x9700;&#x8981;&#x629B;&#x5F03;&#x9ED8;&#x8BA4;&#x7684; Bar.prototype
+Bar.ptototype = Object.create( Foo.prototype );
+
+// ES6 &#x5F00;&#x59CB;&#x53EF;&#x4EE5;&#x76F4;&#x63A5;&#x4FEE;&#x6539;&#x73B0;&#x6709;&#x7684; Bar.prototype
+Object.setPrototypeOf( Bar.prototype, Foo.prototype );
+</code></pre><p>&#x5982;&#x679C;&#x5FFD;&#x7565;&#x6389; Object.create(..) &#x65B9;&#x6CD5;&#x5E26;&#x6765;&#x7684;&#x8F7B;&#x5FAE;&#x6027;&#x80FD;&#x635F;&#x5931;(&#x629B;&#x5F03;&#x7684;&#x5BF9;&#x8C61;&#x9700;&#x8981;&#x8FDB;&#x884C;&#x5783;&#x573E;&#x56DE;&#x6536;)&#xFF0C;&#x5B83;&#x5B9E;&#x9645;&#x4E0A;&#x6BD4; ES6 &#x53CA;&#x5176;&#x4E4B;&#x540E;&#x7684;&#x65B9;&#x6CD5;&#x66F4;&#x77ED;&#x800C;&#x4E14;&#x53EF;&#x8BFB;&#x6027;&#x66F4;&#x9AD8;&#x3002;&#x4E0D;&#x8FC7;&#x65E0;&#x8BBA;&#x5982;&#x4F55;&#xFF0C;&#x8FD9;&#x662F;&#x4E24;&#x79CD;&#x5B8C;&#x5168;&#x4E0D;&#x540C;&#x7684;&#x8BED;&#x6CD5;&#x3002;</p>
+<h4 id="&#x68C0;&#x67E5;&#x7C7B;&#x7684;&#x5173;&#x7CFB;"><a name="&#x68C0;&#x67E5;&#x7C7B;&#x7684;&#x5173;&#x7CFB;" class="anchor-navigation-ex-anchor" href="#&#x68C0;&#x67E5;&#x7C7B;&#x7684;&#x5173;&#x7CFB;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x68C0;&#x67E5;&#x201C;&#x7C7B;&#x201D;&#x7684;&#x5173;&#x7CFB;</h4>
+<p>&#x68C0;&#x67E5;&#x4E00;&#x4E2A;&#x5B9E;&#x4F8B;(JavaScript &#x4E2D;&#x7684;&#x5BF9;&#x8C61;)&#x7684;&#x7EE7;&#x627F;&#x7956;&#x5148;(JavaScript &#x4E2D;&#x7684;&#x59D4;&#x6258;&#x5173;&#x8054;)&#x901A;&#x5E38;&#x88AB;&#x79F0;&#x4E3A;&#x5185;&#x7701;(&#x6216;&#x8005;&#x53CD;&#x5C04;)&#x3002;</p>
+<p><strong>&#x901A;&#x8FC7;&#x5185;&#x7701;&#x627E;&#x51FA; a &#x7684;&#x201C;&#x7956;&#x5148;&#x201D;(&#x59D4;&#x6258;&#x5173;&#x8054;)</strong></p>
+<ul>
+<li>instanceof&#x3002;a instanceof Foo &#x56DE;&#x7B54;&#x7684;&#x95EE;&#x9898;&#x662F;&#xFF0C;&#x5728; a &#x7684;&#x6574;&#x6761; [[Prototype]] &#x94FE;&#x4E2D;&#x662F;&#x5426;&#x6709;&#x6307;&#x5411; Foo.prototype &#x7684;&#x5BF9;&#x8C61;&#x3002;&#x8FD9;&#x79CD;&#x65B9;&#x6CD5;&#x53EA;&#x80FD;&#x5224;&#x65AD;&#x5BF9;&#x8C61;&#x4E0E;&#x6784;&#x9020;&#x51FD;&#x6570;&#x4E4B;&#x95F4;&#x7684;&#x5173;&#x7CFB;&#xFF0C;&#x5982;&#x679C;&#x4F60;&#x60F3;&#x5224;&#x65AD;&#x4E24;&#x4E2A;&#x5BF9;&#x8C61;(&#x6BD4;&#x5982; a &#x548C; b)&#x4E4B;&#x95F4;&#x662F;&#x5426;&#x901A;&#x8FC7; [[Prototype]] &#x94FE;&#x5173;&#x8054;&#xFF0C;&#x53EA;&#x7528; instanceof &#x65E0;&#x6CD5;&#x5B9E;&#x73B0;&#x3002;</li>
+<li>isPrototypeOf(..) &#x3002;Foo.prototype.isPrototypeOf( a ) &#x56DE;&#x7B54;&#x7684;&#x95EE;&#x9898;&#x662F;&#xFF0C;&#x5728; a &#x7684;&#x6574;&#x6761; [[Prototype]] &#x94FE;&#x4E2D;&#x662F;&#x5426;&#x51FA;&#x73B0;&#x8FC7; Foo.prototype&#x3002;</li>
+<li>&#x5728; ES5 &#x4E2D;&#x53EF;&#x4EE5;&#x76F4;&#x63A5;&#x83B7;&#x53D6;&#x4E00;&#x4E2A;&#x5BF9;&#x8C61;&#x7684; [[Prototype]] &#x94FE;&#x3002;<code>Object.getPrototypeOf( a ) === Foo.prototype; // true</code>&#x3002;</li>
+</ul>
+<h4 id="prototype_1"><a name="prototype_1" class="anchor-navigation-ex-anchor" href="#prototype_1"><i class="fa fa-link" aria-hidden="true"></i></a>__prototype__</h4>
+<p>&#x548C; .constructor &#x4E00;&#x6837;&#xFF0C;.__proto__ &#x5E76;&#x4E0D;&#x5B58;&#x5728;&#x4E8E;&#x4F60;&#x6B63;&#x5728;&#x4F7F;&#x7528;&#x7684;&#x5BF9;&#x8C61;&#x4E2D;&#x3002;&#x5B83;&#x5B58;&#x5728;&#x4E8E;&#x5185;&#x7F6E;&#x7684; Object.prototype&#x3002; &#x6B64;&#x5916;&#xFF0C;.__proto__ &#x770B;&#x8D77;&#x6765;&#x5F88;&#x50CF;&#x4E00;&#x4E2A;&#x5C5E;&#x6027;&#xFF0C;&#x4F46;&#x662F;&#x5B9E;&#x9645;&#x4E0A;&#x5B83;&#x66F4;&#x50CF;&#x4E00;&#x4E2A; getter/setter&#x3002;&#x8BBF;&#x95EE;(&#x83B7;&#x53D6;&#x503C;)a.__proto__ &#x65F6;&#xFF0C;&#x5B9E;&#x9645;&#x4E0A;&#x662F;&#x8C03;&#x7528;&#x4E86; a.__proto__()(&#x8C03;&#x7528; getter &#x51FD;&#x6570;)&#x3002;</p>
+<p>.<strong>proto</strong> &#x7684;&#x5B9E;&#x73B0;&#x5927;&#x81F4;&#x4E0A;&#x662F;&#x8FD9;&#x6837;:</p>
+<pre><code>Object.defineProperty( Object.prototype, &quot;__proto__&quot;, {
+    get: function() {
+        return Object.getPrototypeOf( this );
+    },
+    set: function(o) {
+        // ES6 &#x4E2D;&#x7684; setPrototypeOf(..)
+        Object.setPrototypeOf( this, o );
+        return o;
+    }
+});
+</code></pre><p>.__proto__ &#x662F;&#x53EF;&#x8BBE;&#x7F6E;&#x5C5E;&#x6027;&#xFF0C;&#x4E4B;&#x524D;&#x7684;&#x4EE3;&#x7801;&#x4E2D;&#x4F7F;&#x7528; ES6 &#x7684; Object.setPrototypeOf(..) &#x8FDB;&#x884C;&#x8BBE;&#x7F6E;&#x3002;&#x7136;&#x800C;&#xFF0C;&#x901A;&#x5E38;&#x6765;&#x8BF4;&#x4F60;&#x4E0D;&#x9700;&#x8981;&#x4FEE;&#x6539;&#x5DF2;&#x6709;&#x5BF9;&#x8C61;&#x7684; [[Prototype]]&#xFF0C;&#x6700;&#x597D;&#x628A; [[Prototype]] &#x5BF9;&#x8C61;&#x5173;&#x8054;&#x770B;&#x4F5C;&#x662F;&#x53EA;&#x8BFB;&#x7279;&#x6027;&#xFF0C;&#x4ECE;&#x800C;&#x589E;&#x52A0;&#x4EE3;&#x7801;&#x7684;&#x53EF;&#x8BFB;&#x6027;&#x3002;</p>
+<h4 id="&#x5BF9;&#x8C61;&#x5173;&#x8054;"><a name="&#x5BF9;&#x8C61;&#x5173;&#x8054;" class="anchor-navigation-ex-anchor" href="#&#x5BF9;&#x8C61;&#x5173;&#x8054;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x5BF9;&#x8C61;&#x5173;&#x8054;</h4>
+<h5 id="&#x521B;&#x5EFA;&#x5173;&#x8054;"><a name="&#x521B;&#x5EFA;&#x5173;&#x8054;" class="anchor-navigation-ex-anchor" href="#&#x521B;&#x5EFA;&#x5173;&#x8054;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x521B;&#x5EFA;&#x5173;&#x8054;</h5>
+<p>&#x6211;&#x4EEC;&#x5E76;&#x4E0D;&#x9700;&#x8981;&#x7C7B;&#x6765;&#x521B;&#x5EFA;&#x4E24;&#x4E2A;&#x5BF9;&#x8C61;&#x4E4B;&#x95F4;&#x7684;&#x5173;&#x7CFB;&#xFF0C;&#x53EA;&#x9700;&#x8981;&#x901A;&#x8FC7;&#x59D4;&#x6258;&#x6765;&#x5173;&#x8054;&#x5BF9;&#x8C61;&#x5C31;&#x8DB3;&#x591F;&#x4E86;&#x3002;&#x800C; Object.create(..) &#x4E0D;&#x5305;&#x542B;&#x4EFB;&#x4F55;&#x201C;&#x7C7B;&#x7684;&#x8BE1;&#x8BA1;&#x201D;&#xFF0C;&#x6240;&#x4EE5;&#x5B83;&#x53EF;&#x4EE5;&#x5B8C;&#x7F8E;&#x5730;&#x521B;&#x5EFA;&#x6211;&#x4EEC;&#x60F3;&#x8981;&#x7684;&#x5173;&#x8054;&#x5173;&#x7CFB;&#x3002;</p>
+<p>Object.create(..) &#x4F1A;&#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x65B0;&#x5BF9;&#x8C61;(bar)&#x5E76;&#x628A;&#x5B83;&#x5173;&#x8054;&#x5230;&#x6211;&#x4EEC;&#x6307;&#x5B9A;&#x7684;&#x5BF9;&#x8C61;(foo)&#xFF0C;&#x8FD9;&#x6837;&#x6211;&#x4EEC;&#x5C31;&#x53EF;&#x4EE5;&#x5145;&#x5206;&#x53D1;&#x6325; [[Prototype]] &#x673A;&#x5236;&#x7684;&#x5A01;&#x529B;(&#x59D4;&#x6258;)&#x5E76;&#x4E14;&#x907F;&#x514D;&#x4E0D;&#x5FC5;&#x8981;&#x7684;&#x9EBB;&#x70E6;(&#x6BD4;&#x5982;&#x4F7F;&#x7528; new &#x7684;&#x6784;&#x9020;&#x51FD;&#x6570;&#x8C03;&#x7528;&#x4F1A;&#x751F;&#x6210; .prototype &#x548C; .constructor &#x5F15;&#x7528;)&#x3002;</p>
+<p>Object.create(null) &#x4F1A;&#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x62E5;&#x6709;&#x7A7A;(&#x6216;&#x8005;&#x8BF4; null)[[Prototype]] &#x94FE;&#x63A5;&#x7684;&#x5BF9;&#x8C61;&#xFF0C;&#x8FD9;&#x4E2A;&#x5BF9;&#x8C61;&#x65E0;&#x6CD5;&#x8FDB;&#x884C;&#x59D4;&#x6258;&#x3002;&#x7531;&#x4E8E;&#x8FD9;&#x4E2A;&#x5BF9;&#x8C61;&#x6CA1;&#x6709;&#x539F;&#x578B;&#x94FE;&#xFF0C;&#x6240;&#x4EE5; instanceof &#x64CD;&#x4F5C;&#x7B26;(&#x4E4B;&#x524D;&#x89E3;&#x91CA;&#x8FC7;)&#x65E0;&#x6CD5;&#x8FDB;&#x884C;&#x5224;&#x65AD;&#xFF0C;&#x56E0;&#x6B64;&#x603B;&#x662F;&#x4F1A;&#x8FD4;&#x56DE; false&#x3002; &#x8FD9;&#x4E9B;&#x7279;&#x6B8A;&#x7684;&#x7A7A; [[Prototype]] &#x5BF9;&#x8C61;&#x901A;&#x5E38;&#x88AB;&#x79F0;&#x4F5C;&#x201C;&#x5B57;&#x5178;&#x201D;&#xFF0C;&#x5B83;&#x4EEC;&#x5B8C;&#x5168;&#x4E0D;&#x4F1A;&#x53D7;&#x5230;&#x539F;&#x578B;&#x94FE;&#x7684;&#x5E72;&#x6270;&#xFF0C;&#x56E0;&#x6B64;&#x975E;&#x5E38;&#x9002;&#x5408;&#x7528;&#x6765;&#x5B58;&#x50A8;&#x6570;&#x636E;&#x3002;</p>
+<p><strong>Object.create()&#x7684;polyfill&#x4EE3;&#x7801;</strong></p>
+<pre><code>if (!Object.create) {
+    Object.create = function(o) {
+        function F(){}
+        F.prototype = o;
+        return new F();
+    };
+}
+</code></pre><p>&#x6807;&#x51C6; ES5 &#x4E2D;&#x5185;&#x7F6E;&#x7684; Object.create(..) &#x51FD;&#x6570;&#x8FD8;&#x63D0;&#x4F9B;&#x4E86;&#x4E00;&#x7CFB;&#x5217;&#x9644;&#x52A0;&#x529F;&#x80FD;&#xFF0C;Object.create(..) &#x7684;&#x7B2C;&#x4E8C;&#x4E2A;&#x53C2;&#x6570;&#x6307;&#x5B9A;&#x4E86;&#x9700;&#x8981;&#x6DFB;&#x52A0;&#x5230;&#x65B0;&#x5BF9;&#x8C61;&#x4E2D;&#x7684;&#x5C5E;&#x6027;&#x540D;&#x4EE5;&#x53CA;&#x8FD9;&#x4E9B;&#x5C5E;&#x6027;&#x7684;&#x5C5E;&#x6027;&#x63CF;&#x8FF0;&#x7B26;&#x3002;&#x56E0;&#x4E3A; ES5 &#x4E4B;&#x524D;&#x7684;&#x7248;&#x672C;&#x65E0;&#x6CD5;&#x6A21;&#x62DF;&#x5C5E;&#x6027;&#x64CD;&#x4F5C;&#x7B26;&#xFF0C;&#x6240;&#x4EE5; polyfill &#x4EE3;&#x7801;&#x65E0;&#x6CD5;&#x5B9E;&#x73B0;&#x8FD9;&#x4E2A;&#x9644;&#x52A0;&#x529F;&#x80FD;&#x3002;</p>
+<h4 id="&#x5229;&#x7528;&#x5173;&#x8054;&#x4F5C;&#x4E3A;&#x5907;&#x7528;"><a name="&#x5229;&#x7528;&#x5173;&#x8054;&#x4F5C;&#x4E3A;&#x5907;&#x7528;" class="anchor-navigation-ex-anchor" href="#&#x5229;&#x7528;&#x5173;&#x8054;&#x4F5C;&#x4E3A;&#x5907;&#x7528;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x5229;&#x7528;&#x5173;&#x8054;&#x4F5C;&#x4E3A;&#x5907;&#x7528;</h4>
+<p>&#x770B;&#x8D77;&#x6765;&#x5BF9;&#x8C61;&#x4E4B;&#x95F4;&#x7684;&#x5173;&#x8054;&#x5173;&#x7CFB;&#x662F;&#x5904;&#x7406;&#x201C;&#x7F3A;&#x5931;&#x201D;&#x5C5E;&#x6027;&#x6216;&#x8005;&#x65B9;&#x6CD5;&#x65F6;&#x7684;&#x4E00;&#x79CD;&#x5907;&#x7528;&#x9009;&#x9879;&#x3002;&#x5982;&#x679C;&#x4F60;&#x53EA;&#x662F;&#x5C06;&#x5173;&#x8054;&#x5173;&#x7CFB;&#x4F5C;&#x4E3A;&#x5907;&#x7528;&#xFF0C;&#x90A3;&#x4E48;&#x4F60;&#x7684;&#x8F6F;&#x4EF6;&#x5C31;&#x4F1A;&#x53D8;&#x5F97;&#x6709;&#x70B9;&#x201C;&#x795E;&#x5947;&#x201D;&#xFF0C;&#x800C;&#x4E14;&#x5F88;&#x96BE;&#x7406;&#x89E3;&#x548C;&#x7EF4;&#x62A4;&#x3002;</p>
+<p>&#x5728; ES6 &#x4E2D;&#x6709;&#x4E00;&#x4E2A;&#x88AB;&#x79F0;&#x4E3A;&#x201C;&#x4EE3;&#x7406;&#x201D;(Proxy)&#x7684;&#x9AD8;&#x7AEF;&#x529F;&#x80FD;&#xFF0C;&#x5B83;&#x5B9E;&#x73B0;&#x7684;&#x5C31;&#x662F;&#x201C;&#x65B9;&#x6CD5;&#x65E0;&#x6CD5;&#x627E;&#x5230;&#x201D;&#x65F6;&#x7684;&#x884C;&#x4E3A;&#x3002;</p>
+<h2 id="&#x884C;&#x4E3A;&#x59D4;&#x6258;"><a name="&#x884C;&#x4E3A;&#x59D4;&#x6258;" class="anchor-navigation-ex-anchor" href="#&#x884C;&#x4E3A;&#x59D4;&#x6258;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x884C;&#x4E3A;&#x59D4;&#x6258;</h2>
+<p>JavaScript &#x4E2D;[[Prototype]] &#x673A;&#x5236;&#x7684;&#x672C;&#x8D28;&#x5C31;&#x662F;&#x5BF9;&#x8C61;&#x4E4B;&#x95F4;&#x7684;&#x5173;&#x8054;&#x5173;&#x7CFB;&#x3002;&#x59D4;&#x6258;&#x884C;&#x4E3A;&#x610F;&#x5473;&#x7740;&#x67D0;&#x4E9B;&#x5BF9;&#x8C61;&#x5728;&#x627E;&#x4E0D;&#x5230;&#x5C5E;&#x6027;&#x6216;&#x8005;&#x65B9;&#x6CD5;&#x5F15;&#x7528;&#x65F6;&#x4F1A;&#x628A;&#x8FD9;&#x4E2A;&#x8BF7;&#x6C42;&#x59D4;&#x6258;&#x7ED9;&#x53E6;&#x4E00;
+&#x4E2A;&#x5BF9;&#x8C61;(Task)&#x3002;</p>
+<h3 id="&#x9762;&#x5411;&#x59D4;&#x6258;&#x7684;&#x8BBE;&#x8BA1;"><a name="&#x9762;&#x5411;&#x59D4;&#x6258;&#x7684;&#x8BBE;&#x8BA1;" class="anchor-navigation-ex-anchor" href="#&#x9762;&#x5411;&#x59D4;&#x6258;&#x7684;&#x8BBE;&#x8BA1;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x9762;&#x5411;&#x59D4;&#x6258;&#x7684;&#x8BBE;&#x8BA1;</h3>
+<p>&#x8FD9;&#x4E2A;&#x8BBE;&#x8BA1;&#x6A21;&#x5F0F;&#x8981;&#x6C42;&#x5C3D;&#x91CF;&#x5C11;&#x4F7F;&#x7528;&#x5BB9;&#x6613;&#x88AB;&#x91CD;&#x5199;&#x7684;&#x901A;&#x7528;&#x65B9;&#x6CD5;&#x540D;&#xFF0C;&#x63D0;&#x5021;&#x4F7F;&#x7528;&#x66F4;&#x6709;&#x63CF;&#x8FF0;&#x6027;&#x7684;&#x65B9;&#x6CD5;&#x540D;&#xFF0C;&#x5C24;&#x5176;&#x662F;&#x8981;&#x5199;&#x6E05;&#x76F8;&#x5E94;&#x5BF9;&#x8C61;&#x884C;&#x4E3A;&#x7684;&#x7C7B;&#x578B;&#x3002;&#x8FD9;&#x6837;&#x505A;&#x5B9E;&#x9645;&#x4E0A;&#x53EF;&#x4EE5;&#x521B;&#x5EFA;&#x51FA;&#x66F4;&#x5BB9;&#x6613;&#x7406;&#x89E3;&#x548C;&#x7EF4;&#x62A4;&#x7684;&#x4EE3;&#x7801;&#xFF0C;&#x56E0;&#x4E3A;&#x65B9;&#x6CD5;&#x540D;(&#x4E0D;&#x4EC5;&#x5728;&#x5B9A;&#x4E49;&#x7684;&#x4F4D;&#x7F6E;&#xFF0C;&#x800C;&#x662F;&#x8D2F;&#x7A7F;&#x6574;&#x4E2A;&#x4EE3;&#x7801;)&#x66F4;&#x52A0;&#x6E05;&#x6670;(&#x81EA;&#x6587;&#x6863;)&#x3002;</p>
+<p>&#x5728;&#x59D4;&#x6258;&#x8BBE;&#x8BA1;&#x6A21;&#x5F0F;&#x4E2D;&#xFF0C;&#x9664;&#x4E86;&#x5EFA;&#x8BAE;&#x4F7F;&#x7528;&#x4E0D;&#x76F8;&#x540C;&#x5E76;&#x4E14;&#x66F4;&#x5177;&#x63CF;&#x8FF0;&#x6027;&#x7684;&#x65B9;&#x6CD5;&#x540D;&#x4E4B;&#x5916;&#xFF0C;&#x8FD8;&#x8981;&#x901A;&#x8FC7;&#x5BF9;&#x8C61;&#x5173;&#x8054;&#x907F;&#x514D;&#x4E11;&#x964B;&#x7684;&#x663E;&#x5F0F;&#x4F2A;&#x591A;&#x6001;&#x8C03;&#x7528;(Widget.call &#x548C; Widget.prototype.render.call)&#xFF0C;&#x4EE3;&#x4E4B;&#x4EE5;&#x7B80;&#x5355;&#x7684;&#x76F8;&#x5BF9;&#x59D4;&#x6258;&#x8C03;&#x7528; this.init(..) &#x548C; this.insert(..)&#x3002;</p>
+<p>&#x4F60;&#x65E0;&#x6CD5;&#x5728;&#x4E24;&#x4E2A;&#x6216;&#x4E24;&#x4E2A;&#x4EE5;&#x4E0A;&#x4E92;&#x76F8;(&#x53CC;&#x5411;)&#x59D4;&#x6258;&#x7684;&#x5BF9;&#x8C61;&#x4E4B;&#x95F4;&#x521B;&#x5EFA;&#x5FAA;&#x73AF;&#x59D4;&#x6258;&#x3002;&#x5982;&#x679C;&#x4F60;&#x628A; B &#x5173;&#x8054;&#x5230; A &#x7136;&#x540E;&#x8BD5;&#x7740;&#x628A; A &#x5173;&#x8054;&#x5230; B&#xFF0C;&#x5C31;&#x4F1A;&#x51FA;&#x9519;&#x3002;</p>
+<p>JavaScript&#x4E2D;&#x7684;&#x51FD;&#x6570;&#x4E4B;&#x6240;&#x4EE5;&#x53EF;&#x4EE5;&#x8BBF;&#x95EE; call(..)&#x3001;apply(..) &#x548C; bind(..)&#xFF0C;&#x5C31;&#x662F;&#x56E0;&#x4E3A;<strong>&#x51FD;&#x6570;&#x672C;&#x8EAB;&#x662F;&#x5BF9;&#x8C61;</strong>&#x3002;&#x800C;&#x51FD;&#x6570;&#x5BF9;&#x8C61;&#x540C;&#x6837;&#x6709; [[Prototype]] &#x5C5E;&#x6027;&#x5E76;&#x4E14;&#x5173;&#x8054;&#x5230; <strong>Function.prototype</strong> &#x5BF9;&#x8C61;&#x3002;</p>
+<p>&#x5728;&#x59D4;&#x6258;&#x8BBE;&#x8BA1;&#x6A21;&#x5F0F;&#x4E2D;&#xFF0C;&#x9664;&#x4E86;&#x5EFA;&#x8BAE;&#x4F7F;&#x7528;&#x4E0D;&#x76F8;&#x540C;&#x5E76;&#x4E14;&#x66F4;&#x5177;&#x63CF;&#x8FF0;&#x6027;&#x7684;&#x65B9;&#x6CD5;&#x540D;&#x4E4B;&#x5916;&#xFF0C;&#x8FD8;&#x8981;&#x901A;&#x8FC7;&#x5BF9;&#x8C61;&#x5173;&#x8054;&#x907F;&#x514D;&#x4E11;&#x964B;&#x7684;&#x663E;&#x5F0F;&#x4F2A;&#x591A;&#x6001;&#x8C03;&#x7528;(Widget.call &#x548C; Widget.prototype.render.call)&#xFF0C;&#x4EE3;&#x4E4B;&#x4EE5;&#x7B80;&#x5355;&#x7684;&#x76F8;&#x5BF9;&#x59D4;&#x6258;&#x8C03;&#x7528; this.init(..) &#x548C; this.insert(..)&#x3002;</p>
+<h4 id="&#x793A;&#x4F8B;"><a name="&#x793A;&#x4F8B;" class="anchor-navigation-ex-anchor" href="#&#x793A;&#x4F8B;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x793A;&#x4F8B;</h4>
+<pre><code>var Widget = {
+    init: function(width,height){
+        this.width = width || 50; this.height = height || 50; this.$elem = null;
+    },
+    insert: function($where){
+        if (this.$elem) {
+            this.$elem.css( {
+                width: this.width + &quot;px&quot;,
+                height: this.height + &quot;px&quot; } ).appendTo( $where );
+        }
+    }
+};
+
+var Button = Object.create( Widget );
+Button.setup = function(width,height,label){
+    // &#x59D4;&#x6258;&#x8C03;&#x7528;
+    this.init( width, height );
+    this.label = label || &quot;Default&quot;;
+    this.$elem = $( &quot;&lt;button&gt;&quot; ).text( this.label );
+};
+Button.build = function($where) {
+    // &#x59D4;&#x6258;&#x8C03;&#x7528;
+    this.insert( $where );
+    this.$elem.click( this.onClick.bind( this ) );
+};
+</code></pre><p>&#x4E4B;&#x524D;&#x7684;&#x4E00;&#x6B21;&#x8C03;&#x7528;(var btn1 = new Button(..))&#x73B0;&#x5728;&#x53D8;&#x6210;&#x4E86;&#x4E24;&#x6B21;(var btn1 = Object.create(Button) &#x548C; btn1.setup(..))&#x3002;&#x4E4D;&#x4E00;&#x770B;&#x8FD9;&#x4F3C;&#x4E4E;&#x662F;&#x4E00;&#x4E2A;&#x7F3A;&#x70B9; (&#x9700;&#x8981;&#x66F4;&#x591A;&#x4EE3;&#x7801;)&#x3002;&#x4F46;&#x662F;&#x8FD9;&#x4E00;&#x70B9;&#x5176;&#x5B9E;&#x4E5F;&#x662F;&#x5BF9;&#x8C61;&#x5173;&#x8054;&#x98CE;&#x683C;&#x4EE3;&#x7801;&#x76F8;&#x6BD4;&#x4F20;&#x7EDF;&#x539F;&#x578B;&#x98CE;&#x683C;&#x4EE3;&#x7801;&#x6709;&#x4F18;&#x52BF;&#x7684;&#x5730;&#x65B9;&#x3002;&#x4F7F;&#x7528;&#x7C7B;&#x6784;&#x9020;&#x51FD;&#x6570;&#x7684;&#x8BDD;&#xFF0C;&#x4F60;&#x9700;&#x8981;(&#x5E76;&#x4E0D;&#x662F;&#x786C;&#x6027;&#x8981;&#x6C42;&#xFF0C;&#x4F46;&#x662F;&#x5F3A;&#x70C8;&#x5EFA;&#x8BAE;)&#x5728;&#x540C;&#x4E00;&#x4E2A;&#x6B65;&#x9AA4;&#x4E2D;&#x5B9E;&#x73B0;&#x6784;&#x9020;&#x548C;&#x521D;&#x59CB;&#x5316;&#x3002;&#x7136;&#x800C;&#xFF0C;&#x5728;&#x8BB8;&#x591A;&#x60C5;&#x51B5;&#x4E0B;&#x628A;&#x8FD9;&#x4E24;&#x6B65;&#x5206;&#x5F00;(&#x5C31;&#x50CF;&#x5BF9;&#x8C61;&#x5173;&#x8054;&#x4EE3;&#x7801;&#x4E00;&#x6837;)&#x66F4;&#x7075;&#x6D3B;&#x3002;</p>
+<p>&#x4E3E;&#x4F8B;&#x6765;&#x8BF4;&#xFF0C;&#x5047;&#x5982;&#x4F60;&#x5728;&#x7A0B;&#x5E8F;&#x542F;&#x52A8;&#x65F6;&#x521B;&#x5EFA;&#x4E86;&#x4E00;&#x4E2A;&#x5B9E;&#x4F8B;&#x6C60;&#xFF0C;&#x7136;&#x540E;&#x4E00;&#x76F4;&#x7B49;&#x5230;&#x5B9E;&#x4F8B;&#x88AB;&#x53D6;&#x51FA;&#x5E76;&#x4F7F;&#x7528;&#x65F6;&#x624D;&#x6267;&#x884C;&#x7279;&#x5B9A;&#x7684;&#x521D;&#x59CB;&#x5316;&#x8FC7;&#x7A0B;&#x3002;&#x8FD9;&#x4E2A;&#x8FC7;&#x7A0B;&#x4E2D;&#x4E24;&#x4E2A;&#x51FD;&#x6570;&#x8C03;&#x7528;&#x662F;&#x6328;&#x7740;&#x7684;&#xFF0C;&#x4F46;&#x662F;&#x5B8C;&#x5168;&#x53EF;&#x4EE5;&#x6839;&#x636E;&#x9700;&#x8981;&#x8BA9;&#x5B83;&#x4EEC;&#x51FA;&#x73B0;&#x5728;&#x4E0D;&#x540C;&#x7684;&#x4F4D;&#x7F6E;&#x3002;&#x5BF9;&#x8C61;&#x5173;&#x8054;&#x53EF;&#x4EE5;&#x66F4;&#x597D;&#x5730;&#x652F;&#x6301;&#x5173;&#x6CE8;&#x5206;&#x79BB;(separation of concerns)&#x539F;&#x5219;&#xFF0C;&#x521B;&#x5EFA;&#x548C;&#x521D;&#x59CB;&#x5316;&#x5E76;&#x4E0D;&#x9700;&#x8981;&#x5408;&#x5E76;&#x4E3A;&#x4E00;&#x4E2A;&#x6B65;&#x9AA4;&#x3002;</p>
+<h3 id="es6&#x7684;class&#x8BED;&#x6CD5;&#x7CD6;"><a name="es6&#x7684;class&#x8BED;&#x6CD5;&#x7CD6;" class="anchor-navigation-ex-anchor" href="#es6&#x7684;class&#x8BED;&#x6CD5;&#x7CD6;"><i class="fa fa-link" aria-hidden="true"></i></a>ES6&#x7684;class&#x8BED;&#x6CD5;&#x7CD6;</h3>
+<p>class &#x5F88;&#x597D;&#x5730;&#x4F2A;&#x88C5;&#x6210; JavaScript &#x4E2D;&#x7C7B;&#x548C;&#x7EE7;&#x627F;&#x8BBE;&#x8BA1;&#x6A21;&#x5F0F;&#x7684;&#x89E3;&#x51B3;&#x65B9;&#x6848;&#xFF0C;&#x4F46;&#x662F;&#x5B83;&#x5B9E;&#x9645;&#x4E0A;&#x8D77;&#x5230;&#x4E86;&#x53CD;&#x4F5C;&#x7528;:&#x5B83;&#x9690;&#x85CF;&#x4E86;&#x8BB8;&#x591A;&#x95EE;&#x9898;&#x5E76;&#x4E14;&#x5E26;&#x6765;&#x4E86;&#x66F4;&#x591A;&#x66F4;&#x7EC6;&#x5C0F;&#x4F46;&#x662F;&#x5371;&#x9669;&#x7684;&#x95EE;&#x9898;&#x3002;class &#x52A0;&#x6DF1;&#x4E86;&#x8FC7;&#x53BB; 20 &#x5E74;&#x4E2D;&#x5BF9;&#x4E8E; JavaScript &#x4E2D;&#x201C;&#x7C7B;&#x201D;&#x7684;&#x8BEF;&#x89E3;&#xFF0C;&#x5728;&#x67D0;&#x4E9B;&#x65B9;&#x9762;&#xFF0C;&#x5B83;&#x4EA7;&#x751F;&#x7684;&#x95EE;&#x9898;&#x6BD4;&#x89E3;&#x51B3;&#x7684;&#x591A;&#xFF0C;&#x800C;&#x4E14;&#x8BA9;&#x672C;&#x6765;&#x4F18;&#x96C5;&#x7B80;&#x6D01;&#x7684; [[Prototype]] &#x673A;&#x5236;&#x53D8;&#x5F97;&#x975E;&#x5E38;&#x522B;&#x626D;&#x3002;</p>
+<pre><code>class Widget {
+    constructor(width,height) {
+        this.width = width || 50;
+        this.height = height || 50;
+        this.$elem = null;
+  }
+  render($where){
+        if (this.$elem) {
+            this.$elem.css( {
+                width: this.width + &quot;px&quot;,
+                height: this.height + &quot;px&quot;
+            } ).appendTo( $where );
+        }
+    }
+}
+class Button extends Widget {
+    constructor(width,height,label) {
+        super( width, height );
+        this.label = label || &quot;Default&quot;;
+        this.$elem = $( &quot;&lt;button&gt;&quot; ).text( this.label );
+  }
+  render($where) {
+        super( $where );
+        this.$elem.click( this.onClick.bind( this ) );
+    }
+  onClick(evt) {
+     console.log( &quot;Button &apos;&quot; + this.label + &quot;&apos; clicked!&quot; );
+    }
+}
+</code></pre><p>&#x4F7F;&#x7528; ES6 &#x7684; class &#x4E4B;&#x540E;&#xFF0C;&#x8BB8;&#x591A;&#x4E11;&#x964B;&#x7684;&#x8BED;&#x6CD5;&#x90FD;&#x4E0D;&#x89C1;&#x4E86;&#xFF0C;&#x5C3D;&#x7BA1;&#x8BED;&#x6CD5;&#x4E0A;&#x5F97;&#x5230;&#x4E86;&#x6539;&#x8FDB;&#xFF0C;&#x4F46;&#x5B9E;&#x9645;&#x4E0A;&#x8FD9;&#x91CC;&#x5E76;&#x6CA1;&#x6709;&#x771F;&#x6B63;&#x7684;&#x7C7B;&#xFF0C;class &#x4ECD;&#x7136;&#x662F;&#x901A;&#x8FC7; [[Prototype]] &#x673A;&#x5236;&#x5B9E;&#x73B0;&#x7684;&#x3002;</p>
+<p>&#x9664;&#x4E86;&#x8BED;&#x6CD5;&#x66F4;&#x597D;&#x770B;&#x4E4B;&#x5916;&#xFF0C;ES6 &#x8FD8;&#x89E3;&#x51B3;&#x4E86;&#x4EC0;&#x4E48;&#x95EE;&#x9898;?</p>
+<ol>
+<li>&#x4E0D;&#x518D;&#x5F15;&#x7528;&#x6742;&#x4E71;&#x7684; .prototype &#x4E86;&#x3002;</li>
+<li>Button&#x58F0;&#x660E;&#x65F6;&#x76F4;&#x63A5;&#x201C;&#x7EE7;&#x627F;&#x201D;&#x4E86;Widget&#xFF0C;&#x4E0D;&#x518D;&#x9700;&#x8981;&#x901A;&#x8FC7;Object.create(..)&#x6765;&#x66FF;&#x6362; .prototype &#x5BF9;&#x8C61;&#xFF0C;&#x4E5F;&#x4E0D;&#x9700;&#x8981;&#x8BBE;&#x7F6E; .__proto__ &#x6216;&#x8005; Object.setPrototypeOf(..)&#x3002;</li>
+<li>&#x53EF;&#x4EE5;&#x901A;&#x8FC7;super(..)&#x6765;&#x5B9E;&#x73B0;&#x76F8;&#x5BF9;&#x591A;&#x6001;&#xFF0C;&#x8FD9;&#x6837;&#x4EFB;&#x4F55;&#x65B9;&#x6CD5;&#x90FD;&#x53EF;&#x4EE5;&#x5F15;&#x7528;&#x539F;&#x578B;&#x94FE;&#x4E0A;&#x5C42;&#x7684;&#x540C;&#x540D;&#x65B9;&#x6CD5;&#x3002;&#x8FD9;&#x53EF;&#x4EE5;&#x89E3;&#x51B3;&#x7B2C; 4 &#x7AE0;&#x63D0;&#x5230;&#x8FC7;&#x7684;&#x90A3;&#x4E2A;&#x95EE;&#x9898;:&#x6784;&#x9020;&#x51FD;&#x6570;&#x4E0D;&#x5C5E;&#x4E8E;&#x7C7B;&#xFF0C;&#x6240;&#x4EE5;&#x65E0;&#x6CD5;&#x4E92;&#x76F8;&#x5F15;&#x7528;&#x2014;&#x2014;
+super() &#x53EF;&#x4EE5;&#x5B8C;&#x7F8E;&#x89E3;&#x51B3;&#x6784;&#x9020;&#x51FD;&#x6570;&#x7684;&#x95EE;&#x9898;&#x3002;</li>
+<li>class &#x5B57;&#x9762;&#x8BED;&#x6CD5;<strong>&#x4E0D;&#x80FD;&#x58F0;&#x660E;&#x5C5E;&#x6027;</strong>(&#x53EA;&#x80FD;&#x58F0;&#x660E;&#x65B9;&#x6CD5;)&#x3002;&#x770B;&#x8D77;&#x6765;&#x8FD9;&#x662F;&#x4E00;&#x79CD;&#x9650;&#x5236;&#xFF0C;&#x4F46;&#x662F;&#x5B83;&#x4F1A;&#x6392;&#x9664;&#x6389;&#x8BB8;&#x591A;&#x4E0D;&#x597D;&#x7684;&#x60C5;&#x51B5;&#xFF0C;&#x5982;&#x679C;&#x6CA1;&#x6709;&#x8FD9;&#x79CD;&#x9650;&#x5236;&#x7684;&#x8BDD;&#xFF0C;&#x539F;&#x578B;&#x94FE;&#x672B;&#x7AEF;&#x7684;&#x201C;&#x5B9E;&#x4F8B;&#x201D;&#x53EF;&#x80FD;&#x4F1A;&#x610F;&#x5916;&#x5730;&#x83B7;&#x53D6;&#x5176;&#x4ED6;&#x5730;&#x65B9;&#x7684;&#x5C5E;&#x6027;(&#x8FD9;&#x4E9B;&#x5C5E;&#x6027;&#x9690;&#x5F0F;&#x88AB;&#x6240;&#x6709;&#x201C;&#x5B9E;&#x4F8B;&#x201D;&#x6240;&#x201C;&#x5171;&#x4EAB;&#x201D;)&#x3002;&#x6240;&#x4EE5;&#xFF0C;class &#x8BED;&#x6CD5;&#x5B9E;&#x9645;&#x4E0A;&#x53EF;&#x4EE5;&#x5E2E;&#x52A9;&#x4F60;&#x907F;&#x514D;&#x72AF;&#x9519;&#x3002;</li>
+<li>&#x53EF;&#x4EE5;&#x901A;&#x8FC7;extends&#x5F88;&#x81EA;&#x7136;&#x5730;&#x6269;&#x5C55;&#x5BF9;&#x8C61;(&#x5B50;)&#x7C7B;&#x578B;&#xFF0C;&#x751A;&#x81F3;&#x662F;&#x5185;&#x7F6E;&#x7684;&#x5BF9;&#x8C61;(&#x5B50;)&#x7C7B;&#x578B;&#xFF0C;&#x6BD4;&#x5982; Array &#x6216; RegExp&#x3002;&#x6CA1;&#x6709; class ..extends &#x8BED;&#x6CD5;&#x65F6;&#xFF0C;&#x60F3;&#x5B9E;&#x73B0;&#x8FD9;&#x4E00;&#x70B9;&#x662F;&#x975E;&#x5E38;&#x56F0;&#x96BE;&#x7684;&#xFF0C;&#x57FA;&#x672C;&#x4E0A;&#x53EA;&#x6709;&#x6846;&#x67B6;&#x7684;&#x4F5C;&#x8005;&#x624D;&#x80FD;&#x641E;&#x6E05;&#x695A;&#x8FD9;&#x4E00;&#x70B9;&#x3002;&#x4F46;&#x662F;&#x73B0;&#x5728;&#x53EF;&#x4EE5;&#x8F7B;&#x800C;&#x6613;&#x4E3E;&#x5730;&#x505A;&#x5230;!</li>
+</ol>
+<p>&#x7136;&#x800C;&#xFF0C;class &#x8BED;&#x6CD5;&#x5E76;&#x6CA1;&#x6709;&#x89E3;&#x51B3;&#x6240;&#x6709;&#x7684;&#x95EE;&#x9898;&#xFF0C;&#x5728; JavaScript &#x4E2D;&#x4F7F;&#x7528;&#x201C;&#x7C7B;&#x201D;&#x8BBE;&#x8BA1;&#x6A21;&#x5F0F;&#x4ECD;&#x7136;&#x5B58;&#x5728;&#x8BB8;&#x591A;&#x6DF1;&#x5C42;&#x95EE;&#x9898;&#xFF1A;</p>
+<ol>
+<li>class &#x57FA;&#x672C;&#x4E0A;&#x53EA;&#x662F;&#x73B0;&#x6709; <a href="&#x59D4;&#x6258;">[Prototype]</a>&#x673A;&#x5236;&#x7684;&#x4E00;&#x79CD;&#x8BED;&#x6CD5;&#x7CD6;&#x3002;&#x4E5F;&#x5C31;&#x662F;&#x8BF4;&#xFF0C;class &#x5E76;&#x4E0D;&#x4F1A;&#x50CF;&#x4F20;&#x7EDF;&#x9762;&#x5411;&#x7C7B;&#x7684;&#x8BED;&#x8A00;&#x4E00;&#x6837;&#x5728;&#x58F0;&#x660E;&#x65F6;&#x9759;&#x6001;&#x590D;&#x5236;&#x6240;&#x6709;&#x884C;&#x4E3A;&#x3002;&#x5982;&#x679C;&#x4F60; (&#x6709;&#x610F;&#x6216;&#x65E0;&#x610F;)&#x4FEE;&#x6539;&#x6216;&#x8005;&#x66FF;&#x6362;&#x4E86;&#x7236;&#x201C;&#x7C7B;&#x201D;&#x4E2D;&#x7684;&#x4E00;&#x4E2A;&#x65B9;&#x6CD5;&#xFF0C;&#x90A3;&#x5B50;&#x201C;&#x7C7B;&#x201D;&#x548C;&#x6240;&#x6709;&#x5B9E;&#x4F8B;&#x90FD;&#x4F1A;&#x53D7;&#x5230;&#x5F71;&#x54CD;&#xFF0C;&#x56E0;&#x4E3A;&#x5B83;&#x4EEC;&#x53EA;&#x662F;&#x4F7F;&#x7528;&#x57FA;&#x4E8E; [[Prototype]] &#x7684;&#x5B9E;&#x65F6;&#x59D4;&#x6258;:</li>
+<li>ES6 &#x4E2D;&#x7684; class &#x8BED;&#x6CD5;&#x4F1A;&#x8BA9;&#x4F20;&#x7EDF;&#x7C7B;&#x548C;&#x59D4;&#x6258;&#x5BF9;&#x8C61;&#x4E4B;&#x95F4;&#x7684;&#x533A;&#x522B;&#x66F4;&#x52A0;&#x96BE;&#x4EE5;&#x53D1;&#x73B0;&#x548C;&#x7406;&#x89E3;&#x3002;</li>
+<li><p>class &#x8BED;&#x6CD5;&#x65E0;&#x6CD5;&#x5B9A;&#x4E49;&#x7C7B;&#x6210;&#x5458;&#x5C5E;&#x6027;(&#x53EA;&#x80FD;&#x5B9A;&#x4E49;&#x65B9;&#x6CD5;)&#xFF0C;&#x5982;&#x679C;&#x4E3A;&#x4E86;&#x8DDF;&#x8E2A;&#x5B9E;&#x4F8B;&#x4E4B;&#x95F4;&#x5171;&#x4EAB;&#x72B6;&#x6001;&#x5FC5;&#x987B;&#x8981;&#x8FD9;&#x4E48;&#x505A;&#xFF0C;&#x90A3;&#x4F60;&#x53EA;&#x80FD;&#x4F7F;&#x7528;&#x4E11;&#x964B;&#x7684; .prototype &#x8BED;&#x6CD5;&#xFF0C;&#x50CF;&#x8FD9;&#x6837;:</p>
+<pre><code> class C {
+     constructor() {
+         // &#x786E;&#x4FDD;&#x4FEE;&#x6539;&#x7684;&#x662F;&#x5171;&#x4EAB;&#x72B6;&#x6001;&#x800C;&#x4E0D;&#x662F;&#x5728;&#x5B9E;&#x4F8B;&#x4E0A;&#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x5C4F;&#x853D;&#x5C5E;&#x6027;!
+         C.prototype.count++;
+         // this.count &#x53EF;&#x4EE5;&#x901A;&#x8FC7;&#x59D4;&#x6258;&#x5B9E;&#x73B0;&#x6211;&#x4EEC;&#x60F3;&#x8981;&#x7684;&#x529F;&#x80FD;
+         console.log(&quot;Hello: &quot; + this.count);
+     }
+ }
+ // &#x76F4;&#x63A5;&#x5411; prototype &#x5BF9;&#x8C61;&#x4E0A;&#x6DFB;&#x52A0;&#x4E00;&#x4E2A;&#x5171;&#x4EAB;&#x72B6;&#x6001; C.prototype.count = 0;
+ var c1 = new C(); // Hello: 1
+ var c2 = new C(); // Hello: 2
+ c1.count === 2; // true
+ c1.count === c2.count; // true
+</code></pre><p>&#x8FD9;&#x79CD;&#x65B9;&#x6CD5;&#x6700;&#x5927;&#x7684;&#x95EE;&#x9898;&#x662F;&#xFF0C;&#x5B83;&#x8FDD;&#x80CC;&#x4E86; class &#x8BED;&#x6CD5;&#x7684;&#x672C;&#x610F;&#xFF0C;&#x5728;&#x5B9E;&#x73B0;&#x4E2D;&#x66B4;&#x9732;&#x4E86; .prototype&#x3002;</p>
+</li>
+<li><p>class &#x8BED;&#x6CD5;&#x9762;&#x4E34;&#x610F;&#x5916;&#x5C4F;&#x853D;&#x7684;&#x95EE;&#x9898;&#x3002;</p>
+<pre><code> class C {
+     constructor(id) {
+         // &#x5662;&#xFF0C;&#x90C1;&#x95F7;&#xFF0C;&#x6211;&#x4EEC;&#x7684; id &#x5C5E;&#x6027;&#x5C4F;&#x853D;&#x4E86; id() &#x65B9;&#x6CD5;
+         this.id = id;
+     }
+     id() {
+         console.log(&quot;Id: &quot; + id);
+     }
+ }
+ var c1 = new C(&quot;c1&quot;);
+ c1.id(); // TypeError -- c1.id &#x73B0;&#x5728;&#x662F;&#x5B57;&#x7B26;&#x4E32; &quot;c1&quot;
+</code></pre></li>
+<li>super &#x4E5F;&#x5B58;&#x5728;&#x4E00;&#x4E9B;&#x975E;&#x5E38;&#x7EC6;&#x5FAE;&#x7684;&#x95EE;&#x9898;&#x3002;&#x51FA;&#x4E8E;&#x6027;&#x80FD;&#x8003;&#x8651;(this &#x7ED1;&#x5B9A;&#x5DF2;&#x7ECF;&#x662F;&#x5F88;&#x5927;&#x7684;&#x5F00;&#x9500;&#x4E86;)&#xFF0C;super &#x5E76;&#x4E0D;&#x662F;&#x52A8;&#x6001;&#x7ED1;&#x5B9A;&#x7684;&#xFF0C;&#x5B83;&#x4F1A;&#x5728;&#x58F0;&#x660E;&#x65F6;&#x201C;&#x9759;&#x6001;&#x201D;&#x7ED1;&#x5B9A;&#x3002;&#x5982;&#x679C;&#x4F60;&#x548C;&#x5927;&#x591A;&#x6570; JavaScript &#x5F00;&#x53D1;&#x8005;&#x4E00;&#x6837;&#xFF0C;&#x4F1A;&#x7528;&#x8BB8;&#x591A;&#x4E0D;&#x540C;&#x7684;&#x65B9;&#x6CD5;&#x628A;&#x51FD;&#x6570;&#x5E94;&#x7528;&#x5728;&#x4E0D;&#x540C;&#x7684;(&#x4F7F;&#x7528; class &#x5B9A;&#x4E49;&#x7684;)&#x5BF9;&#x8C61;&#x4E0A;&#xFF0C;&#x90A3;&#x4F60;&#x53EF;&#x80FD;&#x4E0D;&#x77E5;&#x9053;&#xFF0C;&#x6BCF;&#x6B21;&#x6267;&#x884C;&#x8FD9;&#x4E9B;&#x64CD;&#x4F5C;&#x65F6;&#x90FD;&#x5FC5;&#x987B;&#x91CD;&#x65B0;&#x7ED1;&#x5B9A; super&#x3002;&#x6B64;&#x5916;&#xFF0C;&#x6839;&#x636E;&#x5E94;&#x7528;&#x65B9;&#x5F0F;&#x7684;&#x4E0D;&#x540C;&#xFF0C;super &#x53EF;&#x80FD;&#x4E0D;&#x4F1A;&#x7ED1;&#x5B9A;&#x5230;&#x5408;&#x9002;&#x7684;&#x5BF9;&#x8C61;&#x3002;&#x56E0;&#x6B64;&#xFF0C;&#x5BF9;&#x4E8E;&#x5F15;&#x64CE;&#x81EA;&#x52A8;&#x7ED1;&#x5B9A;&#x7684; super &#x6765;&#x8BF4;&#xFF0C;&#x4F60;&#x5FC5;&#x987B;&#x65F6;&#x523B;&#x8B66;&#x60D5;&#x662F;&#x5426;&#x9700;&#x8981;&#x8FDB;&#x884C;&#x624B;&#x52A8;&#x7ED1;&#x5B9A;&#x3002;</li>
+</ol>
+<h3 id="&#x66F4;&#x7B80;&#x6D01;&#x7684;&#x8BBE;&#x8BA1;"><a name="&#x66F4;&#x7B80;&#x6D01;&#x7684;&#x8BBE;&#x8BA1;" class="anchor-navigation-ex-anchor" href="#&#x66F4;&#x7B80;&#x6D01;&#x7684;&#x8BBE;&#x8BA1;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x66F4;&#x7B80;&#x6D01;&#x7684;&#x8BBE;&#x8BA1;</h3>
+<p>&#x5BF9;&#x8C61;&#x5173;&#x8054;&#x9664;&#x4E86;&#x80FD;&#x8BA9;&#x4EE3;&#x7801;&#x770B;&#x8D77;&#x6765;&#x66F4;&#x7B80;&#x6D01;(&#x5E76;&#x4E14;&#x66F4;&#x5177;&#x6269;&#x5C55;&#x6027;)&#x5916;&#x8FD8;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;&#x884C;&#x4E3A;&#x59D4;&#x6258;&#x6A21;&#x5F0F;&#x7B80;&#x5316;&#x4EE3;&#x7801;&#x7ED3;&#x6784;&#x3002;&#x6211;&#x4EEC;&#x6765;&#x770B;&#x6700;&#x540E;&#x4E00;&#x4E2A;&#x4F8B;&#x5B50;&#xFF0C;&#x5B83;&#x5C55;&#x793A;&#x4E86;&#x5BF9;&#x8C61;&#x5173;&#x8054;&#x5982;&#x4F55;&#x7B80;&#x5316;&#x6574;&#x4F53;&#x8BBE;&#x8BA1;&#x3002;</p>
+<pre><code>var LoginController = {
+    errors: [],
+    getUser: function() {
+        return document.getElementById(&quot;login_username&quot;).value;
+    },
+    getPassword: function() {
+        return document.getElementById(&quot;login_password&quot;).value;
+    },
+    validateEntry: function(user, pw) {
+        user = user || this.getUser();
+        pw = pw || this.getPassword();
+        if (!(user &amp;&amp; pw)) {
+            return this.failure(
+                &quot;Please enter a username &amp; password!&quot;
+            );
+        } else if (user.length &lt; 5) {
+            return this.failure(
+                &quot;Password must be 5+ characters!&quot;
+            );
+        }
+        // &#x5982;&#x679C;&#x6267;&#x884C;&#x5230;&#x8FD9;&#x91CC;&#x8BF4;&#x660E;&#x901A;&#x8FC7;&#x9A8C;&#x8BC1;
+        return true;
+    },
+    showDialog: function(title, msg) { // &#x7ED9;&#x7528;&#x6237;&#x663E;&#x793A;&#x6807;&#x9898;&#x548C;&#x6D88;&#x606F;
+    },
+    failure: function(err) {
+        this.errors.push(err);
+        this.showDialog(&quot;Error&quot;, &quot;Login invalid: &quot; + err);
+    }
+};
+// &#x8BA9; AuthController &#x59D4;&#x6258; LoginController
+var AuthController = Object.create(LoginController);
+AuthController.errors = [];
+AuthController.checkAuth = function() {
+    var user = this.getUser();
+    var pw = this.getPassword();
+    if (this.validateEntry(user, pw)) {
+        this.server(&quot;/check-auth&quot;, {
+                user: user,
+                pw: pw
+            })
+            .then(this.accepted.bind(this))
+            .fail(this.rejected.bind(this));
+    }
+};
+AuthController.server = function(url, data) {
+    return $.ajax({
+        url: url,
+        data: data
+    });
+};
+AuthController.accepted = function() {
+    this.showDialog(&quot;Success&quot;, &quot;Authenticated!&quot;)
+};
+AuthController.rejected = function(err) {
+    this.failure(&quot;Auth Failed: &quot; + err);
+};
+</code></pre><h3 id="&#x66F4;&#x597D;&#x7684;&#x8BED;&#x6CD5;"><a name="&#x66F4;&#x597D;&#x7684;&#x8BED;&#x6CD5;" class="anchor-navigation-ex-anchor" href="#&#x66F4;&#x597D;&#x7684;&#x8BED;&#x6CD5;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x66F4;&#x597D;&#x7684;&#x8BED;&#x6CD5;</h3>
+<p>&#x5728; ES6 &#x4E2D;&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x5728;&#x4EFB;&#x610F;&#x5BF9;&#x8C61;&#x7684;&#x5B57;&#x9762;&#x5F62;&#x5F0F;&#x4E2D;&#x4F7F;&#x7528;&#x7B80;&#x6D01;&#x65B9;&#x6CD5;&#x58F0;&#x660E;&#xFF0C;&#x53EF;&#x4EE5;&#x8BA9;&#x5BF9;&#x8C61;&#x5173;&#x8054;&#x98CE;&#x683C;&#x66F4;&#x52A0;&#x4EBA;&#x6027;&#x5316;(&#x5E76;&#x4E14;&#x4ECD;&#x7136;&#x6BD4;&#x5178;&#x578B;&#x7684;&#x539F;&#x578B;&#x98CE;&#x683C;&#x4EE3;&#x7801;&#x66F4;&#x52A0;&#x7B80;&#x6D01;&#x548C;&#x4F18;&#x79C0;)&#x3002;&#x4F60;&#x5B8C;&#x5168;&#x4E0D;&#x9700;&#x8981;&#x4F7F;&#x7528;&#x7C7B;&#x5C31;&#x80FD;&#x4EAB;&#x53D7;&#x6574;&#x6D01;&#x7684;&#x5BF9;&#x8C61;&#x8BED;&#x6CD5;&#x3002;</p>
+<pre><code>// &#x4F7F;&#x7528;&#x66F4;&#x597D;&#x7684;&#x5BF9;&#x8C61;&#x5B57;&#x9762;&#x5F62;&#x5F0F;&#x8BED;&#x6CD5;&#x548C;&#x7B80;&#x6D01;&#x65B9;&#x6CD5;
+var AuthController = {
+    errors: [],
+    checkAuth() {
+        // ...
+    },
+    server(url, data) {
+        // ...
+    }
+    // ...
+};
+
+// &#x73B0;&#x5728;&#x628A; AuthController &#x5173;&#x8054;&#x5230; LoginController
+Object.setPrototypeOf( AuthController, LoginController );
+</code></pre><p>&#x7B80;&#x6D01;&#x65B9;&#x6CD5;&#x6709;&#x4E00;&#x4E2A;&#x975E;&#x5E38;&#x5C0F;&#x4F46;&#x662F;&#x975E;&#x5E38;&#x91CD;&#x8981;&#x7684;<strong>&#x7F3A;&#x70B9;</strong>&#x3002;</p>
+<pre><code>var Foo = {
+    bar() { /*..*/ },
+    baz: function baz() { /*..*/ }
+};
+</code></pre><p>&#x53BB;&#x6389;&#x8BED;&#x6CD5;&#x7CD6;&#x4E4B;&#x540E;&#x7684;&#x4EE3;&#x7801;&#x5982;&#x4E0B;&#x6240;&#x793A;:</p>
+<pre><code>var Foo = {
+    bar: function() { /*..*/ },
+    baz: function baz() { /*..*/ }
+};
+</code></pre><p>&#x7531;&#x4E8E;&#x51FD;&#x6570;&#x5BF9;&#x8C61;&#x672C;&#x8EAB;&#x6CA1;&#x6709;&#x540D;&#x79F0;&#x6807;&#x8BC6;&#x7B26;&#xFF0C;&#x6240;&#x4EE5;bar()&#x7684;&#x7F29;&#x5199;&#x5F62;&#x5F0F;(function()..)&#x5B9E;&#x9645;&#x4E0A;&#x4F1A;&#x53D8;&#x6210;&#x4E00;&#x4E2A;&#x533F;&#x540D;&#x51FD;&#x6570;&#x8868;&#x8FBE;&#x5F0F;&#x5E76;&#x8D4B;&#x503C;&#x7ED9; bar &#x5C5E;&#x6027;&#x3002;</p>
+<p>&#x4E0B;&#x9762;&#x662F;&#x533F;&#x540D;&#x51FD;&#x6570;&#xFF08;&#x6CA1;&#x6709; name &#x6807;&#x8BC6;&#x7B26;&#xFF09;&#x8868;&#x8FBE;&#x5F0F;&#x7684;&#x4E09;&#x5927;&#x4E3B;&#x8981;&#x7F3A;&#x70B9;&#xFF1A;</p>
+<ol>
+<li>&#x8C03;&#x8BD5;&#x6808;&#x66F4;&#x96BE;&#x8FFD;&#x8E2A;;</li>
+<li>&#x81EA;&#x6211;&#x5F15;&#x7528;(&#x9012;&#x5F52;&#x3001;&#x4E8B;&#x4EF6;(&#x89E3;&#x9664;)&#x7ED1;&#x5B9A;&#xFF0C;&#x7B49;&#x7B49;)&#x66F4;&#x96BE;;</li>
+<li>&#x4EE3;&#x7801;(&#x7A0D;&#x5FAE;)&#x66F4;&#x96BE;&#x7406;&#x89E3;&#x3002;</li>
+</ol>
+<p>&#x7B80;&#x6D01;&#x65B9;&#x6CD5;&#x6CA1;&#x6709;&#x7B2C; 1 &#x548C;&#x7B2C; 3 &#x4E2A;&#x7F3A;&#x70B9;&#x3002;&#x53BB;&#x6389;&#x8BED;&#x6CD5;&#x7CD6;&#x7684;&#x7248;&#x672C;&#x4F7F;&#x7528;&#x7684;&#x662F;&#x533F;&#x540D;&#x51FD;&#x6570;&#x8868;&#x8FBE;&#x5F0F;&#xFF0C;&#x901A;&#x5E38;&#x6765;&#x8BF4;&#x5E76;&#x4E0D;&#x4F1A;&#x5728;&#x8FFD;&#x8E2A;&#x6808;&#x4E2D;&#x6DFB;&#x52A0; name&#xFF0C;&#x4F46;&#x662F;&#x7B80;&#x6D01;&#x65B9;&#x6CD5;&#x4F1A;&#x7ED9;&#x5BF9;&#x5E94;&#x7684;&#x51FD;&#x6570;&#x5BF9;&#x8C61;&#x8BBE;&#x7F6E;&#x4E00;&#x4E2A;&#x5185;&#x90E8;&#x7684; name &#x5C5E;&#x6027;&#xFF0C;&#x8FD9;&#x6837;&#x7406;&#x8BBA;&#x4E0A;&#x53EF;&#x4EE5;&#x7528;&#x5728;&#x8FFD;&#x8E2A;&#x6808;&#x4E2D;&#x3002;(&#x4F46;&#x662F;&#x8FFD;&#x8E2A;&#x7684;&#x5177;&#x4F53;&#x5B9E;&#x73B0;&#x662F;&#x4E0D;&#x540C;&#x7684;&#xFF0C;&#x56E0;&#x6B64;&#x65E0;&#x6CD5;&#x4FDD;&#x8BC1;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;&#x3002;)</p>
+<p>&#x7B80;&#x6D01;&#x65B9;&#x6CD5;&#x65E0;&#x6CD5;&#x907F;&#x514D;&#x7B2C; 2 &#x4E2A;&#x7F3A;&#x70B9;&#xFF0C;&#x5B83;&#x4EEC;&#x4E0D;&#x5177;&#x5907;&#x53EF;&#x4EE5;&#x81EA;&#x6211;&#x5F15;&#x7528;&#x7684;&#x8BCD;&#x6CD5;&#x6807;&#x8BC6;&#x7B26;&#x3002;</p>
+<pre><code>var Foo = {
+    bar: function(x) {
+        if (x &lt; 10) {
+            return Foo.bar(x * 2);
+        }
+        return x;
+    },
+    baz: function baz(x) {
+        if (x &lt; 10) {
+            return baz(x * 2);
+        }
+        return x;
+    }
+};
+</code></pre><p>&#x4F7F;&#x7528;&#x7B80;&#x6D01;&#x65B9;&#x6CD5;&#x65F6;&#x4E00;&#x5B9A;&#x8981;&#x5C0F;&#x5FC3;&#x8FD9;&#x4E00;&#x70B9;&#x3002;&#x5982;&#x679C;&#x4F60;&#x9700;&#x8981;&#x81EA;&#x6211;&#x5F15;&#x7528;&#x7684;&#x8BDD;&#xFF0C;&#x90A3;&#x6700;&#x597D;&#x4F7F;&#x7528;&#x4F20;&#x7EDF;&#x7684;&#x5177;&#x540D;&#x51FD;&#x6570;&#x8868;&#x8FBE;&#x5F0F;&#x6765;&#x5B9A;&#x4E49;&#x5BF9;&#x5E94;&#x7684;&#x51FD;&#x6570;( &#xB7; baz: function baz(){..}&#xB7; )&#xFF0C;&#x4E0D;&#x8981;&#x4F7F;&#x7528;&#x7B80;&#x6D01;&#x65B9;&#x6CD5;&#x3002;</p>
+<p>ES6 &#x7684; isPrototypeOf(..)&#x3001;getPrototypeOf(..)&#x5185;&#x7701;&#x65B9;&#x6CD5;&#x76F8;&#x6BD4; instanceof &#x66F4;&#x52A0;&#x7B80;&#x6D01;&#x5E76;&#x4E14;&#x6E05;&#x6670;&#x3002;</p>
+<h3 id="&#x5C0F;&#x7ED3;"><a name="&#x5C0F;&#x7ED3;" class="anchor-navigation-ex-anchor" href="#&#x5C0F;&#x7ED3;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x5C0F;&#x7ED3;</h3>
+<p>&#x5728;&#x8F6F;&#x4EF6;&#x67B6;&#x6784;&#x4E2D;&#x4F60;&#x53EF;&#x4EE5;&#x9009;&#x62E9;&#x662F;&#x5426;&#x4F7F;&#x7528;&#x7C7B;&#x548C;&#x7EE7;&#x627F;&#x8BBE;&#x8BA1;&#x6A21;&#x5F0F;&#x3002;&#x9664;&#x4E86;&#x7C7B;&#x8BBE;&#x8BA1;&#x6A21;&#x5F0F;&#xFF0C;&#x8FD8;&#x6709;&#x53E6;&#x4E00;&#x79CD;&#x66F4;&#x5C11;&#x89C1;&#x4F46;&#x662F;&#x66F4;&#x5F3A;&#x5927;&#x7684;&#x8BBE;&#x8BA1;&#x6A21;&#x5F0F;:&#x884C;&#x4E3A;&#x59D4;&#x6258;&#x3002;</p>
+<p>&#x884C;&#x4E3A;&#x59D4;&#x6258;&#x8BA4;&#x4E3A;&#x5BF9;&#x8C61;&#x4E4B;&#x95F4;&#x662F;&#x5144;&#x5F1F;&#x5173;&#x7CFB;&#xFF0C;&#x4E92;&#x76F8;&#x59D4;&#x6258;&#xFF0C;&#x800C;&#x4E0D;&#x662F;&#x7236;&#x7C7B;&#x548C;&#x5B50;&#x7C7B;&#x7684;&#x5173;&#x7CFB;&#x3002;JavaScript &#x7684; [[Prototype]] &#x673A;&#x5236;&#x672C;&#x8D28;&#x4E0A;&#x5C31;&#x662F;&#x884C;&#x4E3A;&#x59D4;&#x6258;&#x673A;&#x5236;&#x3002;&#x4E5F;&#x5C31;&#x662F;&#x8BF4;&#xFF0C;&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x9009;&#x62E9;&#x5728; JavaScript &#x4E2D;&#x52AA;&#x529B;&#x5B9E;&#x73B0;&#x7C7B;&#x673A;&#x5236;&#xFF0C;&#x4E5F;&#x53EF;&#x4EE5;&#x62E5;&#x62B1;&#x66F4;&#x81EA;&#x7136;&#x7684; [[Prototype]] &#x59D4;&#x6258;&#x673A;&#x5236;&#x3002;</p>
+<p>&#x5F53;&#x4F60;&#x53EA;&#x7528;&#x5BF9;&#x8C61;&#x6765;&#x8BBE;&#x8BA1;&#x4EE3;&#x7801;&#x65F6;&#xFF0C;&#x4E0D;&#x4EC5;&#x53EF;&#x4EE5;&#x8BA9;&#x8BED;&#x6CD5;&#x66F4;&#x52A0;&#x7B80;&#x6D01;&#xFF0C;&#x800C;&#x4E14;&#x53EF;&#x4EE5;&#x8BA9;&#x4EE3;&#x7801;&#x7ED3;&#x6784;&#x66F4;&#x52A0;&#x6E05;&#x6670;&#x3002; &#x5BF9;&#x8C61;&#x5173;&#x8054;(&#x5BF9;&#x8C61;&#x4E4B;&#x524D;&#x4E92;&#x76F8;&#x5173;&#x8054;)&#x662F;&#x4E00;&#x79CD;&#x7F16;&#x7801;&#x98CE;&#x683C;&#xFF0C;&#x5B83;&#x5021;&#x5BFC;&#x7684;&#x662F;&#x76F4;&#x63A5;&#x521B;&#x5EFA;&#x548C;&#x5173;&#x8054;&#x5BF9;&#x8C61;&#xFF0C;&#x4E0D;&#x628A;
+&#x5B83;&#x4EEC;&#x62BD;&#x8C61;&#x6210;&#x7C7B;&#x3002;&#x5BF9;&#x8C61;&#x5173;&#x8054;&#x53EF;&#x4EE5;&#x7528;&#x57FA;&#x4E8E; [[Prototype]] &#x7684;&#x884C;&#x4E3A;&#x59D4;&#x6258;&#x975E;&#x5E38;&#x81EA;&#x7136;&#x5730;&#x5B9E;&#x73B0;&#x3002;</p>
+<h2 id="&#x8D44;&#x6599;"><a name="&#x8D44;&#x6599;" class="anchor-navigation-ex-anchor" href="#&#x8D44;&#x6599;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x8D44;&#x6599;</h2>
+<ul>
+<li><a href="https://github.com/getify/You-Dont-Know-JS/blob/master/this%20&amp;%20object%20prototypes/README.md#you-dont-know-js-this--object-prototypes" target="_blank">You Don&apos;t Know JS: this &amp; Object Prototypes</a></li>
+</ul>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="scope.html" class="navigation navigation-prev " aria-label="Previous page: 作用域">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="Types-and-Grammar.html" class="navigation navigation-next " aria-label="Next page: 类型和语法">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"this和对象原型","level":"1.3.5","depth":2,"next":{"title":"类型和语法","level":"1.3.6","depth":2,"path":"tech/Types-and-Grammar.md","ref":"tech/Types-and-Grammar.md","articles":[]},"previous":{"title":"作用域","level":"1.3.4","depth":2,"path":"tech/scope.md","ref":"tech/scope.md","articles":[]},"dir":"ltr"},"config":{"plugins":["anchor-navigation-ex","expandable-chapters-small","sitemap-general","copy-code-button","github"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"github":{"url":"https://github.com/CW0149/gitbook-technote"},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sitemap-general":{"prefix":"https://gitbook.ryanhuang.cn/TechNote/_book/"},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"anchor-navigation-ex":{"associatedWithSummary":true,"float":{"floatIcon":"fa fa-anchor","level1Icon":"fa fa-star","level2Icon":"fa fa-hashtag","level3Icon":"fa fa-magic","showLevelIcon":true},"mode":"float","multipleH1":false,"pageTop":{"level1Icon":"fa fa-hand-o-right","level2Icon":"fa fa-hand-o-right","level3Icon":"fa fa-hand-o-right","showLevelIcon":false},"printLog":false,"showGoTop":true,"showLevel":false},"expandable-chapters-small":{},"copy-code-button":{},"sharing":{"facebook":false,"twitter":false,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Yan Huang的技术笔记","language":"zh","gitbook":"*"},"file":{"path":"tech/this-and-object-prototypes.md","mtime":"2019-03-03T23:41:22.655Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2021-04-02T17:23:08.575Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-expandable-chapters-small/expandable-chapters-small.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-copy-code-button/toggle.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-github/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

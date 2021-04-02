@@ -1,0 +1,1327 @@
+
+<!DOCTYPE HTML>
+<html lang="zh" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>类型和语法 · Yan Huang的技术笔记</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-anchor-navigation-ex/style/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-expandable-chapters-small/expandable-chapters-small.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+        <link rel="stylesheet" href="../styles/website.css">
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="../practice/" />
+    
+    
+    <link rel="prev" href="this-and-object-prototypes.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="輸入並搜尋" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    介绍
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../frontend/">
+            
+                <a href="../frontend/">
+            
+                    
+                    前端体系
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="../frontend/difficulty.html">
+            
+                <a href="../frontend/difficulty.html">
+            
+                    
+                    JS难点
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="../frontend/async-and-events.html">
+            
+                <a href="../frontend/async-and-events.html">
+            
+                    
+                    异步流控制与事件
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3" data-path="../frontend/regexp-and-template-engine.html">
+            
+                <a href="../frontend/regexp-and-template-engine.html">
+            
+                    
+                    正则与模版引擎
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4" data-path="../frontend/cross-origin-and-safe.html">
+            
+                <a href="../frontend/cross-origin-and-safe.html">
+            
+                    
+                    跨域与前端安全
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5" data-path="../frontend/modular-and-webpack.html">
+            
+                <a href="../frontend/modular-and-webpack.html">
+            
+                    
+                    模块化与webpack
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.6" data-path="../frontend/performance-optimization.html">
+            
+                <a href="../frontend/performance-optimization.html">
+            
+                    
+                    性能优化
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.7" data-path="../frontend/monitoring-report-and-pwa.html">
+            
+                <a href="../frontend/monitoring-report-and-pwa.html">
+            
+                    
+                    监控上报与PWA
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.8" data-path="../frontend/test.html">
+            
+                <a href="../frontend/test.html">
+            
+                    
+                    自动化集成测试
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.9" data-path="../frontend/react-and-vue.html">
+            
+                <a href="../frontend/react-and-vue.html">
+            
+                    
+                    React & Vue
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.10" data-path="../frontend/nodejs.html">
+            
+                <a href="../frontend/nodejs.html">
+            
+                    
+                    Node.js
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    阅读笔记
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="questions.html">
+            
+                <a href="questions.html">
+            
+                    
+                    问题库
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2" data-path="regexp.html">
+            
+                <a href="regexp.html">
+            
+                    
+                    正则表达式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3" data-path="urlEncode.html">
+            
+                <a href="urlEncode.html">
+            
+                    
+                    URL编码
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.4" data-path="scope.html">
+            
+                <a href="scope.html">
+            
+                    
+                    作用域
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.5" data-path="this-and-object-prototypes.html">
+            
+                <a href="this-and-object-prototypes.html">
+            
+                    
+                    this和对象原型
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.3.6" data-path="Types-and-Grammar.html">
+            
+                <a href="Types-and-Grammar.html">
+            
+                    
+                    类型和语法
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="../practice/">
+            
+                <a href="../practice/">
+            
+                    
+                    实践笔记
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1" data-path="../practice/ssl.html">
+            
+                <a href="../practice/ssl.html">
+            
+                    
+                    申请SSL通配符证书
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2" data-path="../practice/phabricator.html">
+            
+                <a href="../practice/phabricator.html">
+            
+                    
+                    Phabricator
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.3" data-path="../practice/antd-pro-usage.html">
+            
+                <a href="../practice/antd-pro-usage.html">
+            
+                    
+                    Use Ant Design Pro
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.4" data-path="../practice/mac-start-ways.html">
+            
+                <a href="../practice/mac-start-ways.html">
+            
+                    
+                    Mac 开机方式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.5" data-path="../practice/typescript.html">
+            
+                <a href="../practice/typescript.html">
+            
+                    
+                    TypeScript
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.6" data-path="../practice/resources.html">
+            
+                <a href="../practice/resources.html">
+            
+                    
+                    资源
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.7" data-path="../practice/npm-package-mmanagement.html">
+            
+                <a href="../practice/npm-package-mmanagement.html">
+            
+                    
+                    npm 依赖管理
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="../frameworks/">
+            
+                <a href="../frameworks/">
+            
+                    
+                    框架
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.1" data-path="../frameworks/flutter.html">
+            
+                <a href="../frameworks/flutter.html">
+            
+                    
+                    Flutter
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2" data-path="../frameworks/react-native.html">
+            
+                <a href="../frameworks/react-native.html">
+            
+                    
+                    React Native
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="../articles/">
+            
+                <a href="../articles/">
+            
+                    
+                    文摘摘录
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.6.1" data-path="../articles/mix.html">
+            
+                <a href="../articles/mix.html">
+            
+                    
+                    杂
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.2" data-path="../articles/2019-02-04.html">
+            
+                <a href="../articles/2019-02-04.html">
+            
+                    
+                    2019-02-04
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" data-path="../links/">
+            
+                <a href="../links/">
+            
+                    
+                    链接收藏
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.7.1" data-path="../links/articles.html">
+            
+                <a href="../links/articles.html">
+            
+                    
+                    文章
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.2" data-path="../links/tools.html">
+            
+                <a href="../links/tools.html">
+            
+                    
+                    开发
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.3" data-path="../links/resources.html">
+            
+                <a href="../links/resources.html">
+            
+                    
+                    学习资源
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.4" data-path="../links/blogs.html">
+            
+                <a href="../links/blogs.html">
+            
+                    
+                    博客
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.5" data-path="../links/other.html">
+            
+                <a href="../links/other.html">
+            
+                    
+                    其它
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            本書使用 GitBook 釋出
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >类型和语法</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <div id="anchor-navigation-ex-navbar"><i class="fa fa-anchor"></i><ul><li><span class="title-icon fa fa-star"></span><a href="#&#x7C7B;&#x578B;"><b></b>&#x7C7B;&#x578B;</a></li><ul><li><span class="title-icon fa fa-hashtag"></span><a href="#&#x4EC0;&#x4E48;&#x662F;&#x7C7B;&#x578B;"><b></b>&#x4EC0;&#x4E48;&#x662F;&#x7C7B;&#x578B;</a></li><li><span class="title-icon fa fa-hashtag"></span><a href="#&#x4E3A;&#x4EC0;&#x4E48;&#x8981;&#x61C2;&#x7C7B;&#x578B;"><b></b>&#x4E3A;&#x4EC0;&#x4E48;&#x8981;&#x61C2;&#x7C7B;&#x578B;</a></li><li><span class="title-icon fa fa-hashtag"></span><a href="#&#x5185;&#x7F6E;&#x7C7B;&#x578B;"><b></b>&#x5185;&#x7F6E;&#x7C7B;&#x578B;</a></li></ul><li><span class="title-icon fa fa-star"></span><a href="#&#x503C;"><b></b>&#x503C;</a></li><ul><li><span class="title-icon fa fa-hashtag"></span><a href="#&#x6570;&#x7EC4;"><b></b>&#x6570;&#x7EC4;</a></li><ul><li><span class="title-icon fa fa-magic"></span><a href="#&#x7B80;&#x4ECB;"><b></b>&#x7B80;&#x4ECB;</a></li><li><span class="title-icon fa fa-magic"></span><a href="#&#x7C7B;&#x6570;&#x7EC4;"><b></b>&#x7C7B;&#x6570;&#x7EC4;</a></li></ul><li><span class="title-icon fa fa-hashtag"></span><a href="#&#x5B57;&#x7B26;&#x4E32;"><b></b>&#x5B57;&#x7B26;&#x4E32;</a></li><li><span class="title-icon fa fa-hashtag"></span><a href="#&#x6570;&#x5B57;"><b></b>&#x6570;&#x5B57;</a></li><ul><li><span class="title-icon fa fa-magic"></span><a href="#&#x8F83;&#x5C0F;&#x7684;&#x6570;&#x503C;"><b></b>&#x8F83;&#x5C0F;&#x7684;&#x6570;&#x503C;</a></li><li><span class="title-icon fa fa-magic"></span><a href="#&#x6574;&#x6570;&#x5B89;&#x5168;&#x8303;&#x56F4;"><b></b>&#x6574;&#x6570;&#x5B89;&#x5168;&#x8303;&#x56F4;</a></li><li><span class="title-icon fa fa-magic"></span><a href="#&#x6574;&#x6570;&#x68C0;&#x6D4B;"><b></b>&#x6574;&#x6570;&#x68C0;&#x6D4B;</a></li><li><span class="title-icon fa fa-magic"></span><a href="#32&#x4F4D;&#x6709;&#x7B26;&#x53F7;&#x6574;&#x6570;"><b></b>32&#x4F4D;&#x6709;&#x7B26;&#x53F7;&#x6574;&#x6570;</a></li><li><span class="title-icon fa fa-magic"></span><a href="#&#x7279;&#x6B8A;&#x6570;&#x5B57;"><b></b>&#x7279;&#x6B8A;&#x6570;&#x5B57;</a></li></ul><li><span class="title-icon fa fa-hashtag"></span><a href="#null&#x4E0E;undefined"><b></b>null&#x4E0E;undefined</a></li><ul><li><span class="title-icon fa fa-magic"></span><a href="#null"><b></b>null</a></li><li><span class="title-icon fa fa-magic"></span><a href="#undefined"><b></b>undefined</a></li></ul><li><span class="title-icon fa fa-hashtag"></span><a href="#&#x503C;&#x548C;&#x5F15;&#x7528;"><b></b>&#x503C;&#x548C;&#x5F15;&#x7528;</a></li></ul><li><span class="title-icon fa fa-star"></span><a href="#&#x539F;&#x751F;&#x51FD;&#x6570;"><b></b>&#x539F;&#x751F;&#x51FD;&#x6570;</a></li><ul><li><span class="title-icon fa fa-hashtag"></span><a href="#class"><b></b>[[Class]]</a></li><li><span class="title-icon fa fa-hashtag"></span><a href="#&#x5C01;&#x88C5;&#x5BF9;&#x8C61;"><b></b>&#x5C01;&#x88C5;&#x5BF9;&#x8C61;</a></li><li><span class="title-icon fa fa-hashtag"></span><a href="#&#x62C6;&#x5C01;&#x5BF9;&#x8C61;"><b></b>&#x62C6;&#x5C01;&#x5BF9;&#x8C61;</a></li><li><span class="title-icon fa fa-hashtag"></span><a href="#&#x539F;&#x751F;&#x51FD;&#x6570;&#x4F5C;&#x4E3A;&#x6784;&#x9020;&#x51FD;&#x6570;"><b></b>&#x539F;&#x751F;&#x51FD;&#x6570;&#x4F5C;&#x4E3A;&#x6784;&#x9020;&#x51FD;&#x6570;</a></li><ul><li><span class="title-icon fa fa-magic"></span><a href="#array"><b></b>Array(..)</a></li><li><span class="title-icon fa fa-magic"></span><a href="#object&#x3001;function&#x548C;regexp"><b></b>Object(..)&#x3001;Function(..)&#x548C;RegExp(..)</a></li><li><span class="title-icon fa fa-magic"></span><a href="#date&#x548C;error"><b></b>Date(..)&#x548C;Error(..)</a></li><li><span class="title-icon fa fa-magic"></span><a href="#symbol"><b></b>Symbol(..)</a></li></ul><li><span class="title-icon fa fa-hashtag"></span><a href="#&#x539F;&#x751F;&#x51FD;&#x6570;&#x539F;&#x578B;"><b></b>&#x539F;&#x751F;&#x51FD;&#x6570;&#x539F;&#x578B;</a></li></ul><li><span class="title-icon fa fa-star"></span><a href="#&#x5F3A;&#x5236;&#x7C7B;&#x578B;&#x8F6C;&#x6362;"><b></b>&#x5F3A;&#x5236;&#x7C7B;&#x578B;&#x8F6C;&#x6362;</a></li><ul><li><span class="title-icon fa fa-hashtag"></span><a href="#&#x503C;&#x7C7B;&#x578B;&#x8F6C;&#x6362;"><b></b>&#x503C;&#x7C7B;&#x578B;&#x8F6C;&#x6362;</a></li><li><span class="title-icon fa fa-hashtag"></span><a href="#tostring"><b></b>ToString</a></li><ul><li><span class="title-icon fa fa-magic"></span><a href="#tostring&#x64CD;&#x4F5C;"><b></b>ToString&#x64CD;&#x4F5C;</a></li><li><span class="title-icon fa fa-magic"></span><a href="#json&#x5B57;&#x7B26;&#x4E32;&#x5316;"><b></b>JSON&#x5B57;&#x7B26;&#x4E32;&#x5316;</a></li></ul><li><span class="title-icon fa fa-hashtag"></span><a href="#toprimitive"><b></b>ToPrimitive</a></li><li><span class="title-icon fa fa-hashtag"></span><a href="#tonumber"><b></b>ToNumber</a></li><li><span class="title-icon fa fa-hashtag"></span><a href="#toboolean"><b></b>ToBoolean</a></li><li><span class="title-icon fa fa-hashtag"></span><a href="#&#x7C7B;&#x578B;&#x8F6C;&#x6362;&#x5B9E;&#x8DF5;"><b></b>&#x7C7B;&#x578B;&#x8F6C;&#x6362;&#x5B9E;&#x8DF5;</a></li><ul><li><span class="title-icon fa fa-magic"></span><a href="#&#x663E;&#x793A;&#x8F6C;&#x6362;"><b></b>&#x663E;&#x793A;&#x8F6C;&#x6362;</a></li><li><span class="title-icon fa fa-magic"></span><a href="#&#x9690;&#x5F0F;&#x8F6C;&#x6362;"><b></b>&#x9690;&#x5F0F;&#x8F6C;&#x6362;</a></li><li><span class="title-icon fa fa-magic"></span><a href="#&#x4E00;&#x5143;&#x64CD;&#x4F5C;&#x7B26;"><b></b>&#x4E00;&#x5143;+&#x64CD;&#x4F5C;&#x7B26;</a></li><li><span class="title-icon fa fa-magic"></span><a href="#&#x5B57;&#x7B26;&#x8FD0;&#x7B97;&#x7B26;"><b></b>&#x5B57;&#x7B26;&#x8FD0;&#x7B97;&#x7B26;</a></li><li><span class="title-icon fa fa-magic"></span><a href="#parseint"><b></b>parseInt(..)</a></li><li><span class="title-icon fa fa-magic"></span><a href="#symbol&#x7684;&#x7C7B;&#x578B;&#x8F6C;&#x6362;"><b></b>Symbol&#x7684;&#x7C7B;&#x578B;&#x8F6C;&#x6362;</a></li><li><span class="title-icon fa fa-magic"></span><a href="#&#x4E0E;"><b></b>==&#x4E0E;===</a></li><li><span class="title-icon fa fa-magic"></span><a href="#&#x62BD;&#x8C61;&#x5173;&#x7CFB;&#x6BD4;&#x8F83;"><b></b>&#x62BD;&#x8C61;&#x5173;&#x7CFB;&#x6BD4;&#x8F83;</a></li></ul></ul><li><span class="title-icon fa fa-star"></span><a href="#&#x8BED;&#x6CD5;"><b></b>&#x8BED;&#x6CD5;</a></li><ul><li><span class="title-icon fa fa-hashtag"></span><a href="#&#x8BED;&#x53E5;"><b></b>&#x8BED;&#x53E5;</a></li><li><span class="title-icon fa fa-hashtag"></span><a href="#&#x6807;&#x7B7E;&#x8BED;&#x53E5;"><b></b>&#x6807;&#x7B7E;&#x8BED;&#x53E5;</a></li><li><span class="title-icon fa fa-hashtag"></span><a href="#&#x5BF9;&#x8C61;&#x89E3;&#x6784;"><b></b>&#x5BF9;&#x8C61;&#x89E3;&#x6784;</a></li><li><span class="title-icon fa fa-hashtag"></span><a href="#else-if&#x548C;&#x53EF;&#x9009;&#x4EE3;&#x7801;&#x5757;"><b></b>else if&#x548C;&#x53EF;&#x9009;&#x4EE3;&#x7801;&#x5757;</a></li><li><span class="title-icon fa fa-hashtag"></span><a href="#&#x8FD0;&#x7B97;&#x7B26;&#x4F18;&#x5148;&#x7EA7;"><b></b>&#x8FD0;&#x7B97;&#x7B26;&#x4F18;&#x5148;&#x7EA7;</a></li><li><span class="title-icon fa fa-hashtag"></span><a href="#&#x81EA;&#x52A8;&#x5206;&#x53F7;"><b></b>&#x81EA;&#x52A8;&#x5206;&#x53F7;</a></li><li><span class="title-icon fa fa-hashtag"></span><a href="#&#x9519;&#x8BEF;"><b></b>&#x9519;&#x8BEF;</a></li><ul><li><span class="title-icon fa fa-magic"></span><a href="#&#x9519;&#x8BEF;&#x7C7B;&#x578B;"><b></b>&#x9519;&#x8BEF;&#x7C7B;&#x578B;</a></li><li><span class="title-icon fa fa-magic"></span><a href="#tdz&#x6682;&#x65F6;&#x6027;&#x6B7B;&#x533A;"><b></b>TDZ(&#x6682;&#x65F6;&#x6027;&#x6B7B;&#x533A;)</a></li></ul><li><span class="title-icon fa fa-hashtag"></span><a href="#tryfinally"><b></b>try...finally</a></li><li><span class="title-icon fa fa-hashtag"></span><a href="#switch"><b></b>switch</a></li></ul><li><span class="title-icon fa fa-star"></span><a href="#&#x6DF7;&#x5408;&#x73AF;&#x5883;javascript"><b></b>&#x6DF7;&#x5408;&#x73AF;&#x5883;Javascript</a></li><ul><li><span class="title-icon fa fa-hashtag"></span><a href="#annex-b&#xFF08;ecmascript&#xFF09;"><b></b>Annex B&#xFF08;ECMAScript&#xFF09;</a></li><li><span class="title-icon fa fa-hashtag"></span><a href="#&#x5BBF;&#x4E3B;&#x5BF9;&#x8C61;"><b></b>&#x5BBF;&#x4E3B;&#x5BF9;&#x8C61;</a></li><li><span class="title-icon fa fa-hashtag"></span><a href="#&#x5168;&#x5C40;dom&#x5BF9;&#x8C61;"><b></b>&#x5168;&#x5C40;DOM&#x5BF9;&#x8C61;</a></li><li><span class="title-icon fa fa-hashtag"></span><a href="#&#x539F;&#x751F;&#x539F;&#x578B;"><b></b>&#x539F;&#x751F;&#x539F;&#x578B;</a></li><li><span class="title-icon fa fa-hashtag"></span><a href="#script&#x6807;&#x7B7E;"><b></b>script&#x6807;&#x7B7E;</a></li><li><span class="title-icon fa fa-hashtag"></span><a href="#&#x5B9E;&#x73B0;&#x4E2D;&#x7684;&#x9650;&#x5236;"><b></b>&#x5B9E;&#x73B0;&#x4E2D;&#x7684;&#x9650;&#x5236;</a></li></ul><li><span class="title-icon fa fa-star"></span><a href="#&#x8D44;&#x6599;"><b></b>&#x8D44;&#x6599;</a></li></ul></div><a href="#&#x7C7B;&#x578B;" id="anchorNavigationExGoTop"><i class="fa fa-arrow-up"></i></a><h1 id="&#x7C7B;&#x578B;&#x548C;&#x8BED;&#x6CD5;"><a name="&#x7C7B;&#x578B;&#x548C;&#x8BED;&#x6CD5;" class="anchor-navigation-ex-anchor" href="#&#x7C7B;&#x578B;&#x548C;&#x8BED;&#x6CD5;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x7C7B;&#x578B;&#x548C;&#x8BED;&#x6CD5;</h1>
+<h2 id="&#x7C7B;&#x578B;"><a name="&#x7C7B;&#x578B;" class="anchor-navigation-ex-anchor" href="#&#x7C7B;&#x578B;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x7C7B;&#x578B;</h2>
+<h3 id="&#x4EC0;&#x4E48;&#x662F;&#x7C7B;&#x578B;"><a name="&#x4EC0;&#x4E48;&#x662F;&#x7C7B;&#x578B;" class="anchor-navigation-ex-anchor" href="#&#x4EC0;&#x4E48;&#x662F;&#x7C7B;&#x578B;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x4EC0;&#x4E48;&#x662F;&#x7C7B;&#x578B;</h3>
+<p>&#x5BF9;&#x8BED;&#x8A00;&#x5F15;&#x64CE;&#x548C;&#x5F00;&#x53D1;&#x4EBA;&#x5458;&#x6765;&#x8BF4;&#xFF0C;&#x7C7B;&#x578B;&#x662F;&#x503C;&#x7684;&#x5185;&#x90E8;&#x7279;&#x5F81;&#xFF0C;&#x5B83;&#x5B9A;&#x4E49;&#x4E86;&#x503C;&#x7684;&#x884C;&#x4E3A;&#xFF0C;&#x4EE5;&#x4F7F;&#x5176;&#x533A;&#x522B;&#x4E8E;&#x5176;&#x4ED6;&#x503C;&#x3002;&#x5982;&#x679C;&#x8BED;&#x8A00;&#x5F15;&#x64CE;&#x548C;&#x5F00;&#x53D1;&#x4EBA;&#x5458;&#x5BF9;42&#xFF08;&#x6570;&#x5B57;&#xFF09;&#x548C;&quot;42&quot;&#xFF08;&#x5B57;&#x7B26;&#x4E32;&#xFF09;&#x91C7;&#x53D6;&#x4E0D;&#x540C;&#x7684;&#x5904;&#x7406;&#x65B9;&#x5F0F;&#xFF0C;&#x90A3;&#x5C31;&#x8BF4;&#x660E;&#x5B83;&#x4EEC;&#x662F;&#x4E0D;&#x540C;&#x7684;&#x7C7B;&#x578B;&#x3002;</p>
+<h3 id="&#x4E3A;&#x4EC0;&#x4E48;&#x8981;&#x61C2;&#x7C7B;&#x578B;"><a name="&#x4E3A;&#x4EC0;&#x4E48;&#x8981;&#x61C2;&#x7C7B;&#x578B;" class="anchor-navigation-ex-anchor" href="#&#x4E3A;&#x4EC0;&#x4E48;&#x8981;&#x61C2;&#x7C7B;&#x578B;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x4E3A;&#x4EC0;&#x4E48;&#x8981;&#x61C2;&#x7C7B;&#x578B;</h3>
+<p>&#x8981;&#x6B63;&#x786E;&#x5408;&#x7406;&#x5730;&#x8FDB;&#x884C;&#x7C7B;&#x578B;&#x8F6C;&#x6362;&#xFF0C;&#x6211;&#x4EEC;&#x5FC5;&#x987B;&#x638C;&#x63E1;JavaScript&#x4E2D;&#x7684;&#x5404;&#x4E2A;&#x7C7B;&#x578B;&#x53CA;&#x5176;&#x5185;&#x5728;&#x884C;&#x4E3A;&#x3002;&#x51E0;&#x4E4E;&#x6240;&#x6709;&#x7684;JavaScript&#x7A0B;&#x5E8F;&#x90FD;&#x4F1A;&#x6D89;&#x53CA;&#x67D0;&#x79CD;&#x5F62;&#x5F0F;&#x7684;&#x5F3A;&#x5236;&#x7C7B;&#x578B;&#x8F6C;&#x6362;&#xFF0C;&#x5904;&#x7406;&#x8FD9;&#x4E9B;&#x60C5;&#x51B5;&#x65F6;&#x6211;&#x4EEC;&#x9700;&#x8981;&#x6709;&#x5145;&#x5206;&#x7684;&#x628A;&#x63E1;&#x548C;&#x81EA;&#x4FE1;&#x3002;</p>
+<h3 id="&#x5185;&#x7F6E;&#x7C7B;&#x578B;"><a name="&#x5185;&#x7F6E;&#x7C7B;&#x578B;" class="anchor-navigation-ex-anchor" href="#&#x5185;&#x7F6E;&#x7C7B;&#x578B;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x5185;&#x7F6E;&#x7C7B;&#x578B;</h3>
+<ul>
+<li>null</li>
+<li>undefined</li>
+<li>boolean</li>
+<li>number</li>
+<li>string</li>
+<li>object</li>
+<li>symbol -- ES6&#x65B0;&#x589E;!</li>
+</ul>
+<p>&#x9664;&#x4E86;Object&#xFF0C;&#x5176;&#x4ED6;&#x7EDF;&#x79F0;&#x4E3A;&#x201C;&#x57FA;&#x672C;&#x7C7B;&#x578B;/&#x539F;&#x59CB;&#x7C7B;&#x578B;&#x201D;&#x3002;</p>
+<p>&#x53EF;&#x4EE5;&#x4F7F;&#x7528;typeof&#x6765;&#x67E5;&#x770B;&#x503C;&#x7684;&#x7C7B;&#x578B;&#xFF0C;&#x5B83;&#x603B;&#x4F1A;&#x8FD4;&#x56DE;&#x4E00;&#x4E2A;&#x5B57;&#x7B26;&#x4E32;&#x3002;&#x6709;&#x4E24;&#x79CD;&#x7279;&#x6B8A;&#x60C5;&#x51B5;<code>typeof null === &apos;object&apos;</code>-JavaScript&#x7684;bug&#x3001;<code>typeof function(){} === &apos;function&apos;</code>&#x3002;</p>
+<p>&#x5DF2;&#x5728;&#x4F5C;&#x7528;&#x57DF;&#x4E2D;&#x58F0;&#x660E;&#x4F46;&#x8FD8;&#x6CA1;&#x6709;&#x8D4B;&#x503C;&#x7684;&#x53D8;&#x91CF;&#xFF0C;&#x662F;undefined&#x7684;&#x3002;&#x76F8;&#x53CD;&#xFF0C;&#x8FD8;&#x6CA1;&#x6709;&#x5728;&#x4F5C;&#x7528;&#x57DF;&#x4E2D;&#x58F0;&#x660E;&#x8FC7;&#x7684;&#x53D8;&#x91CF;&#xFF0C;&#x662F;undeclared&#x7684;&#x3002;&#x5BF9;&#x4E8E;undeclared&#xFF08;&#x6216;&#x8005;not defined&#xFF09;&#x53D8;&#x91CF;&#xFF0C;typeof&#x7167;&#x6837;&#x8FD4;&#x56DE;&quot;undefined&quot;&#x3002;&#x8FD9;&#x662F;&#x56E0;&#x4E3A;typeof&#x6709;&#x4E00;&#x4E2A;&#x7279;&#x6B8A;&#x7684;<strong>&#x5B89;&#x5168;&#x9632;&#x8303;&#x673A;&#x5236;</strong>&#xFF0C;&#x8BE5;&#x5B89;&#x5168;&#x9632;&#x8303;&#x673A;&#x5236;&#x5BF9;&#x5728;&#x6D4F;&#x89C8;&#x5668;&#x4E2D;&#x8FD0;&#x884C;&#x7684;JavaScript&#x4EE3;&#x7801;&#x6765;&#x8BF4;&#x662F;&#x6709;&#x5E2E;&#x52A9;&#x7684;&#xFF0C;&#x56E0;&#x4E3A;&#x591A;&#x4E2A;&#x811A;&#x672C;&#x6587;&#x4EF6;&#x4F1A;&#x5728;&#x5171;&#x4EAB;&#x7684;&#x5168;&#x5C40;&#x547D;&#x540D;&#x7A7A;&#x95F4;&#x4E2D;&#x52A0;&#x8F7D;&#x53D8;&#x91CF;&#xFF0C;typeof&#x4F7F;&#x5F97;&#x5728;&#x7A0B;&#x5E8F;&#x4E2D;<strong>&#x68C0;&#x67E5;&#x5168;&#x5C40;&#x53D8;&#x91CF;</strong>&#x4E0D;&#x4F1A;&#x51FA;&#x73B0;ReferenceError&#x9519;&#x8BEF;&#xFF0C;&#x76F8;&#x53CD;&#xFF0C;&#x76F4;&#x63A5;if undeclared&#x5168;&#x5C40;&#x53D8;&#x91CF;&#x4F1A;&#x62A5;&#x9519;&#x3002;&#xFF08;&#x8FD8;&#x6709;&#x4E00;&#x79CD;&#x4E0D;&#x7528;&#x901A;&#x8FC7;typeof&#x7684;&#x5B89;&#x5168;&#x9632;&#x8303;&#x673A;&#x5236;&#x7684;&#x65B9;&#x6CD5;&#xFF0C;&#x5C31;&#x662F;&#x68C0;&#x67E5;&#x6240;&#x6709;&#x5168;&#x5C40;&#x53D8;&#x91CF;&#x662F;&#x5426;&#x662F;&#x5168;&#x5C40;&#x5BF9;&#x8C61;&#x7684;&#x5C5E;&#x6027;&#xFF0C;&#x6D4F;&#x89C8;&#x5668;&#x4E2D;&#x7684;&#x5168;&#x5C40;&#x5BF9;&#x8C61;&#x662F;window&#x3002;&#xFF09;</p>
+<p>function &#x662F; object &#x7684;<strong>&#x5B50;&#x7C7B;&#x578B;</strong>&#xFF0C;&#x5B83;&#x662F;<strong>&#x53EF;&#x8C03;&#x7528;&#x5BF9;&#x8C61;</strong>&#xFF0C;&#x5185;&#x90E8;&#x6709;&#x4E00;&#x4E2A;[[Call]]&#x5C5E;&#x6027;&#x4F7F;&#x5F97;&#x5176;&#x53EF;&#x88AB;&#x8C03;&#x7528;&#x3002;&#x51FD;&#x6570;&#x5BF9;&#x8C61;&#x7684;length&#x5C5E;&#x6027;&#x662F;&#x5176;&#x58F0;&#x660E;&#x7684;&#x53C2;&#x6570;&#x4E2A;&#x6570;&#x3002;</p>
+<h2 id="&#x503C;"><a name="&#x503C;" class="anchor-navigation-ex-anchor" href="#&#x503C;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x503C;</h2>
+<h3 id="&#x6570;&#x7EC4;"><a name="&#x6570;&#x7EC4;" class="anchor-navigation-ex-anchor" href="#&#x6570;&#x7EC4;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x6570;&#x7EC4;</h3>
+<h4 id="&#x7B80;&#x4ECB;"><a name="&#x7B80;&#x4ECB;" class="anchor-navigation-ex-anchor" href="#&#x7B80;&#x4ECB;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x7B80;&#x4ECB;</h4>
+<p>&#x5728;JavaScript&#x4E2D;&#xFF0C;&#x6570;&#x7EC4;&#x53EF;&#x4EE5;&#x5BB9;&#x7EB3;&#x4EFB;&#x4F55;&#x7C7B;&#x578B;&#x7684;&#x503C;&#x3002;&#x6570;&#x7EC4;&#x4E5F;&#x662F;&#x5BF9;&#x8C61;&#xFF0C;&#x53EF;&#x4EE5;&#x5305;&#x542B;&#x5B57;&#x7B26;&#x4E32;&#x952E;&#x503C;&#x548C;&#x5C5E;&#x6027;&#xFF08;&#x4F46;&#x8FD9;&#x4E9B;&#x5E76;&#x4E0D;&#x8BA1;&#x7B97;&#x5728;&#x6570;&#x7EC4;&#x957F;&#x5EA6;&#x5185;&#xFF09;&#x3002;&#x4F46;&#x5728;&#x6570;&#x7EC4;&#x4E2D;&#x52A0;&#x5165;&#x5B57;&#x7B26;&#x4E32;&#x952E;&#x503C;/&#x5C5E;&#x6027;&#x5E76;&#x4E0D;&#x662F;&#x4E00;&#x4E2A;&#x597D;&#x4E3B;&#x610F;&#xFF0C;&#x5EFA;&#x8BAE;&#x4F7F;&#x7528;&#x5BF9;&#x8C61;&#x6765;&#x5B58;&#x653E;&#x952E;&#x503C;/&#x5C5E;&#x6027;&#x503C;&#xFF0C;&#x7528;&#x6570;&#x7EC4;&#x6765;&#x5B58;&#x653E;&#x6570;&#x5B57;&#x7D22;&#x5F15;&#x503C;&#x3002;</p>
+<p><strong>&#x5982;&#x679C;&#x5B57;&#x7B26;&#x4E32;&#x952E;&#x503C;&#x80FD;&#x591F;&#x88AB;&#x5F3A;&#x5236;&#x7C7B;&#x578B;&#x8F6C;&#x6362;&#x4E3A;&#x5341;&#x8FDB;&#x5236;&#x6570;&#x5B57;&#x7684;&#x8BDD;(a[&apos;12&apos;])&#xFF0C;&#x5B83;&#x5C31;&#x4F1A;&#x88AB;&#x5F53;&#x4F5C;&#x6570;&#x5B57;&#x7D22;&#x5F15;&#x6765;&#x5904;&#x7406;&#x3002;</strong>&#x4F7F;&#x7528;<strong>delete&#x8FD0;&#x7B97;&#x7B26;</strong>&#x53EF;&#x4EE5;&#x5C06;&#x5355;&#x5143;&#x4ECE;&#x6570;&#x7EC4;&#x4E2D;&#x5220;&#x9664;&#xFF0C;&#x5355;&#x5143;&#x5220;&#x9664;&#x540E;&#xFF0C;&#x6570;&#x7EC4;&#x7684;length&#x5C5E;&#x6027;&#x5E76;&#x4E0D;&#x4F1A;&#x53D1;&#x751F;&#x53D8;&#x5316;&#xFF0C;&#x6570;&#x7EC4;&#x4E5F;&#x53D8;&#x6210;&#x4E86;&#x4E00;&#x4E2A;<strong>&#x7A00;&#x758F;&#x6570;&#x7EC4;</strong>(&#x542B;&#x6709;&#x7A7A;&#x7F3A;&#x5355;&#x5143;&#x7684;&#x6570;&#x7EC4;)&#x3002;</p>
+<h4 id="&#x7C7B;&#x6570;&#x7EC4;"><a name="&#x7C7B;&#x6570;&#x7EC4;" class="anchor-navigation-ex-anchor" href="#&#x7C7B;&#x6570;&#x7EC4;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x7C7B;&#x6570;&#x7EC4;</h4>
+<p>&#x7C7B;&#x6570;&#x7EC4;&#x662F;&#x4E00;&#x7EC4;&#x80FD;&#x901A;&#x8FC7;&#x6570;&#x5B57;&#x7D22;&#x5F15;&#x7684;&#x503C;&#xFF0C;&#x4F46;&#x4E0D;&#x662F;&#x771F;&#x6B63;&#x7684;&#x6570;&#x7EC4;&#x3002;&#x4F8B;&#x5982;&#xFF0C;&#x4E00;&#x4E9B;DOM&#x67E5;&#x8BE2;&#x64CD;&#x4F5C;&#x4F1A;&#x8FD4;&#x56DE;DOM&#x5143;&#x7D20;&#x5217;&#x8868;&#xFF0C;&#x5B83;&#x4EEC;&#x5E76;&#x975E;&#x771F;&#x6B63;&#x610F;&#x4E49;&#x4E0A;&#x7684;&#x6570;&#x7EC4;&#xFF0C;arguments&#x5BF9;&#x8C61;&#x4E5F;&#x8BF4;&#x7C7B;&#x6570;&#x7EC4;&#xFF08;&#x4ECE;ES6&#x5F00;&#x59CB;&#x5DF2;&#x5E9F;&#x6B62;&#xFF09;&#x3002;
+&#x3002;</p>
+<p><strong>&#x6709;&#x65F6;&#x6211;&#x4EEC;&#x9700;&#x8981;&#x5C06;&#x7C7B;&#x6570;&#x7EC4;&#x8F6C;&#x6362;&#x6210;&#x771F;&#x6B63;&#x7684;&#x6570;&#x7EC4;&#x3002;</strong>slice(..)&#x7ECF;&#x5E38;&#x88AB;&#x7528;&#x4E8E;&#x8FD9;&#x7C7B;&#x8F6C;&#x6362;&#xFF0C;slice()&#x4F1A;&#x8FD4;&#x56DE;&#x7C7B;&#x6570;&#x7EC4;&#x7684;&#x4E00;&#x4E2A;&#x6570;&#x7EC4;&#x590D;&#x672C;<code>Array.prototype.slice.call(arguments)</code>&#x3002;ES6&#x4E2D;&#x7684;&#x5185;&#x7F6E;&#x5DE5;&#x5177;&#x51FD;&#x6570;Array.from(..)&#x4E5F;&#x80FD;&#x5B9E;&#x73B0;&#x540C;&#x6837;&#x7684;&#x529F;&#x80FD;&#x3002;</p>
+<h3 id="&#x5B57;&#x7B26;&#x4E32;"><a name="&#x5B57;&#x7B26;&#x4E32;" class="anchor-navigation-ex-anchor" href="#&#x5B57;&#x7B26;&#x4E32;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x5B57;&#x7B26;&#x4E32;</h3>
+<p>&#x5B57;&#x7B26;&#x4E32;&#x548C;&#x6570;&#x7EC4;&#x5F88;&#x76F8;&#x4F3C;&#xFF0C;&#x90FD;&#x6709;length&#x5C5E;&#x6027;&#x4EE5;&#x53CA;indexOf(..)&#x548C;concat(..)&#x65B9;&#x6CD5;&#x3002;&#x4E0D;&#x540C;&#x4E4B;&#x5904;&#x5728;&#x4E8E;JavaScript&#x4E2D;&#x5B57;&#x7B26;&#x4E32;&#x662F;&#x4E0D;&#x53EF;&#x53D8;(&#x5B57;&#x7B26;&#x4E32;&#x7684;&#x6210;&#x5458;&#x51FD;&#x6570;&#x4E0D;&#x4F1A;&#x6539;&#x53D8;&#x5176;&#x539F;&#x59CB;&#x503C;&#xFF0C;&#x800C;&#x662F;&#x521B;&#x5EFA;&#x5E76;&#x8FD4;&#x56DE;&#x4E00;&#x4E2A;&#x65B0;&#x7684;&#x5B57;&#x7B26;&#x4E32;)&#x7684;&#xFF0C;&#x800C;&#x6570;&#x7EC4;&#x662F;&#x53EF;&#x53D8;(&#x6570;&#x7EC4;&#x7684;&#x6210;&#x5458;&#x51FD;&#x6570;&#x90FD;&#x662F;&#x5728;&#x5176;&#x539F;&#x59CB;&#x503C;&#x4E0A;&#x8FDB;&#x884C;&#x64CD;&#x4F5C;)&#x7684;&#x3002;</p>
+<p>&#x8BB8;&#x591A;&#x6570;&#x7EC4;&#x51FD;&#x6570;&#x7528;&#x6765;&#x5904;&#x7406;&#x5B57;&#x7B26;&#x4E32;&#x5F88;&#x65B9;&#x4FBF;&#x3002;&#x867D;&#x7136;&#x5B57;&#x7B26;&#x4E32;&#x6CA1;&#x6709;&#x8FD9;&#x4E9B;&#x51FD;&#x6570;&#xFF0C;&#x4F46;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;<strong>&#x501F;&#x7528;</strong>&#x6570;&#x7EC4;&#x7684;&#x975E;&#x53D8;&#x66F4;&#x65B9;&#x6CD5;&#x6765;&#x5904;&#x7406;&#x5B57;&#x7B26;&#x4E32;&#x3002;&#x4E0D;&#x8FC7;&#x6211;&#x4EEC;&#x65E0;&#x6CD5;&#x201C;&#x501F;&#x7528;&#x201D;&#x6570;&#x7EC4;&#x7684;<strong>&#x53EF;&#x53D8;&#x66F4;&#x6210;&#x5458;&#x51FD;&#x6570;</strong>(reverse..)&#xFF0C;&#x56E0;&#x4E3A;&#x5B57;&#x7B26;&#x4E32;&#x662F;&#x4E0D;&#x53EF;&#x53D8;&#x7684;&#x3002;&#x4E00;&#x4E2A;&#x53D8;&#x901A;&#x7684;&#x529E;&#x6CD5;&#x662F;&#x5148;&#x5C06;&#x5B57;&#x7B26;&#x4E32;split&#x8F6C;&#x6362;&#x4E3A;&#x6570;&#x7EC4;&#xFF0C;&#x5F85;&#x5904;&#x7406;&#x5B8C;&#x540E;&#x518D;&#x5C06;&#x7ED3;&#x679C;join&#x56DE;&#x5B57;&#x7B26;&#x4E32;&#xFF0C;&#x4E0D;&#x8FC7;&#x8FD9;&#x4E2A;&#x65B9;&#x6CD5;&#x5BF9;&#x4E8E;&#x5305;&#x542B;<strong>&#x590D;&#x6742;&#x5B57;&#x7B26;</strong>&#xFF08;Unicode&#xFF0C;&#x5982;&#x661F;&#x53F7;&#x3001;&#x591A;&#x5B57;&#x8282;&#x5B57;&#x7B26;&#x7B49;&#xFF09;&#x7684;&#x5B57;&#x7B26;&#x4E32;&#x5E76;&#x4E0D;&#x9002;&#x7528;&#x3002;&#x8FD9;&#x65F6;&#x5219;&#x9700;&#x8981;&#x529F;&#x80FD;&#x66F4;&#x52A0;&#x5B8C;&#x5907;&#x3001;&#x80FD;&#x591F;&#x5904;&#x7406;Unicode&#x7684;&#x5DE5;&#x5177;&#x5E93;&#x3002;</p>
+<h3 id="&#x6570;&#x5B57;"><a name="&#x6570;&#x5B57;" class="anchor-navigation-ex-anchor" href="#&#x6570;&#x5B57;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x6570;&#x5B57;</h3>
+<p>&#x4E0E;&#x5176;&#x4ED6;&#x8BED;&#x8A00;&#x4E0D;&#x540C;&#xFF0C;JavaScript&#x6CA1;&#x6709;&#x771F;&#x6B63;&#x610F;&#x4E49;&#x4E0A;&#x7684;&#x6574;&#x6570;&#x3002;JavaScript&#x4E2D;&#x7684;&#x201C;&#x6574;&#x6570;&#x201D;&#x5C31;&#x662F;&#x6CA1;&#x6709;&#x5C0F;&#x6570;&#x7684;&#x5341;&#x8FDB;&#x5236;&#x6570;&#xFF0C;&#x6240;&#x4EE5;42.0&#x5373;&#x7B49;&#x540C;&#x4E8E;&#x201C;&#x6574;&#x6570;&#x201D;42&#x3002;
+&#x4E0E;&#x5927;&#x90E8;&#x5206;&#x73B0;&#x4EE3;&#x7F16;&#x7A0B;&#x8BED;&#x8A00;&#xFF08;&#x5305;&#x62EC;&#x51E0;&#x4E4E;&#x6240;&#x6709;&#x7684;&#x811A;&#x672C;&#x8BED;&#x8A00;&#xFF09;&#x4E00;&#x6837;&#xFF0C;JavaScript&#x4E2D;&#x7684;&#x6570;&#x5B57;&#x7C7B;&#x578B;&#x662F;&#x57FA;&#x4E8E;IEEE 754&#x6807;&#x51C6;&#x6765;&#x5B9E;&#x73B0;&#x7684;&#xFF0C;&#x8BE5;&#x6807;&#x51C6;&#x901A;&#x5E38;&#x4E5F;&#x88AB;&#x79F0;&#x4E3A;<strong>&#x6D6E;&#x70B9;&#x6570;</strong>&#x3002;JavaScript&#x4F7F;&#x7528;&#x7684;&#x662F;&#x201C;&#x53CC;&#x7CBE;&#x5EA6;&#x201D;&#x683C;&#x5F0F;&#xFF08;&#x5373;64&#x4F4D;&#x4E8C;&#x8FDB;&#x5236;&#xFF09;&#x3002;</p>
+<p>Javascript&#x80FD;&#x591F;&#x5448;&#x73B0;&#x7684;&#x6700;&#x5927;&#x6D6E;&#x70B9;&#x6570;&#x5927;&#x7EA6;&#x662F;1.798e+308&#xFF08;&#x8FD9;&#x662F;&#x4E00;&#x4E2A;&#x76F8;&#x5F53;&#x5927;&#x7684;&#x6570;&#x5B57;&#xFF09;&#xFF0C;&#x5B83;&#x5B9A;&#x4E49;&#x5728;<strong>Number.MAX_VALUE</strong>&#x4E2D;&#x3002;&#x6700;&#x5C0F;&#x6D6E;&#x70B9;&#x6570;&#x5B9A;&#x4E49;&#x5728;<strong>Number.MIN_VALUE</strong>&#x4E2D;&#xFF0C;&#x5927;&#x7EA6;&#x662F;5e-324&#xFF0C;&#x5B83;&#x4E0D;&#x662F;&#x8D1F;&#x6570;&#xFF0C;&#x4F46;&#x65E0;&#x9650;&#x63A5;&#x8FD1;&#x4E8E;0&#x3002;</p>
+<p>Javascript&#x4E2D;&#x7279;&#x522B;&#x5927;&#x548C;&#x7279;&#x522B;&#x5C0F;&#x7684;&#x6570;&#x5B57;&#x9ED8;&#x8BA4;&#x7528;<strong>&#x6307;&#x6570;&#x683C;&#x5F0F;</strong>&#x663E;&#x793A;&#xFF0C;&#x4E0E;toExponential()&#x51FD;&#x6570;&#x7684;&#x8F93;&#x51FA;&#x7ED3;&#x679C;&#x76F8;&#x540C;&#x3002;</p>
+<p>&#x6570;&#x5B57;&#x503C;&#x53EF;&#x4EE5;&#x8C03;&#x7528;Number.prototype&#x4E2D;&#x7684;&#x65B9;&#x6CD5;&#x3002;tofixed(..)&#x65B9;&#x6CD5;&#x53EF;&#x6307;&#x5B9A;&#x5C0F;&#x6570;&#x90E8;&#x5206;&#x7684;&#x663E;&#x793A;&#x4F4D;&#x6570;&#xFF0C;&#x5982;&#x679C;&#x6307;&#x5B9A;&#x7684;&#x5C0F;&#x6570;&#x90E8;&#x5206;&#x7684;&#x663E;&#x793A;&#x4F4D;&#x6570;&#x591A;&#x4E8E;&#x5B9E;&#x9645;&#x4F4D;&#x6570;&#x5C31;&#x7528;0&#x8865;&#x9F50;&#x3002;toPrecision(..)&#x65B9;&#x6CD5;&#x7528;&#x6765;&#x6307;&#x5B9A;&#x6709;&#x6548;&#x6570;&#x4F4D;&#x7684;&#x663E;&#x793A;&#x4F4D;&#x6570;&#x3002;</p>
+<p>&#x5BF9;&#x4E8E;<strong>&#xFF0E;&#x8FD0;&#x7B97;&#x7B26;</strong>&#x9700;&#x8981;&#x7ED9;&#x4E88;&#x7279;&#x522B;&#x6CE8;&#x610F;&#xFF0C;&#x56E0;&#x4E3A;&#x5B83;&#x662F;&#x4E00;&#x4E2A;&#x6709;&#x6548;&#x7684;&#x6570;&#x5B57;&#x5B57;&#x7B26;&#xFF0C;&#x4F1A;&#x88AB;&#x4F18;&#x5148;&#x8BC6;&#x522B;&#x4E3A;&#x6570;&#x5B57;&#x5B57;&#x9762;&#x91CF;&#x7684;&#x4E00;&#x90E8;&#x5206;&#xFF0C;&#x7136;&#x540E;&#x624D;&#x662F;&#x5BF9;&#x8C61;&#x5C5E;&#x6027;&#x8BBF;&#x95EE;&#x8FD0;&#x7B97;&#x7B26;&#x3002;42.toFixed(3)&#x662F;&#x65E0;&#x6548;&#x8BED;&#x6CD5;&#xFF0C;&#x56E0;&#x4E3A;&#xFF0E;&#x88AB;&#x89C6;&#x4E3A;&#x5E38;&#x91CF;42&#xFF0E;&#x7684;&#x4E00;&#x90E8;&#x5206;&#x3002;</p>
+<pre><code>// &#x65E0;&#x6548;&#x8BED;&#x6CD5;
+42.toFixed( 3 );    // SyntaxError
+
+// &#x4E0B;&#x9762;&#x7684;&#x8BED;&#x6CD5;&#x90FD;&#x6709;&#x6548;
+(42).toFixed( 3 );    // &quot;42.000&quot;
+0.42.toFixed( 3 );    // &quot;0.420&quot;
+42..toFixed( 3 );     // &quot;42.000&quot;
+</code></pre><p>ES6&#x4F7F;&#x7528;0x&#x3001;0b&#x548C;0o&#x524D;&#x7F00;&#xFF0C;&#x5206;&#x522B;&#x8868;&#x793A;&#x5341;&#x516D;&#x8FDB;&#x5236;&#x3001;&#x4E8C;&#x8FDB;&#x5236;&#x3001;&#x516B;&#x8FDB;&#x5236;&#x3002;</p>
+<h4 id="&#x8F83;&#x5C0F;&#x7684;&#x6570;&#x503C;"><a name="&#x8F83;&#x5C0F;&#x7684;&#x6570;&#x503C;" class="anchor-navigation-ex-anchor" href="#&#x8F83;&#x5C0F;&#x7684;&#x6570;&#x503C;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x8F83;&#x5C0F;&#x7684;&#x6570;&#x503C;</h4>
+<pre><code>.1 + .2 === 0.30000000000000004 // true
+</code></pre><p>&#x4E8C;&#x8FDB;&#x5236;&#x6D6E;&#x70B9;&#x6570;&#x4E2D;&#x7684;0.1&#x548C;0.2&#x5E76;&#x4E0D;&#x662F;&#x5341;&#x5206;&#x7CBE;&#x786E;&#xFF0C;&#x5B83;&#x4EEC;&#x76F8;&#x52A0;&#x7684;&#x7ED3;&#x679C;&#x5E76;&#x975E;&#x521A;&#x597D;&#x7B49;&#x4E8E;0.3&#x3002;&#x5728;&#x5904;&#x7406;&#x5E26;&#x6709;&#x5C0F;&#x6570;&#x7684;&#x6570;&#x5B57;&#x65F6;&#x9700;&#x8981;&#x7279;&#x522B;&#x6CE8;&#x610F;&#x3002;&#x5F88;&#x591A;&#x7A0B;&#x5E8F;&#x53EA;&#x9700;&#x8981;&#x5904;&#x7406;&#x6574;&#x6570;&#xFF0C;&#x6700;&#x5927;&#x4E0D;&#x8D85;&#x8FC7;&#x767E;&#x4E07;&#x6216;&#x8005;&#x4E07;&#x4EBF;&#xFF0C;&#x6B64;&#x65F6;&#x4F7F;&#x7528;JavaScript&#x7684;&#x6570;&#x5B57;&#x7C7B;&#x578B;&#x662F;&#x7EDD;&#x5BF9;&#x5B89;&#x5168;&#x7684;&#x3002;</p>
+<p><strong>&#x90A3;&#x4E48;&#x5E94;&#x8BE5;&#x600E;&#x6837;&#x6765;&#x5224;&#x65AD;0.1 + 0.2&#x548C;0.3&#x662F;&#x5426;&#x76F8;&#x7B49;&#x5462;&#xFF1F;</strong></p>
+<p>&#x6700;&#x5E38;&#x89C1;&#x7684;&#x65B9;&#x6CD5;&#x662F;&#x8BBE;&#x7F6E;&#x4E00;&#x4E2A;&#x8BEF;&#x5DEE;&#x8303;&#x56F4;&#x503C;&#xFF0C;&#x901A;&#x5E38;&#x79F0;&#x4E3A;&#x201C;&#x673A;&#x5668;&#x7CBE;&#x5EA6;&#x201D;&#xFF08;machine epsilon&#xFF09;&#xFF0C;&#x901A;&#x8FC7;&#x5224;&#x65AD;&#x4E24;&#x4E2A;&#x6570;&#x5B57;&#x5DEE;&#x503C;&#x662F;&#x5426;&#x5728;&#x7CBE;&#x5EA6;&#x8303;&#x56F4;&#x5185;&#x6765;&#x5224;&#x65AD;&#x76F8;&#x7B49;&#x3002;&#x5BF9;JavaScript&#x7684;&#x6570;&#x5B57;&#x6765;&#x8BF4;&#xFF0C;&#x8FD9;&#x4E2A;&#x503C;&#x901A;&#x5E38;&#x662F;2^-52 (2.220446049250313e-16)&#xFF0C;&#x4ECE;ES6&#x5F00;&#x59CB;&#xFF0C;&#x8BE5;&#x503C;&#x5B9A;&#x4E49;&#x5728;<strong>Number.EPSILON</strong>&#x4E2D;&#xFF0C;&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x76F4;&#x63A5;&#x62FF;&#x6765;&#x7528;&#x3002;</p>
+<h4 id="&#x6574;&#x6570;&#x5B89;&#x5168;&#x8303;&#x56F4;"><a name="&#x6574;&#x6570;&#x5B89;&#x5168;&#x8303;&#x56F4;" class="anchor-navigation-ex-anchor" href="#&#x6574;&#x6570;&#x5B89;&#x5168;&#x8303;&#x56F4;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x6574;&#x6570;&#x5B89;&#x5168;&#x8303;&#x56F4;</h4>
+<p>&#x6570;&#x5B57;&#x7684;&#x5448;&#x73B0;&#x65B9;&#x5F0F;&#x51B3;&#x5B9A;&#x4E86;&#x201C;&#x6574;&#x6570;&#x201D;&#x7684;&#x5B89;&#x5168;&#x503C;&#x8303;&#x56F4;&#x8FDC;&#x8FDC;&#x5C0F;&#x4E8E;Number.MAX_VALUE&#x3002;&#x80FD;&#x591F;&#x88AB;&#x201C;&#x5B89;&#x5168;&#x201D;&#x5448;&#x73B0;&#x7684;&#x6700;&#x5927;&#x6574;&#x6570;&#x662F;<strong>Number.MAX_SAFE_INTEGER</strong>===2^53-1&#xFF0C;&#x5373;9007199254740991&#x3002;&#x6700;&#x5C0F;&#x6574;&#x6570;&#x662F;<strong>Number.MIN_SAFE_INTEGER</strong>===-9007199254740991&#x3002;</p>
+<p>Number.MAX_VALUE&#x8868;&#x793A;&#x53EF;&#x80FD;&#x7CBE;&#x786E;&#x8868;&#x793A;&#x7684;&#x6700;&#x5927;&#x6D6E;&#x70B9;&#x6570;&#xFF0C;Number.MAX_SAFE_INTEGER&#x8868;&#x793A;&#x4FDD;&#x8BC1;&#x7CBE;&#x786E;&#x8868;&#x793A;&#x7684;&#x6700;&#x5927;&#x6574;&#x6570;&#x3002;</p>
+<h4 id="&#x6574;&#x6570;&#x68C0;&#x6D4B;"><a name="&#x6574;&#x6570;&#x68C0;&#x6D4B;" class="anchor-navigation-ex-anchor" href="#&#x6574;&#x6570;&#x68C0;&#x6D4B;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x6574;&#x6570;&#x68C0;&#x6D4B;</h4>
+<p>ES6&#x4E2D;&#x63D0;&#x4F9B;&#x4E86;<strong>Number.isInterger(...)</strong>&#x65B9;&#x6CD5;&#x3002;</p>
+<p>ES6&#x4E4B;&#x524D;&#x7684;polyfill Number.isInteger(..)&#x65B9;&#x6CD5;&#xFF1A;</p>
+<pre><code>if (! Number.isInteger) {
+  Number.isInteger = function(num) {
+    return typeof num == &quot;number&quot; &amp;&amp; num % 1 == 0;
+  };
+}
+</code></pre><p>&#x8981;&#x68C0;&#x6D4B;&#x4E00;&#x4E2A;&#x503C;&#x662F;&#x5426;&#x662F;&#x5B89;&#x5168;&#x7684;&#x6574;&#x6570;&#xFF0C;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;ES6&#x4E2D;&#x7684;<strong>Number.isSafeInteger(..)</strong>&#x65B9;&#x6CD5;&#x3002;</p>
+<h4 id="32&#x4F4D;&#x6709;&#x7B26;&#x53F7;&#x6574;&#x6570;"><a name="32&#x4F4D;&#x6709;&#x7B26;&#x53F7;&#x6574;&#x6570;" class="anchor-navigation-ex-anchor" href="#32&#x4F4D;&#x6709;&#x7B26;&#x53F7;&#x6574;&#x6570;"><i class="fa fa-link" aria-hidden="true"></i></a>32&#x4F4D;&#x6709;&#x7B26;&#x53F7;&#x6574;&#x6570;</h4>
+<p>&#x867D;&#x7136;&#x6574;&#x6570;&#x6700;&#x5927;&#x80FD;&#x591F;&#x8FBE;&#x5230;53&#x4F4D;&#xFF0C;&#x4F46;&#x662F;&#x6709;&#x4E9B;&#x6570;&#x5B57;&#x64CD;&#x4F5C;&#xFF08;&#x5982;&#x6570;&#x4F4D;&#x64CD;&#x4F5C;&#xFF09;&#x53EA;&#x9002;&#x7528;&#x4E8E;32&#x4F4D;&#x6570;&#x5B57;&#xFF0C;&#x6240;&#x4EE5;&#x8FD9;&#x4E9B;&#x64CD;&#x4F5C;&#x4E2D;&#x6570;&#x5B57;&#x7684;&#x5B89;&#x5168;&#x8303;&#x56F4;&#x5C31;&#x8981;&#x5C0F;&#x5F88;&#x591A;&#xFF0C;&#x53D8;&#x6210;&#x4ECE;Math.pow(-2,31)&#xFF08;-2147483648&#xFF0C;&#x7EA6;&#xFF0D;21&#x4EBF;&#xFF09;&#x5230;Math.pow(2,31) -1&#xFF08;2147483647&#xFF0C;&#x7EA6;21&#x4EBF;&#xFF09;&#x3002;</p>
+<p>a | 0&#x53EF;&#x4EE5;&#x5C06;&#x53D8;&#x91CF;a&#x4E2D;&#x7684;&#x6570;&#x503C;&#x8F6C;&#x6362;&#x4E3A;32&#x4F4D;&#x6709;&#x7B26;&#x53F7;&#x6574;&#x6570;&#xFF0C;&#x56E0;&#x4E3A;&#x67D0;&#x4E9B;&#x7279;&#x6B8A;&#x7684;&#x503C;&#x5E76;&#x4E0D;&#x662F;32&#x4F4D;&#x5B89;&#x5168;&#x8303;&#x56F4;&#x7684;&#xFF0C;&#x5982;NaN&#x548C;Infinity&#xFF0C;&#x6B64;&#x65F6;&#x4F1A;&#x5BF9;&#x5B83;&#x4EEC;&#x6267;&#x884C;&#x62BD;&#x8C61;&#x64CD;&#x4F5C;&#xFF08;abstract operation&#xFF09;ToInt32&#xFF0C;&#x4EE5;&#x4FBF;&#x8F6C;&#x6362;&#x4E3A;&#x7B26;&#x5408;&#x6570;&#x4F4D;&#x8FD0;&#x7B97;&#x7B26;&#x8981;&#x6C42;&#x7684;+0&#x503C;&#x3002;</p>
+<h4 id="&#x7279;&#x6B8A;&#x6570;&#x5B57;"><a name="&#x7279;&#x6B8A;&#x6570;&#x5B57;" class="anchor-navigation-ex-anchor" href="#&#x7279;&#x6B8A;&#x6570;&#x5B57;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x7279;&#x6B8A;&#x6570;&#x5B57;</h4>
+<h5 id="nan"><a name="nan" class="anchor-navigation-ex-anchor" href="#nan"><i class="fa fa-link" aria-hidden="true"></i></a>NaN</h5>
+<p>NaN&#x662F;&#x4E00;&#x4E2A;&#x201C;&#x8B66;&#x6212;&#x503C;&#x201D;&#xFF08;sentinel value&#xFF0C;&#x6709;&#x7279;&#x6B8A;&#x7528;&#x9014;&#x7684;&#x5E38;&#x89C4;&#x503C;&#xFF09;&#xFF0C;&#x7528;&#x4E8E;&#x6307;&#x51FA;&#x6570;&#x5B57;&#x7C7B;&#x578B;&#x4E2D;&#x7684;&#x9519;&#x8BEF;&#x60C5;&#x51B5;&#xFF0C;&#x5373;&#x201C;&#x6267;&#x884C;&#x6570;&#x5B66;&#x8FD0;&#x7B97;&#x6CA1;&#x6709;&#x6210;&#x529F;&#xFF0C;&#x8FD9;&#x662F;&#x5931;&#x8D25;&#x540E;&#x8FD4;&#x56DE;&#x7684;&#x7ED3;&#x679C;&#x201D;&#x3002;&#x5B83;&#x662F;&#x662F;&#x552F;&#x4E00;&#x4E00;&#x4E2A;&#x4E0D;&#x7B49;&#x4E8E;&#x81EA;&#x8EAB;&#x7684;&#x503C;&#x3002;</p>
+<p>&#x53EF;&#x4EE5;&#x4F7F;&#x7528;&#x5185;&#x5EFA;&#x7684;&#x5168;&#x5C40;&#x5DE5;&#x5177;&#x51FD;&#x6570;isNaN(..)&#x6765;&#x5224;&#x65AD;&#x4E00;&#x4E2A;&#x503C;&#x662F;&#x5426;&#x662F;NaN&#x3002;
+&#x7136;&#x800C;&#xFF0C;isNaN(..)&#x6709;&#x4E00;&#x4E2A;&#x4E25;&#x91CD;&#x7684;&#x7F3A;&#x9677;&#xFF0C;&#x5B83;&#x7684;&#x68C0;&#x67E5;&#x65B9;&#x5F0F;&#x8FC7;&#x4E8E;&#x6B7B;&#x677F;&#xFF0C;&#x5C31;&#x662F;&#x201C;&#x68C0;&#x67E5;&#x53C2;&#x6570;&#x662F;&#x5426;&#x4E0D;&#x662F;NaN&#xFF0C;&#x4E5F;&#x4E0D;&#x662F;&#x6570;&#x5B57;&#x201D;-&#x8FD9;&#x4E2A;bug&#x81EA;JavaScript&#x95EE;&#x4E16;&#x4EE5;&#x6765;&#x5C31;&#x4E00;&#x76F4;&#x5B58;&#x5728;&#xFF0C;&#x81F3;&#x4ECA;&#x5DF2;&#x8D85;&#x8FC7;19&#x5E74;&#x3002;</p>
+<p>&#x4ECE;ES6&#x5F00;&#x59CB;&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;&#x5DE5;&#x5177;&#x51FD;&#x6570;<strong>Number.isNaN(..)</strong>&#x3002;&#x5F88;&#x591A;JavaScript&#x7A0B;&#x5E8F;&#x90FD;&#x53EF;&#x80FD;&#x5B58;&#x5728;NaN&#x65B9;&#x9762;&#x7684;&#x95EE;&#x9898;&#xFF0C;&#x6240;&#x4EE5;&#x6211;&#x4EEC;&#x5E94;&#x8BE5;&#x5C3D;&#x91CF;&#x4F7F;&#x7528;Number.isNaN(..)&#x8FD9;&#x6837;&#x53EF;&#x9760;&#x7684;&#x65B9;&#x6CD5;&#xFF0C;&#x65E0;&#x8BBA;&#x662F;&#x7CFB;&#x7EDF;&#x5185;&#x7F6E;&#x8FD8;&#x662F;polyfill&#x3002;</p>
+<h5 id="&#x65E0;&#x7A77;&#x6570;"><a name="&#x65E0;&#x7A77;&#x6570;" class="anchor-navigation-ex-anchor" href="#&#x65E0;&#x7A77;&#x6570;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x65E0;&#x7A77;&#x6570;</h5>
+<p>&#x5982;&#x679C;&#x6570;&#x5B66;&#x8FD0;&#x7B97;&#xFF08;&#x5982;&#x52A0;&#x6CD5;&#xFF09;&#x7684;&#x7ED3;&#x679C;&#x8D85;&#x51FA;&#x5904;&#x7406;&#x8303;&#x56F4;&#xFF0C;&#x5219;&#x7531;IEEE 754&#x89C4;&#x8303;&#x4E2D;&#x7684;&#x201C;&#x5C31;&#x8FD1;&#x53D6;&#x6574;&#x201D;&#xFF08;round-to-nearest&#xFF09;&#x6A21;&#x5F0F;&#x6765;&#x51B3;&#x5B9A;&#x6700;&#x540E;&#x7684;&#x7ED3;&#x679C;&#x3002;&#x4F8B;&#x5982;&#xFF0C;&#x76F8;&#x5BF9;&#x4E8E;Infinity, Number.MAX VALUE + Math.pow(2, 969)&#x4E0E;Number.MAX VALUE&#x66F4;&#x4E3A;&#x63A5;&#x8FD1;&#xFF0C;&#x56E0;&#x6B64;&#x5B83;&#x88AB;&#x201C;&#x5411;&#x4E0B;&#x53D6;&#x6574;&#x201D;&#xFF08;round down&#xFF09;&#xFF1B;&#x800C;Number.MAX VALUE + Math.pow(2, 970)&#x4E0E;Infinity&#x66F4;&#x4E3A;&#x63A5;&#x8FD1;&#xFF0C;&#x6240;&#x4EE5;&#x5B83;&#x88AB;&#x201C;&#x5411;&#x4E0A;&#x53D6;&#x6574;&#x201D;&#xFF08;round up&#xFF09;&#x3002;</p>
+<p>&#x8BA1;&#x7B97;&#x7ED3;&#x679C;&#x4E00;&#x65E6;&#x6EA2;&#x51FA;&#x4E3A;&#x65E0;&#x7A77;&#x6570;&#xFF08;infinity&#xFF09;&#x5C31;&#x65E0;&#x6CD5;&#x518D;&#x5F97;&#x5230;&#x6709;&#x7A77;&#x6570;&#x3002;&#x4ECE;&#x6570;&#x5B66;&#x8FD0;&#x7B97;&#x548C;JavaScript&#x8BED;&#x8A00;&#x7684;&#x89D2;&#x5EA6;&#x6765;&#x8BF4;&#xFF0C;Infinity/Infinity&#x662F;&#x4E00;&#x4E2A;&#x672A;&#x5B9A;&#x4E49;&#x64CD;&#x4F5C;&#xFF0C;&#x7ED3;&#x679C;&#x4E3A;NaN&#x3002;</p>
+<h5 id="&#x96F6;&#x503C;"><a name="&#x96F6;&#x503C;" class="anchor-navigation-ex-anchor" href="#&#x96F6;&#x503C;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x96F6;&#x503C;</h5>
+<p>&#x6839;&#x636E;&#x89C4;&#x8303;&#xFF0C;&#x5BF9;&#x8D1F;&#x96F6;&#x8FDB;&#x884C;&#x5B57;&#x7B26;&#x4E32;&#x5316;&#x4F1A;&#x8FD4;&#x56DE;&quot;0&quot;&#x3002;&#x5982;&#x679C;&#x53CD;&#x8FC7;&#x6765;&#x5C06;&#x5176;&#x4ECE;&#x5B57;&#x7B26;&#x4E32;&#x8F6C;&#x6362;&#x4E3A;&#x6570;&#x5B57;&#xFF0C;&#x5F97;&#x5230;&#x7684;&#x7ED3;&#x679C;&#x662F;&#x51C6;&#x786E;&#x7684;<code>+&quot;-0&quot; -&gt; -0</code>&#x3002;</p>
+<p><code>0 === -0</code>&#x3002;&#x8981;&#x533A;&#x5206;-0&#x548C;0&#xFF0C;&#x8FD8;&#x9700;&#x8981;&#x505A;&#x4E00;&#x4E9B;&#x7279;&#x6B8A;&#x5904;&#x7406;&#x3002;</p>
+<pre><code>function isNegZero(n) {
+    n = Number( n );
+    return (n === 0) &amp;&amp; (1 / n === -Infinity);
+}&#xFFFC;
+</code></pre><p><strong>&#x6211;&#x4EEC;&#x4E3A;&#x4EC0;&#x4E48;&#x9700;&#x8981;&#x8D1F;&#x96F6;&#x5462;&#xFF1F;</strong></p>
+<p>&#x6709;&#x4E9B;&#x5E94;&#x7528;&#x7A0B;&#x5E8F;&#x4E2D;&#x7684;&#x6570;&#x636E;&#x9700;&#x8981;&#x4EE5;&#x7EA7;&#x6570;&#x5F62;&#x5F0F;&#x6765;&#x8868;&#x793A;&#xFF08;&#x6BD4;&#x5982;&#x52A8;&#x753B;&#x5E27;&#x7684;&#x79FB;&#x52A8;&#x901F;&#x5EA6;&#xFF09;&#xFF0C;&#x6570;&#x5B57;&#x7684;&#x7B26;&#x53F7;&#x4F4D;&#xFF08;sign&#xFF09;&#x7528;&#x6765;&#x4EE3;&#x8868;&#x5176;&#x4ED6;&#x4FE1;&#x606F;&#xFF08;&#x6BD4;&#x5982;&#x79FB;&#x52A8;&#x7684;&#x65B9;&#x5411;&#xFF09;&#x3002;&#x6B64;&#x65F6;&#x5982;&#x679C;&#x4E00;&#x4E2A;&#x503C;&#x4E3A;0&#x7684;&#x53D8;&#x91CF;&#x5931;&#x53BB;&#x4E86;&#x5B83;&#x7684;&#x7B26;&#x53F7;&#x4F4D;&#xFF0C;&#x5B83;&#x7684;&#x65B9;&#x5411;&#x4FE1;&#x606F;&#x5C31;&#x4F1A;&#x4E22;&#x5931;&#x3002;&#x6240;&#x4EE5;&#x4FDD;&#x7559;0&#x503C;&#x7684;&#x7B26;&#x53F7;&#x4F4D;&#x53EF;&#x4EE5;&#x9632;&#x6B62;&#x8FD9;&#x7C7B;&#x60C5;&#x51B5;&#x53D1;&#x751F;&#x3002;</p>
+<h5 id="&#x7279;&#x6B8A;&#x7B49;&#x5F0F;"><a name="&#x7279;&#x6B8A;&#x7B49;&#x5F0F;" class="anchor-navigation-ex-anchor" href="#&#x7279;&#x6B8A;&#x7B49;&#x5F0F;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x7279;&#x6B8A;&#x7B49;&#x5F0F;</h5>
+<p>NaN&#x548C;-0&#x5728;&#x76F8;&#x7B49;&#x6BD4;&#x8F83;&#x65F6;&#x7684;&#x8868;&#x73B0;&#x6709;&#x4E9B;&#x7279;&#x522B;&#xFF0C;ES6&#x4E2D;&#x65B0;&#x52A0;&#x5165;&#x4E86;&#x4E00;&#x4E2A;&#x5DE5;&#x5177;&#x65B9;&#x6CD5;Object.is(..)&#x6765;&#x5224;&#x65AD;&#x4E24;&#x4E2A;&#x503C;&#x662F;&#x5426;&#x7EDD;&#x5BF9;&#x76F8;&#x7B49;&#x3002;</p>
+<p>&#x80FD;&#x4F7F;&#x7528;==&#x548C;===&#x5C31;&#x5C3D;&#x91CF;&#x4E0D;&#x8981;&#x4F7F;&#x7528;Object.is(..)&#xFF0C;&#x56E0;&#x4E3A;&#x524D;&#x8005;&#x6548;&#x7387;&#x66F4;&#x9AD8;&#x3001;&#x66F4;&#x4E3A;&#x901A;&#x7528;&#x3002;Object.is(..)&#x4E3B;&#x8981;&#x7528;&#x6765;&#x5904;&#x7406;&#x90A3;&#x4E9B;&#x7279;&#x6B8A;&#x7684;&#x76F8;&#x7B49;&#x6BD4;&#x8F83;&#x3002;</p>
+<h3 id="null&#x4E0E;undefined"><a name="null&#x4E0E;undefined" class="anchor-navigation-ex-anchor" href="#null&#x4E0E;undefined"><i class="fa fa-link" aria-hidden="true"></i></a>null&#x4E0E;undefined</h3>
+<p>undefined&#x7C7B;&#x578B;&#x53EA;&#x6709;&#x4E00;&#x4E2A;&#x503C;&#xFF0C;&#x5373;undefined&#x3002;null&#x7C7B;&#x578B;&#x4E5F;&#x53EA;&#x6709;&#x4E00;&#x4E2A;&#x503C;&#xFF0C;&#x5373;null&#x3002;&#x5B83;&#x4EEC;&#x7684;&#x540D;&#x79F0;&#x65E2;&#x662F;&#x7C7B;&#x578B;&#x4E5F;&#x662F;&#x503C;&#x3002;</p>
+<h4 id="null"><a name="null" class="anchor-navigation-ex-anchor" href="#null"><i class="fa fa-link" aria-hidden="true"></i></a>null</h4>
+<p>null&#x6307;&#x7A7A;&#x503C;&#xFF08;empty value&#xFF09;&#x3002;</p>
+<p>null&#x662F;&#x4E00;&#x4E2A;&#x7279;&#x6B8A;&#x5173;&#x952E;&#x5B57;&#xFF0C;&#x4E0D;&#x662F;&#x6807;&#x8BC6;&#x7B26;&#xFF0C;&#x6211;&#x4EEC;&#x4E0D;&#x80FD;&#x5C06;&#x5176;&#x5F53;&#x4F5C;&#x53D8;&#x91CF;&#x6765;&#x4F7F;&#x7528;&#x548C;&#x8D4B;&#x503C;&#x3002;</p>
+<h4 id="undefined"><a name="undefined" class="anchor-navigation-ex-anchor" href="#undefined"><i class="fa fa-link" aria-hidden="true"></i></a>undefined</h4>
+<p>undefined&#x6307;&#x6CA1;&#x6709;&#x503C;&#xFF08;missing value&#xFF09;&#x3002;</p>
+<p>&#x7136;&#x800C;undefined&#x5374;&#x662F;&#x4E00;&#x4E2A;&#x6807;&#x8BC6;&#x7B26;&#xFF0C;&#x53EF;&#x4EE5;&#x88AB;&#x5F53;&#x4F5C;&#x53D8;&#x91CF;&#x6765;&#x4F7F;&#x7528;&#x548C;&#x8D4B;&#x503C;&#x3002;&#x975E;&#x4E25;&#x683C;&#x6A21;&#x5F0F;&#x4E0B;&#xFF0C;&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x4E3A;&#x5168;&#x5C40;&#x6807;&#x8BC6;&#x7B26;undefined&#x8D4B;&#x503C;&#xFF08;&#x8FD9;&#x6837;&#x7684;&#x8BBE;&#x8BA1;&#x5B9E;&#x5728;&#x662F;&#x6B20;&#x8003;&#x8651;&#xFF01;&#xFF09;&#x3002;&#x5728;&#x975E;&#x4E25;&#x683C;&#x548C;&#x4E25;&#x683C;&#x4E24;&#x79CD;&#x6A21;&#x5F0F;&#x4E0B;&#xFF0C;&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x58F0;&#x660E;&#x4E00;&#x4E2A;&#x540D;&#x4E3A;undefined&#x7684;&#x5C40;&#x90E8;&#x53D8;&#x91CF;&#x3002;&#x518D;&#x6B21;&#x5F3A;&#x8C03;&#x6700;&#x597D;&#x4E0D;&#x8981;&#x8FD9;&#x6837;&#x505A;&#xFF01;</p>
+<p>&#x8868;&#x8FBE;&#x5F0F;void<strong>__</strong>&#x6CA1;&#x6709;&#x8FD4;&#x56DE;&#x503C;&#xFF0C;&#x56E0;&#x6B64;&#x8FD4;&#x56DE;&#x7ED3;&#x679C;&#x662F;undefined&#x3002;void&#x5E76;&#x4E0D;&#x6539;&#x53D8;&#x8868;&#x8FBE;&#x5F0F;&#x7684;&#x7ED3;&#x679C;&#xFF0C;&#x53EA;&#x662F;&#x8BA9;&#x8868;&#x8FBE;&#x5F0F;&#x4E0D;&#x8FD4;&#x56DE;&#x503C;&#x3002;&#x6309;&#x60EF;&#x4F8B;&#x6211;&#x4EEC;&#x7528;void 0&#x6765;&#x83B7;&#x5F97;undefined&#x3002;void 0&#x3001;void 1&#x548C;undefined&#x4E4B;&#x95F4;&#x5E76;&#x6CA1;&#x6709;&#x5B9E;&#x8D28;&#x4E0A;&#x7684;&#x533A;&#x522B;&#x3002;void&#x8FD0;&#x7B97;&#x7B26;&#x5728;&#x5176;&#x4ED6;&#x5730;&#x65B9;&#x4E5F;&#x80FD;&#x6D3E;&#x4E0A;&#x7528;&#x573A;&#xFF0C;&#x6BD4;&#x5982;&#x4E0D;&#x8BA9;&#x8868;&#x8FBE;&#x5F0F;&#x8FD4;&#x56DE;&#x4EFB;&#x4F55;&#x7ED3;&#x679C;&#xFF08;&#x5373;&#x4F7F;&#x5176;&#x6709;&#x526F;&#x4F5C;&#x7528;&#xFF09;&#x3002;&#x603B;&#x4E4B;&#xFF0C;&#x5982;&#x679C;&#x8981;&#x5C06;&#x4EE3;&#x7801;&#x4E2D;&#x7684;&#x503C;&#xFF08;&#x5982;&#x8868;&#x8FBE;&#x5F0F;&#x7684;&#x8FD4;&#x56DE;&#x503C;&#xFF09;&#x8BBE;&#x4E3A;undefined&#xFF0C;&#x5C31;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;void&#x3002;&#x8FD9;&#x79CD;&#x505A;&#x6CD5;&#x5E76;&#x4E0D;&#x591A;&#x89C1;&#xFF0C;&#x4F46;&#x5728;&#x67D0;&#x4E9B;&#x60C5;&#x51B5;&#x4E0B;&#x5374;&#x5F88;&#x6709;&#x7528;&#x3002;</p>
+<h3 id="&#x503C;&#x548C;&#x5F15;&#x7528;"><a name="&#x503C;&#x548C;&#x5F15;&#x7528;" class="anchor-navigation-ex-anchor" href="#&#x503C;&#x548C;&#x5F15;&#x7528;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x503C;&#x548C;&#x5F15;&#x7528;</h3>
+<p>&#x7B80;&#x5355;&#x503C;&#xFF08;&#x5373;&#x6807;&#x91CF;&#x57FA;&#x672C;&#x7C7B;&#x578B;&#x503C;&#xFF0C;scalar primitive&#xFF09;&#x603B;&#x662F;&#x901A;&#x8FC7;&#x503C;&#x590D;&#x5236;&#x7684;&#x65B9;&#x5F0F;&#x6765;&#x8D4B;&#x503C;/&#x4F20;&#x9012;&#xFF0C;&#x5305;&#x62EC;null&#x3001;undefined&#x3001;&#x5B57;&#x7B26;&#x4E32;&#x3001;&#x6570;&#x5B57;&#x3001;&#x5E03;&#x5C14;&#x548C;ES6&#x4E2D;&#x7684;symbol&#x3002;&#x590D;&#x5408;&#x503C;&#xFF08;compound value&#xFF09;&#x2014;&#x2014;&#x5BF9;&#x8C61;&#x548C;&#x51FD;&#x6570;&#xFF0C;&#x5219;&#x603B;&#x662F;&#x901A;&#x8FC7;&#x5F15;&#x7528;&#x590D;&#x5236;&#x7684;&#x65B9;&#x5F0F;&#x6765;&#x8D4B;&#x503C;/&#x4F20;&#x9012;&#x3002;</p>
+<p><strong><code>arr.length = 0</code></strong>&#x53EF;&#x4EE5;&#x6E05;&#x7A7A;&#x4E00;&#x4E2A;&#x6570;&#x7EC4;&#x91CC;&#x9762;&#x7684;&#x6570;&#x636E;&#x3002;slice(..)&#x4E0D;&#x5E26;&#x53C2;&#x6570;&#x4F1A;&#x8FD4;&#x56DE;&#x5F53;&#x524D;&#x6570;&#x7EC4;&#x7684;&#x4E00;&#x4E2A;&#x6D45;&#x590D;&#x672C;&#xFF08;shallow copy&#xFF09;&#x3002;</p>
+<h2 id="&#x539F;&#x751F;&#x51FD;&#x6570;"><a name="&#x539F;&#x751F;&#x51FD;&#x6570;" class="anchor-navigation-ex-anchor" href="#&#x539F;&#x751F;&#x51FD;&#x6570;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x539F;&#x751F;&#x51FD;&#x6570;</h2>
+<p>&#x539F;&#x751F;&#x51FD;&#x6570;&#x53EF;&#x4EE5;&#x88AB;&#x5F53;&#x4F5C;&#x6784;&#x9020;&#x51FD;&#x6570;&#x6765;&#x4F7F;&#x7528;&#xFF0C;&#x4F46;&#x5176;&#x6784;&#x9020;&#x51FA;&#x6765;&#x7684;&#x5BF9;&#x8C61;&#x53EF;&#x80FD;&#x4F1A;&#x548C;&#x6211;&#x4EEC;&#x8BBE;&#x60F3;&#x7684;&#x6709;&#x6240;&#x51FA;&#x5165;&#xFF1A;<code>var a = new String( &quot;abc&quot; ); typeof a;// &#x662F;&quot;object&quot;&#xFF0C;&#x4E0D;&#x662F;&quot;String&quot;&#xFFFC;</code>&#x3002;</p>
+<h3 id="class"><a name="class" class="anchor-navigation-ex-anchor" href="#class"><i class="fa fa-link" aria-hidden="true"></i></a>[[Class]]</h3>
+<p>&#x6240;&#x6709;typeof&#x8FD4;&#x56DE;&#x503C;&#x4E3A;&quot;object&quot;&#x7684;&#x5BF9;&#x8C61;&#xFF08;&#x5982;&#x6570;&#x7EC4;&#xFF09;&#x90FD;&#x5305;&#x542B;&#x4E00;&#x4E2A;&#x5185;&#x90E8;&#x5C5E;&#x6027;[[Class]]&#x3002;&#x8FD9;&#x4E2A;&#x5C5E;&#x6027;&#x65E0;&#x6CD5;&#x76F4;&#x63A5;&#x8BBF;&#x95EE;&#xFF0C;&#x4E00;&#x822C;&#x901A;&#x8FC7;Object.prototype.toString(..)&#x6765;&#x67E5;&#x770B;&#x3002;&#x591A;&#x6570;&#x60C5;&#x51B5;&#x4E0B;&#xFF0C;&#x5BF9;&#x8C61;&#x7684;&#x5185;&#x90E8;[[Class]]&#x5C5E;&#x6027;&#x548C;&#x521B;&#x5EFA;&#x8BE5;&#x5BF9;&#x8C61;&#x7684;&#x5185;&#x5EFA;&#x539F;&#x751F;&#x6784;&#x9020;&#x51FD;&#x6570;&#x76F8;&#x5BF9;&#x5E94;&#xFF08;&#x5982;&#x4E0B;&#xFF09;&#xFF0C;&#x4F46;&#x5E76;&#x975E;&#x603B;&#x662F;&#x5982;&#x6B64;&#x3002;&#x867D;&#x7136;Null()&#x548C;Undefined()&#x8FD9;&#x6837;&#x7684;&#x539F;&#x751F;&#x6784;&#x9020;&#x51FD;&#x6570;&#x5E76;&#x4E0D;&#x5B58;&#x5728;&#xFF0C;&#x4F46;&#x662F;&#x5185;&#x90E8;[[Class]]&#x5C5E;&#x6027;&#x503C;&#x4ECD;&#x7136;&#x662F;&quot;Null&quot;&#x548C;&quot;Undefined&quot;&#x3002;</p>
+<pre><code>Object.prototype.toString.call( null );
+// &quot;[object Null]&quot;
+Object.prototype.toString.call( undefined );
+// &quot;[object Undefined]&quot;
+</code></pre><p>Object.create(null)&#x3001;Object.create(undefined)&#x751F;&#x6210;&#x7684;&#x662F;&#x666E;&#x901A;&#x5BF9;&#x8C61;&#xFF0C;<code>Object.create(null).toString() === &quot;[object Object]&quot;</code>&#x3002;ES5&#x5230;ES6, toString()&#x548C;[[Class]]&#x7684;&#x884C;&#x4E3A;&#x53D1;&#x751F;&#x4E86;&#x4E00;&#x4E9B;&#x53D8;&#x5316;&#xFF0C;</p>
+<h3 id="&#x5C01;&#x88C5;&#x5BF9;&#x8C61;"><a name="&#x5C01;&#x88C5;&#x5BF9;&#x8C61;" class="anchor-navigation-ex-anchor" href="#&#x5C01;&#x88C5;&#x5BF9;&#x8C61;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x5C01;&#x88C5;&#x5BF9;&#x8C61;</h3>
+<p>&#x7531;&#x4E8E;&#x57FA;&#x672C;&#x7C7B;&#x578B;&#x503C;&#x6CA1;&#x6709;&#xFF0E;length&#x548C;&#xFF0E;toString()&#x8FD9;&#x6837;&#x7684;&#x5C5E;&#x6027;&#x548C;&#x65B9;&#x6CD5;&#xFF0C;&#x9700;&#x8981;&#x901A;&#x8FC7;&#x5C01;&#x88C5;&#x5BF9;&#x8C61;&#x624D;&#x80FD;&#x8BBF;&#x95EE;&#xFF0C;&#x6B64;&#x65F6;JavaScript&#x4F1A;&#x81EA;&#x52A8;&#x4E3A;&#x57FA;&#x672C;&#x7C7B;&#x578B;&#x503C;&#x5305;&#x88C5;&#xFF08;box&#x6216;&#x8005;wrap&#xFF09;&#x4E00;&#x4E2A;&#x5C01;&#x88C5;&#x5BF9;&#x8C61;&#x3002;</p>
+<p>&#x6D4F;&#x89C8;&#x5668;&#x5DF2;&#x7ECF;&#x4E3A;&#xFF0E;length&#x8FD9;&#x6837;&#x7684;&#x5E38;&#x89C1;&#x60C5;&#x51B5;&#x505A;&#x4E86;&#x6027;&#x80FD;&#x4F18;&#x5316;&#xFF0C;&#x76F4;&#x63A5;&#x4F7F;&#x7528;&#x5C01;&#x88C5;&#x5BF9;&#x8C61;&#x6765;&#x201C;&#x63D0;&#x524D;&#x4F18;&#x5316;&#x201D;&#x4EE3;&#x7801;&#x53CD;&#x800C;&#x4F1A;&#x964D;&#x4F4E;&#x6267;&#x884C;&#x6548;&#x7387;&#x3002;&#x6700;&#x597D;&#x7684;&#x529E;&#x6CD5;&#x662F;&#x8BA9;JavaScript&#x5F15;&#x64CE;&#x81EA;&#x5DF1;&#x51B3;&#x5B9A;&#x4EC0;&#x4E48;&#x65F6;&#x5019;&#x5E94;&#x8BE5;&#x4F7F;&#x7528;&#x5C01;&#x88C5;&#x5BF9;&#x8C61;&#x3002;&#x6362;&#x53E5;&#x8BDD;&#x8BF4;&#xFF0C;&#x5C31;&#x662F;&#x5E94;&#x8BE5;&#x4F18;&#x5148;&#x8003;&#x8651;&#x4F7F;&#x7528;&quot;abc&quot;&#x548C;42&#x8FD9;&#x6837;&#x7684;&#x57FA;&#x672C;&#x7C7B;&#x578B;&#x503C;&#xFF0C;&#x800C;&#x975E;new String(&quot;abc&quot;)&#x548C;new Number(42)&#x3002;</p>
+<p>&#x5982;&#x679C;&#x60F3;&#x8981;&#x81EA;&#x884C;&#x5C01;&#x88C5;&#x57FA;&#x672C;&#x7C7B;&#x578B;&#x503C;&#xFF0C;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;<strong>Object(..)</strong>&#x51FD;&#x6570;&#xFF08;&#x4E0D;&#x5E26;new&#x5173;&#x952E;&#x5B57;&#xFF09;&#xFF0C;&#x4ED6;&#x4F1A;&#x6839;&#x636E;&#x4F20;&#x5165;&#x53C2;&#x6570;&#x7684;&#x7C7B;&#x578B;&#x81EA;&#x52A8;&#x5C01;&#x88C5;&#x6210;&#x5BF9;&#x5E94;&#x7684;&#x5BF9;&#x8C61;&#x3002;</p>
+<h3 id="&#x62C6;&#x5C01;&#x5BF9;&#x8C61;"><a name="&#x62C6;&#x5C01;&#x5BF9;&#x8C61;" class="anchor-navigation-ex-anchor" href="#&#x62C6;&#x5C01;&#x5BF9;&#x8C61;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x62C6;&#x5C01;&#x5BF9;&#x8C61;</h3>
+<p>&#x5982;&#x679C;&#x60F3;&#x8981;&#x5F97;&#x5230;&#x5C01;&#x88C5;&#x5BF9;&#x8C61;&#x4E2D;&#x7684;&#x57FA;&#x672C;&#x7C7B;&#x578B;&#x503C;&#xFF0C;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;valueOf()&#x51FD;&#x6570;&#x3002;&#x5728;&#x9700;&#x8981;&#x7528;&#x5230;&#x5C01;&#x88C5;&#x5BF9;&#x8C61;&#x4E2D;&#x7684;&#x57FA;&#x672C;&#x7C7B;&#x578B;&#x503C;&#x7684;&#x5730;&#x65B9;&#x4F1A;&#x53D1;&#x751F;&#x9690;&#x5F0F;&#x62C6;&#x5C01;&#x3002;</p>
+<h3 id="&#x539F;&#x751F;&#x51FD;&#x6570;&#x4F5C;&#x4E3A;&#x6784;&#x9020;&#x51FD;&#x6570;"><a name="&#x539F;&#x751F;&#x51FD;&#x6570;&#x4F5C;&#x4E3A;&#x6784;&#x9020;&#x51FD;&#x6570;" class="anchor-navigation-ex-anchor" href="#&#x539F;&#x751F;&#x51FD;&#x6570;&#x4F5C;&#x4E3A;&#x6784;&#x9020;&#x51FD;&#x6570;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x539F;&#x751F;&#x51FD;&#x6570;&#x4F5C;&#x4E3A;&#x6784;&#x9020;&#x51FD;&#x6570;</h3>
+<p>&#x5E94;&#x8BE5;&#x5C3D;&#x91CF;&#x907F;&#x514D;&#x4F7F;&#x7528;&#x6784;&#x9020;&#x51FD;&#x6570;&#x521B;&#x5EFA;&#x5BF9;&#x8C61;&#xFF0C;&#x9664;&#x975E;&#x5341;&#x5206;&#x5FC5;&#x8981;&#xFF0C;&#x56E0;&#x4E3A;&#x5B83;&#x4EEC;&#x7ECF;&#x5E38;&#x4F1A;&#x4EA7;&#x751F;&#x610F;&#x60F3;&#x4E0D;&#x5230;&#x7684;&#x7ED3;&#x679C;&#x3002;</p>
+<h4 id="array"><a name="array" class="anchor-navigation-ex-anchor" href="#array"><i class="fa fa-link" aria-hidden="true"></i></a>Array(..)</h4>
+<p>&#x6570;&#x7EC4;&#x5E76;&#x6CA1;&#x6709;&#x9884;&#x8BBE;&#x957F;&#x5EA6;&#x8FD9;&#x4E2A;&#x6982;&#x5FF5;&#x3002;Array(..)&#x521B;&#x5EFA;&#x51FA;&#x6765;&#x7684;&#x53EA;&#x662F;&#x4E00;&#x4E2A;&#x7A7A;&#x6570;&#x7EC4;&#xFF0C;&#x53EA;&#x4E0D;&#x8FC7;&#x5B83;&#x7684;length&#x5C5E;&#x6027;&#x88AB;&#x8BBE;&#x7F6E;&#x6210;&#x4E86;&#x6307;&#x5B9A;&#x7684;&#x503C;&#x3002;</p>
+<p>&#x6784;&#x9020;&#x51FD;&#x6570;Array(..)&#x4E0D;&#x8981;&#x6C42;&#x5FC5;&#x987B;&#x5E26;new&#x5173;&#x952E;&#x5B57;&#x3002;&#x4E0D;&#x5E26;&#x65F6;&#xFF0C;&#x5B83;&#x4F1A;&#x88AB;&#x81EA;&#x52A8;&#x8865;&#x4E0A;&#x3002;&#x56E0;&#x6B64;Array(1,2,3)&#x548C;new Array(1,2,3)&#x7684;&#x6548;&#x679C;&#x662F;&#x4E00;&#x6837;&#x7684;&#x3002;Array&#x6784;&#x9020;&#x51FD;&#x6570;&#x53EA;&#x5E26;<strong>&#x4E00;&#x4E2A;&#x6570;&#x5B57;&#x53C2;&#x6570;</strong>&#x7684;&#x65F6;&#x5019;&#xFF0C;&#x8BE5;&#x53C2;&#x6570;&#x4F1A;&#x88AB;&#x4F5C;&#x4E3A;&#x6570;&#x7EC4;&#x7684;&#x9884;&#x8BBE;&#x957F;&#x5EA6;&#xFF08;length&#xFF09;&#xFF0C;&#x800C;&#x975E;&#x53EA;&#x5145;&#x5F53;&#x6570;&#x7EC4;&#x4E2D;&#x7684;&#x4E00;&#x4E2A;&#x5143;&#x7D20;&#x3002;&#x8FD9;&#x5B9E;&#x975E;&#x660E;&#x667A;&#x4E4B;&#x4E3E;&#xFF1A;&#x4E00;&#x662F;&#x5BB9;&#x6613;&#x5FD8;&#x8BB0;&#xFF0C;&#x4E8C;&#x662F;&#x5BB9;&#x6613;&#x51FA;&#x9519;&#x3002;</p>
+<p>&#x5982;&#x82E5;&#x4E00;&#x4E2A;&#x6570;&#x7EC4;&#x6CA1;&#x6709;&#x4EFB;&#x4F55;&#x5355;&#x5143;&#xFF0C;&#x4F46;&#x5B83;&#x7684;length&#x5C5E;&#x6027;&#x4E2D;&#x5374;&#x663E;&#x793A;&#x6709;&#x5355;&#x5143;&#x6570;&#x91CF;&#xFF0C;&#x8FD9;&#x6837;&#x5947;&#x7279;&#x7684;&#x6570;&#x636E;&#x7ED3;&#x6784;&#x4F1A;&#x5BFC;&#x81F4;&#x4E00;&#x4E9B;&#x602A;&#x5F02;&#x7684;&#x884C;&#x4E3A;&#x3002;</p>
+<pre><code>a.join( &quot;-&quot; ); // &quot;--&quot;
+b.join( &quot;-&quot; ); // &quot;--&quot;
+a.map(function(v, i){ return i; }); // [ undefined x 3 ]
+b.map(function(v, i){ return i; }); // [ 0, 1, 2 ]
+</code></pre><p>join(..)&#x4F1A;&#x9996;&#x5148;&#x5047;&#x5B9A;&#x6570;&#x7EC4;&#x4E0D;&#x4E3A;&#x7A7A;&#xFF0C;&#x7136;&#x540E;&#x901A;&#x8FC7;length&#x5C5E;&#x6027;&#x503C;&#x6765;&#x904D;&#x5386;&#x5176;&#x4E2D;&#x7684;&#x5143;&#x7D20;&#x3002;&#x800C;map(..)&#x5E76;&#x4E0D;&#x505A;&#x8FD9;&#x6837;&#x7684;&#x5047;&#x5B9A;&#xFF0C;&#x56E0;&#x6B64;&#x7ED3;&#x679C;&#x4E5F;&#x5F80;&#x5F80;&#x5728;&#x9884;&#x671F;&#x4E4B;&#x5916;&#xFF0C;&#x5E76;&#x53EF;&#x80FD;&#x5BFC;&#x81F4;&#x5931;&#x8D25;&#x3002;</p>
+<p>&#x6211;&#x4EEC;&#x5C06;&#x5305;&#x542B;&#x81F3;&#x5C11;&#x4E00;&#x4E2A;&#x201C;&#x7A7A;&#x5355;&#x5143;&#x201D;&#x7684;&#x6570;&#x7EC4;&#x79F0;&#x4E3A;&#x201C;&#x7A00;&#x758F;&#x6570;&#x7EC4;&#x201D;&#x3002;&#x53EA;&#x8981;&#x5C06;length&#x5C5E;&#x6027;&#x8BBE;&#x7F6E;&#x4E3A;&#x8D85;&#x8FC7;&#x5B9E;&#x9645;&#x5355;&#x5143;&#x6570;&#x7684;&#x503C;&#xFF0C;&#x5C31;&#x80FD;&#x9690;&#x5F0F;&#x5730;&#x5236;&#x9020;&#x51FA;&#x7A7A;&#x5355;&#x5143;&#x3002;&#x53E6;&#x5916;&#x8FD8;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;delete b[1]&#x5728;&#x6570;&#x7EC4;b&#x4E2D;&#x5236;&#x9020;&#x51FA;&#x4E00;&#x4E2A;&#x7A7A;&#x5355;&#x5143;&#x3002;</p>
+<p>&#x867D;&#x7136;Array.apply( null, { length: 3 } )&#x7B49;&#x6548;&#x4E8E;Array(undefined, undefined, undefined)&#xFF0C;&#x5176;&#x7ED3;&#x679C;&#x8FDC;&#x6BD4;Array(3)&#x66F4;&#x51C6;&#x786E;&#x53EF;&#x9760;&#x3002;&#x603B;&#x4E4B;&#xFF0C;<strong>&#x6C38;&#x8FDC;&#x4E0D;&#x8981;&#x521B;&#x5EFA;&#x548C;&#x4F7F;&#x7528;&#x7A7A;&#x5355;&#x5143;&#x6570;&#x7EC4;</strong>&#x3002;</p>
+<h4 id="object&#x3001;function&#x548C;regexp"><a name="object&#x3001;function&#x548C;regexp" class="anchor-navigation-ex-anchor" href="#object&#x3001;function&#x548C;regexp"><i class="fa fa-link" aria-hidden="true"></i></a>Object(..)&#x3001;Function(..)&#x548C;RegExp(..)</h4>
+<p>&#x9664;&#x975E;&#x4E07;&#x4E0D;&#x5F97;&#x5DF2;&#xFF0C;&#x5426;&#x5219;&#x5C3D;&#x91CF;&#x4E0D;&#x8981;&#x4F7F;&#x7528;Object(..)/Function(..)/RegExp(..)&#x3002;</p>
+<p>&#x5B9E;&#x9645;&#x60C5;&#x51B5;&#x4E2D;&#x6CA1;&#x6709;&#x5FC5;&#x8981;&#x4F7F;&#x7528;new Object()&#x6765;&#x521B;&#x5EFA;&#x5BF9;&#x8C61;&#xFF0C;&#x56E0;&#x4E3A;&#x8FD9;&#x6837;&#x5C31;&#x65E0;&#x6CD5;&#x50CF;&#x5E38;&#x91CF;&#x5F62;&#x5F0F;&#x90A3;&#x6837;&#x4E00;&#x6B21;&#x8BBE;&#x5B9A;&#x591A;&#x4E2A;&#x5C5E;&#x6027;&#xFF0C;&#x800C;&#x5FC5;&#x987B;&#x9010;&#x4E00;&#x8BBE;&#x5B9A;&#x3002;&#x6784;&#x9020;&#x51FD;&#x6570;Function&#x53EA;&#x5728;&#x6781;&#x5C11;&#x6570;&#x60C5;&#x51B5;&#x4E0B;&#x5F88;&#x6709;&#x7528;&#xFF0C;&#x6BD4;&#x5982;&#x52A8;&#x6001;&#x5B9A;&#x4E49;&#x51FD;&#x6570;&#x53C2;&#x6570;&#x548C;&#x51FD;&#x6570;&#x4F53;&#x3002;&#x5F3A;&#x70C8;&#x5EFA;&#x8BAE;&#x4F7F;&#x7528;&#x5E38;&#x91CF;&#x5F62;&#x5F0F;&#xFF08;&#x5982;/^a&#xFF0A;b+/g&#xFF09;&#x6765;&#x5B9A;&#x4E49;&#x6B63;&#x5219;&#x8868;&#x8FBE;&#x5F0F;&#xFF0C;&#x8FD9;&#x6837;&#x4E0D;&#x4EC5;&#x8BED;&#x6CD5;&#x7B80;&#x5355;&#xFF0C;&#x6267;&#x884C;&#x6548;&#x7387;&#x4E5F;&#x66F4;&#x9AD8;&#xFF0C;&#x56E0;&#x4E3A;JavaScript&#x5F15;&#x64CE;&#x5728;&#x4EE3;&#x7801;&#x6267;&#x884C;&#x524D;&#x4F1A;&#x5BF9;&#x5B83;&#x4EEC;&#x8FDB;&#x884C;&#x9884;&#x7F16;&#x8BD1;&#x548C;&#x7F13;&#x5B58;&#x3002;</p>
+<p>RegExp(..)&#x6709;&#x65F6;&#x8FD8;&#x662F;&#x5F88;&#x6709;&#x7528;&#x7684;&#xFF0C;&#x6BD4;&#x5982;&#x52A8;&#x6001;&#x5B9A;&#x4E49;&#x6B63;&#x5219;&#x8868;&#x8FBE;&#x5F0F;&#x65F6;&#x3002;</p>
+<h4 id="date&#x548C;error"><a name="date&#x548C;error" class="anchor-navigation-ex-anchor" href="#date&#x548C;error"><i class="fa fa-link" aria-hidden="true"></i></a>Date(..)&#x548C;Error(..)</h4>
+<p>&#x76F8;&#x8F83;&#x4E8E;&#x5176;&#x4ED6;&#x539F;&#x751F;&#x6784;&#x9020;&#x51FD;&#x6570;&#xFF0C;Date(..)&#x548C;Error(..)&#x7684;&#x7528;&#x5904;&#x8981;&#x5927;&#x5F88;&#x591A;&#xFF0C;&#x56E0;&#x4E3A;&#x6CA1;&#x6709;&#x5BF9;&#x5E94;&#x7684;&#x5E38;&#x91CF;&#x5F62;&#x5F0F;&#x6765;&#x4F5C;&#x4E3A;&#x5B83;&#x4EEC;&#x7684;&#x66FF;&#x4EE3;&#x3002;</p>
+<p>Date(..)&#x4E3B;&#x8981;&#x7528;&#x6765;&#x83B7;&#x5F97;&#x5F53;&#x524D;&#x7684;Unix&#x65F6;&#x95F4;&#x6233;&#xFF08;&#x4ECE;1970&#x5E74;1&#x6708;1&#x65E5;&#x5F00;&#x59CB;&#x8BA1;&#x7B97;&#xFF0C;&#x4EE5;&#x79D2;&#x4E3A;&#x5355;&#x4F4D;&#xFF09;&#x3002;&#x8BE5;&#x503C;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;&#x65E5;&#x671F;&#x5BF9;&#x8C61;&#x4E2D;&#x7684;getTime()&#x6765;&#x83B7;&#x5F97;&#x3002;&#x4ECE;ES5&#x5F00;&#x59CB;&#x5F15;&#x5165;&#x4E86;&#x4E00;&#x4E2A;&#x66F4;&#x7B80;&#x5355;&#x7684;&#x65B9;&#x6CD5;&#xFF0C;&#x5373;&#x9759;&#x6001;&#x51FD;&#x6570;Date.now()&#x3002;</p>
+<p>&#x6784;&#x9020;&#x51FD;&#x6570;Error(..)&#xFF08;&#x4E0E;&#x524D;&#x9762;&#x7684;Array()&#x7C7B;&#x4F3C;&#xFF09;&#x5E26;&#x4E0D;&#x5E26;new&#x5173;&#x952E;&#x5B57;&#x90FD;&#x53EF;&#x3002;&#x521B;&#x5EFA;&#x9519;&#x8BEF;&#x5BF9;&#x8C61;&#xFF08;error object&#xFF09;&#x4E3B;&#x8981;&#x662F;&#x4E3A;&#x4E86;&#x83B7;&#x5F97;&#x5F53;&#x524D;&#x8FD0;&#x884C;&#x6808;&#x7684;&#x4E0A;&#x4E0B;&#x6587;&#xFF08;&#x5927;&#x90E8;&#x5206;JavaScript&#x5F15;&#x64CE;&#x901A;&#x8FC7;&#x53EA;&#x8BFB;&#x5C5E;&#x6027;&#xFF0E;stack&#x6765;&#x8BBF;&#x95EE;&#xFF09;&#x3002;&#x6808;&#x4E0A;&#x4E0B;&#x6587;&#x4FE1;&#x606F;&#x5305;&#x62EC;&#x51FD;&#x6570;&#x8C03;&#x7528;&#x6808;&#x4FE1;&#x606F;&#x548C;&#x4EA7;&#x751F;&#x9519;&#x8BEF;&#x7684;&#x4EE3;&#x7801;&#x884C;&#x53F7;&#xFF0C;&#x4EE5;&#x4FBF;&#x4E8E;&#x8C03;&#x8BD5;&#xFF08;debug&#xFF09;&#x3002;</p>
+<p>&#x8FD8;&#x6709;&#x4E00;&#x4E9B;&#x9488;&#x5BF9;&#x7279;&#x5B9A;&#x9519;&#x8BEF;&#x7C7B;&#x578B;&#x7684;&#x539F;&#x751F;&#x6784;&#x9020;&#x51FD;&#x6570;&#xFF0C;&#x8FD9;&#x4E9B;&#x6784;&#x9020;&#x51FD;&#x6570;&#x5F88;&#x5C11;&#x88AB;&#x76F4;&#x63A5;&#x4F7F;&#x7528;&#xFF0C;&#x5B83;&#x4EEC;&#x5728;&#x7A0B;&#x5E8F;&#x53D1;&#x751F;&#x5F02;&#x5E38;&#xFF08;&#x6BD4;&#x5982;&#x8BD5;&#x56FE;&#x4F7F;&#x7528;&#x672A;&#x58F0;&#x660E;&#x7684;&#x53D8;&#x91CF;&#x4EA7;&#x751F;ReferenceError&#x9519;&#x8BEF;&#xFF09;&#x65F6;&#x4F1A;&#x88AB;&#x81EA;&#x52A8;&#x8C03;&#x7528;&#x3002;</p>
+<h4 id="symbol"><a name="symbol" class="anchor-navigation-ex-anchor" href="#symbol"><i class="fa fa-link" aria-hidden="true"></i></a>Symbol(..)</h4>
+<p>ES6&#x4E2D;&#x65B0;&#x52A0;&#x5165;&#x4E86;&#x4E00;&#x4E2A;&#x57FA;&#x672C;&#x6570;&#x636E;&#x7C7B;&#x578B;&#x2014;&#x2014;&#x7B26;&#x53F7;&#xFF08;Symbol&#xFF09;&#x3002;&#x7B26;&#x53F7;&#x5E76;&#x975E;&#x5BF9;&#x8C61;&#xFF0C;&#x800C;&#x662F;&#x4E00;&#x79CD;&#x7B80;&#x5355;&#x6807;&#x91CF;&#x57FA;&#x672C;&#x7C7B;&#x578B;&#x3002;&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;Symbol(..)&#x539F;&#x751F;&#x6784;&#x9020;&#x51FD;&#x6570;&#x6765;&#x81EA;&#x5B9A;&#x4E49;&#x7B26;&#x53F7;&#x3002;&#x4F46;&#x5B83;&#x6BD4;&#x8F83;&#x7279;&#x6B8A;&#xFF0C;&#x4E0D;&#x80FD;&#x5E26;new&#x5173;&#x952E;&#x5B57;&#xFF0C;&#x5426;&#x5219;&#x4F1A;&#x51FA;&#x9519;&#x3002;</p>
+<p>&#x7B26;&#x53F7;&#x5177;&#x6709;&#x552F;&#x4E00;&#x6027;&#x7684;&#x7279;&#x6B8A;&#x503C;&#xFF08;&#x5E76;&#x975E;&#x7EDD;&#x5BF9;&#xFF09;&#xFF0C;&#x7528;&#x5B83;&#x6765;&#x547D;&#x540D;&#x5BF9;&#x8C61;&#x5C5E;&#x6027;&#x4E0D;&#x5BB9;&#x6613;&#x5BFC;&#x81F4;&#x91CD;&#x540D;&#x3002;&#x7B26;&#x53F7;&#x53EF;&#x4EE5;&#x7528;&#x4F5C;&#x5C5E;&#x6027;&#x540D;&#xFF0C;&#x4F46;&#x65E0;&#x8BBA;&#x662F;&#x5728;&#x4EE3;&#x7801;&#x8FD8;&#x662F;&#x5F00;&#x53D1;&#x63A7;&#x5236;&#x53F0;&#x4E2D;&#x90FD;&#x65E0;&#x6CD5;&#x67E5;&#x770B;&#x548C;&#x8BBF;&#x95EE;&#x5B83;&#x7684;&#x503C;&#xFF0C;&#x53EA;&#x4F1A;&#x663E;&#x793A;&#x4E3A;&#x8BF8;&#x5982;Symbol(Symbol.create)&#x8FD9;&#x6837;&#x7684;&#x503C;&#x3002;</p>
+<p>&#x867D;&#x7136;&#x7B26;&#x53F7;&#x5B9E;&#x9645;&#x4E0A;&#x5E76;&#x975E;&#x79C1;&#x6709;&#x5C5E;&#x6027;&#xFF08;&#x901A;&#x8FC7;Object.getOwnPropertySymbols(..)&#x4FBF;&#x53EF;&#x4EE5;&#x516C;&#x5F00;&#x83B7;&#x5F97;&#x5BF9;&#x8C61;&#x4E2D;&#x7684;&#x6240;&#x6709;&#x7B26;&#x53F7;&#xFF09;&#xFF0C;&#x4F46;&#x5B83;&#x5374;&#x4E3B;&#x8981;&#x7528;&#x4E8E;&#x79C1;&#x6709;&#x6216;&#x7279;&#x6B8A;&#x5C5E;&#x6027;&#x3002;&#x5F88;&#x591A;&#x5F00;&#x53D1;&#x4EBA;&#x5458;&#x559C;&#x6B22;&#x7528;&#x5B83;&#x6765;&#x66FF;&#x4EE3;&#x6709;&#x4E0B;&#x5212;&#x7EBF;&#xFF08;&#xFF09;&#x524D;&#x7F00;&#x7684;&#x5C5E;&#x6027;&#xFF0C;&#x800C;&#x4E0B;&#x5212;&#x7EBF;&#x524D;&#x7F00;&#x901A;&#x5E38;&#x7528;&#x4E8E;&#x547D;&#x540D;&#x79C1;&#x6709;&#x6216;&#x7279;&#x6B8A;&#x5C5E;&#x6027;&#x3002;</p>
+<p>ES6&#x4E2D;&#x6709;&#x4E00;&#x4E9B;&#x9884;&#x5B9A;&#x4E49;&#x7B26;&#x53F7;&#xFF0C;&#x4EE5;Symbol&#x7684;&#x9759;&#x6001;&#x5C5E;&#x6027;&#x5F62;&#x5F0F;&#x51FA;&#x73B0;&#xFF0C;&#x5982;Symbol.create&#x3001;Symbol. iterator&#x7B49;&#xFF0C;&#x53EF;&#x4EE5;&#x8FD9;&#x6837;&#x6765;&#x4F7F;&#x7528;&#xFF1A;<code>obj[Symbol.iterator] = function(){ /&#xFF0A;..&#xFF0A;/ };</code>&#x3002;</p>
+<h3 id="&#x539F;&#x751F;&#x51FD;&#x6570;&#x539F;&#x578B;"><a name="&#x539F;&#x751F;&#x51FD;&#x6570;&#x539F;&#x578B;" class="anchor-navigation-ex-anchor" href="#&#x539F;&#x751F;&#x51FD;&#x6570;&#x539F;&#x578B;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x539F;&#x751F;&#x51FD;&#x6570;&#x539F;&#x578B;</h3>
+<p>&#x539F;&#x751F;&#x6784;&#x9020;&#x51FD;&#x6570;&#x6709;&#x81EA;&#x5DF1;&#x7684;&#xFF0E;prototype&#x5BF9;&#x8C61;&#xFF0C;&#x5982;Array.prototype&#x3001;String.prototype&#x7B49;&#x3002;&#x6709;&#x4E9B;&#x539F;&#x751F;&#x539F;&#x578B;&#xFF08;native prototype&#xFF09;&#x5E76;&#x975E;&#x666E;&#x901A;&#x5BF9;&#x8C61;&#xFF0C;&#x6211;&#x4EEC;&#x751A;&#x81F3;&#x53EF;&#x4EE5;&#x4FEE;&#x6539;&#x5B83;&#x4EEC;&#x3002;</p>
+<pre><code>typeof Function.prototype; // &quot;function&quot;
+Function.prototype(); // &#x7A7A;&#x51FD;&#x6570;&#xFF01;
+RegExp.prototype.toString();  // &quot;/(? :)/&quot;&#x2014;&#x2014;&#x7A7A;&#x6B63;&#x5219;&#x8868;&#x8FBE;&#x5F0F;
+&quot;abc&quot;.match( RegExp.prototype ); // [&quot;&quot;]
+</code></pre><p>Function.prototype&#x662F;&#x4E00;&#x4E2A;&#x7A7A;&#x51FD;&#x6570;&#xFF0C;RegExp.prototype&#x662F;&#x4E00;&#x4E2A;&#x201C;&#x7A7A;&#x201D;&#x7684;&#x6B63;&#x5219;&#x8868;&#x8FBE;&#x5F0F;&#xFF08;&#x65E0;&#x4EFB;&#x4F55;&#x5339;&#x914D;&#xFF09;&#xFF0C;&#x800C;Array.prototype&#x662F;&#x4E00;&#x4E2A;&#x7A7A;&#x6570;&#x7EC4;&#x3002;&#x5BF9;&#x672A;&#x8D4B;&#x503C;&#x7684;&#x53D8;&#x91CF;&#x6765;&#x8BF4;&#xFF0C;&#x5B83;&#x4EEC;&#x662F;&#x5F88;&#x597D;&#x7684;&#x9ED8;&#x8BA4;&#x503C;&#x3002;&#x8FD9;&#x79CD;&#x65B9;&#x6CD5;&#x7684;&#x4E00;&#x4E2A;&#x597D;&#x5904;&#x662F;&#xFF0E;prototype&#x5DF2;&#x88AB;&#x521B;&#x5EFA;&#x5E76;&#x4E14;&#x4EC5;&#x521B;&#x5EFA;&#x4E00;&#x6B21;&#x3002;&#x5982;&#x679C;&#x53D8;&#x91CF;&#x9ED8;&#x8BA4;&#x503C;&#x968F;&#x540E;&#x4F1A;&#x88AB;&#x66F4;&#x6539;&#xFF0C;&#x90A3;&#x5C31;&#x4E0D;&#x8981;&#x4F7F;&#x7528;Array.prototype&#x3002;</p>
+<h2 id="&#x5F3A;&#x5236;&#x7C7B;&#x578B;&#x8F6C;&#x6362;"><a name="&#x5F3A;&#x5236;&#x7C7B;&#x578B;&#x8F6C;&#x6362;" class="anchor-navigation-ex-anchor" href="#&#x5F3A;&#x5236;&#x7C7B;&#x578B;&#x8F6C;&#x6362;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x5F3A;&#x5236;&#x7C7B;&#x578B;&#x8F6C;&#x6362;</h2>
+<h3 id="&#x503C;&#x7C7B;&#x578B;&#x8F6C;&#x6362;"><a name="&#x503C;&#x7C7B;&#x578B;&#x8F6C;&#x6362;" class="anchor-navigation-ex-anchor" href="#&#x503C;&#x7C7B;&#x578B;&#x8F6C;&#x6362;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x503C;&#x7C7B;&#x578B;&#x8F6C;&#x6362;</h3>
+<p>&#x5C06;&#x503C;&#x4ECE;&#x4E00;&#x79CD;&#x7C7B;&#x578B;&#x8F6C;&#x6362;&#x4E3A;&#x53E6;&#x4E00;&#x79CD;&#x7C7B;&#x578B;&#x901A;&#x5E38;&#x79F0;&#x4E3A;&#x7C7B;&#x578B;&#x8F6C;&#x6362;&#xFF08;type casting&#xFF09;&#x3002;&#x5728;&#x52A8;&#x6001;&#x7C7B;&#x578B;&#x8BED;&#x8A00;&#x7684;&#x8FD0;&#x884C;&#x65F6;&#x53D1;&#x751F;&#x7684;&#x7C7B;&#x578B;&#x8F6C;&#x6362;&#x53EB;&#x505A;&#x5F3A;&#x5236;&#x7C7B;&#x578B;&#x8F6C;&#x6362;&#xFF08;coercion&#xFF09;&#x3002;JavaScript&#x4E2D;&#x7684;&#x5F3A;&#x5236;&#x7C7B;&#x578B;&#x8F6C;&#x6362;&#x603B;&#x662F;&#x8FD4;&#x56DE;&#x6807;&#x91CF;&#x57FA;&#x672C;&#x7C7B;&#x578B;&#x503C;&#xFF0C;&#x5982;string, number, &#x6216; boolean&#x3002;</p>
+<h3 id="tostring"><a name="tostring" class="anchor-navigation-ex-anchor" href="#tostring"><i class="fa fa-link" aria-hidden="true"></i></a>ToString</h3>
+<h4 id="tostring&#x64CD;&#x4F5C;"><a name="tostring&#x64CD;&#x4F5C;" class="anchor-navigation-ex-anchor" href="#tostring&#x64CD;&#x4F5C;"><i class="fa fa-link" aria-hidden="true"></i></a>ToString&#x64CD;&#x4F5C;</h4>
+<p>&#x62BD;&#x8C61;&#x64CD;&#x4F5C;ToString&#x8D1F;&#x8D23;&#x5904;&#x7406;&#x975E;&#x5B57;&#x7B26;&#x4E32;&#x5230;&#x5B57;&#x7B26;&#x4E32;&#x7684;&#x5F3A;&#x5236;&#x7C7B;&#x578B;&#x8F6C;&#x6362;&#x3002;</p>
+<p>&#x57FA;&#x672C;&#x7C7B;&#x578B;&#x503C;&#x7684;&#x5B57;&#x7B26;&#x4E32;&#x5316;&#x89C4;&#x5219;&#x4E3A;&#xFF1A;null&#x8F6C;&#x6362;&#x4E3A;&quot;null&quot;&#x3001;undefined&#x8F6C;&#x6362;&#x4E3A;&quot;undefined&quot;&#x3001;true&#x8F6C;&#x6362;&#x4E3A;&quot;true&quot;&#x3002;&#x6570;&#x5B57;&#x7684;&#x5B57;&#x7B26;&#x4E32;&#x5316;&#x5219;&#x9075;&#x5FAA;&#x901A;&#x7528;&#x89C4;&#x5219;&#xFF0C;&#x6781;&#x5C0F;&#x548C;&#x6781;&#x5927;&#x7684;&#x6570;&#x5B57;&#x4F7F;&#x7528;&#x6307;&#x6570;&#x5F62;&#x5F0F;&#x3002;</p>
+<p>&#x5BF9;<strong>&#x666E;&#x901A;&#x5BF9;&#x8C61;</strong>&#x6765;&#x8BF4;&#xFF0C;&#x9664;&#x975E;&#x81EA;&#x884C;&#x5B9A;&#x4E49;&#xFF0C;&#x5426;&#x5219;toString()&#xFF08;Object.prototype.toString()&#xFF09;&#x8FD4;&#x56DE;&#x5185;&#x90E8;&#x5C5E;&#x6027;[[Class]]&#x7684;&#x503C;&#xFF0C;&#x5982;&quot;[object Object]&quot;&#x3002;&#x5982;&#x679C;&#x5BF9;&#x8C61;&#x6709;&#x81EA;&#x5DF1;&#x7684;toString()&#x65B9;&#x6CD5;&#xFF0C;&#x5B57;&#x7B26;&#x4E32;&#x5316;&#x65F6;&#x5C31;&#x4F1A;&#x8C03;&#x7528;&#x8BE5;&#x65B9;&#x6CD5;&#x5E76;&#x4F7F;&#x7528;&#x5176;&#x8FD4;&#x56DE;&#x503C;&#x3002;String(..)&#x4E0E;toString()&#x8FD4;&#x56DE;&#x503C;&#x4E00;&#x81F4;&#x3002;&#x5BF9;<strong>&#x51FD;&#x6570;</strong>toString()&#x4F1A;&#x8FD4;&#x56DE;&#x51FD;&#x6570;&#x4EE3;&#x7801;&#x3002;</p>
+<p>&#x5BF9;&#x8C61;&#x5F3A;&#x5236;&#x7C7B;&#x578B;&#x8F6C;&#x6362;&#x4E3A;string&#x662F;&#x901A;&#x8FC7;ToPrimitive&#x62BD;&#x8C61;&#x64CD;&#x4F5C;&#x6765;&#x5B8C;&#x6210;&#x7684;&#x3002;</p>
+<h4 id="json&#x5B57;&#x7B26;&#x4E32;&#x5316;"><a name="json&#x5B57;&#x7B26;&#x4E32;&#x5316;" class="anchor-navigation-ex-anchor" href="#json&#x5B57;&#x7B26;&#x4E32;&#x5316;"><i class="fa fa-link" aria-hidden="true"></i></a>JSON&#x5B57;&#x7B26;&#x4E32;&#x5316;</h4>
+<p>&#x5BF9;&#x5927;&#x591A;&#x6570;&#x7B80;&#x5355;&#x503C;&#x6765;&#x8BF4;&#xFF0C;JSON&#x5B57;&#x7B26;&#x4E32;&#x5316;&#x548C;toString()&#x7684;&#x6548;&#x679C;&#x57FA;&#x672C;&#x76F8;&#x540C;&#xFF0C;&#x53EA;&#x4E0D;&#x8FC7;&#x5E8F;&#x5217;&#x5316;&#x7684;&#x7ED3;&#x679C;&#x603B;&#x662F;&#x5B57;&#x7B26;&#x4E32;&#x3002;</p>
+<p>undefined&#x3001;function&#x3001;symbol&#xFF08;ES6+&#xFF09;&#x548C;&#x5305;&#x542B;&#x5FAA;&#x73AF;&#x5F15;&#x7528;&#xFF08;&#x5BF9;&#x8C61;&#x4E4B;&#x95F4;&#x76F8;&#x4E92;&#x5F15;&#x7528;&#xFF0C;&#x5F62;&#x6210;&#x4E00;&#x4E2A;&#x65E0;&#x9650;&#x5FAA;&#x73AF;&#xFF09;&#x7684;&#x5BF9;&#x8C61;&#x90FD;&#x4E0D;&#x7B26;&#x5408;JSON&#x7ED3;&#x6784;&#x6807;&#x51C6;&#xFF0C;&#x5176;&#x4ED6;&#x652F;&#x6301;JSON&#x7684;&#x8BED;&#x8A00;&#x65E0;&#x6CD5;&#x5904;&#x7406;&#x5B83;&#x4EEC;&#x3002;JSON.stringify(..)&#x5728;&#x5BF9;&#x8C61;&#x4E2D;&#x9047;&#x5230;undefined&#x3001;function&#x548C;symbol&#x65F6;&#x4F1A;&#x81EA;&#x52A8;&#x5C06;&#x5176;&#x5FFD;&#x7565;&#xFF0C;&#x5728;&#x6570;&#x7EC4;&#x4E2D;&#x5219;&#x4F1A;&#x8FD4;&#x56DE;null&#xFF08;&#x4EE5;&#x4FDD;&#x8BC1;&#x5355;&#x5143;&#x4F4D;&#x7F6E;&#x4E0D;&#x53D8;&#xFF09;&#x3002;</p>
+<p>&#x5982;&#x679C;&#x5BF9;&#x8C61;&#x4E2D;&#x5B9A;&#x4E49;&#x4E86;toJSON()&#x65B9;&#x6CD5;&#xFF0C;JSON&#x5B57;&#x7B26;&#x4E32;&#x5316;&#x65F6;&#x4F1A;&#x9996;&#x5148;&#x8C03;&#x7528;&#x8BE5;&#x65B9;&#x6CD5;&#xFF0C;&#x7136;&#x540E;&#x7528;&#x5B83;&#x7684;&#x8FD4;&#x56DE;&#x503C;&#x6765;&#x8FDB;&#x884C;&#x5E8F;&#x5217;&#x5316;&#x3002;&#x5982;&#x679C;&#x8981;&#x5BF9;&#x542B;&#x6709;&#x975E;&#x6CD5;JSON&#x503C;&#x7684;&#x5BF9;&#x8C61;&#x505A;&#x5B57;&#x7B26;&#x4E32;&#x5316;&#xFF0C;&#x6216;&#x8005;&#x5BF9;&#x8C61;&#x4E2D;&#x7684;&#x67D0;&#x4E9B;&#x503C;&#x65E0;&#x6CD5;&#x88AB;&#x5E8F;&#x5217;&#x5316;&#x65F6;&#xFF0C;&#x5C31;&#x9700;&#x8981;&#x5B9A;&#x4E49;toJSON()&#x65B9;&#x6CD5;&#x6765;&#x8FD4;&#x56DE;&#x4E00;&#x4E2A;&#x5B89;&#x5168;&#x7684;JSON&#x503C;&#x3002;toJSON()&#x5E94;&#x8BE5;&#x201C;&#x8FD4;&#x56DE;&#x4E00;&#x4E2A;&#x80FD;&#x591F;&#x88AB;&#x5B57;&#x7B26;&#x4E32;&#x5316;&#x7684;&#x5B89;&#x5168;&#x7684;JSON&#x503C;&#x201D;&#xFF0C;&#x800C;&#x4E0D;&#x662F;&#x201C;&#x8FD4;&#x56DE;&#x4E00;&#x4E2A;JSON&#x5B57;&#x7B26;&#x4E32;&#x201D;&#x3002;</p>
+<pre><code>// &#x81EA;&#x5B9A;&#x4E49;&#x7684;JSON&#x5E8F;&#x5217;&#x5316;
+a.toJSON = function() {
+    // &#x5E8F;&#x5217;&#x5316;&#x4EC5;&#x5305;&#x542B;b
+    return { b: this.b };
+};
+JSON.stringify( a ); // &quot;{&quot;b&quot;:42}&quot;
+</code></pre><p>&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x5411;JSON.stringify(..)&#x4F20;&#x9012;&#x4E00;&#x4E2A;&#x53EF;&#x9009;&#x53C2;&#x6570;replacer&#xFF0C;&#x5B83;&#x53EF;&#x4EE5;&#x662F;&#x6570;&#x7EC4;&#x6216;&#x8005;&#x51FD;&#x6570;&#xFF0C;&#x7528;&#x6765;&#x6307;&#x5B9A;&#x5BF9;&#x8C61;&#x5E8F;&#x5217;&#x5316;&#x8FC7;&#x7A0B;&#x4E2D;&#x54EA;&#x4E9B;&#x5C5E;&#x6027;&#x5E94;&#x8BE5;&#x88AB;&#x5904;&#x7406;&#xFF0C;&#x54EA;&#x4E9B;&#x5E94;&#x8BE5;&#x88AB;&#x6392;&#x9664;&#x3002;</p>
+<ul>
+<li>&#x5982;&#x679C;replacer&#x662F;&#x4E00;&#x4E2A;&#x6570;&#x7EC4;&#xFF0C;&#x90A3;&#x4E48;&#x5B83;&#x5FC5;&#x987B;&#x662F;&#x4E00;&#x4E2A;&#x5B57;&#x7B26;&#x4E32;&#x6570;&#x7EC4;&#xFF0C;&#x5176;&#x4E2D;&#x5305;&#x542B;&#x5E8F;&#x5217;&#x5316;&#x8981;&#x5904;&#x7406;&#x7684;&#x5BF9;&#x8C61;&#x7684;&#x5C5E;&#x6027;&#x540D;&#x79F0;&#xFF0C;&#x9664;&#x6B64;&#x4E4B;&#x5916;&#x5176;&#x4ED6;&#x7684;&#x5C5E;&#x6027;&#x5219;&#x88AB;&#x5FFD;&#x7565;-&#x6DF1;&#x5C42;&#x904D;&#x5386;&#x3002;</li>
+<li>&#x5982;&#x679C;replacer&#x662F;&#x4E00;&#x4E2A;&#x51FD;&#x6570;&#xFF0C;&#x5B83;&#x4F1A;&#x5BF9;&#x5BF9;&#x8C61;&#x672C;&#x8EAB;&#x8C03;&#x7528;&#x4E00;&#x6B21;&#xFF0C;&#x7136;&#x540E;&#x5BF9;&#x5BF9;&#x8C61;&#x4E2D;&#x7684;&#x6BCF;&#x4E2A;&#x5C5E;&#x6027;&#x5404;&#x8C03;&#x7528;&#x4E00;&#x6B21;&#xFF0C;&#x6BCF;&#x6B21;&#x4F20;&#x9012;&#x4E24;&#x4E2A;&#x53C2;&#x6570;&#xFF0C;&#x952E;&#x548C;&#x503C;&#x3002;&#x5982;&#x679C;&#x8981;&#x5FFD;&#x7565;&#x67D0;&#x4E2A;&#x952E;&#x5C31;&#x8FD4;&#x56DE;undefined&#xFF0C;&#x5426;&#x5219;&#x8FD4;&#x56DE;&#x6307;&#x5B9A;&#x7684;&#x503C;&#x3002;</li>
+</ul>
+<p>JSON.stringify(..)&#x5E76;&#x4E0D;&#x662F;&#x5F3A;&#x5236;&#x7C7B;&#x578B;&#x8F6C;&#x6362;&#x3002;&#x5728;&#x8FD9;&#x91CC;&#x4ECB;&#x7ECD;&#x662F;&#x56E0;&#x4E3A;&#x5B83;&#x6D89;&#x53CA;ToString&#x5F3A;&#x5236;&#x7C7B;&#x578B;&#x8F6C;&#x6362;&#xFF0C;&#x5177;&#x4F53;&#x8868;&#x73B0;&#x5728;&#x4EE5;&#x4E0B;&#x4E24;&#x70B9;&#x3002;</p>
+<ul>
+<li>&#x5B57;&#x7B26;&#x4E32;&#x3001;&#x6570;&#x5B57;&#x3001;&#x5E03;&#x5C14;&#x503C;&#x548C;null&#x7684;JSON.stringify(..)&#x89C4;&#x5219;&#x4E0E;ToString&#x57FA;&#x672C;&#x76F8;&#x540C;&#x3002;</li>
+<li>&#x5982;&#x679C;&#x4F20;&#x9012;&#x7ED9;JSON.stringify(..)&#x7684;&#x5BF9;&#x8C61;&#x4E2D;&#x5B9A;&#x4E49;&#x4E86;toJSON()&#x65B9;&#x6CD5;&#xFF0C;&#x90A3;&#x4E48;&#x8BE5;&#x65B9;&#x6CD5;&#x4F1A;&#x5728;&#x5B57;&#x7B26;&#x4E32;&#x5316;&#x524D;&#x8C03;&#x7528;&#xFF0C;&#x4EE5;&#x4FBF;&#x5C06;&#x5BF9;&#x8C61;&#x8F6C;&#x6362;&#x4E3A;&#x5B89;&#x5168;&#x7684;JSON&#x503C;&#x3002;</li>
+</ul>
+<h3 id="toprimitive"><a name="toprimitive" class="anchor-navigation-ex-anchor" href="#toprimitive"><i class="fa fa-link" aria-hidden="true"></i></a>ToPrimitive</h3>
+<p>&#x62BD;&#x8C61;&#x64CD;&#x4F5C;ToPrimitive&#xFF1A;</p>
+<ul>
+<li>&#x9996;&#x5148;&#x68C0;&#x67E5;&#x8BE5;&#x503C;&#x662F;&#x5426;&#x6709;valueOf()&#x65B9;&#x6CD5;<ul>
+<li>&#x5982;&#x679C;&#x6709;&#x5E76;&#x4E14;&#x8FD4;&#x56DE;&#x57FA;&#x672C;&#x7C7B;&#x578B;&#x503C;&#xFF0C;&#x5C31;&#x4F7F;&#x7528;&#x8BE5;&#x503C;&#x8FDB;&#x884C;&#x5F3A;&#x5236;&#x7C7B;&#x578B;&#x8F6C;&#x6362;&#x3002;</li>
+<li>&#x5426;&#x5219;&#x4F7F;&#x7528;toString()&#x7684;&#x8FD4;&#x56DE;&#x503C;&#xFF08;&#x5982;&#x679C;&#x5B58;&#x5728;&#xFF09;&#x6765;&#x8FDB;&#x884C;&#x5F3A;&#x5236;&#x7C7B;&#x578B;&#x8F6C;&#x6362;&#x3002;<ul>
+<li>&#x5982;&#x679C;toString()&#x4E5F;&#x4E0D;&#x8FD4;&#x56DE;&#x57FA;&#x672C;&#x7C7B;&#x578B;&#x503C;&#xFF0C;&#x4F1A;&#x4EA7;&#x751F;TypeError&#x9519;&#x8BEF;&#x3002;</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="tonumber"><a name="tonumber" class="anchor-navigation-ex-anchor" href="#tonumber"><i class="fa fa-link" aria-hidden="true"></i></a>ToNumber</h3>
+<p>&#x62BD;&#x8C61;&#x64CD;&#x4F5C;ToNumber&#xFF1A;</p>
+<ul>
+<li>true&#x8F6C;&#x6362;&#x4E3A;1&#x3001;false&#x8F6C;&#x6362;&#x4E3A;0&#x3001;undefined&#x8F6C;&#x6362;&#x4E3A;NaN,&#x3001;<strong>null&#x8F6C;&#x6362;&#x4E3A;0</strong>&#x3002;</li>
+<li>&#x5BF9;&#x4EE5;0&#x5F00;&#x5934;&#x7684;&#x5341;&#x516D;/&#x516B;/&#x4E8C;&#x8FDB;&#x5236;&#x6570;&#x8F6C;&#x6362;&#x4E3A;&#x5341;&#x8FDB;&#x5236;&#x5904;&#x7406;&#x3002;</li>
+<li>&#x5BF9;&#x8C61;&#xFF08;&#x5305;&#x62EC;&#x6570;&#x7EC4;&#xFF09;&#x4F1A;&#x9996;&#x5148;&#x901A;&#x8FC7;ToPrimitive&#x64CD;&#x4F5C;&#x88AB;&#x8F6C;&#x6362;&#x4E3A;&#x76F8;&#x5E94;&#x7684;&#x57FA;&#x672C;&#x7C7B;&#x578B;&#x503C;&#x3002;&#x5982;&#x679C;&#x8FD4;&#x56DE;&#x7684;&#x662F;&#x975E;&#x6570;&#x5B57;&#x7684;&#x57FA;&#x672C;&#x7C7B;&#x578B;&#x503C;&#xFF0C;&#x5219;&#x518D;&#x9075;&#x5FAA;&#x4EE5;&#x4E0A;&#x89C4;&#x5219;&#x5C06;&#x5176;&#x5F3A;&#x5236;&#x8F6C;&#x6362;&#x4E3A;&#x6570;&#x5B57;&#x3002;</li>
+</ul>
+<p>ES5&#x5F00;&#x59CB;&#xFF0C;&#x4F7F;&#x7528;Object.create(null)&#x521B;&#x5EFA;&#x7684;&#x5BF9;&#x8C61;[[Prototype]]&#x5C5E;&#x6027;&#x4E3A;null&#xFF0C;&#x5E76;&#x4E14;&#x6CA1;&#x6709;valueOf()&#x548C;toString()&#x65B9;&#x6CD5;&#xFF0C;&#x56E0;&#x6B64;&#x65E0;&#x6CD5;&#x8FDB;&#x884C;&#x5F3A;&#x5236;&#x7C7B;&#x578B;&#x8F6C;&#x6362;&#x3002;</p>
+<h3 id="toboolean"><a name="toboolean" class="anchor-navigation-ex-anchor" href="#toboolean"><i class="fa fa-link" aria-hidden="true"></i></a>ToBoolean</h3>
+<p>JavaScript&#x4E2D;&#x7684;&#x503C;&#x53EF;&#x4EE5;&#x5206;&#x4E3A;&#x4EE5;&#x4E0B;&#x4E24;&#x7C7B;&#xFF1A;</p>
+<ul>
+<li>&#x53EF;&#x4EE5;&#x88AB;&#x5F3A;&#x5236;&#x7C7B;&#x578B;&#x8F6C;&#x6362;&#x4E3A;false&#x7684;&#x503C;<ul>
+<li>undefined</li>
+<li>null</li>
+<li>false</li>
+<li>+0&#x3001;-0&#x548C;NaN</li>
+<li>&quot;&quot;</li>
+</ul>
+</li>
+<li>&#x5176;&#x4ED6;&#xFF08;&#x88AB;&#x5F3A;&#x5236;&#x7C7B;&#x578B;&#x8F6C;&#x6362;&#x4E3A;true&#x7684;&#x503C;&#xFF09;</li>
+</ul>
+<h3 id="&#x7C7B;&#x578B;&#x8F6C;&#x6362;&#x5B9E;&#x8DF5;"><a name="&#x7C7B;&#x578B;&#x8F6C;&#x6362;&#x5B9E;&#x8DF5;" class="anchor-navigation-ex-anchor" href="#&#x7C7B;&#x578B;&#x8F6C;&#x6362;&#x5B9E;&#x8DF5;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x7C7B;&#x578B;&#x8F6C;&#x6362;&#x5B9E;&#x8DF5;</h3>
+<h4 id="&#x663E;&#x793A;&#x8F6C;&#x6362;"><a name="&#x663E;&#x793A;&#x8F6C;&#x6362;" class="anchor-navigation-ex-anchor" href="#&#x663E;&#x793A;&#x8F6C;&#x6362;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x663E;&#x793A;&#x8F6C;&#x6362;</h4>
+<p>String(..)&#x9075;&#x5FAA;&#x524D;&#x9762;&#x8BB2;&#x8FC7;&#x7684;ToString&#x89C4;&#x5219;&#xFF0C;&#x5C06;&#x503C;&#x8F6C;&#x6362;&#x4E3A;&#x5B57;&#x7B26;&#x4E32;&#x57FA;&#x672C;&#x7C7B;&#x578B;&#x3002;Number(..)&#x9075;&#x5FAA;&#x524D;&#x9762;&#x8BB2;&#x8FC7;&#x7684;ToNumber&#x89C4;&#x5219;&#xFF0C;&#x5C06;&#x503C;&#x8F6C;&#x6362;&#x4E3A;&#x6570;&#x5B57;&#x57FA;&#x672C;&#x7C7B;&#x578B;&#x3002;</p>
+<p>if(..).&#xFF0E;&#x8FD9;&#x6837;&#x7684;&#x5E03;&#x5C14;&#x503C;&#x4E0A;&#x4E0B;&#x6587;&#x4E2D;&#xFF0C;&#x5982;&#x679C;&#x6CA1;&#x6709;&#x4F7F;&#x7528;Boolean(..)&#x548C;!!&#xFF0C;&#x5C31;&#x4F1A;&#x81EA;&#x52A8;&#x9690;&#x5F0F;&#x5730;&#x8FDB;&#x884C;ToBoolean&#x8F6C;&#x6362;&#x3002;&#x5EFA;&#x8BAE;&#x4F7F;&#x7528;Boolean(..)&#x548C;!!&#x6765;&#x8FDB;&#x884C;&#x663E;&#x5F0F;&#x8F6C;&#x6362;&#x4EE5;&#x4FBF;&#x8BA9;&#x4EE3;&#x7801;&#x66F4;&#x6E05;&#x6670;&#x6613;&#x8BFB;&#x3002;</p>
+<h4 id="&#x9690;&#x5F0F;&#x8F6C;&#x6362;"><a name="&#x9690;&#x5F0F;&#x8F6C;&#x6362;" class="anchor-navigation-ex-anchor" href="#&#x9690;&#x5F0F;&#x8F6C;&#x6362;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x9690;&#x5F0F;&#x8F6C;&#x6362;</h4>
+<p>&#x9690;&#x5F0F;&#x5F3A;&#x5236;&#x7C7B;&#x578B;&#x8F6C;&#x6362;&#x7684;&#x4F5C;&#x7528;&#x662F;&#x51CF;&#x5C11;&#x5197;&#x4F59;&#xFF0C;&#x8BA9;&#x4EE3;&#x7801;&#x66F4;&#x7B80;&#x6D01;&#x3002;</p>
+<p>a + &quot;&quot;&#xFF08;&#x9690;&#x5F0F;&#xFF09;&#x548C;&#x524D;&#x9762;&#x7684;String(a)&#xFF08;&#x663E;&#x5F0F;&#xFF09;&#x4E4B;&#x95F4;&#x6709;&#x4E00;&#x4E2A;&#x7EC6;&#x5FAE;&#x7684;&#x5DEE;&#x522B;&#x3002;&#x6839;&#x636E;ToPrimitive&#x62BD;&#x8C61;&#x64CD;&#x4F5C;&#x89C4;&#x5219;&#xFF0C;a + &quot;&quot;&#x4F1A;&#x5BF9;a&#x8C03;&#x7528;valueOf()&#x65B9;&#x6CD5;&#xFF0C;&#x7136;&#x540E;&#x901A;&#x8FC7;ToString&#x62BD;&#x8C61;&#x64CD;&#x4F5C;&#x5C06;&#x8FD4;&#x56DE;&#x503C;&#x8F6C;&#x6362;&#x4E3A;&#x5B57;&#x7B26;&#x4E32;&#x3002;&#x800C;String(a)&#x5219;&#x662F;&#x76F4;&#x63A5;&#x8C03;&#x7528;ToString()&#x3002;</p>
+<pre><code>var a = {
+    valueOf: function() { return 42; },
+    toString: function() { return 4; }
+};
+a + &quot;&quot;;         // &quot;42&quot;
+String( a );    // &quot;4&quot;
+</code></pre><p>-&#x662F;&#x6570;&#x5B57;&#x51CF;&#x6CD5;&#x8FD0;&#x7B97;&#x7B26;&#xFF0C;&#x56E0;&#x6B64;a -0&#x4F1A;&#x5C06;a&#x5F3A;&#x5236;&#x7C7B;&#x578B;&#x8F6C;&#x6362;&#x4E3A;&#x6570;&#x5B57;&#x3002;&#x4E5F;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;a &#xFF0A; 1&#x548C;a /1&#xFF0C;&#x56E0;&#x4E3A;&#x8FD9;&#x4E24;&#x4E2A;&#x8FD0;&#x7B97;&#x7B26;&#x4E5F;&#x53EA;&#x9002;&#x7528;&#x4E8E;&#x6570;&#x5B57;&#xFF0C;&#x53EA;&#x4E0D;&#x8FC7;&#x8FD9;&#x6837;&#x7684;&#x7528;&#x6CD5;&#x4E0D;&#x592A;&#x5E38;&#x89C1;&#x3002;</p>
+<p><strong>&#x53D1;&#x751F;&#x5E03;&#x5C14;&#x503C;&#x9690;&#x5F0F;&#x5F3A;&#x5236;&#x7C7B;&#x578B;&#x8F6C;&#x6362;&#x6761;&#x4EF6;</strong></p>
+<ul>
+<li>if (..)&#x8BED;&#x53E5;&#x4E2D;&#x7684;&#x6761;&#x4EF6;&#x5224;&#x65AD;&#x8868;&#x8FBE;&#x5F0F;&#x3002;</li>
+<li>for ( .. ; .. ; .. )&#x8BED;&#x53E5;&#x4E2D;&#x7684;&#x6761;&#x4EF6;&#x5224;&#x65AD;&#x8868;&#x8FBE;&#x5F0F;&#xFF08;&#x7B2C;&#x4E8C;&#x4E2A;&#xFF09;&#x3002;</li>
+<li>while (..)&#x548C;do..while(..)&#x5FAA;&#x73AF;&#x4E2D;&#x7684;&#x6761;&#x4EF6;&#x5224;&#x65AD;&#x8868;&#x8FBE;&#x5F0F;&#x3002;</li>
+<li>? &#xFF1A;&#x4E2D;&#x7684;&#x6761;&#x4EF6;&#x5224;&#x65AD;&#x8868;&#x8FBE;&#x5F0F;&#x3002;</li>
+<li>&#x903B;&#x8F91;&#x8FD0;&#x7B97;&#x7B26;||&#xFF08;&#x903B;&#x8F91;&#x6216;&#xFF09;&#x548C;&amp;&amp;&#xFF08;&#x903B;&#x8F91;&#x4E0E;&#xFF09;&#x5DE6;&#x8FB9;&#x7684;&#x64CD;&#x4F5C;&#x6570;&#xFF08;&#x4F5C;&#x4E3A;&#x6761;&#x4EF6;&#x5224;&#x65AD;&#x8868;&#x8FBE;&#x5F0F;&#xFF09;&#x3002;</li>
+</ul>
+<h5 id="&#x8FD0;&#x7B97;&#x7B26;"><a name="&#x8FD0;&#x7B97;&#x7B26;" class="anchor-navigation-ex-anchor" href="#&#x8FD0;&#x7B97;&#x7B26;"><i class="fa fa-link" aria-hidden="true"></i></a>+&#x8FD0;&#x7B97;&#x7B26;</h5>
+<p>&#x5982;&#x679C;<strong>&#x67D0;&#x4E2A;&#x64CD;&#x4F5C;&#x6570;&#x662F;&#x5B57;&#x7B26;&#x4E32;</strong>&#x6216;&#x8005;&#x80FD;&#x591F;&#x901A;&#x8FC7;<strong>&#x4EE5;&#x4E0B;&#x6B65;&#x9AA4;&#x8F6C;&#x6362;&#x4E3A;&#x5B57;&#x7B26;&#x4E32;</strong>&#x7684;&#x8BDD;&#xFF0C;+&#x5C06;&#x8FDB;&#x884C;&#x62FC;&#x63A5;&#x64CD;&#x4F5C;&#x3002;&#x5426;&#x5219;&#x6267;&#x884C;&#x6570;&#x5B57;&#x52A0;&#x6CD5;&#x3002;</p>
+<ul>
+<li>&#x5982;&#x679C;&#x5176;&#x4E2D;&#x4E00;&#x4E2A;&#x64CD;&#x4F5C;&#x6570;&#x4E3A;&#x7B80;&#x5355;&#x503C;&#xFF0C;&#xFF0C;&#x5C06;&#x5176;&#x8F6C;&#x4E3A;&#x5B57;&#x7B26;&#x4E32;&#x3002;</li>
+<li>&#x5982;&#x679C;&#x5176;&#x4E2D;&#x4E00;&#x4E2A;&#x64CD;&#x4F5C;&#x6570;&#x662F;&#x5BF9;&#x8C61;&#xFF08;&#x5305;&#x62EC;&#x6570;&#x7EC4;&#xFF09;&#xFF0C;&#x5219;&#x9996;&#x5148;&#x5BF9;&#x5176;&#x8C03;&#x7528;ToPrimitive&#x62BD;&#x8C61;&#x64CD;&#x4F5C;&#x3002;</li>
+</ul>
+<p>&#x4E00;&#x4E2A;&#x5751;&#x5E38;&#x5E38;&#x88AB;&#x63D0;&#x5230;&#xFF0C;&#x5373;[] + {}&#x548C;{} + []&#xFF0C;&#x5B83;&#x4EEC;&#x8FD4;&#x56DE;&#x4E0D;&#x540C;&#x7684;&#x7ED3;&#x679C;&#xFF0C;&#x5206;&#x522B;&#x662F;&quot;[object Object]&quot;&#x548C;0&#x3002;&#x5BF9;&#x4E8E;{} + []&#xFF0C;{}&#x88AB;&#x770B;&#x4F5C;&#x4EE3;&#x7801;&#x5757;&#xFF0C;&#x4E0D;&#x8FC7;&#x6D89;&#x53CA;&#x8D4B;&#x503C;&#x8FD0;&#x7B97;&#xFF0C;{} + []&#x7B49;&#x4E8E;&quot;[object Object]&quot;&#x3002;<code>{}+[] === [] + {}</code>&#x3002;</p>
+<h4 id="&#x4E00;&#x5143;&#x64CD;&#x4F5C;&#x7B26;"><a name="&#x4E00;&#x5143;&#x64CD;&#x4F5C;&#x7B26;" class="anchor-navigation-ex-anchor" href="#&#x4E00;&#x5143;&#x64CD;&#x4F5C;&#x7B26;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x4E00;&#x5143;+&#x64CD;&#x4F5C;&#x7B26;</h4>
+<p>&#x5728;JavaScript&#x5F00;&#x6E90;&#x793E;&#x533A;&#x4E2D;&#xFF0C;<strong>&#x4E00;&#x5143;&#x8FD0;&#x7B97;+</strong>&#x88AB;&#x666E;&#x904D;&#x8BA4;&#x4E3A;&#x662F;&#x663E;&#x5F0F;&#x5F3A;&#x5236;&#x7C7B;&#x578B;&#x8F6C;&#x6362;&#x3002;&#x4E00;&#x5143;&#x8FD0;&#x7B97;&#x7B26;+&#x7684;&#x53E6;&#x4E00;&#x4E2A;&#x5E38;&#x89C1;&#x7528;&#x9014;&#x662F;&#x5C06;&#x65E5;&#x671F;&#xFF08;Date&#xFF09;&#x5BF9;&#x8C61;&#x5F3A;&#x5236;&#x7C7B;&#x578B;&#x8F6C;&#x6362;&#x4E3A;&#x6570;&#x5B57;<code>+new Date()</code></p>
+<h4 id="&#x5B57;&#x7B26;&#x8FD0;&#x7B97;&#x7B26;"><a name="&#x5B57;&#x7B26;&#x8FD0;&#x7B97;&#x7B26;" class="anchor-navigation-ex-anchor" href="#&#x5B57;&#x7B26;&#x8FD0;&#x7B97;&#x7B26;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x5B57;&#x7B26;&#x8FD0;&#x7B97;&#x7B26;</h4>
+<p>&#x5B57;&#x4F4D;&#x8FD0;&#x7B97;&#x7B26;&#x53EA;&#x9002;&#x7528;&#x4E8E;32&#x4F4D;&#x6574;&#x6570;&#xFF0C;&#x8FD0;&#x7B97;&#x7B26;&#x4F1A;&#x5F3A;&#x5236;&#x64CD;&#x4F5C;&#x6570;&#x4F7F;&#x7528;32&#x4F4D;&#x683C;&#x5F0F;&#x3002;&#x8FD9;&#x662F;&#x901A;&#x8FC7;&#x62BD;&#x8C61;&#x64CD;&#x4F5C;ToInt32&#x6765;&#x5B9E;&#x73B0;&#x7684;&#x3002;ToInt32&#x9996;&#x5148;&#x6267;&#x884C;ToNumber&#x5F3A;&#x5236;&#x7C7B;&#x578B;&#x8F6C;&#x6362;&#xFF0C;&#x6BD4;&#x5982;&quot;123&quot;&#x4F1A;&#x5148;&#x88AB;&#x8F6C;&#x6362;&#x4E3A;123&#xFF0C;&#x7136;&#x540E;&#x518D;&#x6267;&#x884C;ToInt32&#x3002;</p>
+<pre><code>0 | -0;         // 0
+0 | NaN;        // 0
+0 | Infinity;   // 0
+0 | -Infinity;  // 0
+</code></pre><p>&#x4EE5;&#x4E0A;&#x8FD9;&#x4E9B;&#x7279;&#x6B8A;&#x6570;&#x5B57;&#x65E0;&#x6CD5;&#x4EE5;32&#x4F4D;&#x683C;&#x5F0F;&#x5448;&#x73B0;&#xFF08;&#x56E0;&#x4E3A;&#x5B83;&#x4EEC;&#x6765;&#x81EA;64&#x4F4D;IEEE 754&#x6807;&#x51C6;&#xFF09;&#xFF0C;&#x56E0;&#x6B64;ToInt32&#x8FD4;&#x56DE;0&#x3002;</p>
+<p><strong>~&#x8FD0;&#x7B97;&#x7B26;</strong>&#x9996;&#x5148;&#x5C06;&#x503C;&#x5F3A;&#x5236;&#x7C7B;&#x578B;&#x8F6C;&#x6362;&#x4E3A;32&#x4F4D;&#x6570;&#x5B57;&#xFF0C;&#x7136;&#x540E;&#x6267;&#x884C;&#x5B57;&#x4F4D;&#x64CD;&#x4F5C;&#x201C;&#x975E;&#x201D;&#xFF08;&#x5BF9;&#x6BCF;&#x4E00;&#x4E2A;&#x5B57;&#x4F4D;&#x8FDB;&#x884C;&#x53CD;&#x8F6C;&#xFF09;&#x3002;<code>~-1</code>&#x662F;&#x552F;&#x4E00;&#x8FD4;&#x56DE;0&#x7684;&#x6570;&#x5B57;&#x53D6;&#x53CD;&#x64CD;&#x4F5C;&#x3002;<code>~</code>&#x53EF;&#x4EE5;&#x914D;&#x5408;<code>indexOf()</code>&#x4E00;&#x8D77;&#x4F7F;&#x7528;<code>if(~a.indexOf(&apos;key&apos;))</code>&#x3002;</p>
+<p>&#x4E00;&#x4E9B;&#x5F00;&#x53D1;&#x4EBA;&#x5458;&#x4F7F;&#x7528;<strong>~~&#x8FD0;&#x7B97;&#x7B26;</strong>&#x6765;&#x622A;&#x9664;&#x6570;&#x5B57;&#x503C;&#x7684;&#x5C0F;&#x6570;&#x90E8;&#x5206;&#xFF0C;&#x4EE5;&#x4E3A;&#x8FD9;&#x548C;Math.floor(..)&#x7684;&#x6548;&#x679C;&#x4E00;&#x6837;&#xFF0C;&#x5B9E;&#x9645;&#x4E0A;&#x5E76;&#x975E;&#x5982;&#x6B64;&#x3002;
+~~&#x4E2D;&#x7684;&#x7B2C;&#x4E00;&#x4E2A;~&#x6267;&#x884C;ToInt32&#x5E76;&#x53CD;&#x8F6C;&#x5B57;&#x4F4D;&#xFF0C;&#x7136;&#x540E;&#x7B2C;&#x4E8C;&#x4E2A;~&#x518D;&#x8FDB;&#x884C;&#x4E00;&#x6B21;&#x5B57;&#x4F4D;&#x53CD;&#x8F6C;&#xFF0C;&#x5373;&#x5C06;&#x6240;&#x6709;&#x5B57;&#x4F4D;&#x53CD;&#x8F6C;&#x56DE;&#x539F;&#x503C;&#xFF0C;&#x6700;&#x540E;&#x5F97;&#x5230;&#x7684;&#x4ECD;&#x7136;&#x662F;ToInt32&#x7684;&#x7ED3;&#x679C;&#x3002;&#x5BF9;~~&#x6211;&#x4EEC;&#x8981;&#x591A;&#x52A0;&#x6CE8;&#x610F;&#x3002;&#x9996;&#x5148;&#x5B83;&#x53EA;&#x9002;&#x7528;&#x4E8E;32&#x4F4D;&#x6570;&#x5B57;&#xFF0C;&#x66F4;&#x91CD;&#x8981;&#x7684;&#x662F;&#x5B83;&#x5BF9;&#x8D1F;&#x6570;&#x7684;&#x5904;&#x7406;&#x4E0E;Math. floor(..)&#x4E0D;&#x540C;&#x3002;</p>
+<pre><code>Math.floor( -49.6 );    // -50
+~~-49.6;                // -49
+</code></pre><h4 id="parseint"><a name="parseint" class="anchor-navigation-ex-anchor" href="#parseint"><i class="fa fa-link" aria-hidden="true"></i></a>parseInt(..)</h4>
+<p>&#x4ECE;ES5&#x5F00;&#x59CB;parseInt(..)&#x9ED8;&#x8BA4;&#x8F6C;&#x6362;&#x4E3A;&#x5341;&#x8FDB;&#x5236;&#x6570;&#xFF0C;&#x9664;&#x975E;&#x53E6;&#x5916;&#x6307;&#x5B9A;&#x3002;&#x5982;&#x679C;&#x4F60;&#x7684;&#x4EE3;&#x7801;&#x9700;&#x8981;&#x5728;ES5&#x4E4B;&#x524D;&#x7684;&#x73AF;&#x5883;&#x8FD0;&#x884C;&#xFF0C;&#x8BF7;&#x8BB0;&#x5F97;&#x5C06;&#x7B2C;&#x4E8C;&#x4E2A;&#x53C2;&#x6570;&#x8BBE;&#x7F6E;&#x4E3A;10&#x3002;</p>
+<pre><code>var a = &quot;42&quot;;
+var b = &quot;42px&quot;;
+
+Number( a );    // 42
+parseInt( a );  // 42
+Number( b );    // NaN
+parseInt( b );  // 42
+</code></pre><p>parseInt&#x5141;&#x8BB8;&#x5B57;&#x7B26;&#x4E32;&#x4E2D;&#x542B;&#x6709;&#x975E;&#x6570;&#x5B57;&#x5B57;&#x7B26;&#xFF0C;&#x89E3;&#x6790;&#x6309;&#x4ECE;&#x5DE6;&#x5230;&#x53F3;&#x7684;&#x987A;&#x5E8F;&#xFF0C;&#x5982;&#x679C;&#x9047;&#x5230;&#x975E;&#x6570;&#x5B57;&#x5B57;&#x7B26;&#x5C31;&#x505C;&#x6B62;&#x3002;&#x800C;&#x8F6C;&#x6362;&#x4E0D;&#x5141;&#x8BB8;&#x51FA;&#x73B0;&#x975E;&#x6570;&#x5B57;&#x5B57;&#x7B26;&#xFF0C;&#x5426;&#x5219;&#x4F1A;&#x5931;&#x8D25;&#x5E76;&#x8FD4;&#x56DE;NaN&#x3002;</p>
+<p><strong>parseInt(..)&#x9488;&#x5BF9;&#x7684;&#x662F;&#x5B57;&#x7B26;&#x4E32;&#x503C;</strong>&#x3002;&#x975E;&#x5B57;&#x7B26;&#x4E32;&#x53C2;&#x6570;&#x4F1A;&#x9996;&#x5148;&#x88AB;&#x5F3A;&#x5236;&#x7C7B;&#x578B;<strong>&#x8F6C;&#x6362;&#x4E3A;&#x5B57;&#x7B26;&#x4E32;</strong>&#xFF0C;&#x4F9D;&#x8D56;&#x8FD9;&#x6837;&#x7684;&#x9690;&#x5F0F;&#x5F3A;&#x5236;&#x7C7B;&#x578B;&#x8F6C;&#x6362;&#x5E76;&#x975E;&#x4E0A;&#x7B56;&#xFF0C;&#x5E94;&#x8BE5;&#x907F;&#x514D;&#x5411;parseInt(..)&#x4F20;&#x9012;&#x975E;&#x5B57;&#x7B26;&#x4E32;&#x53C2;&#x6570;&#x3002;</p>
+<pre><code>parseInt( 1/0, 19 ); // 18
+</code></pre><p>parseInt(1/0, 19)&#x5B9E;&#x9645;&#x4E0A;&#x662F;parseInt(&quot;Infinity&quot;, 19)&#x3002;&#x7B2C;&#x4E00;&#x4E2A;&#x5B57;&#x7B26;&#x662F;&quot;I&quot;&#xFF0C;&#x4EE5;19&#x4E3A;&#x57FA;&#x6570;&#x65F6;&#x503C;&#x4E3A;18&#x3002;</p>
+<pre><code>parseInt( 0.000008 );       // 0   (&quot;0&quot; &#x6765;&#x81EA;&#x4E8E; &quot;0.000008&quot;)
+parseInt( 0.0000008 );      // 8   (&quot;8&quot; &#x6765;&#x81EA;&#x4E8E; &quot;8e-7&quot;)
+parseInt( false, 16 );      // 250 (&quot;fa&quot; &#x6765;&#x81EA;&#x4E8E; &quot;false&quot;)
+parseInt( parseInt, 16 );   // 15  (&quot;f&quot; &#x6765;&#x81EA;&#x4E8E; &quot;function..&quot;)
+parseInt( &quot;0x10&quot; );         // 16
+parseInt( &quot;103&quot;, 2 );       // 2
+</code></pre><h4 id="symbol&#x7684;&#x7C7B;&#x578B;&#x8F6C;&#x6362;"><a name="symbol&#x7684;&#x7C7B;&#x578B;&#x8F6C;&#x6362;" class="anchor-navigation-ex-anchor" href="#symbol&#x7684;&#x7C7B;&#x578B;&#x8F6C;&#x6362;"><i class="fa fa-link" aria-hidden="true"></i></a>Symbol&#x7684;&#x7C7B;&#x578B;&#x8F6C;&#x6362;</h4>
+<p>ES6&#x4E2D;&#x5F15;&#x5165;&#x4E86;&#x7B26;&#x53F7;&#x7C7B;&#x578B;&#xFF0C;&#x5B83;&#x7684;&#x5F3A;&#x5236;&#x7C7B;&#x578B;&#x8F6C;&#x6362;&#x6709;&#x4E00;&#x4E2A;&#x5751;&#xFF0C;&#x5728;&#x8FD9;&#x91CC;&#x6709;&#x5FC5;&#x8981;&#x63D0;&#x4E00;&#x4E0B;&#x3002;ES6&#x5141;&#x8BB8;&#x4ECE;&#x7B26;&#x53F7;&#x5230;&#x5B57;&#x7B26;&#x4E32;&#x7684;&#x663E;&#x5F0F;&#x5F3A;&#x5236;&#x7C7B;&#x578B;&#x8F6C;&#x6362;&#xFF0C;&#x7136;&#x800C;&#x9690;&#x5F0F;&#x5F3A;&#x5236;&#x7C7B;&#x578B;&#x8F6C;&#x6362;&#x4F1A;&#x4EA7;&#x751F;&#x9519;&#x8BEF;&#x3002;</p>
+<p>&#x7B26;&#x53F7;&#x4E0D;&#x80FD;&#x591F;&#x88AB;&#x5F3A;&#x5236;&#x7C7B;&#x578B;&#x8F6C;&#x6362;&#x4E3A;&#x6570;&#x5B57;&#xFF08;&#x663E;&#x5F0F;&#x548C;&#x9690;&#x5F0F;&#x90FD;&#x4F1A;&#x4EA7;&#x751F;&#x9519;&#x8BEF;&#xFF09;&#xFF0C;&#x4F46;&#x53EF;&#x4EE5;&#x88AB;&#x5F3A;&#x5236;&#x7C7B;&#x578B;&#x8F6C;&#x6362;&#x4E3A;&#x5E03;&#x5C14;&#x503C;&#xFF08;&#x663E;&#x5F0F;&#x548C;&#x9690;&#x5F0F;&#x7ED3;&#x679C;&#x90FD;&#x662F;true&#xFF09;&#x3002;</p>
+<p>&#x7531;&#x4E8E;&#x89C4;&#x5219;&#x7F3A;&#x4E4F;&#x4E00;&#x81F4;&#x6027;&#xFF0C;&#x6211;&#x4EEC;&#x8981;&#x5BF9;ES6&#x4E2D;&#x7B26;&#x53F7;&#x7684;&#x5F3A;&#x5236;&#x7C7B;&#x578B;&#x8F6C;&#x6362;&#x591A;&#x52A0;&#x5C0F;&#x5FC3;&#x3002;</p>
+<h4 id="&#x4E0E;"><a name="&#x4E0E;" class="anchor-navigation-ex-anchor" href="#&#x4E0E;"><i class="fa fa-link" aria-hidden="true"></i></a>==&#x4E0E;===</h4>
+<p>==&#x548C;===&#x90FD;&#x4F1A;&#x68C0;&#x67E5;&#x64CD;&#x4F5C;&#x6570;&#x7684;&#x7C7B;&#x578B;&#x3002;&#x533A;&#x522B;&#x5728;&#x4E8E;&#x64CD;&#x4F5C;&#x6570;&#x7C7B;&#x578B;&#x4E0D;&#x540C;&#x65F6;&#x5B83;&#x4EEC;&#x7684;&#x5904;&#x7406;&#x65B9;&#x5F0F;&#x4E0D;&#x540C;&#x3002;==&#x5141;&#x8BB8;&#x5728;&#x76F8;&#x7B49;&#x6BD4;&#x8F83;&#x4E2D;&#x8FDB;&#x884C;&#x5F3A;&#x5236;&#x7C7B;&#x578B;&#x8F6C;&#x6362;&#xFF0C;&#x800C;===&#x4E0D;&#x5141;&#x8BB8;&#x3002;</p>
+<p>&#x6BD4;&#x8F83;&#x4E24;&#x4E2A;&#x5BF9;&#x8C61;&#x7684;&#x65F6;&#x5019;&#xFF0C;==&#x548C;===&#x7684;&#x5DE5;&#x4F5C;&#x539F;&#x7406;&#x662F;&#x4E00;&#x6837;&#x7684;&#x3002;</p>
+<p>==&#x5728;&#x6BD4;&#x8F83;&#x4E24;&#x4E2A;&#x4E0D;&#x540C;&#x7C7B;&#x578B;&#x7684;&#x503C;&#x65F6;&#x4F1A;&#x53D1;&#x751F;&#x9690;&#x5F0F;&#x5F3A;&#x5236;&#x7C7B;&#x578B;&#x8F6C;&#x6362;&#xFF0C;&#x4F1A;&#x5C06;&#x5176;&#x4E2D;&#x4E4B;&#x4E00;&#x6216;&#x4E24;&#x8005;&#x90FD;&#x8F6C;&#x6362;&#x4E3A;&#x76F8;&#x540C;&#x7684;&#x7C7B;&#x578B;&#x540E;&#x518D;&#x8FDB;&#x884C;&#x6BD4;&#x8F83;&#x3002;</p>
+<h5 id="&#x5BBD;&#x677E;&#x76F8;&#x7B49;"><a name="&#x5BBD;&#x677E;&#x76F8;&#x7B49;" class="anchor-navigation-ex-anchor" href="#&#x5BBD;&#x677E;&#x76F8;&#x7B49;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x5BBD;&#x677E;&#x76F8;&#x7B49;</h5>
+<ul>
+<li><strong>&#x5B57;&#x7B26;&#x4E32;&#x548C;&#x6570;&#x5B57;&#x76F8;&#x7B49;&#x6BD4;&#x8F83;</strong><ul>
+<li>&#x5982;&#x679C;Type(x)&#x662F;&#x6570;&#x5B57;&#xFF0C;Type(y)&#x662F;&#x5B57;&#x7B26;&#x4E32;&#xFF0C;&#x5219;&#x8FD4;&#x56DE;x == ToNumber(y)&#x7684;&#x7ED3;&#x679C;&#x3002;</li>
+<li>&#x5982;&#x679C;Type(x)&#x662F;&#x5B57;&#x7B26;&#x4E32;&#xFF0C;Type(y)&#x662F;&#x6570;&#x5B57;&#xFF0C;&#x5219;&#x8FD4;&#x56DE;ToNumber(x) == y&#x7684;&#x7ED3;&#x679C;&#x3002;</li>
+</ul>
+</li>
+<li><strong>&#x5176;&#x4ED6;&#x7C7B;&#x578B;&#x4E0E;&#x5E03;&#x5C14;&#x7C7B;&#x578B;&#x76F8;&#x7B49;&#x6BD4;&#x8F83;</strong><ul>
+<li>&#x5982;&#x679C;Type(x)&#x662F;&#x5E03;&#x5C14;&#x7C7B;&#x578B;&#xFF0C;&#x5219;&#x8FD4;&#x56DE;ToNumber(x) == y&#x7684;&#x7ED3;&#x679C;&#xFF1B;</li>
+<li>&#x5982;&#x679C;Type(y)&#x662F;&#x5E03;&#x5C14;&#x7C7B;&#x578B;&#xFF0C;&#x5219;&#x8FD4;&#x56DE;x == ToNumber(y)&#x7684;&#x7ED3;&#x679C;&#x3002;</li>
+</ul>
+</li>
+<li><strong>null&#x4E0E;undefined&#x76F8;&#x7B49;&#x6BD4;&#x8F83;</strong><ul>
+<li>null&#x4E0E;undefined&#x76F8;&#x7B49;</li>
+<li>null&#x4E0E;undefined&#x4E0E;&#x5176;&#x5B83;&#x5047;&#x503C;&#x4E0D;&#x76F8;&#x7B49;</li>
+</ul>
+</li>
+<li><strong>&#x5BF9;&#x8C61;&#x4E0E;&#x975E;&#x5BF9;&#x8C61;&#x76F8;&#x7B49;&#x6BD4;&#x8F83;</strong><ul>
+<li>&#x5982;&#x679C;Type(x)&#x662F;&#x5B57;&#x7B26;&#x4E32;&#x6216;&#x6570;&#x5B57;&#xFF0C;Type(y)&#x662F;&#x5BF9;&#x8C61;&#xFF0C;&#x5219;&#x8FD4;&#x56DE;x == ToPrimitive(y)&#x7684;&#x7ED3;&#x679C;&#xFF1B;</li>
+<li>&#x5982;&#x679C;Type(x)&#x662F;&#x5BF9;&#x8C61;&#xFF0C;Type(y)&#x662F;&#x5B57;&#x7B26;&#x4E32;&#x6216;&#x6570;&#x5B57;&#xFF0C;&#x5219;&#x8FD4;&#x56DE;ToPrimitive(x) == y&#x7684;&#x7ED3;&#x679C;&#x3002;</li>
+</ul>
+</li>
+</ul>
+<p>Object(null)&#x548C;Object()&#x5747;&#x8FD4;&#x56DE;&#x4E00;&#x4E2A;&#x5E38;&#x89C4;&#x5BF9;&#x8C61;&#x3002;NaN&#x80FD;&#x591F;&#x88AB;&#x5C01;&#x88C5;&#x4E3A;&#x6570;&#x5B57;&#x5C01;&#x88C5;&#x5BF9;&#x8C61;&#xFF0C;&#x4F46;&#x62C6;&#x5C01;&#x4E4B;&#x540E;NaN == NaN&#x8FD4;&#x56DE;false&#xFF0C;&#x56E0;&#x4E3A;NaN&#x4E0D;&#x7B49;&#x4E8E;NaN&#x3002;</p>
+<h5 id="&#x975E;&#x5E38;&#x89C1;&#x60C5;&#x51B5;"><a name="&#x975E;&#x5E38;&#x89C1;&#x60C5;&#x51B5;" class="anchor-navigation-ex-anchor" href="#&#x975E;&#x5E38;&#x89C1;&#x60C5;&#x51B5;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x975E;&#x5E38;&#x89C1;&#x60C5;&#x51B5;</h5>
+<pre><code>// &#x793A;&#x4F8B;&#x4E00;
+var i = 2;
+Number.prototype.valueOf = function() {
+    return i++;
+};
+var a = new Number( 42 );
+
+if (a == 2 &amp;&amp; a == 3) {
+    console.log( &quot;Yep, this happened.&quot; );
+}
+
+// &#x793A;&#x4F8B;&#x4E8C;
+[] == ![]    // true
+&quot;&quot; == [null];    // true
+[null, undefined, null] == &quot;,,&quot;    // true
+0 == &apos;\n   \t &apos;    // true
+</code></pre><p>&#x4EE5;&#x4E0B;&#x4E24;&#x4E2A;&#x539F;&#x5219;&#x53EF;&#x4EE5;&#x8BA9;&#x6211;&#x4EEC;&#x6709;&#x6548;&#x5730;&#x907F;&#x514D;&#x51FA;&#x9519;&#xFF1A;</p>
+<ul>
+<li>&#x5982;&#x679C;&#x4E24;&#x8FB9;&#x7684;&#x503C;&#x4E2D;&#x6709;true&#x6216;&#x8005;false&#xFF0C;&#x5343;&#x4E07;&#x4E0D;&#x8981;&#x4F7F;&#x7528;==&#x3002;</li>
+<li>&#x5982;&#x679C;&#x4E24;&#x8FB9;&#x7684;&#x503C;&#x4E2D;&#x6709;[]&#x3001;&quot;&quot;&#x6216;&#x8005;0&#xFF0C;&#x5C3D;&#x91CF;&#x4E0D;&#x8981;&#x4F7F;&#x7528;==&#x3002;</li>
+</ul>
+<h4 id="&#x62BD;&#x8C61;&#x5173;&#x7CFB;&#x6BD4;&#x8F83;"><a name="&#x62BD;&#x8C61;&#x5173;&#x7CFB;&#x6BD4;&#x8F83;" class="anchor-navigation-ex-anchor" href="#&#x62BD;&#x8C61;&#x5173;&#x7CFB;&#x6BD4;&#x8F83;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x62BD;&#x8C61;&#x5173;&#x7CFB;&#x6BD4;&#x8F83;</h4>
+<p><strong>&#x201C;&#x62BD;&#x8C61;&#x5173;&#x7CFB;&#x6BD4;&#x8F83;&#x201D;&#xFF0C;&#x5206;&#x4E3A;&#x4E24;&#x4E2A;&#x90E8;&#x5206;</strong></p>
+<ul>
+<li>&#x6BD4;&#x8F83;&#x53CC;&#x65B9;&#x90FD;&#x662F;&#x5B57;&#x7B26;&#x4E32;&#x5219;&#x6309;&#x5B57;&#x6BCD;&#x987A;&#x5E8F;&#x6765;&#x8FDB;&#x884C;&#x6BD4;&#x8F83;&#x3002;</li>
+<li>&#x5176;&#x4ED6;&#x60C5;&#x51B5;&#x3002;&#x6BD4;&#x8F83;&#x53CC;&#x65B9;&#x9996;&#x5148;&#x8C03;&#x7528;ToPrimitive&#xFF0C;&#x5982;&#x679C;&#x7ED3;&#x679C;&#x51FA;&#x73B0;&#x975E;&#x5B57;&#x7B26;&#x4E32;&#xFF0C;&#x5C31;&#x6839;&#x636E;ToNumber&#x89C4;&#x5219;&#x5C06;&#x53CC;&#x65B9;&#x5F3A;&#x5236;&#x7C7B;&#x578B;&#x8F6C;&#x6362;&#x4E3A;&#x6570;&#x5B57;&#x6765;&#x8FDB;&#x884C;&#x6BD4;&#x8F83;&#x3002;</li>
+</ul>
+<pre><code>// &#x793A;&#x4F8B;&#x4E00;
+var a = { b: 42 };
+var b = { b: 43 };
+a &lt; b;  // false
+a == b; // false
+a &gt; b;  // false
+
+a &lt;= b; // true
+a &gt;= b; // true
+
+// &#x793A;&#x4F8B;&#x4E8C;
+var a = [ 42 ];
+var b = &quot;043&quot;;
+a &lt; b;                      // false
+
+// &#x793A;&#x4F8B;&#x4E09;
+42 &lt; &apos;043&apos;    // true
+</code></pre><h2 id="&#x8BED;&#x6CD5;"><a name="&#x8BED;&#x6CD5;" class="anchor-navigation-ex-anchor" href="#&#x8BED;&#x6CD5;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x8BED;&#x6CD5;</h2>
+<h3 id="&#x8BED;&#x53E5;"><a name="&#x8BED;&#x53E5;" class="anchor-navigation-ex-anchor" href="#&#x8BED;&#x53E5;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x8BED;&#x53E5;</h3>
+<p>&#x8BED;&#x53E5;&#x90FD;&#x6709;&#x4E00;&#x4E2A;&#x7ED3;&#x679C;&#x503C;&#xFF08;statement completion value, undefined&#x4E5F;&#x7B97;&#xFF09;&#x3002;&#x4EE5;&#x8D4B;&#x503C;&#x8868;&#x8FBE;&#x5F0F;b = a&#x4E3A;&#x4F8B;&#xFF0C;&#x5176;&#x7ED3;&#x679C;&#x503C;&#x662F;&#x8D4B;&#x7ED9;b&#x7684;&#x503C;&#xFF0C;&#x4F46;&#x89C4;&#x8303;&#x5B9A;&#x4E49;var&#x7684;&#x7ED3;&#x679C;&#x503C;&#x662F;undefined&#x3002;&#x5982;&#x679C;&#x5728;&#x63A7;&#x5236;&#x53F0;&#x4E2D;&#x8F93;&#x5165;var a = 42&#x4F1A;&#x5F97;&#x5230;&#x7ED3;&#x679C;&#x503C;undefined&#xFF0C;&#x800C;&#x975E;42&#x3002;</p>
+<p>{ }&#x5728;&#x4E0D;&#x540C;&#x60C5;&#x51B5;&#x4E0B;&#x7684;&#x610F;&#x601D;&#x4E0D;&#x5C3D;&#x76F8;&#x540C;&#xFF0C;&#x53EF;&#x4EE5;&#x662F;&#x8BED;&#x53E5;&#x5757;&#x3001;&#x5BF9;&#x8C61;&#x5E38;&#x91CF;&#x3001;&#x89E3;&#x6784;&#x8D4B;&#x503C;&#xFF08;ES6&#xFF09;&#x6216;&#x8005;&#x547D;&#x540D;&#x51FD;&#x6570;&#x53C2;&#x6570;&#xFF08;ES6&#xFF09;&#x3002;</p>
+<p>&#x4EE3;&#x7801;&#x5757;{ .. }&#x7684;&#x7ED3;&#x679C;&#x503C;&#x662F;&#x5176;&#x6700;&#x540E;&#x4E00;&#x4E2A;&#x8BED;&#x53E5;/&#x8868;&#x8FBE;&#x5F0F;&#x7684;&#x7ED3;&#x679C;&#x3002;&#x8BED;&#x6CD5;&#x4E0D;&#x5141;&#x8BB8;&#x6211;&#x4EEC;&#x83B7;&#x5F97;&#x8BED;&#x53E5;&#x7684;&#x7ED3;&#x679C;&#x503C;&#x5E76;&#x5C06;&#x5176;&#x8D4B;&#x503C;&#x7ED9;&#x53E6;&#x4E00;&#x4E2A;&#x53D8;&#x91CF;&#xFF08;&#x81F3;&#x5C11;&#x76EE;&#x524D;&#x4E0D;&#x884C;&#xFF09;&#x3002;&#x4E0D;&#x8FC7;&#xFF0C;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;&#x4E07;&#x6076;&#x7684;eval(..)&#xFF08;&#x53C8;&#x8BFB;&#x4F5C;&#x201C;evil&#x201D;&#xFF09;&#x6765;&#x83B7;&#x5F97;&#x7ED3;&#x679C;&#x503C;&#x3002;</p>
+<p>ES7&#x89C4;&#x8303;&#x6709;&#x4E00;&#x9879;&#x201C;do&#x8868;&#x8FBE;&#x5F0F;&#x201D;&#xFF08;do expression&#xFF09;&#x63D0;&#x6848;&#xFF1A;</p>
+<pre><code>var a, b;
+a = do {
+    if (true) {
+        b = 4 + 38;
+  }
+};
+a;  // 42
+</code></pre><p>++&#x65E0;&#x6CD5;&#x76F4;&#x63A5;&#x5728;42&#x8FD9;&#x6837;&#x7684;&#x503C;&#x4E0A;&#x4EA7;&#x751F;&#x526F;&#x4F5C;&#x7528;&#xFF0C;++42&#x4F1A;&#x62A5;&#x9519;&#x3002;b = ( a++, a )&#x53EF;&#x4EE5;&#x5C06;a+1&#x7136;&#x540E;&#x8D4B;&#x503C;&#x7ED9;b&#x3002;</p>
+<p>&#x94FE;&#x5F0F;&#x8D4B;&#x503C;&#x5E38;&#x5E38;&#x88AB;&#x8BEF;&#x7528;&#xFF0C;&#x4F8B;&#x5982;var a = b = 42&#xFF0C;&#x770B;&#x4F3C;&#x548C;a = b = 42&#xFF0C;&#x5B9E;&#x5219;&#x4E0D;&#x7136;&#x3002;&#x5982;&#x679C;&#x53D8;&#x91CF;b&#x6CA1;&#x6709;&#x5728;&#x4F5C;&#x7528;&#x57DF;&#x4E2D;&#x8C61;var b&#x8FD9;&#x6837;&#x58F0;&#x660E;&#x8FC7;&#xFF0C;&#x5219;var a = b =42&#x4E0D;&#x4F1A;&#x5BF9;&#x53D8;&#x91CF;b&#x8FDB;&#x884C;&#x58F0;&#x660E;&#x3002;&#x5728;&#x4E25;&#x683C;&#x6A21;&#x5F0F;&#x4E2D;&#x8FD9;&#x6837;&#x4F1A;&#x4EA7;&#x751F;&#x9519;&#x8BEF;&#xFF0C;&#x6216;&#x8005;&#x4F1A;&#x65E0;&#x610F;&#x4E2D;&#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x5168;&#x5C40;&#x53D8;&#x91CF;&#x3002;</p>
+<p>&#x4E8B;&#x5B9E;&#x4E0A;JavaScript&#x6CA1;&#x6709;else if&#xFF0C;&#x4F46;if&#x548C;else&#x53EA;&#x5305;&#x542B;&#x5355;&#x6761;&#x8BED;&#x53E5;&#x7684;&#x65F6;&#x5019;&#x53EF;&#x4EE5;&#x7701;&#x7565;&#x4EE3;&#x7801;&#x5757;&#x7684;{ }&#x3002;</p>
+<h3 id="&#x6807;&#x7B7E;&#x8BED;&#x53E5;"><a name="&#x6807;&#x7B7E;&#x8BED;&#x53E5;" class="anchor-navigation-ex-anchor" href="#&#x6807;&#x7B7E;&#x8BED;&#x53E5;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x6807;&#x7B7E;&#x8BED;&#x53E5;</h3>
+<p>&#x5E26;&#x6807;&#x7B7E;&#x7684;&#x5FAA;&#x73AF;/&#x4EE3;&#x7801;&#x5757;&#x5341;&#x5206;&#x5C11;&#x89C1;&#xFF0C;&#x4E5F;&#x4E0D;&#x5EFA;&#x8BAE;&#x4F7F;&#x7528;&#x3002;</p>
+<pre><code>// &#x6807;&#x7B7E;&#x4E3A;foo&#x7684;&#x5FAA;&#x73AF;
+foo: for (var i=0; i&lt;4; i++) {
+    for (var j=0; j&lt;4; j++) {
+      if ((i &#xFF0A; j) &gt;= 3) {
+          console.log( &quot;stopping! &quot;, i, j );
+          break foo;
+      }
+      console.log( i, j );
+    }
+}&#xFFFC;
+</code></pre><p>break foo&#x4E0D;&#x662F;&#x6307;&#x201C;&#x8DF3;&#x8F6C;&#x5230;&#x6807;&#x7B7E;foo&#x6240;&#x5728;&#x4F4D;&#x7F6E;&#x7EE7;&#x7EED;&#x6267;&#x884C;&#x201D;&#xFF0C;&#x800C;&#x662F;&#x201C;&#x8DF3;&#x51FA;&#x6807;&#x7B7E;foo&#x6240;&#x5728;&#x7684;&#x5FAA;&#x73AF;/&#x4EE3;&#x7801;&#x5757;&#xFF0C;&#x7EE7;&#x7EED;&#x6267;&#x884C;&#x540E;&#x9762;&#x7684;&#x4EE3;&#x7801;&#x201D;&#x3002;&#x56E0;&#x6B64;&#x5B83;&#x5E76;&#x975E;&#x4F20;&#x7EDF;&#x610F;&#x4E49;&#x4E0A;&#x7684;goto&#x3002;</p>
+<p>JSON-P&#xFF08;&#x5C06;JSON&#x6570;&#x636E;&#x5C01;&#x88C5;&#x4E3A;&#x51FD;&#x6570;&#x8C03;&#x7528;&#xFF0C;&#x6BD4;&#x5982;foo({&quot;a&quot;:42})&#xFF09;&#x901A;&#x8FC7;&#x5C06;JSON&#x6570;&#x636E;&#x4F20;&#x9012;&#x7ED9;&#x51FD;&#x6570;&#x6765;&#x5B9E;&#x73B0;&#x5BF9;&#x5176;&#x7684;&#x8BBF;&#x95EE;&#x3002;&#x5B83;&#x80FD;&#x5C06;JSON&#x8F6C;&#x6362;&#x4E3A;&#x5408;&#x6CD5;&#x7684;JavaScript&#x8BED;&#x6CD5;&#x3002;</p>
+<h3 id="&#x5BF9;&#x8C61;&#x89E3;&#x6784;"><a name="&#x5BF9;&#x8C61;&#x89E3;&#x6784;" class="anchor-navigation-ex-anchor" href="#&#x5BF9;&#x8C61;&#x89E3;&#x6784;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x5BF9;&#x8C61;&#x89E3;&#x6784;</h3>
+<p>ES6&#x5F00;&#x59CB;&#xFF0C;{ .. }&#x4E5F;&#x53EF;&#x7528;&#x4E8E;&#x201C;&#x89E3;&#x6784;&#x8D4B;&#x503C;&#x201D;&#x3002;</p>
+<pre><code>function getData() {
+    // ..
+    return {
+      a: 42,
+      b: &quot;foo&quot;
+     };
+}
+var { a, b } = getData();
+
+var { a: c, b: d } = { a: 1, b : 2 };
+console.log(c, d) // 1 2
+</code></pre><p>{ a, b }&#x5B9E;&#x9645;&#x4E0A;&#x662F;{ a: a, b: b }&#x7684;&#x7B80;&#x5316;&#x7248;&#x672C;&#xFF0C;&#x4E24;&#x8005;&#x5747;&#x53EF;&#xFF0C;&#x53EA;&#x4E0D;&#x8FC7;{ a, b }&#x66F4;&#x7B80;&#x6D01;&#x3002;</p>
+<p>es6&#x4E2D;&#x652F;&#x6301;import&#x5F15;&#x5165;&#x6A21;&#x5757;&#xFF0C;&#x4E5F;&#x652F;&#x6301;&#x7C7B;&#x4F3C;&#x4E0A;&#x9762;&#x5199;&#x6CD5;&#xFF0C;&#x4F46;&#x662F;&#x8BED;&#x6CD5;&#x7A0D;&#x6709;&#x4E0D;&#x540C;&#xFF1A;<code>import { a as c, d as b } from file</code>&#x3002;</p>
+<h3 id="else-if&#x548C;&#x53EF;&#x9009;&#x4EE3;&#x7801;&#x5757;"><a name="else-if&#x548C;&#x53EF;&#x9009;&#x4EE3;&#x7801;&#x5757;" class="anchor-navigation-ex-anchor" href="#else-if&#x548C;&#x53EF;&#x9009;&#x4EE3;&#x7801;&#x5757;"><i class="fa fa-link" aria-hidden="true"></i></a>else if&#x548C;&#x53EF;&#x9009;&#x4EE3;&#x7801;&#x5757;</h3>
+<p>&#x4E8B;&#x5B9E;&#x4E0A;JavaScript&#x6CA1;&#x6709;else if&#xFF0C;&#x4F46;if&#x548C;else&#x53EA;&#x5305;&#x542B;&#x5355;&#x6761;&#x8BED;&#x53E5;&#x7684;&#x65F6;&#x5019;&#x53EF;&#x4EE5;&#x7701;&#x7565;&#x4EE3;&#x7801;&#x5757;&#x7684;{ }&#x3002;&#x6240;&#x4EE5;&#x6211;&#x4EEC;&#x7ECF;&#x5E38;&#x7528;&#x5230;&#x7684;else if&#x5B9E;&#x9645;&#x4E0A;&#x662F;&#x8FD9;&#x6837;&#x7684;&#xFF1A;</p>
+<pre><code>if (a) {
+    // ..
+} else {
+    if (b) {
+      // ..
+    }
+    else {
+          // ..
+    }
+}
+</code></pre><h3 id="&#x8FD0;&#x7B97;&#x7B26;&#x4F18;&#x5148;&#x7EA7;"><a name="&#x8FD0;&#x7B97;&#x7B26;&#x4F18;&#x5148;&#x7EA7;" class="anchor-navigation-ex-anchor" href="#&#x8FD0;&#x7B97;&#x7B26;&#x4F18;&#x5148;&#x7EA7;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x8FD0;&#x7B97;&#x7B26;&#x4F18;&#x5148;&#x7EA7;</h3>
+<p>&#x7528;&#xFF0C;&#x6765;&#x8FDE;&#x63A5;&#x4E00;&#x7CFB;&#x5217;&#x8BED;&#x53E5;&#x7684;&#x65F6;&#x5019;&#xFF0C;&#x5B83;&#x7684;&#x4F18;&#x5148;&#x7EA7;&#x6700;&#x4F4E;&#xFF0C;&#x5176;&#x4ED6;&#x64CD;&#x4F5C;&#x6570;&#x7684;&#x4F18;&#x5148;&#x7EA7;&#x90FD;&#x6BD4;&#x5B83;&#x9AD8;&#x3002;</p>
+<p>&amp;&amp;&#x8FD0;&#x7B97;&#x7B26;&#x7684;&#x4F18;&#x5148;&#x7EA7;&#x9AD8;&#x4E8E;||&#xFF0C;&#x800C;||&#x7684;&#x4F18;&#x5148;&#x7EA7;&#x53C8;&#x9AD8;&#x4E8E;&#xFF1F; :&#x3002;</p>
+<p>&#x5982;&#x679C;&amp;&amp;&#x662F;&#x53F3;&#x5173;&#x8054;&#x7684;&#x8BDD;&#x4F1A;&#x88AB;&#x5904;&#x7406;&#x4E3A;a &amp;&amp; (b &amp;&amp; c)&#x3002;&#x4F46;&#x8FD9;&#x5E76;&#x4E0D;&#x610F;&#x5473;&#x7740;c&#x4F1A;&#x5728;b&#x4E4B;&#x524D;&#x6267;&#x884C;&#x3002;&#x53F3;&#x5173;&#x8054;&#x4E0D;&#x662F;&#x6307;&#x4ECE;&#x53F3;&#x5F80;&#x5DE6;&#x6267;&#x884C;&#xFF0C;&#x800C;&#x662F;&#x6307;&#x4ECE;&#x53F3;&#x5F80;&#x5DE6;&#x7EC4;&#x5408;&#x3002;&#x60C5;&#x51B5;&#x5E76;&#x975E;&#x603B;&#x662F;&#x8FD9;&#x6837;&#x3002;&#x4E00;&#x4E9B;&#x8FD0;&#x7B97;&#x7B26;&#x5728;&#x5DE6;&#x5173;&#x8054;&#x548C;&#x53F3;&#x5173;&#x8054;&#x65F6;&#x7684;&#x8868;&#x73B0;&#x622A;&#x7136;&#x4E0D;&#x540C;&#x3002;&#x6BD4;&#x5982;&#xFF1F;&#xFF1A;&#xFF08;&#x5373;&#x4E09;&#x5143;&#x8FD0;&#x7B97;&#x7B26;&#x6216;&#x8005;&#x6761;&#x4EF6;&#x8FD0;&#x7B97;&#x7B26;&#xFF09;&#x3002;</p>
+<p><strong>?:&#x662F;&#x53F3;&#x5173;&#x8054;&#xFF0C;&#x5B83;&#x7684;&#x7EC4;&#x5408;&#x987A;&#x5E8F;&#x662F;&#x4EE5;&#x4E0B;&#x54EA;&#x4E00;&#x79CD;&#x5462;&#xFF1F;</strong></p>
+<ul>
+<li>a ? b : (c ? d : e)</li>
+<li>(a ? b : c) ? d : e
+&#x7B54;&#x6848;&#x662F;a ? b : (c ? d : e)&#x3002;</li>
+</ul>
+<p>&#x5982;&#x679C;&#x8FD0;&#x7B97;&#x7B26;&#x4F18;&#x5148;&#x7EA7;/&#x5173;&#x8054;&#x89C4;&#x5219;&#x80FD;&#x591F;&#x4EE4;&#x4EE3;&#x7801;&#x66F4;&#x4E3A;&#x7B80;&#x6D01;&#xFF0C;&#x5C31;&#x4F7F;&#x7528;&#x8FD0;&#x7B97;&#x7B26;&#x4F18;&#x5148;&#x7EA7;/&#x5173;&#x8054;&#x89C4;&#x5219;&#xFF1B;&#x800C;&#x5982;&#x679C;( )&#x6709;&#x52A9;&#x4E8E;&#x63D0;&#x9AD8;&#x4EE3;&#x7801;&#x53EF;&#x8BFB;&#x6027;&#xFF0C;&#x5C31;&#x4F7F;&#x7528;( )&#x3002;</p>
+<h3 id="&#x81EA;&#x52A8;&#x5206;&#x53F7;"><a name="&#x81EA;&#x52A8;&#x5206;&#x53F7;" class="anchor-navigation-ex-anchor" href="#&#x81EA;&#x52A8;&#x5206;&#x53F7;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x81EA;&#x52A8;&#x5206;&#x53F7;</h3>
+<p>&#x6709;&#x65F6;JavaScript&#x4F1A;&#x81EA;&#x52A8;&#x4E3A;&#x4EE3;&#x7801;&#x884C;&#x8865;&#x4E0A;&#x7F3A;&#x5931;&#x7684;&#x5206;&#x53F7;&#xFF0C;&#x5373;&#x81EA;&#x52A8;&#x5206;&#x53F7;&#x63D2;&#x5165;&#xFF08;Automatic Semicolon Insertion, ASI&#xFF09;&#x3002;</p>
+<p>ASI&#x53EA;&#x5728;&#x6362;&#x884C;&#x7B26;&#x5904;&#x8D77;&#x4F5C;&#x7528;&#xFF0C;&#x800C;&#x4E0D;&#x4F1A;&#x5728;&#x4EE3;&#x7801;&#x884C;&#x7684;&#x4E2D;&#x95F4;&#x63D2;&#x5165;&#x5206;&#x53F7;&#x3002;&#x5982;&#x679C;JavaScript&#x89E3;&#x6790;&#x5668;&#x53D1;&#x73B0;&#x4EE3;&#x7801;&#x884C;&#x53EF;&#x80FD;&#x56E0;&#x4E3A;&#x7F3A;&#x5931;&#x5206;&#x53F7;&#x800C;&#x5BFC;&#x81F4;&#x9519;&#x8BEF;&#xFF0C;&#x90A3;&#x4E48;&#x5B83;&#x5C31;&#x4F1A;&#x81EA;&#x52A8;&#x8865;&#x4E0A;&#x5206;&#x53F7;&#x3002;&#x5E76;&#x4E14;&#xFF0C;&#x53EA;&#x6709;&#x5728;&#x4EE3;&#x7801;&#x884C;&#x672B;&#x5C3E;&#x4E0E;&#x6362;&#x884C;&#x7B26;&#x4E4B;&#x95F4;&#x9664;&#x4E86;&#x7A7A;&#x683C;&#x548C;&#x6CE8;&#x91CA;&#x4E4B;&#x5916;&#x6CA1;&#x6709;&#x522B;&#x7684;&#x5185;&#x5BB9;&#x65F6;&#xFF0C;&#x5B83;&#x624D;&#x4F1A;&#x8FD9;&#x6837;&#x505A;&#x3002;</p>
+<pre><code>var a = 42, b
+c;
+</code></pre><p>&#x5982;&#x679C;b&#x548C;c&#x4E4B;&#x95F4;&#x51FA;&#x73B0;&#xFF0C;&#x7684;&#x8BDD;&#xFF08;&#x5373;&#x4F7F;&#x53E6;&#x8D77;&#x4E00;&#x884C;&#xFF09;, c&#x4F1A;&#x88AB;&#x4F5C;&#x4E3A;var&#x8BED;&#x53E5;&#x7684;&#x4E00;&#x90E8;&#x5206;&#x6765;&#x5904;&#x7406;&#x3002;</p>
+<pre><code>var a = 42;
+do {
+    // ..
+} while (a) // &lt;-- &#x8FD9;&#x91CC;&#x5E94;&#x8BE5;&#x6709;;
+a;
+</code></pre><p>&#x8BED;&#x6CD5;&#x89C4;&#x5B9A;do..while&#x5FAA;&#x73AF;&#x540E;&#x9762;&#x5FC5;&#x987B;&#x5E26;&#xFF1B;&#xFF0C;&#x800C;while&#x548C;for&#x5FAA;&#x73AF;&#x540E;&#x5219;&#x4E0D;&#x9700;&#x8981;&#x3002;&#x5927;&#x591A;&#x6570;&#x5F00;&#x53D1;&#x4EBA;&#x5458;&#x90FD;&#x4E0D;&#x8BB0;&#x5F97;&#x8FD9;&#x4E00;&#x70B9;&#xFF0C;&#x6B64;&#x65F6;ASI&#x5C31;&#x4F1A;&#x81EA;&#x52A8;&#x8865;&#x4E0A;&#x5206;&#x53F7;&#x3002;&#x8BED;&#x53E5;&#x4EE3;&#x7801;&#x5757;&#x7ED3;&#x5C3E;&#x4E0D;&#x7528;&#x5E26;&#xFF1B;&#xFF0C;&#x6240;&#x4EE5;&#x4E0D;&#x9700;&#x8981;&#x7528;&#x5230;ASI&#x3002;&#x5176;&#x4ED6;&#x6D89;&#x53CA;ASI&#x7684;&#x60C5;&#x51B5;&#x662F;break&#x3001;continue&#x3001;return&#x548C;yield&#xFF08;ES6&#xFF09;&#x7B49;&#x5173;&#x952E;&#x5B57;&#x3002;</p>
+<p>ASI&#x5B9E;&#x9645;&#x4E0A;&#x662F;&#x4E00;&#x4E2A;<strong>&#x201C;&#x7EA0;&#x9519;&#x201D;&#x673A;&#x5236;</strong>&#x3002;&#x8FD9;&#x91CC;&#x7684;&#x9519;&#x8BEF;&#x662F;&#x6307;&#x89E3;&#x6790;&#x5668;&#x9519;&#x8BEF;&#x3002;&#x6362;&#x53E5;&#x8BDD;&#x8BF4;&#xFF0C;ASI&#x7684;&#x76EE;&#x7684;&#x5728;&#x4E8E;&#x63D0;&#x9AD8;&#x89E3;&#x6790;&#x5668;&#x7684;&#x5BB9;&#x9519;&#x6027;&#x3002;&#x56E0;&#x6B64;&#xFF0C;&#x5EFA;&#x8BAE;&#x5728;&#x6240;&#x6709;&#x9700;&#x8981;&#x7684;&#x5730;&#x65B9;&#x52A0;&#x4E0A;&#x5206;&#x53F7;&#xFF0C;&#x5C06;&#x5BF9;ASI&#x7684;&#x4F9D;&#x8D56;&#x964D;&#x5230;&#x6700;&#x4F4E;&#x3002;</p>
+<h3 id="&#x9519;&#x8BEF;"><a name="&#x9519;&#x8BEF;" class="anchor-navigation-ex-anchor" href="#&#x9519;&#x8BEF;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x9519;&#x8BEF;</h3>
+<h4 id="&#x9519;&#x8BEF;&#x7C7B;&#x578B;"><a name="&#x9519;&#x8BEF;&#x7C7B;&#x578B;" class="anchor-navigation-ex-anchor" href="#&#x9519;&#x8BEF;&#x7C7B;&#x578B;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x9519;&#x8BEF;&#x7C7B;&#x578B;</h4>
+<p>JavaScript&#x4E2D;&#x6709;&#x5F88;&#x591A;&#x9519;&#x8BEF;&#x7C7B;&#x578B;&#xFF0C;&#x5206;&#x4E3A;&#x4E24;&#x5927;&#x7C7B;&#xFF1A;&#x65E9;&#x671F;&#x9519;&#x8BEF;&#xFF08;&#x7F16;&#x8BD1;&#x65F6;&#x9519;&#x8BEF;&#xFF0C;&#x65E0;&#x6CD5;&#x88AB;&#x6355;&#x83B7;&#xFF09;&#x548C;&#x8FD0;&#x884C;&#x65F6;&#x9519;&#x8BEF;&#xFF08;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;try..catch&#x6765;&#x6355;&#x83B7;&#xFF09;&#x3002;&#x6240;&#x6709;&#x8BED;&#x6CD5;&#x9519;&#x8BEF;&#x90FD;&#x662F;&#x65E9;&#x671F;&#x9519;&#x8BEF;&#xFF0C;&#x7A0B;&#x5E8F;&#x6709;&#x8BED;&#x6CD5;&#x9519;&#x8BEF;&#x5219;&#x65E0;&#x6CD5;&#x8FD0;&#x884C;&#x3002;</p>
+<h4 id="tdz&#x6682;&#x65F6;&#x6027;&#x6B7B;&#x533A;"><a name="tdz&#x6682;&#x65F6;&#x6027;&#x6B7B;&#x533A;" class="anchor-navigation-ex-anchor" href="#tdz&#x6682;&#x65F6;&#x6027;&#x6B7B;&#x533A;"><i class="fa fa-link" aria-hidden="true"></i></a>TDZ(&#x6682;&#x65F6;&#x6027;&#x6B7B;&#x533A;)</h4>
+<p>ES6&#x89C4;&#x8303;&#x5B9A;&#x4E49;&#x4E86;&#x4E00;&#x4E2A;&#x65B0;&#x6982;&#x5FF5;&#xFF0C;&#x53EB;&#x4F5C;TDZ&#xFF08;Temporal Dead Zone&#xFF0C;&#x6682;&#x65F6;&#x6027;&#x6B7B;&#x533A;&#xFF09;&#x3002;TDZ&#x6307;&#x7684;&#x662F;&#x7531;&#x4E8E;&#x4EE3;&#x7801;&#x4E2D;&#x7684;&#x53D8;&#x91CF;&#x8FD8;&#x6CA1;&#x6709;&#x521D;&#x59CB;&#x5316;&#x800C;&#x4E0D;&#x80FD;&#x88AB;&#x5F15;&#x7528;&#x7684;&#x60C5;&#x51B5;&#x3002;&#x5BF9;&#x6B64;&#xFF0C;&#x6700;&#x76F4;&#x89C2;&#x7684;&#x4F8B;&#x5B50;&#x662F;ES6&#x89C4;&#x8303;&#x4E2D;&#x7684;let&#x5757;&#x4F5C;&#x7528;&#x57DF;&#x3002;</p>
+<pre><code>{
+    typeof b;   // undefined
+    typeof a;   // ReferenceError! (TDZ)
+    a = 2;      // ReferenceError!
+    let a;
+}
+</code></pre><p>&#x5BF9;&#x672A;&#x58F0;&#x660E;&#x53D8;&#x91CF;&#x4F7F;&#x7528;typeof&#x4E0D;&#x4F1A;&#x4EA7;&#x751F;&#x9519;&#x8BEF;&#xFF0C;&#x4F46;&#x5728;TDZ&#x4E2D;&#x5374;&#x4F1A;&#x62A5;&#x9519;&#x3002;</p>
+<pre><code>var b = 3;
+function foo( a = 42, b = a + b + 5 ) {
+    // ..
+}
+</code></pre><p>b = a + b + 5&#x5728;&#x53C2;&#x6570;b&#xFF08;=&#x53F3;&#x8FB9;&#x7684;b&#xFF0C;&#x800C;&#x4E0D;&#x662F;&#x51FD;&#x6570;&#x5916;&#x7684;&#x90A3;&#x4E2A;&#xFF09;&#x7684;TDZ&#x4E2D;&#x8BBF;&#x95EE;b&#xFF0C;&#x6240;&#x4EE5;&#x4F1A;&#x51FA;&#x9519;&#x3002;</p>
+<p>&#x5728;ES6&#x4E2D;&#xFF0C;&#x5982;&#x679C;&#x53C2;&#x6570;&#x88AB;&#x7701;&#x7565;&#x6216;&#x8005;&#x503C;&#x4E3A;undefined&#xFF0C;&#x5219;&#x53D6;&#x8BE5;&#x53C2;&#x6570;&#x7684;&#x9ED8;&#x8BA4;&#x503C;&#x3002;ES6&#x53C2;&#x6570;&#x9ED8;&#x8BA4;&#x503C;&#x4F1A;&#x5BFC;&#x81F4;arguments&#x6570;&#x7EC4;&#x548C;&#x76F8;&#x5BF9;&#x5E94;&#x7684;&#x547D;&#x540D;&#x53C2;&#x6570;&#x4E4B;&#x95F4;&#x51FA;&#x73B0;&#x504F;&#x5DEE;&#xFF0C;ES5&#x4E5F;&#x4F1A;&#x51FA;&#x73B0;&#x8FD9;&#x79CD;&#x60C5;&#x51B5;&#x3002;arguments&#x6570;&#x7EC4;&#x5DF2;&#x7ECF;&#x88AB;&#x5E9F;&#x6B62;&#x3002;</p>
+<h3 id="tryfinally"><a name="tryfinally" class="anchor-navigation-ex-anchor" href="#tryfinally"><i class="fa fa-link" aria-hidden="true"></i></a>try...finally</h3>
+<p>finally&#x4E2D;&#x7684;&#x4EE3;&#x7801;&#x603B;&#x662F;&#x4F1A;&#x5728;try&#x4E4B;&#x540E;&#x6267;&#x884C;&#xFF0C;&#x5982;&#x679C;&#x6709;catch&#x7684;&#x8BDD;&#x5219;&#x5728;catch&#x4E4B;&#x540E;&#x6267;&#x884C;&#x3002;&#x4E5F;&#x53EF;&#x4EE5;&#x5C06;finally&#x4E2D;&#x7684;&#x4EE3;&#x7801;&#x770B;&#x4F5C;&#x4E00;&#x4E2A;&#x56DE;&#x8C03;&#x51FD;&#x6570;&#xFF0C;&#x5373;&#x65E0;&#x8BBA;&#x51FA;&#x73B0;&#x4EC0;&#x4E48;&#x60C5;&#x51B5;&#x6700;&#x540E;&#x4E00;&#x5B9A;&#x4F1A;&#x88AB;&#x8C03;&#x7528;&#x3002;</p>
+<p>&#x5982;&#x679C;try&#x4E2D;&#x6709;return&#x8BED;&#x53E5;&#x4F1A;&#x51FA;&#x73B0;&#x4EC0;&#x4E48;&#x60C5;&#x51B5;&#x5462;?</p>
+<pre><code>function foo() {
+    try {
+    return 42;
+  }
+    finally {
+    console.log( &quot;Hello&quot; );
+  }
+  console.log( &quot;never runs&quot; );
+}
+console.log( foo() );
+// Hello
+// 42
+</code></pre><p>&#x8FD9;&#x91CC;return 42&#x5148;&#x6267;&#x884C;&#xFF0C;&#x5E76;&#x5C06;foo()&#x51FD;&#x6570;&#x7684;&#x8FD4;&#x56DE;&#x503C;&#x8BBE;&#x7F6E;&#x4E3A;42&#x3002;&#x7136;&#x540E;try&#x6267;&#x884C;&#x5B8C;&#x6BD5;&#xFF0C;&#x63A5;&#x7740;&#x6267;&#x884C;finally&#x3002;&#x6700;&#x540E;foo()&#x51FD;&#x6570;&#x6267;&#x884C;&#x5B8C;&#x6BD5;&#xFF0C;console.log(..)&#x663E;&#x793A;&#x8FD4;&#x56DE;&#x503C;&#x3002;try&#x4E2D;&#x7684;throw&#x4E5F;&#x662F;&#x5982;&#x6B64;&#x3002;</p>
+<p>&#x5982;&#x679C;finally&#x4E2D;&#x629B;&#x51FA;&#x5F02;&#x5E38;&#xFF08;&#x65E0;&#x8BBA;&#x662F;&#x6709;&#x610F;&#x8FD8;&#x662F;&#x65E0;&#x610F;&#xFF09;&#xFF0C;&#x51FD;&#x6570;&#x5C31;&#x4F1A;&#x5728;&#x6B64;&#x5904;&#x7EC8;&#x6B62;&#x3002;&#x5982;&#x679C;&#x6B64;&#x524D;try&#x4E2D;&#x5DF2;&#x7ECF;&#x6709;return&#x8BBE;&#x7F6E;&#x4E86;&#x8FD4;&#x56DE;&#x503C;&#xFF0C;&#x5219;&#x8BE5;&#x503C;&#x4F1A;&#x88AB;&#x4E22;&#x5F03;&#x3002;&#x901A;&#x5E38;&#x6765;&#x8BF4;&#xFF0C;&#x5728;&#x51FD;&#x6570;&#x4E2D;&#x7701;&#x7565;return&#x7684;&#x7ED3;&#x679C;&#x548C;return&#xFF1B;&#x53CA;return undefined&#xFF1B;&#x662F;&#x4E00;&#x6837;&#x7684;&#xFF0C;&#x4F46;&#x662F;&#x5728;finally&#x4E2D;&#x7701;&#x7565;return&#x5219;&#x4F1A;&#x8FD4;&#x56DE;&#x524D;&#x9762;&#x7684;return&#x8BBE;&#x5B9A;&#x7684;&#x8FD4;&#x56DE;&#x503C;&#x3002;</p>
+<h3 id="switch"><a name="switch" class="anchor-navigation-ex-anchor" href="#switch"><i class="fa fa-link" aria-hidden="true"></i></a>switch</h3>
+<p>case&#x8868;&#x8FBE;&#x5F0F;&#x7684;&#x5339;&#x914D;&#x7B97;&#x6CD5;&#x4E0E;===&#x76F8;&#x540C;&#x3002;&#x6709;&#x65F6;&#x53EF;&#x80FD;&#x4F1A;&#x9700;&#x8981;&#x901A;&#x8FC7;&#x5F3A;&#x5236;&#x7C7B;&#x578B;&#x8F6C;&#x6362;&#x6765;&#x8FDB;&#x884C;&#x76F8;&#x7B49;&#x6BD4;&#x8F83;&#xFF08;&#x5373;==&#xFF0C;&#x53C2;&#x89C1;&#x7B2C;4&#x7AE0;&#xFF09;&#xFF0C;&#x8FD9;&#x65F6;&#x5C31;&#x9700;&#x8981;&#x505A;&#x4E00;&#x4E9B;&#x7279;&#x6B8A;&#x5904;&#x7406;&#xFF1A;</p>
+<pre><code>var a = &quot;42&quot;;
+switch (true) {
+    case a == 10:
+    console.log( &quot;10 or &apos;10&apos;&quot; );
+    break;
+  case a == 42;
+    console.log( &quot;42 or &apos;42&apos;&quot; );
+    break;
+  default:
+    // &#x6C38;&#x8FDC;&#x6267;&#x884C;&#x4E0D;&#x5230;&#x8FD9;&#x91CC;
+}
+// 42 or &apos;42&apos;
+</code></pre><pre><code>var a = 10;
+switch (a) {
+    case 1:
+    case 2:
+    // &#x6C38;&#x8FDC;&#x6267;&#x884C;&#x4E0D;&#x5230;&#x8FD9;&#x91CC;
+  default:
+        console.log( &quot;default&quot; );
+    case 3:
+        console.log( &quot;3&quot; );
+        break;
+    case 4:
+        console.log( &quot;4&quot; );
+}
+// default
+// 3
+</code></pre><p>&#x4E0A;&#x4F8B;&#x4E2D;&#x7684;&#x4EE3;&#x7801;&#x662F;&#x8FD9;&#x6837;&#x6267;&#x884C;&#x7684;&#xFF0C;&#x9996;&#x5148;&#x904D;&#x5386;&#x5E76;&#x627E;&#x5230;&#x6240;&#x6709;&#x5339;&#x914D;&#x7684;case&#xFF0C;&#x5982;&#x679C;&#x6CA1;&#x6709;&#x5339;&#x914D;&#x5219;&#x6267;&#x884C;default&#x4E2D;&#x7684;&#x4EE3;&#x7801;&#x3002;&#x56E0;&#x4E3A;&#x5176;&#x4E2D;&#x6CA1;&#x6709;break&#xFF0C;&#x6240;&#x4EE5;&#x7EE7;&#x7EED;&#x6267;&#x884C;&#x5DF2;&#x7ECF;&#x904D;&#x5386;&#x8FC7;&#x7684;case 3&#x4EE3;&#x7801;&#x5757;&#xFF0C;&#x76F4;&#x5230;break&#x4E3A;&#x6B62;&#x3002;</p>
+<h2 id="&#x6DF7;&#x5408;&#x73AF;&#x5883;javascript"><a name="&#x6DF7;&#x5408;&#x73AF;&#x5883;javascript" class="anchor-navigation-ex-anchor" href="#&#x6DF7;&#x5408;&#x73AF;&#x5883;javascript"><i class="fa fa-link" aria-hidden="true"></i></a>&#x6DF7;&#x5408;&#x73AF;&#x5883;Javascript</h2>
+<p>JavaScript&#x8BED;&#x8A00;&#x672C;&#x8EAB;&#x6709;&#x4E00;&#x4E2A;&#x7EDF;&#x4E00;&#x7684;&#x6807;&#x51C6;&#xFF0C;&#x5728;&#x6240;&#x6709;&#x6D4F;&#x89C8;&#x5668;/&#x5F15;&#x64CE;&#x4E2D;&#x7684;&#x5B9E;&#x73B0;&#x4E5F;&#x662F;&#x53EF;&#x9760;&#x7684;&#x3002;&#x4F46;&#x662F;JavaScript&#x5F88;&#x5C11;&#x72EC;&#x7ACB;&#x8FD0;&#x884C;&#x3002;&#x901A;&#x5E38;&#x8FD0;&#x884C;&#x73AF;&#x5883;&#x4E2D;&#x8FD8;&#x6709;&#x7B2C;&#x4E09;&#x65B9;&#x4EE3;&#x7801;&#xFF0C;&#x6709;&#x65F6;&#x4EE3;&#x7801;&#x751A;&#x81F3;&#x4F1A;&#x8FD0;&#x884C;&#x5728;&#x6D4F;&#x89C8;&#x5668;&#x4E4B;&#x5916;&#x7684;&#x5F15;&#x64CE;/&#x73AF;&#x5883;&#x4E2D;&#x3002;</p>
+<h3 id="annex-b&#xFF08;ecmascript&#xFF09;"><a name="annex-b&#xFF08;ecmascript&#xFF09;" class="anchor-navigation-ex-anchor" href="#annex-b&#xFF08;ecmascript&#xFF09;"><i class="fa fa-link" aria-hidden="true"></i></a>Annex B&#xFF08;ECMAScript&#xFF09;</h3>
+<p>JavaScript&#x8BED;&#x8A00;&#x7684;&#x5B98;&#x65B9;&#x540D;&#x79F0;&#x662F;ECMAScript&#xFF08;&#x6307;&#x7684;&#x662F;&#x7BA1;&#x7406;&#x5B83;&#x7684;ECMA&#x6807;&#x51C6;&#xFF09;&#x3002;&#x5B98;&#x65B9;ECMAScript&#x89C4;&#x8303;&#x5305;&#x62EC;Annex B&#xFF0C;&#x5176;&#x4E2D;&#x4ECB;&#x7ECD;&#x4E86;&#x7531;&#x4E8E;&#x6D4F;&#x89C8;&#x5668;&#x517C;&#x5BB9;&#x6027;&#x95EE;&#x9898;&#x5BFC;&#x81F4;Javascript&#x5B9E;&#x73B0;&#x7684;&#x4E0E;&#x5B98;&#x65B9;&#x89C4;&#x8303;&#x7684;&#x5DEE;&#x5F02;&#x3002;</p>
+<p>&#x5982;&#x679C;&#x4EE3;&#x7801;&#x53EA;&#x5728;&#x6D4F;&#x89C8;&#x5668;&#x4E2D;&#x8FD0;&#x884C;&#xFF0C;&#x5219;&#x65E0;&#x9700;&#x8003;&#x8651;&#x8FD9;&#x4E9B;&#x5DEE;&#x5F02;&#x3002;&#x5426;&#x5219;&#xFF08;&#x5982;&#x679C;&#x4EE3;&#x7801;&#x4E5F;&#x5728;Node.js&#x3001;Rhino&#x7B49;&#x73AF;&#x5883;&#x4E2D;&#x8FD0;&#x884C;&#xFF09;&#xFF0C;&#x6216;&#x8005;&#x4F60;&#x4E5F;&#x4E0D;&#x786E;&#x5B9A;&#x7684;&#x65F6;&#x5019;&#xFF0C;&#x5C31;&#x9700;&#x8981;&#x5C0F;&#x5FC3;&#x5BF9;&#x5F85;&#x3002;</p>
+<p>&#x4E0B;&#x9762;&#x662F;&#x4E3B;&#x8981;&#x7684;&#x517C;&#x5BB9;&#x6027;&#x5DEE;&#x5F02;&#xFF1A;</p>
+<ul>
+<li>&#x5728;&#x975E;&#x4E25;&#x683C;&#x6A21;&#x5F0F;&#x4E2D;&#x5141;&#x8BB8;&#x516B;&#x8FDB;&#x5236;&#x6570;&#x503C;&#x5E38;&#x91CF;&#x5B58;&#x5728;&#xFF0C;&#x5982;0123&#xFF08;&#x5373;&#x5341;&#x8FDB;&#x5236;&#x7684;83&#xFF09;&#x3002;</li>
+<li>window.escape(..)&#x548C;window.unescape(..)&#x8BA9;&#x4F60;&#x80FD;&#x591F;&#x8F6C;&#x4E49;&#xFF08;escape&#xFF09;&#x548C;&#x56DE;&#x8F6C;&#xFF08;unescape&#xFF09;&#x5E26;&#x6709;%&#x5206;&#x9694;&#x7B26;&#x7684;&#x5341;&#x516D;&#x8FDB;&#x5236;&#x5B57;&#x7B26;&#x4E32;&#x3002;&#x4F8B;&#x5982;&#xFF0C;window.escape( &quot;? foo=97%&amp;bar=3%&quot; )&#x7684;&#x7ED3;&#x679C;&#x4E3A;&quot;%3Ffoo%3D97%25%26bar%3D3%25&quot;&#x3002;</li>
+<li>String.prototype.substr&#x548C;String.prototype.substring&#x5341;&#x5206;&#x76F8;&#x4F3C;&#xFF0C;&#x9664;&#x4E86;&#x540E;&#x8005;&#x7684;&#x7B2C;&#x4E8C;&#x4E2A;&#x53C2;&#x6570;&#x662F;&#x7ED3;&#x675F;&#x4F4D;&#x7F6E;&#x7D22;&#x5F15;&#xFF08;&#x975E;&#x81EA;&#x5305;&#x542B;&#xFF09;&#xFF0C;&#x800C;substr&#x7684;&#x7B2C;&#x4E8C;&#x4E2A;&#x53C2;&#x6570;&#x662F;&#x957F;&#x5EA6;&#xFF08;&#x9700;&#x8981;&#x5305;&#x542B;&#x7684;&#x5B57;&#x7B26;&#x6570;&#xFF09;&#x3002;</li>
+</ul>
+<h3 id="&#x5BBF;&#x4E3B;&#x5BF9;&#x8C61;"><a name="&#x5BBF;&#x4E3B;&#x5BF9;&#x8C61;" class="anchor-navigation-ex-anchor" href="#&#x5BBF;&#x4E3B;&#x5BF9;&#x8C61;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x5BBF;&#x4E3B;&#x5BF9;&#x8C61;</h3>
+<p>&#x201C;&#x5BBF;&#x4E3B;&#x5BF9;&#x8C61;&#x201D;&#xFF08;&#x5305;&#x62EC;&#x5185;&#x5EFA;&#x5BF9;&#x8C61;&#x548C;&#x51FD;&#x6570;&#xFF09;&#x662F;&#x7531;&#x5BBF;&#x4E3B;&#x73AF;&#x5883;&#xFF08;&#x6D4F;&#x89C8;&#x5668;&#x7B49;&#xFF09;&#x521B;&#x5EFA;&#x5E76;&#x63D0;&#x4F9B;&#x7ED9;JavaScript&#x5F15;&#x64CE;&#x7684;&#x53D8;&#x91CF;&#x3002;</p>
+<p>&#x9488;&#x5BF9;&#x8FD0;&#x884C;&#x73AF;&#x5883;&#x8FDB;&#x884C;&#x7F16;&#x7801;&#x65F6;&#xFF0C;&#x5BBF;&#x4E3B;&#x5BF9;&#x8C61;&#x626E;&#x6F14;&#x7740;&#x4E00;&#x4E2A;&#x5341;&#x5206;&#x5173;&#x952E;&#x7684;&#x89D2;&#x8272;&#xFF0C;&#x4F46;&#x8981;&#x7279;&#x522B;&#x6CE8;&#x610F;&#x5176;&#x884C;&#x4E3A;&#x7279;&#x6027;&#xFF0C;&#x56E0;&#x4E3A;&#x5B83;&#x4EEC;&#x5E38;&#x5E38;&#x6709;&#x522B;&#x4E8E;&#x666E;&#x901A;&#x7684;JavaScript object&#x3002;&#x6BD4;&#x5982;&#xFF0C;&#x4E00;&#x4E9B;&#x5BF9;&#x8C61;&#x5728;&#x5F3A;&#x5236;&#x8F6C;&#x6362;&#x4E3A;boolean&#x65F6;&#xFF0C;&#x4F1A;&#x610F;&#x5916;&#x5730;&#x6210;&#x4E3A;&#x5047;&#x503C;&#x800C;&#x975E;&#x771F;&#x503C;&#x3002;&#x5176;&#x4ED6;&#x9700;&#x8981;&#x6CE8;&#x610F;&#x7684;&#x5BBF;&#x4E3B;&#x5BF9;&#x8C61;&#x7684;&#x884C;&#x4E3A;&#x5DEE;&#x5F02;&#x6709;&#xFF1A;</p>
+<ul>
+<li>&#x65E0;&#x6CD5;&#x8BBF;&#x95EE;&#x6B63;&#x5E38;&#x7684;object&#x5185;&#x5EFA;&#x65B9;&#x6CD5;&#xFF0C;&#x5982;toString();</li>
+<li>&#x65E0;&#x6CD5;&#x5199;&#x8986;&#x76D6;&#xFF1B;</li>
+<li>&#x5305;&#x542B;&#x4E00;&#x4E9B;&#x9884;&#x5B9A;&#x4E49;&#x7684;&#x53EA;&#x8BFB;&#x5C5E;&#x6027;&#xFF1B;</li>
+<li>&#x5305;&#x542B;&#x65E0;&#x6CD5;&#x5C06;this&#x91CD;&#x8F7D;&#x4E3A;&#x5176;&#x4ED6;&#x5BF9;&#x8C61;&#x7684;&#x65B9;&#x6CD5;&#xFF1B;</li>
+<li>&#x5176;&#x4ED6;&#x2026;&#x2026;</li>
+</ul>
+<p>&#x5728;&#x6211;&#x4EEC;&#x7ECF;&#x5E38;&#x6253;&#x4EA4;&#x9053;&#x7684;&#x5BBF;&#x4E3B;&#x5BF9;&#x8C61;&#x4E2D;&#xFF0C;console&#x53CA;&#x5176;&#x5404;&#x79CD;&#x65B9;&#x6CD5;&#xFF08;log(..)&#x3001;error(..)&#x7B49;&#xFF09;&#x662F;&#x6BD4;&#x8F83;&#x503C;&#x5F97;&#x4E00;&#x63D0;&#x7684;&#x3002;console&#x5BF9;&#x8C61;&#x7531;&#x5BBF;&#x4E3B;&#x73AF;&#x5883;&#x63D0;&#x4F9B;&#xFF0C;&#x4EE5;&#x4FBF;&#x4ECE;&#x4EE3;&#x7801;&#x4E2D;&#x8F93;&#x51FA;&#x5404;&#x79CD;&#x503C;&#x3002;</p>
+<h3 id="&#x5168;&#x5C40;dom&#x5BF9;&#x8C61;"><a name="&#x5168;&#x5C40;dom&#x5BF9;&#x8C61;" class="anchor-navigation-ex-anchor" href="#&#x5168;&#x5C40;dom&#x5BF9;&#x8C61;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x5168;&#x5C40;DOM&#x5BF9;&#x8C61;</h3>
+<p>&#x7531;&#x4E8E;&#x6D4F;&#x89C8;&#x5668;&#x6F14;&#x8FDB;&#x7684;&#x5386;&#x53F2;&#x9057;&#x7559;&#x95EE;&#x9898;&#xFF0C;&#x5728;&#x521B;&#x5EFA;&#x5E26;&#x6709;id&#x5C5E;&#x6027;&#x7684;DOM&#x5143;&#x7D20;&#x65F6;&#x4E5F;&#x4F1A;&#x521B;&#x5EFA;&#x540C;&#x540D;&#x7684;&#x5168;&#x5C40;&#x53D8;&#x91CF;&#x3002;</p>
+<p>&#x5982;&#x4E0A;HTML&#x9875;&#x9762;&#x4E2D;&#x7684;&#x5185;&#x5BB9;&#x4E5F;&#x4F1A;&#x4EA7;&#x751F;&#x5168;&#x5C40;&#x53D8;&#x91CF;&#xFF0C;&#x8FD9;&#x4E5F;&#x662F;&#x5C3D;&#x91CF;&#x4E0D;&#x8981;&#x4F7F;&#x7528;&#x5168;&#x5C40;&#x53D8;&#x91CF;&#x7684;&#x4E00;&#x4E2A;&#x539F;&#x56E0;&#x3002;&#x5982;&#x679C;&#x786E;&#x5B9E;&#x8981;&#x7528;&#xFF0C;&#x4E5F;&#x8981;&#x786E;&#x4FDD;&#x53D8;&#x91CF;&#x540D;&#x7684;&#x552F;&#x4E00;&#x6027;&#xFF0C;&#x4ECE;&#x800C;&#x907F;&#x514D;&#x4E0E;&#x5176;&#x4ED6;&#x5730;&#x65B9;&#x7684;&#x53D8;&#x91CF;&#x4EA7;&#x751F;&#x51B2;&#x7A81;&#xFF0C;&#x5305;&#x62EC;HTML&#x548C;&#x5176;&#x4ED6;&#x7B2C;&#x4E09;&#x65B9;&#x4EE3;&#x7801;&#x3002;</p>
+<h3 id="&#x539F;&#x751F;&#x539F;&#x578B;"><a name="&#x539F;&#x751F;&#x539F;&#x578B;" class="anchor-navigation-ex-anchor" href="#&#x539F;&#x751F;&#x539F;&#x578B;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x539F;&#x751F;&#x539F;&#x578B;</h3>
+<p><strong>&#x4E0D;&#x8981;&#x6269;&#x5C55;&#x539F;&#x751F;&#x539F;&#x578B;&#x3002;</strong>&#x5982;&#x679C;&#x5411;Array.prototype&#x4E2D;&#x52A0;&#x5165;&#x65B0;&#x7684;&#x65B9;&#x6CD5;&#x548C;&#x5C5E;&#x6027;&#xFF0C;&#x5047;&#x8BBE;&#x5B83;&#x4EEC;&#x786E;&#x5B9E;&#x6709;&#x7528;&#xFF0C;&#x8BBE;&#x8BA1;&#x548C;&#x547D;&#x540D;&#x90FD;&#x5F88;&#x5F97;&#x5F53;&#xFF0C;&#x90A3;&#x5B83;&#x6700;&#x540E;&#x5F88;&#x6709;&#x53EF;&#x80FD;&#x4F1A;&#x88AB;&#x52A0;&#x5165;&#x5230;JavaScript&#x89C4;&#x8303;&#x5F53;&#x4E2D;&#x3002;&#x8FD9;&#x6837;&#x4E00;&#x6765;&#x4F60;&#x6240;&#x505A;&#x7684;&#x6269;&#x5C55;&#x5C31;&#x4F1A;&#x4E0E;&#x4E4B;&#x51B2;&#x7A81;&#x3002;</p>
+<h3 id="script&#x6807;&#x7B7E;"><a name="script&#x6807;&#x7B7E;" class="anchor-navigation-ex-anchor" href="#script&#x6807;&#x7B7E;"><i class="fa fa-link" aria-hidden="true"></i></a>script&#x6807;&#x7B7E;</h3>
+<p><code>&lt;script src=..&gt;&lt;/script&gt;</code>&#x6765;&#x52A0;&#x8F7D;&#x7684;&#x6587;&#x4EF6;&#xFF0C;&#x6216;&#x8005;&#x4F7F;&#x7528;<code>&lt;script&gt; .. &lt;/script&gt;</code>&#x6765;&#x5305;&#x542B;&#x7684;&#x5185;&#x8054;&#x4EE3;&#x7801;&#xFF08;inline-code&#xFF09;&#x662F;&#x76F8;&#x4E92;&#x72EC;&#x7ACB;&#x7684;JavaScript&#x7A0B;&#x5E8F;&#x8FD8;&#x662F;&#x4E00;&#x4E2A;&#x6574;&#x4F53;&#x5462;&#xFF1F;</p>
+<p>&#x7B54;&#x6848;&#xFF08;&#x4E5F;&#x8BB8;&#x4F1A;&#x4EE4;&#x4EBA;&#x60CA;&#x8BB6;&#xFF09;&#x662F;&#x5B83;&#x4EEC;&#x7684;&#x8FD0;&#x884C;&#x65B9;&#x5F0F;&#x66F4;&#x50CF;&#x662F;&#x76F8;&#x4E92;&#x72EC;&#x7ACB;&#x7684;JavaScript&#x7A0B;&#x5E8F;&#xFF0C;&#x4F46;&#x662F;&#x5E76;&#x975E;&#x603B;&#x662F;&#x5982;&#x6B64;&#x3002;&#x5B83;&#x4EEC;&#x5171;&#x4EAB;global&#x5BF9;&#x8C61;&#xFF08;&#x5728;&#x6D4F;&#x89C8;&#x5668;&#x4E2D;&#x5219;&#x662F;window&#xFF09;&#xFF0C;&#x4E5F;&#x5C31;&#x662F;&#x8BF4;&#x8FD9;&#x4E9B;&#x6587;&#x4EF6;&#x4E2D;&#x7684;&#x4EE3;&#x7801;&#x5728;&#x5171;&#x4EAB;&#x7684;&#x547D;&#x540D;&#x7A7A;&#x95F4;&#x4E2D;&#x8FD0;&#x884C;&#xFF0C;&#x5E76;&#x76F8;&#x4E92;&#x4EA4;&#x4E92;&#x3002;&#x4F46;&#x662F;&#x5168;&#x5C40;&#x53D8;&#x91CF;&#x4F5C;&#x7528;&#x57DF;&#x7684;&#x63D0;&#x5347;&#x673A;&#x5236;&#x5728;&#x8FD9;&#x4E9B;&#x8FB9;&#x754C;&#x4E2D;&#x4E0D;&#x9002;&#x7528;&#x3002;</p>
+<p>&#x5982;&#x679C;script&#x4E2D;&#x7684;&#x4EE3;&#x7801;&#xFF08;&#x65E0;&#x8BBA;&#x662F;&#x5185;&#x8054;&#x4EE3;&#x7801;&#x8FD8;&#x662F;&#x5916;&#x90E8;&#x4EE3;&#x7801;&#xFF09;&#x53D1;&#x751F;&#x9519;&#x8BEF;&#xFF0C;&#x5B83;&#x4F1A;&#x50CF;&#x72EC;&#x7ACB;&#x7684;JavaScript&#x7A0B;&#x5E8F;&#x90A3;&#x6837;&#x505C;&#x6B62;&#xFF0C;&#x4F46;&#x662F;&#x540E;&#x7EED;&#x7684;script&#x4E2D;&#x7684;&#x4EE3;&#x7801;&#xFF08;&#x4ECD;&#x7136;&#x5171;&#x4EAB;global&#xFF09;&#x4F9D;&#x7136;&#x4F1A;&#x63A5;&#x7740;&#x8FD0;&#x884C;&#xFF0C;&#x4E0D;&#x4F1A;&#x53D7;&#x5F71;&#x54CD;&#x3002;</p>
+<p>&#x5185;&#x8054;&#x4EE3;&#x7801;&#x548C;&#x5916;&#x90E8;&#x6587;&#x4EF6;&#x4E2D;&#x7684;&#x4EE3;&#x7801;&#x4E4B;&#x95F4;&#x6709;&#x4E00;&#x4E2A;&#x533A;&#x522B;&#xFF0C;&#x5373;&#x5728;&#x5185;&#x8054;&#x4EE3;&#x7801;&#x4E2D;&#x4E0D;&#x53EF;&#x4EE5;&#x51FA;&#x73B0;<code>&lt;/script&gt;</code>&#x5B57;&#x7B26;&#x4E32;&#xFF0C;&#x4E00;&#x65E6;&#x51FA;&#x73B0;&#x5373;&#x88AB;&#x89C6;&#x4E3A;&#x4EE3;&#x7801;&#x5757;&#x7ED3;&#x675F;&#x3002;&#x5E38;&#x7528;&#x7684;&#x53D8;&#x901A;&#x65B9;&#x6CD5;&#x662F;&#xFF1A;
+<code>&quot;&lt;/sc&quot; + &quot;ript&gt;&quot;;</code></p>
+<p>&#x53E6;&#x5916;&#x9700;&#x8981;&#x6CE8;&#x610F;&#x7684;&#x4E00;&#x70B9;&#x662F;&#xFF0C;&#x6211;&#x4EEC;&#x662F;&#x6839;&#x636E;&#x4EE3;&#x7801;&#x6587;&#x4EF6;&#x7684;&#x5B57;&#x7B26;&#x96C6;&#x5C5E;&#x6027;&#xFF08;UTF-8&#x3001;ISO-8859-8&#x7B49;&#xFF09;&#x6765;&#x89E3;&#x6790;&#x5916;&#x90E8;&#x6587;&#x4EF6;&#x4E2D;&#x7684;&#x4EE3;&#x7801;&#xFF08;&#x6216;&#x8005;&#x9ED8;&#x8BA4;&#x5B57;&#x7B26;&#x96C6;&#xFF09;&#xFF0C;&#x800C;&#x5185;&#x8054;&#x4EE3;&#x7801;&#x5219;&#x4F7F;&#x7528;&#x5176;&#x6240;&#x5728;&#x9875;&#x9762;&#x6587;&#x4EF6;&#x7684;&#x5B57;&#x7B26;&#x96C6;&#xFF08;&#x6216;&#x8005;&#x9ED8;&#x8BA4;&#x5B57;&#x7B26;&#x96C6;&#xFF09;&#x3002;</p>
+<h3 id="&#x5B9E;&#x73B0;&#x4E2D;&#x7684;&#x9650;&#x5236;"><a name="&#x5B9E;&#x73B0;&#x4E2D;&#x7684;&#x9650;&#x5236;" class="anchor-navigation-ex-anchor" href="#&#x5B9E;&#x73B0;&#x4E2D;&#x7684;&#x9650;&#x5236;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x5B9E;&#x73B0;&#x4E2D;&#x7684;&#x9650;&#x5236;</h3>
+<p>JavaScript&#x89C4;&#x8303;&#x5BF9;&#x4E8E;&#x51FD;&#x6570;&#x4E2D;&#x53C2;&#x6570;&#x7684;&#x4E2A;&#x6570;&#xFF0C;&#x4EE5;&#x53CA;&#x5B57;&#x7B26;&#x4E32;&#x5E38;&#x91CF;&#x7684;&#x957F;&#x5EA6;&#x7B49;&#x5E76;&#x6CA1;&#x6709;&#x9650;&#x5236;&#xFF1B;&#x4F46;&#x662F;&#x7531;&#x4E8E;JavaScript&#x5F15;&#x64CE;&#x5B9E;&#x73B0;&#x5404;&#x5F02;&#xFF0C;&#x89C4;&#x8303;&#x5728;&#x67D0;&#x4E9B;&#x5730;&#x65B9;&#x6709;&#x4E00;&#x4E9B;&#x9650;&#x5236;&#x3002;</p>
+<p>&#x5DF2;&#x77E5;&#x7684;&#x9650;&#x5236;&#xFF1A;</p>
+<ul>
+<li>&#x5B57;&#x7B26;&#x4E32;&#x5E38;&#x91CF;&#x4E2D;&#x5141;&#x8BB8;&#x7684;&#x6700;&#x5927;&#x5B57;&#x7B26;&#x6570;&#xFF08;&#x5E76;&#x975E;&#x53EA;&#x662F;&#x9488;&#x5BF9;&#x5B57;&#x7B26;&#x4E32;&#x503C;&#xFF09;&#xFF1B;</li>
+<li>&#x53EF;&#x4EE5;&#x4F5C;&#x4E3A;&#x53C2;&#x6570;&#x4F20;&#x9012;&#x5230;&#x51FD;&#x6570;&#x4E2D;&#x7684;&#x6570;&#x636E;&#x5927;&#x5C0F;&#xFF08;&#x4E5F;&#x79F0;&#x4E3A;&#x6808;&#x5927;&#x5C0F;&#xFF0C;&#x4EE5;&#x5B57;&#x8282;&#x4E3A;&#x5355;&#x4F4D;&#xFF09;&#xFF1B;</li>
+<li>&#x51FD;&#x6570;&#x58F0;&#x660E;&#x4E2D;&#x7684;&#x53C2;&#x6570;&#x4E2A;&#x6570;&#xFF1B;</li>
+<li>&#x672A;&#x7ECF;&#x4F18;&#x5316;&#x7684;&#x8C03;&#x7528;&#x6808;&#xFF08;&#x4F8B;&#x5982;&#x9012;&#x5F52;&#xFF09;&#x7684;&#x6700;&#x5927;&#x5C42;&#x6570;&#xFF0C;&#x5373;&#x51FD;&#x6570;&#x8C03;&#x7528;&#x94FE;&#x7684;&#x6700;&#x5927;&#x957F;&#x5EA6;&#xFF1B;</li>
+<li>JavaScript&#x7A0B;&#x5E8F;&#x4EE5;&#x963B;&#x585E;&#x65B9;&#x5F0F;&#x5728;&#x6D4F;&#x89C8;&#x5668;&#x4E2D;&#x8FD0;&#x884C;&#x7684;&#x6700;&#x957F;&#x65F6;&#x95F4;&#xFF08;&#x79D2;&#xFF09;&#xFF1B;</li>
+<li>&#x53D8;&#x91CF;&#x540D;&#x7684;&#x6700;&#x5927;&#x957F;&#x5EA6;&#x3002;</li>
+</ul>
+<h2 id="&#x8D44;&#x6599;"><a name="&#x8D44;&#x6599;" class="anchor-navigation-ex-anchor" href="#&#x8D44;&#x6599;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x8D44;&#x6599;</h2>
+<ul>
+<li><a href="https://github.com/getify/You-Dont-Know-JS/blob/master/types%20&amp;%20grammar/README.md#you-dont-know-js-types--grammar" target="_blank">You Don&apos;t Know JS: Types &amp; Grammar</a></li>
+<li><a href="https://stackoverflow.com/questions/2910495/why-null-0-null-0-but-not-null-0" target="_blank">Why <code>null &gt;= 0 &amp;&amp; null &lt;= 0</code> but not <code>null == 0</code>?</a></li>
+</ul>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="this-and-object-prototypes.html" class="navigation navigation-prev " aria-label="Previous page: this和对象原型">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="../practice/" class="navigation navigation-next " aria-label="Next page: 实践笔记">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"类型和语法","level":"1.3.6","depth":2,"next":{"title":"实践笔记","level":"1.4","depth":1,"path":"practice/README.md","ref":"practice/README.md","articles":[{"title":"申请SSL通配符证书","level":"1.4.1","depth":2,"path":"practice/ssl.md","ref":"practice/ssl.md","articles":[]},{"title":"Phabricator","level":"1.4.2","depth":2,"path":"practice/phabricator.md","ref":"practice/phabricator.md","articles":[]},{"title":"Use Ant Design Pro","level":"1.4.3","depth":2,"path":"practice/antd-pro-usage.md","ref":"practice/antd-pro-usage.md","articles":[]},{"title":"Mac 开机方式","level":"1.4.4","depth":2,"path":"practice/mac-start-ways.md","ref":"practice/mac-start-ways.md","articles":[]},{"title":"TypeScript","level":"1.4.5","depth":2,"path":"practice/typescript.md","ref":"practice/typescript.md","articles":[]},{"title":"资源","level":"1.4.6","depth":2,"path":"practice/resources.md","ref":"practice/resources.md","articles":[]},{"title":"npm 依赖管理","level":"1.4.7","depth":2,"path":"practice/npm-package-mmanagement.md","ref":"practice/npm-package-mmanagement.md","articles":[]}]},"previous":{"title":"this和对象原型","level":"1.3.5","depth":2,"path":"tech/this-and-object-prototypes.md","ref":"tech/this-and-object-prototypes.md","articles":[]},"dir":"ltr"},"config":{"plugins":["anchor-navigation-ex","expandable-chapters-small","sitemap-general","copy-code-button","github"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"github":{"url":"https://github.com/CW0149/gitbook-technote"},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sitemap-general":{"prefix":"https://gitbook.ryanhuang.cn/TechNote/_book/"},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"anchor-navigation-ex":{"associatedWithSummary":true,"float":{"floatIcon":"fa fa-anchor","level1Icon":"fa fa-star","level2Icon":"fa fa-hashtag","level3Icon":"fa fa-magic","showLevelIcon":true},"mode":"float","multipleH1":false,"pageTop":{"level1Icon":"fa fa-hand-o-right","level2Icon":"fa fa-hand-o-right","level3Icon":"fa fa-hand-o-right","showLevelIcon":false},"printLog":false,"showGoTop":true,"showLevel":false},"expandable-chapters-small":{},"copy-code-button":{},"sharing":{"facebook":false,"twitter":false,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Yan Huang的技术笔记","language":"zh","gitbook":"*"},"file":{"path":"tech/Types-and-Grammar.md","mtime":"2019-03-02T08:33:48.869Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2021-04-02T17:23:08.575Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-expandable-chapters-small/expandable-chapters-small.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-copy-code-button/toggle.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-github/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

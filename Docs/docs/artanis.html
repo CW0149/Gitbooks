@@ -1,0 +1,1457 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>Artanis · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    
+    <link rel="prev" href="webpack.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    介绍
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.1.1" data-path="webpack.html">
+            
+                <a href="webpack.html">
+            
+                    
+                    Webpack
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.1.2" data-path="artanis.html">
+            
+                <a href="artanis.html">
+            
+                    
+                    Artanis
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >Artanis</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="gnu-artanis-web-framework-manual">GNU Artanis web-framework Manual</h1>
+<p><strong>A web application framework (WAF)</strong> is a software framework that is designed to support the development of dynamic websites, web applications, web services and web resources. This framework aims to alleviate the overhead associated with common activities in web development. <strong>GNU Artanis</strong> provides several tools for web development: database access, templating frameworks, session management, URL-remapping for RESTful, page caching, and more.</p>
+<p><strong>Guile</strong> is the GNU Ubiquitous Intelligent Language for Extensions, the official extension language for the GNU operating system. Guile is also an interpreter and compiler for other dynamic programming languages including Scheme.</p>
+<p><strong>Scheme</strong> is a functional programming language and one of the two main dialects of the programming language Lisp. Scheme follows a minimalist design philosophy specifying a small standard core with powerful tools for language extension.</p>
+<h2 id="the-use-of-the-api">The use of the API</h2>
+<p><code>(api-name arg1 arg2 #:key0 val0 ... [optional-arg1 &lt;- default-value1] ...)</code></p>
+<h2 id="installation">Installation</h2>
+<h3 id="gnu-guile-222-or-higher-version">GNU Guile-2.2.2 or higher version</h3>
+<pre><code>wget -c ftp://ftp.gnu.org/gnu/guile/guile-2.2.2.tar.xz
+tar xvf guile-2.2.2.tar.xz
+cd guile-2.2.2 &amp;&amp; ./autogen.sh &amp;&amp; ./configure &amp;&amp; make
+sudo make install
+</code></pre><h3 id="dependencies">Dependencies</h3>
+<ul>
+<li>guile-dbi-2.1.7 (The tarball included guile-dbd) [Optional]</li>
+</ul>
+<pre><code>wget -c https://github.com/opencog/guile-dbi/archive/guile-dbi-2.1.7.tar.gz
+tar xvzf guile-dbi-2.1.7.tar.gz
+cd guile-dbi-guile-dbi-2.1.7/guile-dbi &amp;&amp; ./autogen.sh &amp;&amp; ./configure &amp;&amp; make
+sudo make install
+</code></pre><ul>
+<li>guile-dbd [Optional]. The dbd plugins connect to an actual database server.</li>
+</ul>
+<pre><code>tar xvzf guile-dbd-mysql-2.1.6.tar.gz
+cd guile-dbi-guile-dbi-2.1.7/guile-dbd-mysql &amp;&amp; ./autogen.sh &amp;&amp; ./configure &amp;&amp; make
+sudo make install
+</code></pre><h3 id="the-latest-gnu-artanis"><a href="https://gitlab.com/NalaGinrut/artanis.git" target="_blank">The latest GNU Artanis</a></h3>
+<pre><code>wget -c http://ftp.gnu.org/gnu/artanis/artanis-latest.tar.bz2
+tar xvjf artanis-latest.tar.bz2
+cd artanis-latest &amp;&amp; ./autogen.sh &amp;&amp; ./configure &amp;&amp; make
+sudo make install
+</code></pre><h2 id="artanis-configuration">Artanis Configuration</h2>
+<h3 id="file-configuration">File Configuration</h3>
+<p>A configuration file is required when Artanis is run for the first time.</p>
+<ul>
+<li>/etc/artanis/artanis.conf (If all your code are in a script file without application directory).</li>
+<li>conf/artanis.conf (If you&apos;re using application directory, it will be generated automatically).</li>
+</ul>
+<h3 id="config-apis">Config APIs</h3>
+<ul>
+<li>To change the default configurations:</li>
+</ul>
+<pre><code>(conf-set! key value)
+;;e.g
+(conf-set! &apos;debug-mode #t)
+</code></pre><ul>
+<li>To get the current configuration:</li>
+</ul>
+<pre><code>(get-conf key)
+;;e.g
+(get-conf &apos;(server charset))
+</code></pre><ul>
+<li>To get the current hostname in GNU Artanis environment.</li>
+</ul>
+<pre><code>(current-myhost)
+</code></pre><h2 id="start-to-use">Start To Use</h2>
+<h3 id="test-artanis">Test artanis</h3>
+<pre><code>&gt; guile
+&gt; ,use (artanis artanis)
+artanis-version
+
+$1 = &quot;GNU Artanis-x.x.x&quot;
+</code></pre><h3 id="simple-http-server">Simple HTTP server</h3>
+<p>Fetching static file by the URL: <a href="http://localhost:3000/path/filename" target="_blank">http://localhost:3000/path/filename</a></p>
+<pre><code>guile -c &quot;(use-modules (artanis artanis))(init-server)(run)&quot;
+</code></pre><h3 id="url-remapping">URL remapping</h3>
+<h4 id="simple-url-remapping">Simple URL remapping</h4>
+<pre><code>(use-modules (artanis artanis)) // Load GNU Artanis module
+(init-server)
+(get &quot;/hello&quot; (lambda () &quot;hello world&quot;))
+(run #:port 8080)
+</code></pre><p>Type Ctrl+C to quit and stop the server.</p>
+<h4 id="more-complex-url-remapping">More complex URL remapping</h4>
+<pre><code>(use-modules (artanis artanis))
+(init-server)
+(get &quot;/hello/:who&quot;
+  (lambda (rc)
+    (format #f &quot;&lt;p&gt;hello ~a&lt;/p&gt; &quot; (params rc &quot;who&quot;))))
+(run #:port 8080)
+</code></pre><p><strong>rc</strong> means route context which preserves all the related context information. Many GNU Artanis APIs need it, e.g. params.</p>
+<p>Format is a Scheme lib function. Means outputs text with a formatted pattern. #f (means FALSE) indicates that the formatted output should be returned in a string rather than printed out.</p>
+<h4 id="regex-in-url-remapping">Regex in URL remapping</h4>
+<p>You can use regular expressions as a URL rule argument.</p>
+<pre><code>(use-modules (artanis artanis))
+(init-server)
+(get &quot;/.+\\.(png|gif|jpeg)&quot; static-page-emitter)
+(run #:port 8080)
+</code></pre><p><strong>static-page-emitter</strong> is a GNU Artanis API that sends a static file (images, data files) to the client.</p>
+<h3 id="database-operating">Database operating</h3>
+<p>GNU Artanis supports mysql/postgresql/sqlite3. We use mysql as an example here.</p>
+<p>Please ensure that your DB service was started before you run this code.</p>
+<p>If you encounter any problems, it&apos;s very likely it&apos;s with your DB config.</p>
+<p>You can use a DB (such as mysql) with GUI tools such as &quot;adminer&quot;, independently of the running web-server, e.g. artanis-based.</p>
+<pre><code>(use-modules (artanis artanis))
+(init-server)
+(define conn (connect-db &apos;mysql #:db-username &quot;your_db_username&quot;
+                         #:db-name &quot;your_db_name&quot; #:db-passwd &quot;your_passwd&quot;))
+(define mtable (map-table-from-DB conn))
+((mtable &apos;create &apos;Persons &apos;((name varchar 10)
+                            (age integer)
+                            (email varchar 20)))
+ &apos;valid?)
+;; ==&gt; #t
+(mtable &apos;set &apos;Persons #:name &quot;nala&quot; #:age 99 #:email &quot;nala@artanis.com&quot;)
+(mtable &apos;get &apos;Persons #:columns &apos;(name email))
+;; ==&gt; (((&quot;name&quot; . &quot;nala&quot;) (&quot;email&quot; . &quot;nala@artanis.com&quot;)))
+</code></pre><p><strong>map-table-from-DB</strong> is the GNU Artanis API handling tables in a DB.</p>
+<p>We can use mtable to handle tables. <strong>mtable</strong> is a function which accepts the first argument as a command, say &apos;create, which is a command to create a new table. &apos;set is used to insert/update values in the table. And the &apos;get command to fetch the values of specific columns.</p>
+<p>The second argument of mtable is the name of the table as you can guess. Please note that it is case sensitive, while the column name isn&apos;t.</p>
+<p>The &apos;create command returns a function too, which also accepts an argument as a command. Here, we use the &apos;valid? command to check if the table has been created successfully.</p>
+<pre><code>(get &quot;/dbtest&quot; #:conn #t ; apply for a DB connection from pool
+     (lambda (rc)
+       (let ((mtable (map-table-from-DB (:conn rc))))
+         (object-&gt;string
+          (mtable &apos;get &apos;Persons #:columns &apos;(name email))))))
+
+(run #:use-db? #t #:dbd &apos;mysql #:db-username &quot;your_db_username&quot;
+     #:db-name &quot;your_db_name&quot; #:db-passwd &quot;your_passwd&quot; #:port 8080)
+</code></pre><p>Now, try loading <a href="http://localhost:8080/dbtest" target="_blank">http://localhost:8080/dbtest</a> in your browser.</p>
+<p>The keyword-value pair #:conn #t means applying for a DB connection from connection-pool. Then you can use (:conn rc) to get the allocated connection for DB operations.</p>
+<p>Finally, the handler needs to return a string as the HTTP response body, so in this example, we have to use the Guile API object-&gt;string to convert the query result into a string.</p>
+<p>Exercise: Return a beautiful table in HTML rather than using object-&gt;string.</p>
+<h2 id="scheme-basics">Scheme Basics</h2>
+<h3 id="for-newbies">For newbies</h3>
+<p>Type/paste the code in Guile REPL following the guide in tutorial:</p>
+<ul>
+<li><a href="https://web-artanis.com/scheme.html" target="_blank">Learn Scheme in 15 minutes</a></li>
+<li><a href="https://www.gnu.org/software/guile/manual/guile.html#Hello-Scheme_0021" target="_blank">Hello Scheme</a></li>
+</ul>
+<h3 id="for-pythonistas">For Pythonistas</h3>
+<ul>
+<li><a href="http://draketo.de/proj/guile-basics/" target="_blank">Guile basics from the perspective of a Pythonista</a></li>
+<li><a href="http://draketo.de/proj/py2guile" target="_blank">Going from Python to Guile Scheme</a></li>
+</ul>
+<h3 id="for-rubyist">For Rubyist</h3>
+<ul>
+<li><a href="http://wiki.call-cc.org/chicken-for-ruby-programmers" target="_blank">Scheme for ruby programmers</a></li>
+</ul>
+<h3 id="for-deep-learners">For deep learners</h3>
+<ul>
+<li><a href="http://www.scheme.com/tspl4/" target="_blank">The Scheme Programming Language</a></li>
+<li><a href="http://mitpress.mit.edu/sicp/" target="_blank">Structure and Interpretation of Computer Programs(SICP)</a></li>
+</ul>
+<h2 id="gnu-artanis-basics">GNU Artanis Basics</h2>
+<h3 id="run-a-site-with-gnu-artanis">Run a site with GNU Artanis</h3>
+<pre><code>#!/bin/env guile
+!#
+(use-modules (artanis artanis))
+(init-server)
+(get &quot;/hello&quot; (lambda () &quot;hello world&quot;))
+(run)
+</code></pre><h3 id="initialization">Initialization</h3>
+<pre><code>(init-server #:statics &apos;(png jpg jpeg ico html js css)
+             #:cache-statics? #f #:exclude &apos;())
+</code></pre><p><code>#:statics</code> specifies the static files with the file name extensions. GNU Artanis is based on URL remapping, so the requested URL will have to end in the requested file name, matching the string defined, and returning the file without any extra defintions per file type. By default, it covers the most common static file types.</p>
+<p><code>#:cache-statics?</code> controls whether the static files should be cached.</p>
+<p>@why:<code>#:exclude</code> specifies the types should be excluded. This is useful when you want to generate files dynamically. Even JavaScript/CSS could be generated dynamically, so it depends your design.</p>
+<h3 id="registering-handlers-for-http-methods">Registering handlers for HTTP methods</h3>
+<h3 id="emit-a-response">Emit a Response</h3>
+<pre><code>(response-emit body #:status 200 #:headers &apos;() #:mtime (current-time))
+</code></pre><ul>
+<li>body is the response body, it can be a bytevector or literal string (in HTML).</li>
+<li><code>#:status</code> is the HTTP status, 200 in default, which means OK.</li>
+<li><code>#:headers</code> lets you specify custom HTTP headers. The headers must follow a certain format. Please read Response Headers for details.</li>
+<li><code>#:mtime</code> specifies the modified time in the response. GNU Artanis will generate it for you when not defined.</li>
+</ul>
+<pre><code>(emit-response-with-file filename [headers &lt;- &apos;()])
+</code></pre><ul>
+<li>filename is the filename to be sent as a response.</li>
+<li>[headers] is the custom HTTP headers.</li>
+</ul>
+<h3 id="running-the-server">Running the server</h3>
+<pre><code>(run #:host #f #:port #f #:debug #f #:use-db? #f
+     #:dbd #f #:db-username #f #:db-passwd #f #:db-name #f)
+</code></pre><ul>
+<li><code>#f</code>, as default, will get the values from the config file.</li>
+<li><code>#:host</code> the hostname.</li>
+<li><code>#:port</code> the socket port of the server.</li>
+<li><code>#:debug</code> set #t if you want to enable debug mode. Logs will be more verbose.</li>
+<li><code>#:use-db?</code> set #t if you want to use DB, and GNU Artanis will initialize DB connections.</li>
+<li><code>#:dbd</code> choose a dbd. These are the supported three: mysql, postgresql, and sqlite3.</li>
+<li><code>#:db-username</code> the username of your DB server.</li>
+<li><code>#:db-passwd</code> the DB password for the user above.</li>
+<li><code>#:db-name</code> the DB name to use.</li>
+</ul>
+<h3 id="working-with-nginx">Working with Nginx</h3>
+<p>Although GNU Artanis has good server core, I would recommend you use Nginx as the front server. In addition to the enhanced performance, it&apos;ll also be less vulnerable to attacks.</p>
+<h4 id="modify-etcnginxnginxconf">Modify /etc/nginx/nginx.conf</h4>
+<pre><code>location / {
+    proxy_pass http://127.0.0.1:1234;
+    proxy_set_header Host $host;
+    proxy_set_header X-Real-IP $remote_addr;
+    proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+}
+</code></pre><h4 id="restart-nginx">Restart Nginx</h4>
+<pre><code>sudo service nginx restart
+</code></pre><h4 id="run-gnu-artanis">Run GNU Artanis</h4>
+<pre><code>(run #:port 1234)
+</code></pre><h2 id="the-art-command-line">The Art command line</h2>
+<h3 id="art-create">art create</h3>
+<pre><code>art create proj_path
+</code></pre><p>With this command you can:</p>
+<ul>
+<li>Set up your site/app in an application directory.</li>
+<li>Take advantage of the MVC features.</li>
+</ul>
+<h3 id="art-draw">art draw</h3>
+<pre><code>art draw &lt;component&gt; NAME [options]
+
+component list:
+  model
+  controller
+  migration
+
+Options:
+  -h, [--help]     # Print this screen
+  -d, [--dry]      # Dry run but do not make any changes
+  -f, [--force]    # Overwrite files that already exist
+  -s, [--skip]     # Skip files that already exist
+                   # If -s and -f are both provided, -f will be enabled
+  -q, [--quiet]    # Suppress status output
+
+Example:
+  art draw model myblog
+</code></pre><p>This command will generate the specified components.</p>
+<h3 id="art-migrate">art migrate</h3>
+<pre><code>art migrate operator name [OPTIONS]
+
+Operators:
+  up
+  down
+
+OPTIONS:
+  VERSION=version
+</code></pre><p>Migrate is used for Database migration.</p>
+<h3 id="art-work">art work</h3>
+<pre><code>art work [options]
+
+Options:
+  -c, [--config=CONFIG]          # Specify config file
+                                   Default: conf/artanis.conf
+                                            if no, /etc/artanis/artanis.conf
+  -h, [--host=HOST]              # Specify the network host
+                                   Default: 0.0.0.0
+  -d, [--usedb]                  # Whether to use Database
+                                   Default: false
+  -b, [--dbd=DBD]                # Specify DBD, mysql/postgresql/sqlit3
+                                   Default: mysql
+  -n, [--name=DATABASE_NAME]     # Database name
+                                   Default: artanis
+  -w, [--passwd=PASSWD]          # Database password
+                                   Default: none
+  -u, [--user=USER]              # Database user name
+                                   Default: root
+  -p, [--port=PORT]              # Specify listening port
+                                   Default: 3000
+  -g, [--debug]                  # Debug mode
+                                   Default: disable
+  -s, [--server=SERVER]          # Specify server core
+                                   Default: Ragnarok (New server core since 0.2)
+  --help                         # Show this screen
+</code></pre><p>This command is used to start the server when run in a project directory.</p>
+<h2 id="url-remapping">URL remapping</h2>
+<p>URL remapping is used to modify a web URL&apos;s appearance to provide short, pretty or fancy, search engine friendly URLs. It&apos;s largely used in modern WAFs(web application framework) to provide RESTful web APIs.</p>
+<h3 id="url-handling">URL handling</h3>
+<p>In GNU Artanis the HEAD method is handled by the server, so you can&apos;t define specific handlers directly for it within GNU Artanis.</p>
+<pre><code>Usage:
+
+(method rule handler)
+And the handler could be one of two types, depending on your needs:
+
+(lambda ()
+  ...
+  ret)
+
+(lambda (rc)
+  ...
+  ret)
+</code></pre><p>ret also has two types:</p>
+<ol>
+<li>literal string as the returned response body</li>
+<li>See [BROKEN LINK: nil]</li>
+</ol>
+<pre><code>(get &quot;/hello&quot; (lambda () &quot;hello world&quot;))
+(post &quot;/auth&quot; (lambda (rc) ...))
+</code></pre><h3 id="get-parameters-from-a-url">Get parameters from a URL</h3>
+<pre><code>(params rc name)
+;; e.g
+(get &quot;/hello/:who&quot; (lambda (rc) (params rc &quot;who&quot;)))
+</code></pre><h3 id="redirecting">Redirecting</h3>
+<pre><code>(redirect-to rc path #:status 301
+             #:scheme &apos;http)
+;; e.g
+(get &quot;/aaa&quot; (lambda (rc) (redirect-to rc &quot;/bbb&quot;)))
+(get &quot;/bbb&quot; (lambda () &quot;ok bbb&quot;))
+</code></pre><h2 id="route-context">Route context</h2>
+<p><strong>Route context</strong> is a struct type object which encapsulates the necessary information for the server from the current request context. We named it route because it&apos;s related to the route of URL remapping. Usually it&apos;s passed to the page handler as a unique argument. It&apos;s supposed to provide sufficient data about the current request.</p>
+<pre><code>(HTTP-METHOD URL-rule (lambda (&lt;route-context&gt;) ...))
+;; e.g:
+(get &quot;/hello&quot; (lambda (rc) &quot;world&quot;)) ; rc is &lt;route-context&gt; type
+</code></pre><h3 id="route-context-apis">Route context APIs</h3>
+<p>There&apos;re other APIs in route-context, but they&apos;re largely used for internals of Artanis, rarely useful for users. So we don&apos;t list them here.</p>
+<h4 id="rc-path">rc-path</h4>
+<p>Get the requested path, that is to say, the actual URI visited by the client.</p>
+<pre><code>(rc-path &lt;route-context&gt;)
+
+(get &quot;/hello/world&quot; (lambda (rc) (rc-path rc)))
+;; visit localhost:3000/hello/world or from any port you specified
+;; the result is &quot;/hello/world&quot;.
+(get &quot;/hello/:who&quot; (lambda (rc) (rc-path rc)))
+;; visit localhost:3000/hello/world or from any port you specified
+;; the result is &quot;/hello/world&quot;.
+</code></pre><h4 id="rc-method">rc-method</h4>
+<p>Get the current requested HTTP method.</p>
+<pre><code>(rc-method &lt;route-context&gt;)
+</code></pre><h4 id="rc-req">rc-req</h4>
+<p>Get the current HTTP request wrapped in record-type. About HTTP request please see HTTP Request. It stores HTTP request of Guile.</p>
+<pre><code>(rc-req &lt;route-context&gt;)
+</code></pre><h4 id="rc-qt">rc-qt</h4>
+<p>Get query table, which is a key-value list parsed from query string.</p>
+<pre><code>(rc-qt &lt;route-context&gt;)
+</code></pre><h4 id="rc-cookie">rc-cookie</h4>
+<p>The cookies parsed from request header.</p>
+<pre><code>(rc-cookie &lt;route-context&gt;)
+</code></pre><h4 id="rc-set-cookie">rc-set-cookie!</h4>
+<p>Set response cookie from server side. If you want to return cookies to the client, please use it.</p>
+<pre><code>(rc-set-cookie! &lt;route-context&gt;)
+</code></pre><h4 id="rc-conn">rc-conn</h4>
+<p>Get the current DB connection if you&apos;ve requested one, please checkout [BROKEN LINK: nil].</p>
+<pre><code>(rc-conn &lt;route-context&gt;)
+</code></pre><h4 id="rc-handler">rc-handler</h4>
+<p>Get the current request handler. The tricky part is that you can only get this handler within this handler unless you can go no where to run rc-handler correctly.</p>
+<p>It&apos;s on your own risk to use this API. But now that we have powerful first class lambda, you may do some magic. Well, depends on you.</p>
+<pre><code>(rc-handler &lt;route-context&gt;)
+</code></pre><h4 id="rc-body">rc-body</h4>
+<p>Get the current request body:</p>
+<ul>
+<li>For a regular HTTP request, the body should be a bytevector;</li>
+<li>For a Websocket request, the body should be Websocket frame as a record-type.</li>
+</ul>
+<pre><code>(rc-body &lt;route-context&gt;)
+</code></pre><h4 id="rc-mtime">rc-mtime</h4>
+<p>You may set it in the handler to return you customized modified time. For static pages, the mtime is set automatically. But sometimes people may want to set it in a dynamic generated page.</p>
+<pre><code>(rc-mtime &lt;route-context&gt;) ; getter
+(rc-mtime! &lt;route-context&gt;) ; setter
+</code></pre><h2 id="mvc">MVC</h2>
+<p>MVC is Model-View-Controller, the most classic architectural pattern for implementing user interfaces. It divides a given software application into three interconnected parts, so as to separate internal representations of information from the ways that information is presented to or accepted from the user.</p>
+<h3 id="controllersviews">Controllers/Views</h3>
+<p>Let&apos;s make a controller named article:</p>
+<pre><code>art draw controller article show edit
+</code></pre><p>show and edit are the name of methods for the controller named article.</p>
+<p>This will generate both a controller and a view for article:</p>
+<pre><code>drawing    controller article
+working    Controllers `article.scm&apos;
+create     app/controllers/article.scm
+working    Views `article&apos;
+create     app/views/article/show.html.tpl
+create     app/views/article/edit.html.tpl
+</code></pre><p>These three files are generated:</p>
+<ul>
+<li>app/controllers/article.scm</li>
+<li>app/views/article/show.html.tpl</li>
+<li>app/views/article/edit.html.tpl</li>
+</ul>
+<p>Based on this, the controller article will have two methods mapped to the URL rule, show and edit. As part of the view component. An HTML template is generated for each method. For the show method for example, the view file show.html.tpl is created. For the controller component, you get a show method handler, as:</p>
+<pre><code>(article-define show
+                (lambda (rc)
+                  &quot;&lt;h1&gt;This is article#show&lt;/h1&gt;&lt;p&gt;Find me in app/views/article/show.html.tpl&lt;/p&gt;&quot;
+                  ;; TODO: add controller method `show&apos;
+                  ;; uncomment this line if you want to render view from template
+                  ;; (view-render &quot;show&quot;)
+                  ))
+</code></pre><p>Of course, you&apos;re free to use or not use these templates. If you want to use the view template, just uncomment the last line (view-render &quot;show&quot;).</p>
+<h3 id="models">Models</h3>
+<p>Models contains operations of database.</p>
+<p>For modifying tables, you should read Migration.</p>
+<p>For other DB operation, please read FPRM.</p>
+<h2 id="query-string">Query String</h2>
+<p>A query string is a special part of a URL:</p>
+<pre><code>http://example.com/over/there?name=ferret&amp;color=purple
+</code></pre><p>In this example, &quot;name&quot; and &quot;color&quot; are query strings with the values &quot;ferret&quot; and &quot;purple&quot; respectively. It&apos;s useful to pass parameters to the server side like this.</p>
+<h3 id="query-string-from-get">Query string from GET</h3>
+<p>The query string would be encoded in the URL on the GET method.</p>
+<pre><code>http://example.com/over/there?name=ferret&amp;color=purple
+</code></pre><p>Please notice that URL-remapping supports regex. So you could register a URL rule like this:</p>
+<pre><code>(get &quot;/there?&quot;
+  (lambda (rc)
+    (get-from-qstr rc &quot;name&quot;)))
+</code></pre><p>Or it will throw 404 since URL-remapping failed to hit the rule with the query string.</p>
+<h3 id="query-string-from-post">Query string from POST</h3>
+<p>The query string would be encoded in the HTTP body on the POST method.</p>
+<pre><code>(post &quot;/there&quot; #:from-post &apos;qstr
+  (lambda (rc)
+    (:from-post rc &apos;get &quot;name&quot;)))
+</code></pre><p>Please notice that #:from-post &apos;qstr is necessary when you&apos;re trying to get data from POST. And you should use :from-post to get related data from query-string.</p>
+<pre><code>#:from-post &lt;mode&gt;
+</code></pre><p>The mode includes:</p>
+<ul>
+<li><code>#t</code> or &apos;qstr: handle query-string for you.</li>
+<li>&apos;json: returns a parsed json as hashtable.</li>
+<li>&apos;qstr-safe: similar to &apos;qstr, but try to eliminate evil HTML entities first.</li>
+<li>&apos;bv: returns the body as bytevector.</li>
+<li>&apos;store rest ...: It&apos;s for Upload files.</li>
+</ul>
+<p>The reason to design :from-post is for the efficient purpose. Artanis will not try to auto parse POST body as query-string for at least 2 reasons:</p>
+<ol>
+<li>It may not be query-string, maybe json, or uploaded file</li>
+<li>It may be long query-string, and could be deleyed to parse. This is
+useful to avoid redundant parsing. However, each time you call :from-post, it will parse the query-string again, the correct way to fetch multiple values is:</li>
+</ol>
+<pre><code>(:from-post rc &apos;get-vals &quot;key1&quot; &quot;key2&quot; &quot;key3&quot;)
+</code></pre><p>BTW, you may get the parsed query-string as an assoc-list as well:</p>
+<pre><code>(let ((qstr (:from-post rc &apos;get)))
+  (assoc-ref qstr &quot;key-1&quot;))
+</code></pre><h2 id="layouts-and-rendering-in-gnu-artanis">Layouts and Rendering in GNU Artanis</h2>
+<h3 id="templating">Templating</h3>
+<p>Templating provides a way to mix programmatic code into HTML.</p>
+<h4 id="templating-for-pythoners">Templating for Pythoners</h4>
+<p>If you&apos;re familiar with Django, which implemented a DSL(Domain Specific Language) to express presentation rather than program logic. Templating in GNU Artanis follows a different philosophy.</p>
+<p>Templating in GNU Artanis, is just writing Scheme code in the HTML document. Why? Because of the philosophy of FP(Functional Programming), everything is a function. So, (filesizeformat size) is easy enough to grasp for anyone with scheme experience. It&apos;s just a simple function calling in prefix-notation. There&apos;s no need to implement DSL like size|filesizeformat to increase the complexity of code. Let alone the syntax is very different from Python.</p>
+<p>The syntax size | filesizeformat follows postfix-notation, used in stack-based languages, say Forth. Such a language used to delegate another programming paradigm named concatenative programming. It&apos;s very different from the paradigm of Scheme (functional programming), and the paradigm of Python (imperative programming).</p>
+<p>The philosophy of GNU Artanis templating is to bring it into correspondence with the paradigm of the language. And reduce unnecessary complexities. KISS.</p>
+<h4 id="templating-for-rubyists">Templating for Rubyists</h4>
+<p>Templating in GNU Artanis looks very similar to Rails.</p>
+<p>The Rails code:</p>
+<pre><code>&lt;% if( @fullscreen == 1 ) %&gt;
+&lt;%= &quot;&lt;div class=&apos;full&apos;&gt;&lt;p&gt;...&lt;/p&gt;&lt;/div&gt;&quot; %&gt;
+&lt;% end %&gt;
+And the same function in GNU Artanis code:
+
+&lt;% (if (= fullscreen 1) %&gt;
+       &lt;% &quot;&lt;div class=&apos;full&apos;&gt;&lt;p&gt;...&lt;/p&gt;&lt;/div&gt;&quot; %&gt;
+       &lt;% ) %&gt;
+</code></pre><h4 id="templating-apis">Templating APIs</h4>
+<pre><code>(tpl-&gt;response filename/sxml [environment &lt;- (the-environment)] [escape? &lt;- #f])
+
+(tpl-&gt;html filename/sxm [environment &lt;- (the-environment)] [escape? &lt;- #f])
+</code></pre><p>The difference is that tpl-&gt;html returns a string, but tpl-&gt;response returns an HTTP object response.</p>
+<p>[environment] is the environment you want to use. We often ignore it. If you want to ref some vars defined outside your template string, you need to pass this variable.</p>
+<p>[escape?] If you want to char-escape the HTML with the returned string, set it to #t.</p>
+<p>There are two main ways of writing templates:</p>
+<h4 id="embedded-templates">Embedded Templates</h4>
+<p>Example: Write a tpl file named &quot;my.tpl&quot;:</p>
+<pre><code>&lt;html&gt;
+  &lt;p&gt; &lt;%= &quot;This is tpl test!&quot; %&gt; &lt;/p&gt;
+  &lt;p&gt; &lt;% (format #t &quot;And this is ~a&quot; (getcwd)) %&gt; &lt;/p&gt;
+  &lt;p&gt; &lt;%= external-var %&gt; &lt;/p&gt;
+&lt;/html&gt;
+</code></pre><p>The filename extension &quot;.tpl&quot; is mandatory when using the MVC. Since the MVC will find the template by detecting controller name automatically.</p>
+<p>If you don&apos;t use the MVC, and are rather writing all in one script file loading GNU Artanis modules. Then you don&apos;t need to follow this rule.</p>
+<pre><code>(get &quot;/test&quot;
+  (lambda (rc)
+    (let ((external-var 123))
+      (tpl-&gt;response &quot;my.tpl&quot; (the-environment)))))
+(run #:port 8080)
+</code></pre><p>In this case, make sure to put my.tpl in the same path as your GNU Artanis code.</p>
+<p>Since external-var is defined outside the file &quot;my.tpl&quot;, and it&apos;s bound in let with 123, you have to pass (the-environment). Or the template render will complain aobut not being able to find the variable external-var.</p>
+<p>If you don&apos;t need to refer to any external vars, just use (tpl-&gt;response &quot;file.tpl&quot;).</p>
+<p>To test, access <a href="http://localhost:3000/test" target="_blank">http://localhost:3000/test</a> in your browser.</p>
+<h4 id="template-special-commands">Template special commands</h4>
+<p>GNU Artanis provides special helper commands.</p>
+<p>Please notice that GNU Artanis constrains the path of sources in the application directory for security reasons. The resources files, CSS, JS etc, should be put int pub directory in the application directory, or the client won&apos;t be able to access them.</p>
+<p>These special commands are useful to expand the path for you, and they should be added into the tamplate file, for example:</p>
+<pre><code>&lt;html&gt;
+  &lt;head&gt;
+    &lt;@icon favicon.ico %&gt;
+      &lt;@js functions.js %&gt;
+        &lt;@css blog.css %&gt;
+  &lt;/head&gt;
+
+  &lt;@include sidebar.html %&gt;
+
+    &lt;body&gt;
+      ...
+    &lt;/body&gt;
+&lt;/html&gt;
+</code></pre><p>NOTE: The command name is prefixed with @, as, @include, @css, etc. Please do not seperate the @, or it will throw exception.</p>
+<p>You can include html files with the include command:</p>
+<pre><code>;; @include is the command name, not &lt;@ include filename %&gt;
+&lt;@include filename.html %&gt;
+</code></pre><p>This will be expanded like this:</p>
+<pre><code>/current_toplevel/pub/filename.html
+</code></pre><p>NOTE: Please make sure the included file is in the pub directory in the application directory.</p>
+<p>To refer to a CSS file:</p>
+<pre><code>&lt;@css filename.css %&gt;
+</code></pre><p>This will be expanded like this:</p>
+<pre><code>&lt;link rel=&quot;stylesheet&quot; href=&quot;/pub/css/filename.css&quot;&gt;
+</code></pre><p>To refer to a JS (javascript) file in the HTML head:</p>
+<pre><code>&lt;@js filename.js %&gt;
+</code></pre><p>This will be expanded like this:</p>
+<pre><code>&lt;script type=&quot;text/javascript&quot; src=&quot;/pub/js/filename.js&quot;&gt; &lt;/script&gt;
+</code></pre><p>To specify an icon for the domain:</p>
+<pre><code>&lt;@icon favicon.ico %&gt;
+</code></pre><p>This will be expanded like this:</p>
+<pre><code>&lt;link rel=&quot;icon&quot; href=&quot;/pub/img/favicon.ico&quot; type=&quot;image/x-icon&quot;&gt;
+</code></pre><h3 id="sxml-templates">SXML Templates</h3>
+<p>SXML is an alternative syntax for writing XML data, using the form of S-expressions.</p>
+<p>SXML is to Scheme as JSON is to ECMAScript(the so-called Javascript). Maybe this explains it clearer.</p>
+<p>One benefit of SXML is that it takes advantage of the quasiquote in Scheme. Please search in the internet &quot;scheme quasiquote&quot; for more details.</p>
+<p>This is an SXML expression:</p>
+<pre><code>(tpl-&gt;response &apos;(html (body (p (@ (id &quot;content&quot;)) &quot;hello world&quot;))))
+</code></pre><p>The above would result the following HTML code:</p>
+<pre><code>&lt;html&gt;&lt;body&gt;&lt;p id=&quot;content&quot;&gt;hello world&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;
+</code></pre><p>Sometimes you may need quasiquote to refer to a variable, for example:</p>
+<pre><code>(let ((content &quot;hello world&quot;))
+  (tpl-&gt;response `(html (body (p (@ (id &quot;content&quot;)) ,content)))))
+</code></pre><p>Here, the &quot;html&quot; block is being quoted with the backtick, which in combination with a &quot;,&quot; character before the variable name, makes the variable be referred to instead of just passing a string.</p>
+<h2 id="databases">Databases</h2>
+<h3 id="db-init-hooks">DB init hooks</h3>
+<p>Sometimes you need to do some configurations before using DB, Artanis provide an API for that, you should put it to ENTRY file before run the server.</p>
+<p>For example, assuming you&apos;re using MySQL/MariaDB, and you need to configure it to UTF-8, you should add these lines to you ENTRY file. Or if you&apos;re using minimal mode without application folder, just put it before running the server.</p>
+<pre><code>(run-when-DB-init!
+ (lambda (conn)
+  (DB-query conn &quot;set names utf8;&quot;)))
+</code></pre><p>NOTE: Don&apos;t forget &apos;!&apos; here, it implies the side-effects in Scheme!</p>
+<h3 id="db-connection-pool">DB connection pool</h3>
+<p>TODO</p>
+<h3 id="migration">Migration</h3>
+<p>Migrations provide a way to do complicated modification of tables in a database by GNU Artanis. Here&apos;s an example.</p>
+<p>First, draw a migration:</p>
+<pre><code># art draw migration person
+drawing    migration person
+working    Migration `20151107040209_person.scm&apos;
+</code></pre><p>You&apos;ll see something similar like above.</p>
+<p>Then you&apos;d edit the file db/migration/20151107040209_person.scm:</p>
+<pre><code>(migrate-up
+ (create-table
+  &apos;person
+  &apos;(id auto (#:primary-key))
+  &apos;(name char-field (#:not-null #:maxlen 10))
+  &apos;(age tiny-integer (#:not-null))
+  &apos;(email char-field (#:maxlen 20))))
+
+(migrate-down
+ (drop-table &apos;person))
+</code></pre><p>Then you run the up command for migration:</p>
+<pre><code>art migrate up person
+</code></pre><p>Then migrate-up function will be called, and this will create a table named person:</p>
+<pre><code>+-------+---------------------+------+-----+---------+----------------+
+| Field | Type                | Null | Key | Default | Extra          |
++-------+---------------------+------+-----+---------+----------------+
+| id    | bigint(20) unsigned | NO   | PRI | NULL    | auto_increment |
+| name  | varchar(10)         | NO   |     | NULL    |                |
+| age   | tinyint(4)          | NO   |     | NULL    |                |
+| email | varchar(20)         | YES  |     | NULL    |                |
++-------+---------------------+------+-----+---------+----------------+
+</code></pre><p>If you run the down command of migration, as:</p>
+<pre><code>art migrate down person
+</code></pre><p>The table person will be dropped.</p>
+<p>14.4 ORM problem</p>
+<p>ORM stands for Object Relational Mapping, which is a popular approach to handle relational DB nowadays, in OOP.</p>
+<p>Of course, Guile has it&apos;s own Object System named GOOPS. Users can use OOP with it. And it&apos;s possible to implement ORM in GNU Artanis as well.</p>
+<p>However, FP fans realized that they don&apos;t have to use OOP if they can use FP features reasonably.</p>
+<p>Besides, there&apos;re some critics about ORM:</p>
+<p>ORM Hate
+Vietnam of Computer Science
+Object-Relational Mapping is the Vietnam of Computer Science
+Here are some known ways to solve ORM related problems:</p>
+<ol>
+<li>Give up ORM.</li>
+<li>Give up relational storage model. Don&apos;t use a relational DB. Use another DB style, such as No-SQL. Well, this way is not cool when you must use a relational DB.</li>
+<li>Manual mapping. Write SQL code directly. It&apos;s fine sometimes. But the code increases when things get complicated. Refactoring and reusing would be worth to consider.</li>
+<li>Limited ORM. Limiting the utility of ORM. And use ORM to solve part of your work rather than whole, depends on you. This may avoid some problems.</li>
+<li>SQL related DSL. Design a new language. Microsoft&apos;s LINQ is such a case.</li>
+<li>Integration of relational concepts into frameworks. Well, harder than 5, but worth to try.</li>
+<li>Stateless. This is the critical hit to counter complexity and unreliability.
+Basically, GNU Artanis has no ORM yet, and maybe never will. GNU Artanis is trying to experiment new ways to solve the problems of ORM.</li>
+</ol>
+<p>GNU Artanis provides three ways to complete this mission. All of them, are experimental at present.</p>
+<p>SSQL (1,3,5)
+FPRM (4,7)
+SQL Mapping (1,3,6)
+14.5 SSQL
+The concept of SSQL is very easy. Write SQL in s-expression.</p>
+<p>Usage:</p>
+<p>(-&gt;sql sql-statement)
+(where #:key val ... [literal string])
+(having #:key val ... [literal string])
+(/or conds ...)
+(/and conds ...)
+For example:</p>
+<p>(-&gt;sql select * from &apos;Persons (where #:city &quot;Shenzhen&quot;))
+(-&gt;sql select &apos;(age name) from &apos;Persons (where &quot;age &lt; 30&quot;))
+The SQL update command is quite different to SQL grammar. Example:</p>
+<p>(-&gt;sql update &apos;table set (list (list phone_number &quot;13666666666&quot;)) (where #:name &quot;john&quot;))
+14.6 FPRM (experimental)
+FPRM stands for Functional Programming Relational Mapping. It&apos;s a new word I invented. But it&apos;s not new concept. FP here indicates stateless.</p>
+<p>FPRM is still experimental and work-in-progress.</p>
+<p>14.6.1 Connect to DB server
+;; usage 1:
+(connect-db dbd init-str)</p>
+<p>;; usage 2:
+(connect-db dbd #:db-name &quot;artanis&quot; #:db-username &quot;root&quot; #:db-passwd &quot;&quot;</p>
+<pre><code>        #:proto &quot;tcp&quot; #:host &quot;localhost&quot; #:port 3306)
+</code></pre><p>dbd is a string. It must match any of these: &quot;mysql&quot;, &quot;postgresql&quot;, or &quot;sqlite3&quot;.</p>
+<p>init-str is a string for DB init, for example:</p>
+<pre><code>(connect-db &quot;mysql&quot; &quot;root:123:artanis:tcp:localhost:3306&quot;)
+</code></pre><ul>
+<li><code>#:db-name</code> specifies the DB name.</li>
+<li><code>#:db-username</code> specifies the DB username.</li>
+<li><code>#:proto</code> specifies the socket protocol, which is related to the DB server of your choice.</li>
+<li><code>#:host</code> specifies the host name.</li>
+<li><code>#:port</code> specifies the socket port.</li>
+</ul>
+<p>14.6.2 Map DB table
+This step will generate an new instance (as a closure) mapped to database table or view. In ORM, it is often called an Active Record. It maps the database view to a class object.</p>
+<p>There are two main differences to SSQL:</p>
+<p>FPRM doesn&apos;t create an object for each table. It maps the whole database, and generates an SQL for each table as you use it. So it might be lighter compared to an ORM object.
+FPRM doesn&apos;t maintain any states at all. It&apos;s stateless as an object (Not in the database).
+These two points may decrease the power of FPRM, but our main philosophy in GNU Artanis is that</p>
+<p>The best way to control DB is SQL, don&apos;t bother with other guile schemes.
+That means we&apos;re not going to develop a complicated ORM in GNU Artanis, but a promising way to interact with SQL easily. This is what SQL Mapping provided. FPRM aims to reduce states &amp; complexity to provide reliability. And SQL-Mapping will provide a convenient way to handle complex SQL queries for better performance and security (SQL-Injection, etc).</p>
+<p>(define m (map-table-from-DB rc/conn))
+rc/conn can be a route-context or a DB connection.</p>
+<p>map-table-from-DB returns a function, named m here for simplicity.</p>
+<p>14.6.3 Create table
+(m &apos;create table-name defs #:if-exists? #f #:primary-keys &apos;() #:engine #f)
+table-name specifies the name of the DB table.
+defs is a list to define the type of columns. For example:
+&apos;((name varchar 10) (age integer) (email varchar 20))</p>
+<h1 id="if-exists-has-two-kinds-of-possible-options">:if-exists? has two kinds of possible options:</h1>
+<p>&apos;overwrite and &apos;drop, which will overwrite the existing table.
+&apos;ignore means to ignore the table when it already exists.</p>
+<h1 id="primary-keys-specifies-the-primary-keys-in-the-created-table">:primary-keys specifies the primary keys in the created table.</h1>
+<h1 id="engine-specifies-the-db-engine-it-depends-on-what-dbd-you-chose">:engine specifies the DB engine. It depends on what dbd you chose.</h1>
+<p>14.6.4 Get columns from table
+(m &apos;get table-name #:columns &apos;(*) #:functions &apos;() #:ret &apos;all</p>
+<h1 id="group-by-f-order-by-f">:group-by #f #:order-by #f)</h1>
+<h1 id="column-is-the-list-of-columns-to-get">:column is the list of columns to get.</h1>
+<h1 id="functions-is-a-function-to-call-eg">:functions is a function to call, e.g:</h1>
+<h1 id="functions-count-personslastname">:functions &apos;((count Persons.Lastname))</h1>
+<h1 id="ret-specifies-how-to-return-the-result-there-are-three-options">:ret specifies how to return the result, there are three options:</h1>
+<p>&apos;all for returning all results
+&apos;top for returning the first result
+integer (larger than 0), to give it the end of a range from 0 to this number to give as result.</p>
+<h1 id="group-by-used-in-conjunction-with-the-aggregate-functions-to-group-the-result-set-by-one-or-more-columns">:group-by used in conjunction with the aggregate functions to group the result-set by one or more columns.</h1>
+<h1 id="order-by-used-to-sort-the-result-set-by-one-or-more-columns">:order-by used to sort the result-set by one or more columns.</h1>
+<p>For example, to get Lastname and City column, and return the first result.</p>
+<p>(m &apos;get &apos;Persons #:columns &apos;(Lastname City) #:ret &apos;top)
+14.6.5 Set values to table
+(m &apos;set table-name . kargs)
+kargs is a var-list that takes key-value arguments.</p>
+<p>For example:</p>
+<p>(m &apos;set &apos;Persons #:name &quot;nala&quot; #:age 99 #:email &quot;nala@artanis.com&quot;)
+14.6.6 Drop a table
+(m &apos;drop table-name)
+14.6.7 Check existence of table
+;; case sensitive
+(m &apos;exists? table-name . columns)
+;; or for case-insensitive
+(m &apos;ci-exists? table-name . columns)
+For example:</p>
+<p>(m &apos;exists? &apos;Persons &apos;city &apos;lastname)
+14.6.8 Get schema of a table
+(m &apos;schema table-name)
+NOTE: all the returned names of the schema will be in lowercase.</p>
+<p>14.7 SQL Mapping (experimental)
+To be continued &#x2026;</p>
+<p>15 MIME</p>
+<h1 id="mime-method-is-used-to-return-the-proper-mime-type-in-the-http-response">:mime method is used to return the proper MIME type in the HTTP response.</h1>
+<h1 id="mime-type--for-registering-type">:mime type ; for registering type</h1>
+<p>(:mime rc body) ; to emit the reponse with the proper MIME
+15.1 JSON
+GNU Artanis integrates the third-party module guile-json to parse json. You can use the #:mime method to handle JSON:</p>
+<p>(get &quot;/json&quot; #:mime &apos;json
+     (lambda (rc)
+       (let ((j (json (object (&quot;name&quot; &quot;nala&quot;) (&quot;age&quot; 15)))))
+         (:mime rc j))))
+For example:</p>
+<p>(define my-json
+  (json (object (&quot;name&quot; &quot;nala&quot;) (&quot;age&quot; 15)
+                (&quot;read_list&quot;
+                 (object
+                  (&quot;book1&quot; &quot;The interpreter and structure of Artanis&quot;)
+                  (&quot;book2&quot; &quot;The art of Artanis programming&quot;))))))
+(scm-&gt;json my-json) ; scm-&gt;json will print a json object
+;; ==&gt; {&quot;name&quot; : &quot;nala&quot;,
+;;      &quot;age&quot; : 15,
+;;      &quot;read_list&quot; : {&quot;book2&quot; : &quot;The art of Artanis programming&quot;,
+;;                     &quot;book1&quot; : &quot;The interpreter and structure of Artanis&quot;}}
+scm-&gt;json will print the result directly.</p>
+<p>If you need to format JSON as a string to return to the client, please use scm-&gt;json-string.</p>
+<p>15.2 CSV
+GNU Artanis integrates the third-party module guile-csv to parse csv. You can use the #:mime method to handle CSV:</p>
+<p>(get &quot;/csv&quot; #:mime &apos;csv
+     (lambda (rc)
+       (:mime rc &apos;((&quot;a&quot; &quot;1&quot;) (&quot;b&quot; &quot;2&quot;)))))
+15.3 XML
+In Scheme, XML is handled with SXML. Another way would be to append the text to a common string.</p>
+<p>(get &quot;/xml&quot; #:mime &apos;xml
+     (lambda (rc)
+       (:mime rc &apos;(<em>TOP</em> (WEIGHT (@ (unit &quot;pound&quot;))
+                                 (NET (@ (certified &quot;certified&quot;)) &quot;67&quot;)
+                                 (GROSS &quot;95&quot;))))))
+The rendered result to the client will be:</p>
+<p><weight unit="pound">
+  <net certified="certified">67</net>
+  <gross>95</gross>
+</weight>
+15.4 SXML
+You can use SXML to replace XML for exchanging data format. This way saves some bandwidth.</p>
+<p>(get &quot;/sxml&quot; #:mime &apos;sxml
+     (lambda (rc)
+       (:mime rc &apos;((a 1) (b 2)))))
+16 Upload files
+If you want to be able to upload files, store-uploaded-files is your friend.</p>
+<p>16.1 Receive an upload from the client</p>
+<p>The typical configuration of an uploading WebAPI looks like this:</p>
+<p>(post &quot;/upload&quot; #:from-post &apos;(store #:path &quot;upload&quot; #:sync #f)
+ (lambda (rc)
+  (case (:from-post rc &apos;store)
+   ((success) (response-emit &quot;upload succeeded!&quot;))
+   ((none) (response-emit &quot;No uploaded files!&quot;))
+   (else (response-emit &quot;Impossible! please report bug!&quot;)))))
+However, you may use the low-level API for more configurations as well:</p>
+<p>(store-uploaded-files rc #:path (current-upload-path)</p>
+<pre><code>                  #:uid #f
+                  #:gid #f
+                  #:simple-ret? #t
+                  #:mode #o664
+                  #:path-mode #o775
+                  #:sync #f)
+</code></pre><p>rc is the route-context.</p>
+<ul>
+<li><code>#:path</code> is the specified path to put uploaded files.</li>
+<li><code>#:uid</code> is new UID for the uploaded files, #f uses the default UID.</li>
+<li><code>#:gid</code> specifies the GID.</li>
+<li><code>#:simple-ret?</code> specifies the mode of return:</li>
+</ul>
+<p>if #t, there&apos;re only two possible return value, &apos;success for success, &apos;none for nothing has been done.
+if #f, and while it&apos;s successful, it returns a list to show more details: (success size-list filename-list).- <code>#:mode</code> chmod files to mode.</p>
+<ul>
+<li><code>#:path-mode</code> chmod upload path to mode.</li>
+<li><code>#:sync</code> sync while storing files.</li>
+</ul>
+<h3 id="send-an-upload-to-a-server">Send an upload to a Server</h3>
+<p>Although GNU Artanis is often used in server-side, we provide this function for users to upload files from the client.</p>
+<p>(upload-files-to uri pattern)
+uri is standard HTTP URL:</p>
+<pre><code>scheme://[user:password@]domain:port/path?query_string#fragment_id
+</code></pre><p>pattern should be: <code>((file filelist &#x2026;) (data datalist &#x2026;))</code>, for example:</p>
+<pre><code>(upload-files-to &quot;ftp://nala:123@myupload.com/&quot;
+                 &apos;((data (&quot;data1&quot; &quot;hello world&quot;))
+                   (file (&quot;file1&quot; &quot;filename&quot;) (&quot;file2&quot; &quot;filename2&quot;))))
+</code></pre><h2 id="sessions">Sessions</h2>
+<p>You can use #:session mode to define a URL rule handler.</p>
+<pre><code>(post &quot;/auth&quot; #:session mode
+      (lambda (rc) ...))
+</code></pre><p>mode can be:</p>
+<ul>
+<li><code>#t</code> or <code>&apos;spawn</code>, to spawn a new session, the name of the SID is &quot;sid&quot; by default.</li>
+<li>`(spawn ,sid) to specify the name of the sid to spawn.</li>
+<li>`(spawn ,sid ,proc) to specify the name of the sid and a proc to define your own session spawner.</li>
+</ul>
+<p>And the APIs of the session is <code>:session</code></p>
+<pre><code>(:session rc cmd)
+</code></pre><p>cmd can be:</p>
+<pre><code>&apos;check to check the session with name &quot;sid&quot;.
+`(check ,sid) to check the session with a specified sid name.
+&apos;check-and-spawn to check &quot;sid&quot; first, if it doesn&apos;t exist, then spawn new.
+`(check-and-spawn ,sid) to do the same as above, but with specifying the sid name.
+`(check-and-spawn-and-keep ,sid) to check, then spawn, then keep, specifying the sid name.
+&apos;spawn to spawn a session with the name &quot;sid&quot;.
+&apos;spawn-and-keep to spawn a session then keep with the name &quot;sid&quot;.
+</code></pre><h3 id="session-backend">Session backend</h3>
+<p>Artanis provide several backends for implementing sessions in the lower-level. Please take a look at the description of session.backend in your artanis.conf.</p>
+<h2 id="cookies">Cookies</h2>
+<p>You can use <code>#:cookies</code> mode to define a URL rule handler.</p>
+<pre><code>(get &quot;/certain-rule&quot; #:cookies mode
+     (lambda (rc) ...))
+</code></pre><p>mode can be:</p>
+<p>(&apos;names names &#x2026;) to specify the list name for the cookies.
+(&apos;custom (names &#x2026;) maker setter getter modifier) to specify a more complicated customized cookie handler.</p>
+<p>And the APIs:</p>
+<pre><code>(:cookies-set! rc cookie-name key val)
+
+(:cookies-ref rc cookie-name key)
+
+(:cookies-setattr! rc cookie-name #:expir #f #:domain #f
+                   #:path #f #:secure #f #:http-only #f)
+
+(:cookies-remove! rc key) ; remove cookie from client
+
+(:cookies-update! rc) ; cookie operations won&apos;t work unless you update it
+</code></pre><p>NOTE: You don&apos;t have to call :cookies-update! yourself, since it will be called automatically by the hook before the response.</p>
+<p>For example:</p>
+<pre><code>(get &quot;/cookie&quot; #:cookies &apos;(names cc)
+     (lambda (rc)
+       (:cookies-set! rc &apos;cc &quot;sid&quot; &quot;123321&quot;)
+       &quot;ok&quot;))
+
+(get &quot;/cookie/:expires&quot; #:cookies &apos;(names cc)
+     (lambda (rc)
+       (:cookies-set! rc &apos;cc &quot;sid&quot; &quot;123321&quot;)
+       (:cookies-setattr! rc &apos;cc #:expir (string-&gt;number (params rc &quot;expires&quot;)))
+       &quot;ok&quot;))
+</code></pre><p>You can use these commands in your console to see the results:</p>
+<pre><code>curl --head localhost:3000/cookie
+# and
+curl --head localhost:3000/cookie/120
+</code></pre><h2 id="authentication">Authentication</h2>
+<h3 id="init-authentication">Init Authentication</h3>
+<p>GNU Artanis provides flexible mechanism for authentication.</p>
+<p>You can use #:auth mode to define a URL rule handler.</p>
+<pre><code>(get &quot;/certain-rule&quot; #:auth mode
+     (lambda (rc) ...))
+</code></pre><p>mode can be:</p>
+<p>SQL as string template. You can write your own custom SQL string to fetch &amp; check your username and password.
+(&apos;basic (lambda (rc user passwd) ...)) init Basic Authentication mode. user is the username, and passwd is the password.
+(&apos;table table-name username-field passwd-field) init a common Authentication mode. The passwd will be encrypted by the default algorithm.
+(&apos;table table-name username-field passwd-field crypto-proc) similar to the above item, but encrypt passwd with crypto-proc.
+(table-name crypto-proc), so the passwd field will be &quot;passwd&quot; and username will be &quot;username&quot; by default.You can encrypt the passwd with crypto-proc.
+Available crypto-proc helper functions listed here:</p>
+<pre><code class="lang-`">(string-&gt;md5 &lt;string&gt;)
+(string-&gt;sha-1 &lt;string&gt;)
+(string-&gt;sha-224 &lt;string&gt;)
+(string-&gt;sha-256 &lt;string&gt;)
+(string-&gt;sha-384 &lt;string&gt;)
+(string-&gt;sha-512 &lt;string&gt;)
+</code></pre>
+<p>NOTE: Please make sure that the username-field and passwd-field must be the same with the field name specifed in the submit form of you web page code.</p>
+<p>For example, if there is a form on you page:</p>
+<p><input type="password" name="passwd">
+Please notice that name of password input was specified to &quot;passwd&quot;.</p>
+<p>Then you should write authentication like this:</p>
+<pre><code>(post &quot;/auth&quot; #:auth &apos;(table user &quot;user&quot; &quot;passwd&quot;) #:session #t
+  (lambda (rc) ...))
+</code></pre><p>Please notice that the &quot;passwd&quot; here is the same with what you specified in the form.</p>
+<p>19.2 Basic Authentication
+The HTTP Basic authentication (BA) implementation is the simplest technique for enforcing access control to web resources, as it doesn&apos;t require cookies, session identifiers, or login pages. But rather uses static, standard HTTP headers, which means that no extra handshakes are necessary for the connection.</p>
+<p>The BA mechanism provides no protection for the transmitted credentials. They are merely encoded with Base64, but not encrypted or hashed in any way. For that reason, Basic Authentication is typically used over HTTPS.</p>
+<p>GNU Artanis doesn&apos;t support HTTPS at present. There are plans to support it in the future.</p>
+<p>Let&apos;s see a simple example:</p>
+<pre><code>(define (my-checker rc user passwd)
+  (and (string=? user &quot;jack&quot;) (string=? passwd &quot;123&quot;)))
+
+(post &quot;/bauth&quot; #:auth `(basic ,checker)
+      (lambda (rc)
+        (if (:auth rc)
+            &quot;auth ok&quot;
+            (throw-auth-needed))))
+</code></pre><p>Another simple way to provide authentication is to compare the passsword stored in a database table:</p>
+<pre><code>(post &quot;/bauth&quot; #:auth `(basic Person username passwd)
+      (lambda (rc) ... ))
+</code></pre><p>NOTE: Assuming username and passwd are columns of the Person table.</p>
+<p>You have to define your own checker with the anonymous function (lambda (rc u p) ...). #t to show success, and #f to fail.</p>
+<p>APIs:</p>
+<p>(:auth rc) will check if Basic Authentication succeeded, #f if not.
+(throw-auth-needed) is a useful helper function to ask for auth in client side.</p>
+<h3 id="common-authentication">Common Authentication</h3>
+<p>There are multiple authentication methods that can be used by developers. Most of them are sort of tricky hacks. Here are the most common.</p>
+<p>The most common, and relatively safe way to authenticate, is to use the POST method, and check the username and passwd from a table in the DB.</p>
+<p>There are several ways to provide authentication.</p>
+<p>The simplest case is for String Template:</p>
+<pre><code>#:auth &quot;string-template&quot;
+</code></pre><p>If you save the account data in a database table, then you can use the table mode:</p>
+<pre><code>#:auth `(table ,table-name [,username-field] [,passwd-field] [,salt-field] [,hmac])
+</code></pre><p>NOTE: The square-bracked [args] above are optional.</p>
+<p>The default values for the optional items are:</p>
+<p>username-field: username
+passwd-field: passwd
+salt-field: salt
+TODO: remove the brackets for salt-field, as it says below that it&apos;s not optional. And specify whether &quot;optional&quot; means that can be skipped or set to #f to use the default value.</p>
+<p>GNU Artanis requires a salted password, it&apos;s not optional.</p>
+<p>So please prepare a field in a table for the salt string. It&apos;s your duty to generate a salt string, please see Random String Generator. When authenticating, please specify the salt field name in the salt-field argument.</p>
+<p>For hmac item, please see HMAC.</p>
+<p>19.4 Login authentication
+Usually, when doing a login, you will need both #:auth and #:session options for a long time session. The first step is to authenticate, if it&apos;s successful, then spawn a new session for this request.</p>
+<p>Here is a simple example:</p>
+<p>(post &quot;/auth&quot; #:auth &apos;(table user &quot;user&quot; &quot;passwd&quot;) #:session #t
+      (lambda (rc)
+        (cond
+         ((:session rc &apos;check) &quot;auth ok (session)&quot;)
+         ((:auth rc)
+          (:session rc &apos;spawn)
+          &quot;auth ok&quot;)
+         (else (redirect-to rc &quot;/login?login_failed=true&quot;)))))
+NOTE: The passwd will be encrypted by the default algorithm.</p>
+<p>19.5 HMAC
+HMAC is a hash-based message authentication code. It&apos;s dangerous to store the passwd in a raw string. A safer way is to salt then hash with a strong cryptograpic hash function when storing the passwd.</p>
+<p>The default salt is a random string got from the operating system. And the default cryptographic hash function is SHA256. You can set your own HMAC function, as in this example:</p>
+<p>(define (my-hmac passwd salt)
+  (string-&gt;sha-512 (format #f &quot;~a-~a-~a&quot; passwd salt (current-time))))</p>
+<p>(post &quot;/auth&quot; #:auth `(table user &quot;user&quot; &quot;passwd&quot; &quot;salt&quot; ,my-hmac)
+      ...... )
+The default HMAC function is:</p>
+<p>(define (default-hmac passwd salt)
+  (string-&gt;sha-256 (string-append passwd salt)))
+For more on hash functions, please refer to Cryptographic hash functions.</p>
+<p>20 Cache
+20.1 On web caching
+Web caching is very important nowadays. This section discusses proper web caching. It is not a full product guide document, but it may help to understand how to cache data in GNU Artanis.</p>
+<p>(to be continued&#x2026;)</p>
+<p>20.2 Cache APIs
+You can use #:cache mode to define a URL rule handler.</p>
+<p>(get &quot;/certain-rule&quot; #:cache mode
+     (lambda (rc) ...))
+NOTE: the default value of &quot;maxage&quot; (3600 seconds) is defined by cache.maxage in /etc/artanis/artanis.conf.</p>
+<p>mode can be:</p>
+<p><code>#t</code> to enable caching the page.
+<code>#f</code> to disable caching the page explicitly. It&apos;s the default value.
+(&apos;static [maxage &lt;- 3600]) to be used for static files. The URL rule must be a real path to a static file.
+(filename [maxage &lt;- 3600]) to cache a static file. This is useful when you don&apos;t want to reveal the actual path of the static file, but use a fake URL for it.
+(&apos;public filename [maxage &lt;- 3600]) to allow proxies cache the content of specified static file. If HTTP authentication is required, responses are automatically set to &quot;private&quot;.
+(&apos;private filename [maxage &lt;- 3600]) to not allow proxies cache the content of specified static file.
+Let&apos;s set a simple cache setting for dynamic content:</p>
+<pre><code>(get &quot;/new&quot; #:cache #t
+     (lambda (rc)
+       (:cache rc &quot;hello world&quot;)))
+</code></pre><p>If you want to cache a static file, and permit proxies cache the content:</p>
+<pre><code>(get &quot;/hide&quot; #:cache &apos;(public &quot;pub/some.html&quot;)
+     (lambda (rc)
+       (:cache rc)))
+</code></pre><p>But, if your current URL rule is used for authentication (once you use #:auth), the cache will be changed to private even if you specify public.</p>
+<pre><code>(get &quot;/pauth&quot;
+  #:auth `(basic ,(lambda (rc u p) (and (string=? u &quot;nala&quot;)
+                                        (string=? p &quot;123&quot;))))
+  #:cache &apos;(public &quot;pub/some.html&quot;) ; will be changed to &apos;private&apos; forcely.
+  (lambda (rc) (:cache rc)))
+</code></pre><p>21 Shortcuts</p>
+<p>21.1 What is shortcuts?</p>
+<p>shortcuts are a series of special functions. They&apos;re used to simplify complex operations, according to the configuration specified by the related keyword, set after a URL-rule.</p>
+<p>It was named OHT which stands for Optional Handler Table, which indicates the basic principle to be implemented. But it was too hard to remember. So let&apos;s just call it shortcut.</p>
+<p>Anyway, you may find them in the module (artanis oht).</p>
+<p>It&apos;s good practice to use shortcuts as much as possible and avoid calling low-level APIs.</p>
+<p>Each shortcut consists of 2 parts: config and apply.</p>
+<p>config is to configure a certain service for the specific URL rule. This configuration will only be availble to this URL rule, and independent to other registered URL rules.</p>
+<p>apply is used to call specific functions related to your configuration in the config step. The first argument of the apply method must be a route-context (route context).</p>
+<p>21.2 Database connection
+This is a useful feature to use when you connect to a database. The shortcut provides a way to interact with the raw connection. The connection is fetched from the connection pool, which is created at GNU Artanis&apos;s start up.</p>
+<pre><code>;; config
+#:conn #t
+
+;; apply
+(:conn &lt;route-context&gt; [sql])
+</code></pre><p>The second argument is optional, if it&apos;s missing, then :conn will return the raw connection after applying (:conn rc).
+NOTE: If you haven&apos;t set #:conn #t, and applied (:conn rc), then (rc-conn rc) will return #f. This is why you shouldn&apos;t use low-level (rc-conn rc).
+If you pass a second argument, it should be a valid SQL query string. The returned value is described in DB connection pool.
+You can create the SQL query string with SSQL.
+21.3 Raw SQL
+This shortcut is useful for a simple one-shot query.</p>
+<pre><code>;; config
+#:raw-sql sql
+
+;; apply
+(:raw-sql &lt;route-context&gt; mode)
+</code></pre><p>Sql must be a valid SQL query string.</p>
+<p>Mode is one of:</p>
+<p>&apos;all for getting all the results.
+&apos;top for getting the first result.
+A positive integer to indicate how many results should be returned.
+21.4 String template
+This is a shortcut for string template. Sometimes it&apos;s useful when you just need a quick way to use a string template. It doesn&apos;t support multi templates, so if you do need to, please use the traditional 25.1.</p>
+<pre><code>;; config
+#:str &quot;string template&quot;
+
+;; apply
+(:str &lt;route-context&gt; key-values ...)
+</code></pre><p>Please checkout string template to find out how to use the string-template and key-values.</p>
+<p>21.5 SQL-Mapping shortcut (unfinished)
+This is related to SQL-Mapping, which is still experimental, maybe you should wait for the next version if you wish to use it.</p>
+<pre><code>;; config
+#:sql-mapping config-patterns
+
+;; apply
+(:sql-mapping &lt;route-context&gt; command ...)
+</code></pre><p>config-patterns can be any of:</p>
+<p><code>#t</code> enable the simple sql-mapping.
+<code>(path ,path ,name) Fetch the sql-mapping with name in the specified path.
+name must be an object of the symbol type.
+path must be an object of the string type, and an existing path in your filesystem.</code>(add ,name ,sql-template) Fetch the sql-mapping with name rendered from sql-template.
+name should be an object of the symbol type.
+sql-template is described in more detail in SQL-Mapping.</p>
+<h2 id="websocket-experimental">Websocket (Experimental)</h2>
+<h3 id="websocket-introduction">Websocket introduction</h3>
+<p>Websockets are becoming more and more important for modern web development. GNU Artanis is trying to provide an industrial strength and efficient Websocket implementation. Websockets are important for GNU Artanis&apos;s design. Please see Principles for more details.</p>
+<h3 id="websocket-basic-usage">Websocket basic usage</h3>
+<p>In GNU Artanis, a Websocket handling is triggered by setting it on a specific URL. You should use #:websocket to configure the Websocket. For example:</p>
+<pre><code>(use-modules (artanis artanis))
+
+(get &quot;/echo&quot; #:websocket &apos;(proto echo)
+     (lambda (rc)
+       (:websocket rc &apos;payload)))
+
+(run #:port 3000)
+</code></pre><p>In this simple test, we choose the simplest echo protocol of the Websocket. This will return back the string sent from the client. Let&apos;s also write a simple javascript function for the web frontend:</p>
+<pre><code>function WebSocketTest()
+{
+    if (&quot;WebSocket&quot; in window)
+    {
+        document.write(&quot;&lt;p&gt;WebSocket is supported by your Browser!&lt;/p&gt;&quot;);
+
+        // Let us open a web socket
+        var ws = new WebSocket(&quot;ws://localhost:3000/echo&quot;);
+
+        ws.onopen = function()
+        {
+            // Web Socket is connected, send data using send()
+            ws.send(&quot;hello world&quot;);
+            document.write(&quot;&lt;p&gt;Message is sent...&lt;/p&gt;&quot;);
+        };
+
+        ws.onmessage = function (evt)
+        {
+            var received_msg = evt.data;
+            document.write(&quot;&lt;p&gt;hello welcome...&lt;/p&gt;&quot;);
+        };
+
+        ws.onclose = function()
+        {
+            // websocket is closed.
+            document.write(&quot;&lt;p&gt;Connection is closed...&lt;/p&gt;&quot;);
+        };
+
+        window.onbeforeunload = function(event) {
+            socket.close();
+        };
+    }
+    else
+    {
+        // Your browser doesn&apos;t support WebSockets
+        document.write(&quot;&lt;p&gt;WebSocket NOT supported by your Browser!&lt;/p&gt;&quot;);
+    }
+}
+</code></pre><h3 id="websocket-named-pipe">Websocket named-pipe</h3>
+<p>Artanis provides the named-pipe based on Websocket, which is very useful to interact between the client and server. NOTE: The Websocket named-pipe is very useful to implement server-push messaging.</p>
+<p>Here is the critical API:</p>
+<pre><code>(named-pipe-subscribe &lt;route-context&gt;)
+</code></pre><p>Let&apos;s try a simple example:</p>
+<pre><code>(get &quot;/robot&quot; #:websocket &apos;(proto echo) named-pipe-subscribe)
+</code></pre><p>Here we register a WebAPI named &quot;/robot&quot;, and configure it a Websocket API by #:websocket &apos;(proto echo). As you may see, we specify its protocol to a simple echo protocal, it is to say, it will redirect what it receives. Each time it receives a message, it will redirect the message to the specified named-pipe, and the subscriber of that named-pipe will get the message instantly. The name of the pipe is specified by the client like this:</p>
+<pre><code>var ws = new WebSocket(&quot;ws://localhost:3000/robot?artanis_named_pipe=robot-1&quot;);
+</code></pre><p>The query-string &quot;artanis_named_pipe&quot; is a special key in Artanis, you MUST use this key to specify the pipe name. Here we specify the pipe name as &quot;robot-1&quot;.</p>
+<p>Now we setup the named-pipe, however, we still need to setup another WebAPI to let the client send message:</p>
+<pre><code>(get &quot;/welcome/:whom/:what&quot; #:websocket &apos;send-only
+     (lambda (rc)
+       (:websocket rc &apos;send (params rc &quot;whom&quot;) (params rc &quot;what&quot;))
+       &quot;ok&quot;))
+</code></pre><p>The configure &quot;#:websocket &apos;send-only&quot; means this API is only for sending, so that it&apos;s half-duplex. And another critical Websocket API here:</p>
+<pre><code>(:websocket &lt;route-context&gt; &apos;send &lt;pipe-name&gt; &lt;data&gt;)
+</code></pre><p>Each time you send data from the WebAPI, for example:</p>
+<p><code>curl localhost:3000/welcome/robot-1/nala</code></p>
+<p>In our simple example of Websocket named-pipe test, and you should run The named-pipe will receive the message &quot;nala&quot;, and the page on the browser will print it instantly.</p>
+<h3 id="websocket-apis">Websocket APIs</h3>
+<p>NOTE: The Websocket is in a very preliminary stage. It only support echo.</p>
+<h4 id="websocket-configuration">Websocket configuration</h4>
+<pre><code>#:websocket `(proto ,protocol_name)
+</code></pre><p>protocol_name can be:</p>
+<p>&apos;echo for a simple echo test. NOTE: More protocols will be added in the future.</p>
+<pre><code>#:websocket simple_pattern
+</code></pre><p>simple_pattern can be:</p>
+<p><code>#t</code> or &apos;raw will enable a WebSocket on this URL without specifying the protocol. So you will get the raw data from the decoded payload.</p>
+<pre><code>#:websocket `(redirect ,ip/usk)
+</code></pre><p>This is used for redirecting a Websocket stream to another address. ip/usk is an ip or a unix-socket. The string regexp pattern has to match:</p>
+<pre><code>^ip://(?:[0-9]{1,3}\\.){3}[0-9]{1,3}(:[0-9]{1,5})?$
+^unix://[a-zA-Z-_0-9]+\\.socket$
+#:websocket `(proxy ,protocol)
+</code></pre><p>Setup a proxy with a specific protocol handler. Unlike the regular proxy approach, the proxy in Artanis doesn&apos;t need a listening port. Since it&apos;s always 80/443 or a custom port. The client has to have websocket support. And be able to access the specified URL to establish a websocket connection. The rest is the same as with a regular proxy.</p>
+<h4 id="websocket-application">Websocket application</h4>
+<pre><code>(:websocket &lt;route-context&gt; command)
+</code></pre><p>command can be:</p>
+<p>&apos;payload to get the decoded data from the client. It&apos;s decoded from Websocket frame automatically. So you don&apos;t have to parse the frame.</p>
+<h3 id="websocket-frame">Websocket frame</h3>
+<p>GNU Artanis provides a Websocket data frame struct, as defined in RFC6455.</p>
+<p>The frame will not be decoded or parsed into a record-type, but will be kept as the binary frame read from the client, and use bitwise operations to fetch fields. This kind of &apos;lazy&apos; design saves much time as it doesn&apos;t parse unused fields, and makes it easier to redirect without any serialization. If users want to get a certain field, Artanis provides APIs for fetching them. Users can decide how to parse the frames by themselves, which we think is more efficient.</p>
+<p>Here are the APIs you can use:</p>
+<pre><code>(websocket-frame? &lt;websocket-frame&gt;)
+;; parser: bytevector -&gt; custom data frame
+(websocket-frame-parser &lt;websocket-frame&gt;)
+</code></pre><p>websocket-frame-parser is the registered reader for the protocol specified by the #:websocket configuration. The protocol is customizable based on protobuf. NOTE: Custom protocols support hasn&apos;t been implemented yet.</p>
+<pre><code>(websocket-frame-head &lt;websocket-frame&gt;)
+(websocket-frame-final-fragment? &lt;websocket-frame&gt;)
+(websocket-frame-opcode &lt;websocket-frame&gt;)
+(websocket-frame-payload &lt;websocket-frame&gt;)
+(websocket-frame-mask &lt;websocket-frame&gt;)
+</code></pre><p>To get the Websocket frame information. See Data framing for details.</p>
+<ul>
+<li>head returns the first 2 bytes in the data frame.</li>
+<li>final-fragment returns true if it&apos;s the last frame in a session.</li>
+<li>opcode returns the opcode in the frame. Refer to Websocket opcode.</li>
+<li>payload returns the actual encoded data.</li>
+<li>mask returns the frame mask.</li>
+</ul>
+<h3 id="websocket-opcode">Websocket opcode</h3>
+<p>Opcode defines the interpretation of &quot;Payload data&quot;. If an unknown opcode is received, the receiving endpoint&apos;s WebSocket connection will fail.</p>
+<pre><code>;;  check if it&apos;s a continuation frame
+(is-continue-frame? opcode)
+
+;;  check if it&apos;s text frame
+(is-text-frame? opcode)
+
+;; check if it&apos;s binary frame
+(is-binary-frame? opcode)
+
+;; check if it&apos;s control frame
+(is-control-frame? opcode)
+(is-non-control-frame? opcode)
+
+;;  websocket requires closing
+(is-close-frame? opcode)
+
+;;  check if it&apos;s a ping frame
+(is-ping-frame? opcode)
+
+;;  check if it&apos;s a pong frame
+(is-pong-frame? opcode)
+
+;;  %xB-F are reserved for further control frames
+(is-reserved-frame? opcode)
+</code></pre><h2 id="ragnarok-server-core">Ragnarok server core</h2>
+<h3 id="introduction">Introduction</h3>
+<p>Since version 0.2, GNU Artanis has started to use a strong server core for high concurrency. Its name is Ragnarok. In the philosophy of the design of GNU Artanis, everything is meant to be flexible and customizable. The server core is no exception. In case Ragnarok doesn&apos;t suit your needs, you&apos;re free to use something else.</p>
+<p>Ragnarok doesn&apos;t use any popular library for handling events (libev/libuv etc &#x2026;). It&apos;s a brand new server core based on epoll and delimited continuations.</p>
+<h3 id="principles">Principles</h3>
+<p>A basic characteristic of Ragnarok is the use of co-routines. These co-routines are implemented with delimited continuations. There are no OS/kernel controlled threads, like pthread, for scheduling request-handlers in Ragnarok. All the tasks are scheduled by a userland scheduler. And the task is nothing but just a special continuation. The key difference between this and a regular full-stack continuation, is that you can set limits with precision, instead of having to capture the whole stack.</p>
+<p>For researchers, there is a paper published on ICFP Scheme Workshop 2016 conference to explain the principle and the design of GNU Artanis:</p>
+<p>Multi-purpose web framework design based on websockets over HTTP Gateway.</p>
+<h3 id="features">Features</h3>
+<p>In Artanis, the request handling can be scheduled even when the socket buffer is full (depends on server.bufsize). And let other handlers deal with the requests. Just like the scheduling of an OS, but in userland.</p>
+<p>If you have issues with the buffer when scheduling, there&apos;s no way to flush before it breaks, since we can&apos;t tell if the scheduling is caused by the buffering or the blocking.</p>
+<p>Ragnarok takes advantage of SO_REUSEPORT introduced in GNU/Linux 3.9 to provide a feature named server.multi which can be enabled in the config. This feature allows users to start several Artanis instances listening to the same port, to take advantage of multi core CPUs, and the Linux Kernel managing the events.</p>
+<h3 id="ragnarok-apis">Ragnarok APIs</h3>
+<p>You can use these APIs to customize your own server core.</p>
+<h2 id="key-value-database">Key-Value Database</h2>
+<h3 id="lpc">LPC</h3>
+<p>LPC stands for Lightweight Persistent Cache. It&apos;s the easiest way to use key-value DB in Artanis.</p>
+<p>For example:</p>
+<pre><code>(get &quot;/certain_rule&quot; #:lpc &lt;backend&gt; (lambda (rc) ...))
+</code></pre><p>The backend includes:</p>
+<pre><code>`#t` or `&apos;redis`
+`&apos;json`
+</code></pre><p>After configured, it&apos;s easy to use it:</p>
+<pre><code>;; Setter
+(:lpc rc &apos;set &lt;key&gt; &lt;val&gt;)
+
+;; Getter
+(:lpc rc &apos;get &lt;key&gt;)
+;; or
+(:lpc rc &apos;ref &lt;key&gt;)
+</code></pre><p>In default, the key will be prefixed automatically:</p>
+<pre><code>(string-append &quot;__artanis_lpc_&quot; (get-conf &apos;(db name)) &quot;_&quot; key)
+</code></pre><h2 id="utils">Utils</h2>
+<p>The functions listed below require the (artanis utils) module.</p>
+<h3 id="string-template">String Template</h3>
+<p>GNU Artanis provides Python3-like template strings:</p>
+<pre><code>(make-string-template tpl . vals)
+</code></pre><p>tpl stands for template string.
+vals is varg-list specifying default value to certain key.</p>
+<p>For example:</p>
+<pre><code>(define st (make-string-template &quot;hello ${name}&quot;))
+(st #:name &quot;nala&quot;)
+;; ==&gt; &quot;hello nala&quot;
+</code></pre><p>;; or you may specify a default value for ${name}</p>
+<pre><code>(define st (make-string-template &quot;hello ${name}&quot; #:name &quot;unknown&quot;))
+(st)
+;; ==&gt; &quot;hello unknown&quot;
+(st #:name &quot;john&quot;)
+;; ==&gt; &quot;hello john&quot;
+</code></pre><h3 id="random-string-generator">Random String Generator</h3>
+<p>Get random string from /dev/urandom.</p>
+<pre><code>(get-random-from-dev #:length 8 #:uppercase #f)
+</code></pre><h3 id="cryptographic-hash-functions">Cryptographic hash functions</h3>
+<p>;; hash a string with MD5</p>
+<pre><code>(string-&gt;md5 str)
+</code></pre><p>;; hash a string with SHA-1</p>
+<pre><code>(string-&gt;sha-1 str)
+</code></pre><p>SHA-2 hash functions are also supported from Artanis-0.2.5.</p>
+<pre><code>(string-&gt;sha-224 str)
+(string-&gt;sha-384 str)
+(string-&gt;sha-512 str)
+</code></pre><h3 id="stack--queue">Stack &amp; Queue</h3>
+<p>GNU Artanis provides simple interfaces for stack &amp; queue:</p>
+<pre><code>;; stack operations
+(new-stack)
+(stack-pop! stk)
+(stack-push! stk elem)
+(stack-top stk)
+(stack-remove! stk key)
+(stack-empty? stk)
+
+;; queue operations
+(new-queue)
+(queue-out! q)
+(queue-in! q elem)
+(queue-head q)
+(queue-tail q)
+(queue-remove! q key)
+(queue-empty? q)
+</code></pre><h3 id="useful-string-operation">Useful string operation</h3>
+<p>If you want to get all the contents from a file into a string, then don&apos;t use get-string-all imported from rnrs. Because it will not detect the correct charset from the locale, and this may cause the length differ from the actual value. Although GNU Artanis can handle this length issue properly, you should use get-string-all-with-detected-charset when you need to do something like this. If you don&apos;t care about the contents encoding but just want to get the them, it&apos;s better to use get-bytevector-all imported from rnrs.</p>
+<p>(get-string-all-with-detected-charset filename)</p>
+<h2 id="debug-mode">Debug mode</h2>
+<p>GNU Artanis provides a debug-mode for a more convenient way to debug. It&apos;s very easy to use.</p>
+<p>For the simplest way, pass #:debug #t when calling run function:</p>
+<p>(run #:debug #t)</p>
+<p>If you are using the MVC system, or created a project directory, just pass &#x2013;debug or -g to art:</p>
+<p>In the project directory: <code>art work --debug</code>.</p>
+<p>Or <code>art work -g</code>.</p>
+<p>When you enable debug-mode, the Model and Controller modules in the directory will be reloaded automatically every time they&apos;re called.</p>
+<p>When not in debug mode, you have to press Ctrl+C to quit GNU Artanis server and start it again to test changed modules. Debug mode saves time when testing.</p>
+<p>You can add paths to monitor certain files (for example, a JSON file as config file to be reloaded on the fly). If you want to be notified when they&apos;re changed. Just put the paths here:</p>
+<p>debug.monitor = my/lib/json, my/lib/modules</p>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="webpack.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page: Webpack">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"Artanis","level":"1.1.2","depth":2,"previous":{"title":"Webpack","level":"1.1.1","depth":2,"path":"docs/webpack.md","ref":"docs/webpack.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"docs/artanis.md","mtime":"2019-03-30T12:28:51.109Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2021-04-02T17:23:14.907Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

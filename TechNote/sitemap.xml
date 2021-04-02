@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:news="http://www.google.com/schemas/sitemap-news/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:mobile="http://www.google.com/schemas/sitemap-mobile/1.0" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+<url> <loc>https://gitbook.ryanhuang.cn/TechNote/_book/</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
+<url> <loc>https://gitbook.ryanhuang.cn/TechNote/_book/frontend/</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
+<url> <loc>https://gitbook.ryanhuang.cn/TechNote/_book/frontend/difficulty.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
+<url> <loc>https://gitbook.ryanhuang.cn/TechNote/_book/frontend/async-and-events.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
+<url> <loc>https://gitbook.ryanhuang.cn/TechNote/_book/frontend/regexp-and-template-engine.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
+<url> <loc>https://gitbook.ryanhuang.cn/TechNote/_book/frontend/cross-origin-and-safe.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
+<url> <loc>https://gitbook.ryanhuang.cn/TechNote/_book/frontend/modular-and-webpack.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
+<url> <loc>https://gitbook.ryanhuang.cn/TechNote/_book/frontend/performance-optimization.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
+<url> <loc>https://gitbook.ryanhuang.cn/TechNote/_book/frontend/monitoring-report-and-pwa.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
+<url> <loc>https://gitbook.ryanhuang.cn/TechNote/_book/frontend/test.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
+<url> <loc>https://gitbook.ryanhuang.cn/TechNote/_book/frontend/react-and-vue.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
+<url> <loc>https://gitbook.ryanhuang.cn/TechNote/_book/frontend/nodejs.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
+<url> <loc>https://gitbook.ryanhuang.cn/TechNote/_book/tech/</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
+<url> <loc>https://gitbook.ryanhuang.cn/TechNote/_book/tech/questions.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
+<url> <loc>https://gitbook.ryanhuang.cn/TechNote/_book/tech/regexp.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
+<url> <loc>https://gitbook.ryanhuang.cn/TechNote/_book/tech/urlEncode.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
+<url> <loc>https://gitbook.ryanhuang.cn/TechNote/_book/tech/scope.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
+<url> <loc>https://gitbook.ryanhuang.cn/TechNote/_book/tech/this-and-object-prototypes.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
+<url> <loc>https://gitbook.ryanhuang.cn/TechNote/_book/tech/Types-and-Grammar.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
+<url> <loc>https://gitbook.ryanhuang.cn/TechNote/_book/practice/</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
+<url> <loc>https://gitbook.ryanhuang.cn/TechNote/_book/practice/ssl.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
+<url> <loc>https://gitbook.ryanhuang.cn/TechNote/_book/practice/phabricator.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
+<url> <loc>https://gitbook.ryanhuang.cn/TechNote/_book/practice/antd-pro-usage.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
+<url> <loc>https://gitbook.ryanhuang.cn/TechNote/_book/practice/mac-start-ways.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
+<url> <loc>https://gitbook.ryanhuang.cn/TechNote/_book/practice/typescript.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
+<url> <loc>https://gitbook.ryanhuang.cn/TechNote/_book/practice/resources.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
+<url> <loc>https://gitbook.ryanhuang.cn/TechNote/_book/practice/npm-package-mmanagement.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
+<url> <loc>https://gitbook.ryanhuang.cn/TechNote/_book/frameworks/</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
+<url> <loc>https://gitbook.ryanhuang.cn/TechNote/_book/frameworks/flutter.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
+<url> <loc>https://gitbook.ryanhuang.cn/TechNote/_book/frameworks/react-native.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
+<url> <loc>https://gitbook.ryanhuang.cn/TechNote/_book/articles/</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
+<url> <loc>https://gitbook.ryanhuang.cn/TechNote/_book/articles/mix.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
+<url> <loc>https://gitbook.ryanhuang.cn/TechNote/_book/articles/2019-02-04.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
+<url> <loc>https://gitbook.ryanhuang.cn/TechNote/_book/links/</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
+<url> <loc>https://gitbook.ryanhuang.cn/TechNote/_book/links/articles.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
+<url> <loc>https://gitbook.ryanhuang.cn/TechNote/_book/links/tools.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
+<url> <loc>https://gitbook.ryanhuang.cn/TechNote/_book/links/resources.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
+<url> <loc>https://gitbook.ryanhuang.cn/TechNote/_book/links/blogs.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
+<url> <loc>https://gitbook.ryanhuang.cn/TechNote/_book/links/other.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
+</urlset>

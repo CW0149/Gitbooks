@@ -1,0 +1,843 @@
+
+<!DOCTYPE HTML>
+<html lang="zh" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>Node.js · Yan Huang的技术笔记</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-anchor-navigation-ex/style/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-expandable-chapters-small/expandable-chapters-small.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+        <link rel="stylesheet" href="../styles/website.css">
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="../tech/" />
+    
+    
+    <link rel="prev" href="react-and-vue.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="輸入並搜尋" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    介绍
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    前端体系
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="difficulty.html">
+            
+                <a href="difficulty.html">
+            
+                    
+                    JS难点
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="async-and-events.html">
+            
+                <a href="async-and-events.html">
+            
+                    
+                    异步流控制与事件
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3" data-path="regexp-and-template-engine.html">
+            
+                <a href="regexp-and-template-engine.html">
+            
+                    
+                    正则与模版引擎
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4" data-path="cross-origin-and-safe.html">
+            
+                <a href="cross-origin-and-safe.html">
+            
+                    
+                    跨域与前端安全
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5" data-path="modular-and-webpack.html">
+            
+                <a href="modular-and-webpack.html">
+            
+                    
+                    模块化与webpack
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.6" data-path="performance-optimization.html">
+            
+                <a href="performance-optimization.html">
+            
+                    
+                    性能优化
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.7" data-path="monitoring-report-and-pwa.html">
+            
+                <a href="monitoring-report-and-pwa.html">
+            
+                    
+                    监控上报与PWA
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.8" data-path="test.html">
+            
+                <a href="test.html">
+            
+                    
+                    自动化集成测试
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.9" data-path="react-and-vue.html">
+            
+                <a href="react-and-vue.html">
+            
+                    
+                    React & Vue
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.2.10" data-path="nodejs.html">
+            
+                <a href="nodejs.html">
+            
+                    
+                    Node.js
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="../tech/">
+            
+                <a href="../tech/">
+            
+                    
+                    阅读笔记
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="../tech/questions.html">
+            
+                <a href="../tech/questions.html">
+            
+                    
+                    问题库
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2" data-path="../tech/regexp.html">
+            
+                <a href="../tech/regexp.html">
+            
+                    
+                    正则表达式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3" data-path="../tech/urlEncode.html">
+            
+                <a href="../tech/urlEncode.html">
+            
+                    
+                    URL编码
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.4" data-path="../tech/scope.html">
+            
+                <a href="../tech/scope.html">
+            
+                    
+                    作用域
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.5" data-path="../tech/this-and-object-prototypes.html">
+            
+                <a href="../tech/this-and-object-prototypes.html">
+            
+                    
+                    this和对象原型
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.6" data-path="../tech/Types-and-Grammar.html">
+            
+                <a href="../tech/Types-and-Grammar.html">
+            
+                    
+                    类型和语法
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="../practice/">
+            
+                <a href="../practice/">
+            
+                    
+                    实践笔记
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1" data-path="../practice/ssl.html">
+            
+                <a href="../practice/ssl.html">
+            
+                    
+                    申请SSL通配符证书
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2" data-path="../practice/phabricator.html">
+            
+                <a href="../practice/phabricator.html">
+            
+                    
+                    Phabricator
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.3" data-path="../practice/antd-pro-usage.html">
+            
+                <a href="../practice/antd-pro-usage.html">
+            
+                    
+                    Use Ant Design Pro
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.4" data-path="../practice/mac-start-ways.html">
+            
+                <a href="../practice/mac-start-ways.html">
+            
+                    
+                    Mac 开机方式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.5" data-path="../practice/typescript.html">
+            
+                <a href="../practice/typescript.html">
+            
+                    
+                    TypeScript
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.6" data-path="../practice/resources.html">
+            
+                <a href="../practice/resources.html">
+            
+                    
+                    资源
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.7" data-path="../practice/npm-package-mmanagement.html">
+            
+                <a href="../practice/npm-package-mmanagement.html">
+            
+                    
+                    npm 依赖管理
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="../frameworks/">
+            
+                <a href="../frameworks/">
+            
+                    
+                    框架
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.1" data-path="../frameworks/flutter.html">
+            
+                <a href="../frameworks/flutter.html">
+            
+                    
+                    Flutter
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2" data-path="../frameworks/react-native.html">
+            
+                <a href="../frameworks/react-native.html">
+            
+                    
+                    React Native
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="../articles/">
+            
+                <a href="../articles/">
+            
+                    
+                    文摘摘录
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.6.1" data-path="../articles/mix.html">
+            
+                <a href="../articles/mix.html">
+            
+                    
+                    杂
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.2" data-path="../articles/2019-02-04.html">
+            
+                <a href="../articles/2019-02-04.html">
+            
+                    
+                    2019-02-04
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" data-path="../links/">
+            
+                <a href="../links/">
+            
+                    
+                    链接收藏
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.7.1" data-path="../links/articles.html">
+            
+                <a href="../links/articles.html">
+            
+                    
+                    文章
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.2" data-path="../links/tools.html">
+            
+                <a href="../links/tools.html">
+            
+                    
+                    开发
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.3" data-path="../links/resources.html">
+            
+                <a href="../links/resources.html">
+            
+                    
+                    学习资源
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.4" data-path="../links/blogs.html">
+            
+                <a href="../links/blogs.html">
+            
+                    
+                    博客
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.5" data-path="../links/other.html">
+            
+                <a href="../links/other.html">
+            
+                    
+                    其它
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            本書使用 GitBook 釋出
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >Node.js</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <div id="anchor-navigation-ex-navbar"><i class="fa fa-anchor"></i><ul><li><span class="title-icon fa fa-star"></span><a href="#nodejs-&#x57FA;&#x7840;"><b></b>Node.js &#x57FA;&#x7840;</a></li><li><span class="title-icon fa fa-star"></span><a href="#&#x8FDB;&#x9636;"><b></b>&#x8FDB;&#x9636;</a></li><li><span class="title-icon fa fa-star"></span><a href="#debug"><b></b>Debug</a></li><li><span class="title-icon fa fa-star"></span><a href="#deploy"><b></b>Deploy</a></li><li><span class="title-icon fa fa-star"></span><a href="#apm"><b></b>APM</a></li><li><span class="title-icon fa fa-star"></span><a href="#&#x65E5;&#x5FD7;--elk"><b></b>&#x65E5;&#x5FD7; &amp; ELK</a></li><li><span class="title-icon fa fa-star"></span><a href="#&#x8D44;&#x6599;"><b></b>&#x8D44;&#x6599;</a></li><ul><li><span class="title-icon fa fa-hashtag"></span><a href="#&#x6587;&#x7AE0;"><b></b>&#x6587;&#x7AE0;</a></li><li><span class="title-icon fa fa-hashtag"></span><a href="#&#x5DE5;&#x5177;"><b></b>&#x5DE5;&#x5177;</a></li></ul></ul></div><a href="#nodejs-&#x57FA;&#x7840;" id="anchorNavigationExGoTop"><i class="fa fa-arrow-up"></i></a><h1 id="nodejs"><a name="nodejs" class="anchor-navigation-ex-anchor" href="#nodejs"><i class="fa fa-link" aria-hidden="true"></i></a>Node.js</h1>
+<h2 id="nodejs-&#x57FA;&#x7840;"><a name="nodejs-&#x57FA;&#x7840;" class="anchor-navigation-ex-anchor" href="#nodejs-&#x57FA;&#x7840;"><i class="fa fa-link" aria-hidden="true"></i></a>Node.js &#x57FA;&#x7840;</h2>
+<ul>
+<li>&#x4E86;&#x89E3; koa&#xFF0C;&#x5C1D;&#x8BD5;&#x5199;&#x4E00;&#x4E2A;&#x4E2D;&#x95F4;&#x4EF6;</li>
+<li>&#x4E86;&#x89E3; express&#xFF0C;&#x5C1D;&#x8BD5;&#x5199;&#x4E00;&#x4E2A;&#x4E2D;&#x95F4;&#x4EF6;</li>
+</ul>
+<h2 id="&#x8FDB;&#x9636;"><a name="&#x8FDB;&#x9636;" class="anchor-navigation-ex-anchor" href="#&#x8FDB;&#x9636;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x8FDB;&#x9636;</h2>
+<ul>
+<li>&#x4E86;&#x89E3;&#x5E38;&#x89C1;&#x5185;&#x5B58;&#x66F4;&#x65B0;&#x7B56;&#x7565;</li>
+<li>&#x719F;&#x6089; LRU &#x539F;&#x7406;</li>
+<li>[&#x53EF;&#x9009;]&#x5B89;&#x88C5; mysql&#x3001;mongodb &#x548C; Redis</li>
+<li>&#x719F;&#x6089; MySQL&#x3001;Mongodb &#x548C; Mongoose &#x53CA;&#x5176; CRUD &#x64CD;&#x4F5C;</li>
+</ul>
+<h2 id="debug"><a name="debug" class="anchor-navigation-ex-anchor" href="#debug"><i class="fa fa-link" aria-hidden="true"></i></a>Debug</h2>
+<h2 id="deploy"><a name="deploy" class="anchor-navigation-ex-anchor" href="#deploy"><i class="fa fa-link" aria-hidden="true"></i></a>Deploy</h2>
+<ul>
+<li>&#x4E86;&#x89E3; <a href="https://app.pm2.io" target="_blank">pm2</a>&#xFF0C;&#x5E76;&#x719F;&#x6089;&#x5E38;&#x7528;&#x547D;&#x4EE4;</li>
+<li>[&#x53EF;&#x9009;] &#x5B89;&#x88C5; docker&#xFF0C;&#x5E76;&#x719F;&#x6089;&#x5E38;&#x7528;&#x547D;&#x4EE4;</li>
+</ul>
+<h2 id="apm"><a name="apm" class="anchor-navigation-ex-anchor" href="#apm"><i class="fa fa-link" aria-hidden="true"></i></a>APM</h2>
+<h2 id="&#x65E5;&#x5FD7;--elk"><a name="&#x65E5;&#x5FD7;--elk" class="anchor-navigation-ex-anchor" href="#&#x65E5;&#x5FD7;--elk"><i class="fa fa-link" aria-hidden="true"></i></a>&#x65E5;&#x5FD7; &amp; ELK</h2>
+<p>&#x4E86;&#x89E3;&#x4EC0;&#x4E48;&#x662F; ELK&#xFF0C;&#x5C1D;&#x8BD5;&#x7528; ELK &#x7BA1;&#x7406;&#x4F60;&#x7684;&#x65E5;&#x5FD7;</p>
+<h2 id="&#x8D44;&#x6599;"><a name="&#x8D44;&#x6599;" class="anchor-navigation-ex-anchor" href="#&#x8D44;&#x6599;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x8D44;&#x6599;</h2>
+<h3 id="&#x6587;&#x7AE0;"><a name="&#x6587;&#x7AE0;" class="anchor-navigation-ex-anchor" href="#&#x6587;&#x7AE0;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x6587;&#x7AE0;</h3>
+<ul>
+<li><a href="https://nodejs.org/api/" target="_blank">node.js api</a></li>
+<li><a href="https://github.com/nodejs/node" target="_blank">node.js &#x6E90;&#x7801;</a></li>
+<li><a href="https://nodejs.org/en/docs/guides/" target="_blank">node.js &#x5B98;&#x65B9;&#x5B66;&#x4E60;&#x6307;&#x5357;</a></li>
+<li><a href="https://github.com/chyingp/nodejs-learning-guide" target="_blank">nodejs learning guide</a></li>
+<li><a href="https://docs.npmjs.com/" target="_blank">npm</a></li>
+<li><a href="https://github.com/koajs/koa/blob/master/docs/koa-vs-express.md" target="_blank">Koa vs Express</a></li>
+</ul>
+<ul>
+<li><a href="https://en.wikipedia.org/wiki/Cache_replacement_policies" target="_blank">Cache replacement policies</a></li>
+<li><a href="https://npm.taobao.org/package/lru-cache" target="_blank">LRU cache</a></li>
+</ul>
+<ul>
+<li><a href="https://github.com/mysqljs/mysql" target="_blank">mysql</a></li>
+<li><a href="http://mongoosejs.com/docs/guide.html" target="_blank">mongoosejs</a></li>
+<li><a href="http://mongodb.github.io/node-mongodb-native/2.2/api/" target="_blank">node mongodb native</a></li>
+</ul>
+<ul>
+<li><a href="https://github.com/yjhjstz/deep-into-node" target="_blank">Deep into node</a></li>
+<li><a href="https://github.com/nswbmw/node-in-debugging" target="_blank">node in debugging</a></li>
+<li><a href="https://zhuanlan.zhihu.com/p/36340263" target="_blank">Node &#x6848;&#x53D1;&#x73B0;&#x573A;&#x63ED;&#x79D8; &#x2014;&#x2014; &#x5FEB;&#x901F;&#x5B9A;&#x4F4D;&#x7EBF;&#x4E0A;&#x5185;&#x5B58;&#x6CC4;&#x6F0F;</a></li>
+</ul>
+<ul>
+<li><a href="http://dockone.io/article/4817" target="_blank">&#x5229;&#x7528;ELK&#x642D;&#x5EFA;Docker&#x5BB9;&#x5668;&#x5316;&#x5E94;&#x7528;&#x65E5;&#x5FD7;&#x4E2D;&#x5FC3;</a></li>
+<li><a href="https://elk-docker.readthedocs.io/" target="_blank">Elasticsearch, Logstash, Kibana (ELK) Docker image documentation</a></li>
+</ul>
+<h3 id="&#x5DE5;&#x5177;"><a name="&#x5DE5;&#x5177;" class="anchor-navigation-ex-anchor" href="#&#x5DE5;&#x5177;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x5DE5;&#x5177;</h3>
+<ul>
+<li><a href="https://app.keymetrics.io" target="_blank">pm2</a></li>
+<li><a href="https://newrelic.com/nodejs" target="_blank">Node.js Performance Monitoring</a></li>
+<li><a href="https://www.tingyun.com" target="_blank">&#x542C;&#x4E91;-&#x5E94;&#x7528;&#x6027;&#x80FD;&#x76D1;&#x63A7;&#x5E73;&#x53F0;</a></li>
+<li><a href="https://www.elastic.co/solutions/apm" target="_blank">Elastic-&#x5F00;&#x6E90;&#x5E94;&#x7528;&#x7A0B;&#x5E8F;&#x6027;&#x80FD;&#x76D1;&#x6D4B;</a></li>
+</ul>
+<ul>
+<li><a href="https://github.com/log4js-node/log4js-node" target="_blank">log4js-node</a>
+<a href="http://dockone.io/article/4817" target="_blank">http://dockone.io/article/4817</a>
+<a href="http://elk-docker.readthedocs.io" target="_blank">http://elk-docker.readthedocs.io</a></li>
+</ul>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="react-and-vue.html" class="navigation navigation-prev " aria-label="Previous page: React & Vue">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="../tech/" class="navigation navigation-next " aria-label="Next page: 阅读笔记">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"Node.js","level":"1.2.10","depth":2,"next":{"title":"阅读笔记","level":"1.3","depth":1,"path":"tech/README.md","ref":"tech/README.md","articles":[{"title":"问题库","level":"1.3.1","depth":2,"path":"tech/questions.md","ref":"tech/questions.md","articles":[]},{"title":"正则表达式","level":"1.3.2","depth":2,"path":"tech/regexp.md","ref":"tech/regexp.md","articles":[]},{"title":"URL编码","level":"1.3.3","depth":2,"path":"tech/urlEncode.md","ref":"tech/urlEncode.md","articles":[]},{"title":"作用域","level":"1.3.4","depth":2,"path":"tech/scope.md","ref":"tech/scope.md","articles":[]},{"title":"this和对象原型","level":"1.3.5","depth":2,"path":"tech/this-and-object-prototypes.md","ref":"tech/this-and-object-prototypes.md","articles":[]},{"title":"类型和语法","level":"1.3.6","depth":2,"path":"tech/Types-and-Grammar.md","ref":"tech/Types-and-Grammar.md","articles":[]}]},"previous":{"title":"React & Vue","level":"1.2.9","depth":2,"path":"frontend/react-and-vue.md","ref":"frontend/react-and-vue.md","articles":[]},"dir":"ltr"},"config":{"plugins":["anchor-navigation-ex","expandable-chapters-small","sitemap-general","copy-code-button","github"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"github":{"url":"https://github.com/CW0149/gitbook-technote"},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sitemap-general":{"prefix":"https://gitbook.ryanhuang.cn/TechNote/_book/"},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"anchor-navigation-ex":{"associatedWithSummary":true,"float":{"floatIcon":"fa fa-anchor","level1Icon":"fa fa-star","level2Icon":"fa fa-hashtag","level3Icon":"fa fa-magic","showLevelIcon":true},"mode":"float","multipleH1":false,"pageTop":{"level1Icon":"fa fa-hand-o-right","level2Icon":"fa fa-hand-o-right","level3Icon":"fa fa-hand-o-right","showLevelIcon":false},"printLog":false,"showGoTop":true,"showLevel":false},"expandable-chapters-small":{},"copy-code-button":{},"sharing":{"facebook":false,"twitter":false,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Yan Huang的技术笔记","language":"zh","gitbook":"*"},"file":{"path":"frontend/nodejs.md","mtime":"2019-03-04T04:43:43.306Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2021-04-02T17:23:08.575Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-expandable-chapters-small/expandable-chapters-small.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-copy-code-button/toggle.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-github/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

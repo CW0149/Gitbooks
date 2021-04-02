@@ -25,8 +25,7 @@ books=(
 rm -rf build
 mkdir build
 
-for book in ${books[@]}
-do
+handleOne() {
   # rm -rf ${book}/_book
   # rm -rf ${book}/node_modules
   # rm -rf ${book}/.git
@@ -35,5 +34,11 @@ do
   bookdir=build/${book}
   echo ${bookdir}
   mkdir ${bookdir}
-  gitbook build ${book} ${bookdir}
+  cd ${book} && gitbook install && cd .. && gitbook build ${book} ${bookdir}
+}
+
+for book in ${books[@]}
+do
+  handleOne
+
 done

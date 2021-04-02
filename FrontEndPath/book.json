@@ -6,8 +6,7 @@
         "expandable-chapters-small",
         "sitemap-general",
         "copy-code-button",
-        "github",
-        "mermaid"
+        "github"
     ],
     "pluginsConfig": {
         "sitemap-general": {

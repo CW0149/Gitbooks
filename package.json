@@ -1,11 +1,11 @@
 {
   "name": "gitbooks",
   "version": "1.0.0",
-  "description": "",
+  "homepage": "https://cw0149.github.io/gitbooks/",
   "scripts": {
     "build": "./build.sh",
     "deploy": "gh-pages -d build",
-    "b-deploy": "build && deploy"
+    "b-deploy": "yarn build && yarn deploy"
   },
   "author": "",
   "license": "ISC",

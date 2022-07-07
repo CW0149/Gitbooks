@@ -4,14 +4,10 @@
     "plugins" : [
         "anchor-navigation-ex",
         "expandable-chapters-small",
-        "sitemap-general",
         "copy-code-button",
         "github"
     ],
     "pluginsConfig": {
-        "sitemap-general": {
-            "prefix": "https://gitbook.ryanhuang.cn/TechNote/_book/"
-        },
         "anchor-navigation-ex": {
             "showLevel": false,
             "associatedWithSummary": true,

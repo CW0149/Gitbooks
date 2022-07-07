@@ -4,8 +4,8 @@
   "homepage": "https://cw0149.github.io/gitbooks/",
   "scripts": {
     "build": "./build.sh",
-    "deploy": "gh-pages -d build",
-    "b-deploy": "yarn build && yarn deploy"
+    "deploy-gh": "gh-pages -d build",
+    "deploy": "source .env.local && npm run build && rm -rf $DEPLOY_PATH && mv build $DEPLOY_PATH"
   },
   "author": "",
   "license": "ISC",

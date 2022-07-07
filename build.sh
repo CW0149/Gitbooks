@@ -6,13 +6,8 @@ init() {
   echo "init"
 
   books=(
-    'AdvancedJS'
     'FrontEndPath'
-    'ReactRouterV4'
-    'Redux'
-    'ModernJS'
     'ReactFundamentals'
-    'ReactNative'
 
     'LeetCodeEasy'
     'LeetCodeMedium'

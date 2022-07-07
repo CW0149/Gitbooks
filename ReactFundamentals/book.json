@@ -4,13 +4,9 @@
     "plugins" : [
         "anchor-navigation-ex",
         "expandable-chapters-small",
-        "sitemap-general",
         "copy-code-button"
     ],
     "pluginsConfig": {
-        "sitemap-general": {
-            "prefix": "https://gitbook.ryanhuang.cn/ReactFundamentals/_book/"
-        },
         "anchor-navigation-ex": {
             "showLevel": false,
             "associatedWithSummary": true,
